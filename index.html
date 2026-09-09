@@ -19,6 +19,77 @@ body {
     min-height: 100vh;
 }
 
+/* ================= POPUP ================= */
+
+.notice-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(5px);
+}
+
+.notice-box {
+    width: 100%;
+    max-width: 380px;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 17px;
+    padding: 25px 20px 20px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    animation: popup .25s ease;
+}
+
+.notice-title {
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.notice-text {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.notice-btn {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    background: #fff;
+    color: #000;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.notice-btn:hover {
+    transform: translateY(-1px);
+    opacity: .9;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ================= MAIN ================= */
+
 .container {
     width: 100%;
     max-width: 520px;
@@ -34,14 +105,14 @@ body {
 }
 
 .avatar {
+    display: block;
     width: 92px;
     height: 92px;
     border-radius: 50%;
     object-fit: cover;
-    display: block;
     background: #151515;
     border: 2px solid #242424;
-    margin: 0 auto 13px;
+    margin-bottom: 13px;
 }
 
 .name {
@@ -248,6 +319,10 @@ footer {
     .name {
         font-size: 23px;
     }
+
+    .notice-box {
+        padding: 22px 17px 17px;
+    }
 }
 
 @media (min-width: 700px) {
@@ -261,6 +336,33 @@ footer {
 
 <body>
 
+<!-- ================= POPUP THÔNG BÁO ================= -->
+
+<div class="notice-overlay" id="noticePopup">
+
+    <div class="notice-box">
+
+        <div class="notice-title">
+            📢 THÔNG BÁO
+        </div>
+
+        <div class="notice-text">
+            Thắc mắc gì thì có thể hỏi Admin
+        </div>
+
+        <button
+            class="notice-btn"
+            onclick="closeNotice()"
+        >
+            ĐÃ HIỂU, VÀO WEB
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= WEBSITE ================= -->
+
 <div class="container">
 
     <div class="profile">
@@ -271,7 +373,9 @@ footer {
             alt="ModGameios"
         >
 
-        <div class="name">ModGameios</div>
+        <div class="name">
+            ModGameios
+        </div>
 
         <div class="subtitle">
             MOD GAME • TOOLS • iOS
@@ -281,7 +385,8 @@ footer {
 
     <a
         class="main-btn"
-        href="#download"
+        href="https://example.com"
+        target="_blank"
     >
         TẢI GAME NGAY
     </a>
@@ -336,7 +441,7 @@ footer {
         onkeyup="searchCards()"
     >
 
-    <div class="section" id="download">
+    <div class="section">
 
         <h2>DOWNLOAD</h2>
 
@@ -344,30 +449,44 @@ footer {
 
             <a
                 class="card"
-                href="#"
+                href="https://example.com"
+                target="_blank"
             >
-                <div class="card-icon">⬇️</div>
+
+                <div class="card-icon">
+                    ⬇️
+                </div>
 
                 <div class="card-info">
                     <b>Download Game</b>
                     <span>Tải game</span>
                 </div>
 
-                <div class="arrow">›</div>
+                <div class="arrow">
+                    ›
+                </div>
+
             </a>
 
             <a
                 class="card"
-                href="#"
+                href="https://example.com"
+                target="_blank"
             >
-                <div class="card-icon">📱</div>
+
+                <div class="card-icon">
+                    📱
+                </div>
 
                 <div class="card-info">
                     <b>Ứng dụng iOS</b>
                     <span>Download</span>
                 </div>
 
-                <div class="arrow">›</div>
+                <div class="arrow">
+                    ›
+                </div>
+
             </a>
 
         </div>
@@ -382,30 +501,44 @@ footer {
 
             <a
                 class="card"
-                href="#"
+                href="https://example.com"
+                target="_blank"
             >
-                <div class="card-icon">🛠️</div>
+
+                <div class="card-icon">
+                    🛠️
+                </div>
 
                 <div class="card-info">
                     <b>iOS Tools</b>
                     <span>Công cụ dành cho iOS</span>
                 </div>
 
-                <div class="arrow">›</div>
+                <div class="arrow">
+                    ›
+                </div>
+
             </a>
 
             <a
                 class="card"
-                href="#"
+                href="https://example.com"
+                target="_blank"
             >
-                <div class="card-icon">📦</div>
+
+                <div class="card-icon">
+                    📦
+                </div>
 
                 <div class="card-info">
                     <b>Tài nguyên</b>
                     <span>Kho tài nguyên ModGameios</span>
                 </div>
 
-                <div class="arrow">›</div>
+                <div class="arrow">
+                    ›
+                </div>
+
             </a>
 
         </div>
@@ -419,24 +552,40 @@ footer {
 </div>
 
 <script>
+
+/* Đóng popup */
+
+function closeNotice() {
+    document.getElementById("noticePopup").style.display = "none";
+}
+
+
+/* Tìm kiếm */
+
 function searchCards() {
-    const input = document
+
+    let input = document
         .querySelector(".search")
         .value
         .toLowerCase();
 
-    const cards = document.querySelectorAll(".card");
+    let cards = document
+        .querySelectorAll(".card");
 
     cards.forEach(function(card) {
-        const text = card.innerText.toLowerCase();
+
+        let text = card.innerText.toLowerCase();
 
         if (text.includes(input)) {
             card.style.display = "flex";
         } else {
             card.style.display = "none";
         }
+
     });
+
 }
+
 </script>
 
 </body>
