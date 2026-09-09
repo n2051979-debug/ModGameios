@@ -28,6 +28,9 @@ body {
 
 .profile {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .avatar {
@@ -35,9 +38,10 @@ body {
     height: 92px;
     border-radius: 50%;
     object-fit: cover;
+    display: block;
     background: #151515;
     border: 2px solid #242424;
-    margin-bottom: 13px;
+    margin: 0 auto 13px;
 }
 
 .name {
@@ -267,9 +271,7 @@ footer {
             alt="ModGameios"
         >
 
-        <div class="name">
-            ModGameios
-        </div>
+        <div class="name">ModGameios</div>
 
         <div class="subtitle">
             MOD GAME • TOOLS • iOS
@@ -279,8 +281,7 @@ footer {
 
     <a
         class="main-btn"
-        href="https://example.com"
-        target="_blank"
+        href="#download"
     >
         TẢI GAME NGAY
     </a>
@@ -335,7 +336,7 @@ footer {
         onkeyup="searchCards()"
     >
 
-    <div class="section">
+    <div class="section" id="download">
 
         <h2>DOWNLOAD</h2>
 
@@ -343,44 +344,30 @@ footer {
 
             <a
                 class="card"
-                href="https://example.com"
-                target="_blank"
+                href="#"
             >
-
-                <div class="card-icon">
-                    ⬇️
-                </div>
+                <div class="card-icon">⬇️</div>
 
                 <div class="card-info">
                     <b>Download Game</b>
                     <span>Tải game</span>
                 </div>
 
-                <div class="arrow">
-                    ›
-                </div>
-
+                <div class="arrow">›</div>
             </a>
 
             <a
                 class="card"
-                href="https://example.com"
-                target="_blank"
+                href="#"
             >
-
-                <div class="card-icon">
-                    📱
-                </div>
+                <div class="card-icon">📱</div>
 
                 <div class="card-info">
                     <b>Ứng dụng iOS</b>
                     <span>Download</span>
                 </div>
 
-                <div class="arrow">
-                    ›
-                </div>
-
+                <div class="arrow">›</div>
             </a>
 
         </div>
@@ -395,44 +382,30 @@ footer {
 
             <a
                 class="card"
-                href="https://example.com"
-                target="_blank"
+                href="#"
             >
-
-                <div class="card-icon">
-                    🛠️
-                </div>
+                <div class="card-icon">🛠️</div>
 
                 <div class="card-info">
                     <b>iOS Tools</b>
                     <span>Công cụ dành cho iOS</span>
                 </div>
 
-                <div class="arrow">
-                    ›
-                </div>
-
+                <div class="arrow">›</div>
             </a>
 
             <a
                 class="card"
-                href="https://example.com"
-                target="_blank"
+                href="#"
             >
-
-                <div class="card-icon">
-                    📦
-                </div>
+                <div class="card-icon">📦</div>
 
                 <div class="card-info">
                     <b>Tài nguyên</b>
                     <span>Kho tài nguyên ModGameios</span>
                 </div>
 
-                <div class="arrow">
-                    ›
-                </div>
-
+                <div class="arrow">›</div>
             </a>
 
         </div>
@@ -447,25 +420,21 @@ footer {
 
 <script>
 function searchCards() {
-
-    let input = document
+    const input = document
         .querySelector(".search")
         .value
         .toLowerCase();
 
-    let cards = document
-        .querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card");
 
     cards.forEach(function(card) {
-
-        let text = card.innerText.toLowerCase();
+        const text = card.innerText.toLowerCase();
 
         if (text.includes(input)) {
             card.style.display = "flex";
         } else {
             card.style.display = "none";
         }
-
     });
 }
 </script>
