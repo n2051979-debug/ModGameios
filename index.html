@@ -6,297 +6,264 @@
 <title>ModGameios</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Arial,sans-serif;
-    background:#080808;
-    color:#fff;
-    min-height:100vh;
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: #fff;
+    min-height: 100vh;
 }
 
-.container{
-    width:100%;
-    max-width:520px;
-    margin:auto;
-    padding:28px 15px 45px;
+.container {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 30px 15px 45px;
 }
 
-/* PROFILE */
-.profile{
-    text-align:center;
+.profile {
+    text-align: center;
 }
 
-.avatar{
-    width:92px;
-    height:92px;
-    border-radius:50%;
-    object-fit:cover;
-    background:#151515;
-    border:2px solid #242424;
-    margin-bottom:13px;
+.avatar {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #151515;
+    border: 2px solid #242424;
+    margin-bottom: 13px;
 }
 
-.name{
-    font-size:25px;
-    font-weight:800;
+.name {
+    font-size: 25px;
+    font-weight: 800;
 }
 
-.subtitle{
-    color:#888;
-    font-size:14px;
-    margin-top:6px;
+.subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-top: 6px;
 }
 
-/* BUTTON CHÍNH */
-.main-btn{
-    display:block;
-    text-align:center;
-    text-decoration:none;
-    color:#fff;
-    background:#151515;
-    border:1px solid #292929;
-    border-radius:13px;
-    padding:15px;
-    margin:24px 0 15px;
-    font-size:14px;
-    font-weight:700;
-    transition:.2s;
+.main-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 13px;
+    padding: 15px;
+    margin: 24px 0 15px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .2s;
 }
 
-.main-btn:hover{
-    border-color:#00ff88;
-    transform:translateY(-1px);
+.main-btn:hover {
+    border-color: #00ff88;
+    transform: translateY(-1px);
 }
 
-/* STATS */
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
 }
 
-.stat{
-    background:#111;
-    border:1px solid #202020;
-    border-radius:12px;
-    text-align:center;
-    padding:14px 5px;
+.stat {
+    background: #111;
+    border: 1px solid #202020;
+    border-radius: 12px;
+    text-align: center;
+    padding: 14px 5px;
 }
 
-.stat b{
-    display:block;
-    font-size:19px;
-    margin-bottom:5px;
+.stat b {
+    display: block;
+    font-size: 19px;
+    margin-bottom: 5px;
 }
 
-.stat span{
-    color:#777;
-    font-size:11px;
+.stat span {
+    color: #777;
+    font-size: 11px;
 }
 
-/* GIỚI THIỆU */
-.about{
-    background:#111;
-    border:1px solid #202020;
-    border-radius:13px;
-    padding:16px;
-    margin-top:15px;
+.about {
+    background: #111;
+    border: 1px solid #202020;
+    border-radius: 13px;
+    padding: 16px;
+    margin-top: 15px;
 }
 
-.about-title{
-    font-size:16px;
-    font-weight:700;
-    margin-bottom:7px;
+.about-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 7px;
 }
 
-.about-text{
-    color:#888;
-    font-size:13px;
-    line-height:1.6;
+.about-text {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
-/* SOCIAL */
-.social{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-top:15px;
+.social {
+    margin-top: 15px;
 }
 
-.social a{
-    display:block;
-    text-decoration:none;
-    color:#fff;
-    background:#111;
-    border:1px solid #202020;
-    border-radius:12px;
-    padding:14px;
-    text-align:center;
-    font-size:14px;
-    font-weight:600;
-    transition:.2s;
+.social a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+    border: 1px solid #202020;
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .2s;
 }
 
-.social a:hover{
-    border-color:#5865F2;
-    transform:translateY(-1px);
+.social a:hover {
+    border-color: #5865F2;
 }
 
-/* SEARCH */
-.search{
-    width:100%;
-    margin-top:20px;
-    padding:14px 15px;
-    border-radius:12px;
-    border:1px solid #242424;
-    outline:none;
-    background:#111;
-    color:#fff;
-    font-size:13px;
+.search {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 15px;
+    border-radius: 12px;
+    border: 1px solid #242424;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 13px;
 }
 
-.search::placeholder{
-    color:#666;
+.search::placeholder {
+    color: #666;
 }
 
-.search:focus{
-    border-color:#444;
+.search:focus {
+    border-color: #444;
 }
 
-/* SECTION */
-.section{
-    margin-top:28px;
+.section {
+    margin-top: 28px;
 }
 
-.section h2{
-    font-size:17px;
-    margin-bottom:11px;
+.section h2 {
+    font-size: 17px;
+    margin-bottom: 11px;
 }
 
-/* CARDS */
-.cards{
-    display:flex;
-    flex-direction:column;
-    gap:9px;
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
 }
 
-.card{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    text-decoration:none;
-    color:#fff;
-    background:#111;
-    border:1px solid #202020;
-    border-radius:12px;
-    padding:14px;
-    transition:.2s;
+.card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+    border: 1px solid #202020;
+    border-radius: 12px;
+    padding: 14px;
+    transition: .2s;
 }
 
-.card:hover{
-    border-color:#00ff88;
-    transform:translateY(-1px);
+.card:hover {
+    border-color: #00ff88;
+    transform: translateY(-1px);
 }
 
-.card-icon{
-    width:40px;
-    height:40px;
-    border-radius:10px;
-    background:#1a1a1a;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
-    font-size:18px;
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
 }
 
-.card-info{
-    flex:1;
+.card-info {
+    flex: 1;
 }
 
-.card-info b{
-    display:block;
-    font-size:13px;
-    margin-bottom:4px;
+.card-info b {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
 }
 
-.card-info span{
-    color:#707070;
-    font-size:11px;
+.card-info span {
+    color: #707070;
+    font-size: 11px;
 }
 
-.arrow{
-    color:#666;
-    font-size:19px;
+.arrow {
+    color: #666;
+    font-size: 19px;
 }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    color:#555;
-    font-size:11px;
-    margin-top:35px;
+footer {
+    text-align: center;
+    color: #555;
+    font-size: 11px;
+    margin-top: 35px;
 }
 
-/* MOBILE NHỎ */
-@media(max-width:380px){
-
-    .container{
-        padding-left:12px;
-        padding-right:12px;
+@media (max-width: 380px) {
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
-    .avatar{
-        width:85px;
-        height:85px;
+    .avatar {
+        width: 85px;
+        height: 85px;
     }
 
-    .name{
-        font-size:23px;
-    }
-
-    .stats{
-        gap:6px;
+    .name {
+        font-size: 23px;
     }
 }
 
-/* PC */
-@media(min-width:700px){
-
-    .container{
-        max-width:520px;
-        padding-top:50px;
+@media (min-width: 700px) {
+    .container {
+        max-width: 520px;
+        padding-top: 50px;
     }
 }
 </style>
 </head>
 
-
 <body>
 
 <div class="container">
 
-
-    <!-- =========================
-         PROFILE
-    ========================== -->
-
     <div class="profile">
-
-        <!--
-        ĐỔI LINK AVATAR Ở ĐÂY
-        Ví dụ:
-        src="avatar.png"
-        -->
 
         <img
             class="avatar"
-            src="https://via.placeholder.com/150"
+            src="avatar.jpg"
             alt="ModGameios"
         >
 
@@ -310,12 +277,6 @@ footer{
 
     </div>
 
-
-
-    <!-- =========================
-         NÚT CHÍNH
-    ========================== -->
-
     <a
         class="main-btn"
         href="https://example.com"
@@ -323,12 +284,6 @@ footer{
     >
         TẢI GAME NGAY
     </a>
-
-
-
-    <!-- =========================
-         THỐNG KÊ
-    ========================== -->
 
     <div class="stats">
 
@@ -349,12 +304,6 @@ footer{
 
     </div>
 
-
-
-    <!-- =========================
-         GIỚI THIỆU
-    ========================== -->
-
     <div class="about">
 
         <div class="about-title">
@@ -368,12 +317,6 @@ footer{
 
     </div>
 
-
-
-    <!-- =========================
-         DISCORD
-    ========================== -->
-
     <div class="social">
 
         <a
@@ -385,12 +328,6 @@ footer{
 
     </div>
 
-
-
-    <!-- =========================
-         TÌM KIẾM
-    ========================== -->
-
     <input
         class="search"
         type="text"
@@ -398,20 +335,11 @@ footer{
         onkeyup="searchCards()"
     >
 
-
-
-    <!-- =========================
-         DOWNLOAD
-    ========================== -->
-
     <div class="section">
 
-        <h2>
-            DOWNLOAD
-        </h2>
+        <h2>DOWNLOAD</h2>
 
         <div class="cards">
-
 
             <a
                 class="card"
@@ -424,15 +352,8 @@ footer{
                 </div>
 
                 <div class="card-info">
-
-                    <b>
-                        Download Game
-                    </b>
-
-                    <span>
-                        Tải game
-                    </span>
-
+                    <b>Download Game</b>
+                    <span>Tải game</span>
                 </div>
 
                 <div class="arrow">
@@ -440,8 +361,6 @@ footer{
                 </div>
 
             </a>
-
-
 
             <a
                 class="card"
@@ -454,15 +373,8 @@ footer{
                 </div>
 
                 <div class="card-info">
-
-                    <b>
-                        Ứng dụng iOS
-                    </b>
-
-                    <span>
-                        Download
-                    </span>
-
+                    <b>Ứng dụng iOS</b>
+                    <span>Download</span>
                 </div>
 
                 <div class="arrow">
@@ -471,25 +383,15 @@ footer{
 
             </a>
 
-
         </div>
 
     </div>
 
-
-
-    <!-- =========================
-         TOOLS
-    ========================== -->
-
     <div class="section">
 
-        <h2>
-            TOOLS & TÀI NGUYÊN
-        </h2>
+        <h2>TOOLS & TÀI NGUYÊN</h2>
 
         <div class="cards">
-
 
             <a
                 class="card"
@@ -502,15 +404,8 @@ footer{
                 </div>
 
                 <div class="card-info">
-
-                    <b>
-                        iOS Tools
-                    </b>
-
-                    <span>
-                        Công cụ dành cho iOS
-                    </span>
-
+                    <b>iOS Tools</b>
+                    <span>Công cụ dành cho iOS</span>
                 </div>
 
                 <div class="arrow">
@@ -518,8 +413,6 @@ footer{
                 </div>
 
             </a>
-
-
 
             <a
                 class="card"
@@ -532,15 +425,8 @@ footer{
                 </div>
 
                 <div class="card-info">
-
-                    <b>
-                        Tài nguyên
-                    </b>
-
-                    <span>
-                        Kho tài nguyên ModGameios
-                    </span>
-
+                    <b>Tài nguyên</b>
+                    <span>Kho tài nguyên ModGameios</span>
                 </div>
 
                 <div class="arrow">
@@ -549,59 +435,39 @@ footer{
 
             </a>
 
-
         </div>
 
     </div>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
 
     <footer>
         © 2026 ModGameios
     </footer>
 
-
 </div>
 
-
-
 <script>
+function searchCards() {
 
-function searchCards(){
-
-    let input =
-        document
+    let input = document
         .querySelector(".search")
         .value
         .toLowerCase();
 
-    let cards =
-        document
+    let cards = document
         .querySelectorAll(".card");
 
-    cards.forEach(function(card){
+    cards.forEach(function(card) {
 
-        let text =
-            card.innerText.toLowerCase();
+        let text = card.innerText.toLowerCase();
 
-        if(text.includes(input)){
-
+        if (text.includes(input)) {
             card.style.display = "flex";
-
-        }else{
-
+        } else {
             card.style.display = "none";
-
         }
 
     });
-
 }
-
 </script>
 
 </body>
