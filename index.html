@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ModGameios</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d0e13;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.container{width:92%;max-width:850px;margin:28px auto 50px}
+.header{text-align:center;margin:15px 0 35px}
+.logo{width:90px;height:90px;border-radius:25px;background:#20222a;display:inline-flex;align-items:center;justify-content:center;font-size:38px;font-weight:800}
+.header h1{margin:12px 0 5px;font-size:30px}
+.header p{margin:0;color:#9b9da8}
+.section{margin:28px 0 14px}
+.section-title{display:inline-block;padding:10px 18px;border:1px solid #343640;border-radius:30px;color:#69a7ff;font-weight:700}
+.card{display:flex;align-items:center;gap:18px;background:#1a1b21;border:1px solid #30313a;border-radius:25px;padding:18px;margin:14px 0;box-shadow:0 4px 18px #0003}
+.thumb{width:92px;height:92px;border-radius:20px;background:#282a32;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0}
+.info{flex:1;min-width:0}
+.info h2{margin:0 0 7px;font-size:21px}
+.info p{margin:5px 0;color:#a4a5ae}
+.tags{margin-top:11px}
+.tag{display:inline-block;background:#303138;color:#ddd;padding:7px 11px;border-radius:10px;margin:3px 4px 0 0;font-size:13px}
+.download{width:66px;height:66px;border-radius:21px;background:#19345f;color:#62a2ff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:29px;flex-shrink:0;transition:.15s}
+.download:hover{transform:scale(1.06)}
+@media(max-width:600px){
+.container{width:94%;margin-top:18px}
+.card{gap:12px;padding:15px;border-radius:22px}
+.thumb{width:76px;height:76px;border-radius:17px;font-size:28px}
+.info h2{font-size:17px}
+.info p{font-size:13px}
+.download{width:55px;height:55px;border-radius:18px;font-size:23px}
+.header h1{font-size:27px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">MG</div>
+    <h1>ModGameios</h1>
+    <p>Kho liên kết và tài nguyên iOS</p>
+  </header>
+
+  <div class="section"><span class="section-title">🎮 FILE DOWNLOAD</span></div>
+
+  <!-- Nhân bản card bên dưới để thêm mục mới -->
+  <div class="card">
+    <div class="thumb">📦</div>
+    <div class="info">
+      <h2>FILE DOWNLOAD 01</h2>
+      <p>• Phiên bản mới nhất</p>
+      <p>• Nội dung của bạn</p>
+      <div class="tags">
+        <span class="tag">⬇️ Download</span>
+        <span class="tag"> iOS</span>
+      </div>
+    </div>
+    <a class="download" href="https://example.com" target="_blank" rel="noopener">☁️</a>
+  </div>
+
+  <div class="card">
+    <div class="thumb">📱</div>
+    <div class="info">
+      <h2>HƯỚNG DẪN</h2>
+      <p>• Hướng dẫn sử dụng</p>
+      <p>• Cập nhật mới</p>
+      <div class="tags">
+        <span class="tag">🎥 Hướng dẫn</span>
+        <span class="tag"> iOS</span>
+      </div>
+    </div>
+    <a class="download" href="https://example.com" target="_blank" rel="noopener">›</a>
+  </div>
+</div>
+</body>
+</html>
