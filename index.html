@@ -29,63 +29,199 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.78);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
 }
 
 .notice-box {
+    position: relative;
     width: 100%;
-    max-width: 380px;
-    background: #111;
-    border: 1px solid #292929;
-    border-radius: 17px;
-    padding: 25px 20px 20px;
+    max-width: 390px;
+    padding: 30px 22px 22px;
     text-align: center;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
-    animation: popup .25s ease;
+
+    background: linear-gradient(145deg, #151515, #0c0c0c);
+
+    border: 1px solid rgba(0, 255, 136, 0.28);
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.03),
+        0 0 35px rgba(0,255,136,0.13),
+        0 25px 70px rgba(0,0,0,0.75);
+
+    overflow: hidden;
+
+    animation: popupShow .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.notice-box::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 220px;
+    height: 150px;
+
+    background: rgba(0,255,136,0.16);
+    filter: blur(45px);
+    border-radius: 50%;
+}
+
+.notice-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    width: 76%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00ff88,
+        transparent
+    );
+
+    box-shadow: 0 0 12px #00ff88;
+}
+
+.notice-icon {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        145deg,
+        #1d2d26,
+        #111
+    );
+
+    border: 1px solid rgba(0,255,136,0.35);
+
+    font-size: 30px;
+
+    box-shadow:
+        0 0 25px rgba(0,255,136,0.14);
 }
 
 .notice-title {
-    font-size: 19px;
-    font-weight: 800;
-    margin-bottom: 12px;
+    position: relative;
+    font-size: 21px;
+    font-weight: 900;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #00ff88
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .notice-text {
-    color: #999;
+    position: relative;
+    color: #a5a5a5;
     font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.65;
+    margin-bottom: 23px;
+}
+
+.notice-text b {
+    color: #fff;
 }
 
 .notice-btn {
+    position: relative;
     width: 100%;
     border: none;
-    border-radius: 12px;
-    padding: 14px;
-    background: #fff;
-    color: #000;
+    border-radius: 13px;
+
+    padding: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #00ff88,
+        #00d975
+    );
+
+    color: #001b0e;
+
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 900;
+
     cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,255,136,0.20);
+
     transition: .2s;
 }
 
 .notice-btn:hover {
-    transform: translateY(-1px);
-    opacity: .9;
+    transform: translateY(-2px);
 }
 
-@keyframes popup {
-    from {
+.notice-btn:active {
+    transform: scale(.97);
+}
+
+@keyframes popupShow {
+    0% {
         opacity: 0;
-        transform: scale(.92);
+        transform: translateY(15px) scale(.9);
     }
 
-    to {
+    100% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0) scale(1);
     }
+}
+
+/* ================= MUSIC BUTTON ================= */
+
+.music-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9998;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    border: 1px solid #292929;
+
+    background: #151515;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.4);
+
+    transition: .2s;
+}
+
+.music-btn:hover {
+    border-color: #00ff88;
+    transform: scale(1.05);
 }
 
 /* ================= MAIN ================= */
@@ -321,7 +457,8 @@ footer {
     }
 
     .notice-box {
-        padding: 22px 17px 17px;
+        max-width: 350px;
+        padding: 27px 18px 19px;
     }
 }
 
@@ -336,18 +473,22 @@ footer {
 
 <body>
 
-<!-- ================= POPUP THÔNG BÁO ================= -->
+<!-- ================= POPUP ================= -->
 
 <div class="notice-overlay" id="noticePopup">
 
     <div class="notice-box">
 
+        <div class="notice-icon">
+            📢
+        </div>
+
         <div class="notice-title">
-            📢 THÔNG BÁO
+            THÔNG BÁO
         </div>
 
         <div class="notice-text">
-            Thắc mắc gì thì có thể hỏi Admin
+            Thắc mắc gì thì có thể hỏi <b>Admin</b>
         </div>
 
         <button
@@ -360,6 +501,20 @@ footer {
     </div>
 
 </div>
+
+<!-- ================= MUSIC ================= -->
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button
+    class="music-btn"
+    id="musicButton"
+    onclick="toggleMusic()"
+>
+    🔇
+</button>
 
 <!-- ================= WEBSITE ================= -->
 
@@ -553,10 +708,40 @@ footer {
 
 <script>
 
-/* Đóng popup */
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
+/* Bấm ĐÃ HIỂU → đóng popup + phát nhạc */
 
 function closeNotice() {
+
     document.getElementById("noticePopup").style.display = "none";
+
+    music.play().then(function() {
+        musicButton.innerHTML = "🔊";
+    }).catch(function() {
+        musicButton.innerHTML = "🔇";
+    });
+}
+
+
+/* Bật / tắt nhạc */
+
+function toggleMusic() {
+
+    if (music.paused) {
+
+        music.play().then(function() {
+            musicButton.innerHTML = "🔊";
+        });
+
+    } else {
+
+        music.pause();
+        musicButton.innerHTML = "🔇";
+
+    }
+
 }
 
 
