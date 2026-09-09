@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d0d10">
 
-<title>ModGameios • APP CRACK + MODS GAME</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
 
-<!-- FONT INTER -->
+<meta name="theme-color" content="#08090c">
+
+<title>ModGameios</title>
+
+
+<!-- ==================================================
+     FONT
+================================================== -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
 >
+
 
 <style>
 
@@ -29,12 +46,22 @@
 }
 
 html {
-    background: #0d0d10;
+    background: #08090c;
 }
 
 body {
-    background: #0d0d10;
-    color: #f5f5f7;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(38,120,255,.08),
+            transparent 35%
+        ),
+        #08090c;
+
+    color: #fff;
 
     font-family:
         "Inter",
@@ -45,15 +72,13 @@ body {
         Arial,
         sans-serif;
 
-    min-height: 100vh;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 button,
 input {
-    font: inherit;
+    font-family: inherit;
 }
 
 a {
@@ -63,18 +88,20 @@ a {
 
 
 /* ==================================================
-   MAIN
+   PAGE
 ================================================== */
 
 .page {
+
     width: 100%;
+
     max-width: 520px;
 
     margin: auto;
 
     padding:
         0
-        15px
+        14px
         55px;
 }
 
@@ -84,33 +111,40 @@ a {
 ================================================== */
 
 .topbar {
-    height: 54px;
+
+    height: 55px;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
 
-    position: relative;
+    align-items: center;
+
+    justify-content: center;
 }
 
 .brand {
-    font-size: 12px;
+
+    font-size: 11px;
 
     font-weight: 800;
 
-    color: #5da2ff;
+    color: #5ea7ff;
 
-    letter-spacing: .1px;
+    letter-spacing: .5px;
 }
 
 .brand::before {
-    content: "◉";
 
-    font-size: 9px;
+    content: "●";
+
+    font-size: 7px;
 
     margin-right: 6px;
 
-    color: #5da2ff;
+    color: #4e9bff;
+
+    text-shadow:
+        0 0 8px
+        #348aff;
 }
 
 
@@ -119,47 +153,215 @@ a {
 ================================================== */
 
 .profile {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
     text-align: center;
 
     padding:
-        20px
+        18px
         0
         8px;
 }
 
-.avatar {
-    width: 84px;
-    height: 84px;
 
-    border-radius: 23px;
+/* ==================================================
+   AVATAR WRAP
+================================================== */
 
-    object-fit: cover;
+.avatar-wrap {
+
+    position: relative;
+
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 16px;
+}
+
+
+/* vòng gradient xoay */
+
+.avatar-wrap::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            #1765d8,
+            #58adff,
+            #ffffff,
+            #2785ff,
+            #124b9e,
+            #1765d8
+        );
+
+    animation:
+        avatarRotate
+        4s
+        linear
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(40,130,255,.75)
+        );
+
+    z-index: 0;
+}
+
+
+/* vòng pulse */
+
+.avatar-wrap::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -11px;
+
+    border-radius: 50%;
 
     border:
         1px solid
-        #2c2c31;
+        rgba(50,140,255,.55);
 
-    background: #19191d;
+    box-shadow:
+        0 0 12px
+        rgba(40,130,255,.5),
 
-    margin-bottom: 11px;
+        0 0 28px
+        rgba(40,130,255,.2);
+
+    animation:
+        avatarPulse
+        2s
+        ease-in-out
+        infinite;
+
+    z-index: 0;
 }
 
+
+/* avatar */
+
+.avatar {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #15161a;
+
+    border:
+        3px solid
+        #0c0d11;
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(255,255,255,.08),
+
+        0 0 18px
+        rgba(40,125,255,.4);
+}
+
+
+@keyframes avatarRotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes avatarPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(.96);
+
+        opacity: .4;
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* ==================================================
+   NAME
+================================================== */
+
 .name {
-    font-size: 22px;
+
+    font-size: 23px;
 
     font-weight: 900;
 
-    letter-spacing: -.5px;
+    letter-spacing: -.7px;
+
+    color: #fff;
+
+    text-shadow:
+        0 2px 15px
+        rgba(255,255,255,.08);
 }
 
 .subtitle {
-    font-size: 11px;
-
-    color: #707078;
 
     margin-top: 5px;
 
-    font-weight: 500;
+    color: #73747c;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .3px;
 }
 
 
@@ -168,60 +370,64 @@ a {
 ================================================== */
 
 .search-wrap {
+
     position: sticky;
 
     top: 0;
 
-    z-index: 20;
+    z-index: 50;
 
     padding:
         8px
         0
-        10px;
+        11px;
 
     background:
         linear-gradient(
-            #0d0d10 72%,
+            #08090c 70%,
             transparent
         );
 }
 
 .search {
+
     width: 100%;
 
-    height: 44px;
-
-    border:
-        1px solid
-        #25252a;
-
-    border-radius: 13px;
-
-    background: #17171b;
-
-    color: #fff;
-
-    outline: none;
+    height: 45px;
 
     padding:
         0
         15px;
 
-    font-size: 13px;
+    border:
+        1px solid
+        #25262c;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #15161a;
+
+    color: #fff;
+
+    font-size: 12px;
 
     font-weight: 500;
 
-    box-shadow:
-        0 5px 18px
-        rgba(0,0,0,.16);
+    transition: .2s;
 }
 
 .search::placeholder {
-    color: #6f6f77;
+    color: #666870;
 }
 
 .search:focus {
-    border-color: #3a3a42;
+    border-color: #3b3d45;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(50,130,255,.05);
 }
 
 
@@ -230,32 +436,35 @@ a {
 ================================================== */
 
 .section {
+
     margin-top: 14px;
 }
 
 .section-title {
-    font-size: 22px;
 
-    line-height: 1.15;
+    margin:
+        20px
+        6px
+        12px;
+
+    font-size: 20px;
 
     font-weight: 900;
 
-    margin:
-        17px
-        6px
-        13px;
-
-    text-transform: uppercase;
+    line-height: 1.1;
 
     letter-spacing: -.7px;
+
+    color: #f5f5f7;
 }
 
 .cards {
+
     display: flex;
 
     flex-direction: column;
 
-    gap: 10px;
+    gap: 9px;
 }
 
 
@@ -264,53 +473,82 @@ a {
 ================================================== */
 
 .card {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 78px;
+
     display: flex;
 
     align-items: center;
 
-    min-height: 86px;
-
-    width: 100%;
-
     padding:
-        13px
-        13px
-        13px
-        14px;
+        12px;
 
     border:
         1px solid
-        #2a2a2f;
+        #25262b;
 
-    border-radius: 17px;
+    border-radius: 16px;
 
     background:
         linear-gradient(
             145deg,
-            #1d1d21,
-            #19191d
+            #1a1b1f,
+            #15161a
         );
 
-    box-shadow:
-        0 2px 7px
-        rgba(0,0,0,.12);
+    overflow: hidden;
 
     transition:
-        .18s ease;
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease;
+}
 
-    position: relative;
+.card::after {
 
-    overflow: hidden;
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 45%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.025),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition: .5s;
 }
 
 .card:hover {
-    border-color: #34343b;
+
+    border-color: #35373e;
+
+    transform:
+        translateY(-1px);
+}
+
+.card:hover::after {
+    left: 130%;
 }
 
 .card:active {
-    transform: scale(.99);
-
-    background: #202024;
+    transform:
+        scale(.985);
 }
 
 
@@ -319,67 +557,56 @@ a {
 ================================================== */
 
 .icon {
-    width: 51px;
-    height: 51px;
+
+    width: 50px;
+    height: 50px;
 
     flex:
-        0 0 51px;
+        0 0 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 12px;
 
     border-radius: 13px;
 
-    background: #29292e;
-
-    display: grid;
-
-    place-items: center;
-
-    overflow: hidden;
-
-    margin-right: 13px;
+    background:
+        #292a2f;
 
     border:
         1px solid
         rgba(255,255,255,.04);
-}
 
-.icon img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-.emoji {
-    font-size: 27px;
-
-    line-height: 1;
+    font-size: 25px;
 }
 
 
 /* ==================================================
-   CARD INFO
+   INFO
 ================================================== */
 
 .info {
+
     min-width: 0;
 
     flex: 1;
-
-    padding-right: 8px;
 }
 
 .title {
-    font-size: 14px;
+
+    font-size: 13px;
 
     font-weight: 800;
 
-    line-height: 1.2;
+    line-height: 1.25;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
-    letter-spacing: -.2px;
+    letter-spacing: -.15px;
 
     white-space: nowrap;
 
@@ -389,66 +616,49 @@ a {
 }
 
 .desc {
-    font-size: 10.5px;
 
-    color: #8b8b92;
+    color: #81828a;
 
-    line-height: 1.45;
+    font-size: 10px;
 
     font-weight: 500;
+
+    line-height: 1.5;
 }
 
 
 /* ==================================================
-   TAGS
+   TAG
 ================================================== */
 
 .tags {
+
     display: flex;
 
-    gap: 5px;
-
     flex-wrap: wrap;
+
+    gap: 5px;
 
     margin-top: 6px;
 }
 
 .tag {
-    font-size: 8.5px;
-
-    color: #d8d8dc;
-
-    background: #303035;
-
-    border-radius: 7px;
 
     padding:
         4px
         7px;
 
-    line-height: 1;
+    border-radius: 7px;
 
-    font-weight: 600;
-}
+    background: #303137;
 
-.tag.apple::before {
-    content: "●";
-
-    font-size: 6px;
-
-    margin-right: 4px;
-
-    color: #e9e9ed;
-}
-
-.tag.shield::before {
-    content: "◈";
+    color: #d5d6db;
 
     font-size: 8px;
 
-    margin-right: 4px;
+    line-height: 1;
 
-    color: #d8d8dc;
+    font-weight: 700;
 }
 
 
@@ -457,28 +667,32 @@ a {
 ================================================== */
 
 .open {
-    width: 42px;
-    height: 42px;
+
+    width: 39px;
+    height: 39px;
 
     flex:
-        0 0 42px;
+        0 0 39px;
 
-    display: grid;
+    display: flex;
 
-    place-items: center;
+    align-items: center;
 
-    color: #a4a4ac;
+    justify-content: center;
+
+    color: #92949d;
 }
 
 .open svg {
-    width: 23px;
-    height: 23px;
+
+    width: 21px;
+    height: 21px;
+
+    fill: none;
 
     stroke: currentColor;
 
     stroke-width: 1.8;
-
-    fill: none;
 }
 
 
@@ -487,52 +701,88 @@ a {
 ================================================== */
 
 .download-btn {
-    width: 43px;
-    height: 43px;
+
+    width: 40px;
+    height: 40px;
 
     flex:
-        0 0 43px;
+        0 0 40px;
 
     border: 0;
 
-    border-radius: 12px;
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #67adff;
 
     background:
         linear-gradient(
             145deg,
-            #245aa9,
-            #173d78
+            #214f91,
+            #17345f
         );
-
-    display: grid;
-
-    place-items: center;
-
-    color: #75b1ff;
-
-    box-shadow:
-        inset
-        0 1px 0
-        rgba(255,255,255,.05);
 }
 
 .download-btn svg {
-    width: 21px;
-    height: 21px;
+
+    width: 19px;
+    height: 19px;
+
+    fill: none;
 
     stroke: currentColor;
 
-    stroke-width: 2.2;
-
-    fill: none;
+    stroke-width: 2.1;
 }
 
 
 /* ==================================================
-   POPUP OVERLAY
+   EMPTY
+================================================== */
+
+.empty {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 30px 0;
+
+    color: #666870;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+    margin-top: 35px;
+
+    text-align: center;
+
+    color: #4d4e55;
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+/* ==================================================
+   POPUP
 ================================================== */
 
 .notice-overlay {
+
     position: fixed;
 
     inset: 0;
@@ -548,13 +798,13 @@ a {
     padding: 20px;
 
     background:
-        rgba(0,0,0,.86);
+        rgba(0,0,0,.88);
 
     backdrop-filter:
-        blur(14px);
+        blur(15px);
 
     -webkit-backdrop-filter:
-        blur(14px);
+        blur(15px);
 }
 
 
@@ -563,6 +813,7 @@ a {
 ================================================== */
 
 .notice-box {
+
     position: relative;
 
     width: 100%;
@@ -570,70 +821,88 @@ a {
     max-width: 390px;
 
     padding:
-        32px
+        33px
         21px
         21px;
 
     text-align: center;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(29,29,32,.99),
-            rgba(12,12,14,.99)
-        );
-
-    border-radius: 23px;
+    border-radius: 24px;
 
     border:
         1px solid
-        rgba(40,121,238,.28);
+        rgba(48,135,255,.3);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,29,34,.99),
+            rgba(11,12,15,.99)
+        );
 
     box-shadow:
-        0 25px 90px
-        #000;
+
+        0 0 0 1px
+        rgba(255,255,255,.02),
+
+        0 0 35px
+        rgba(30,120,255,.1),
+
+        0 30px 100px
+        rgba(0,0,0,.9);
 
     overflow: hidden;
 
     animation:
         popupIn
-        .42s
+        .45s
         cubic-bezier(.16,1,.3,1);
 }
 
+
+/* glow trên popup */
+
 .notice-box::before {
+
     content: "";
 
     position: absolute;
 
-    top: -110px;
+    top: -120px;
 
     left: 50%;
 
     transform:
         translateX(-50%);
 
-    width: 260px;
-    height: 200px;
+    width: 280px;
+    height: 220px;
 
     background:
         radial-gradient(
             circle,
-            rgba(40,121,238,.16),
+            rgba(45,135,255,.22),
             transparent 70%
         );
+
+    filter:
+        blur(10px);
 
     pointer-events: none;
 }
 
+
+/* đường sáng */
+
 .notice-box::after {
+
     content: "";
 
     position: absolute;
 
-    left: 10%;
-
     top: 0;
+
+    left: 10%;
 
     width: 80%;
 
@@ -643,15 +912,15 @@ a {
         linear-gradient(
             90deg,
             transparent,
-            #428fff,
+            #398cff,
             #fff,
-            #428fff,
+            #398cff,
             transparent
         );
 
     box-shadow:
-        0 0 15px
-        #2879ee;
+        0 0 16px
+        rgba(55,140,255,.9);
 }
 
 
@@ -660,40 +929,78 @@ a {
 ================================================== */
 
 .notice-icon-wrap {
+
     position: relative;
 
-    width: 70px;
-    height: 70px;
-
-    border-radius: 20px;
+    width: 72px;
+    height: 72px;
 
     margin:
         0
         auto
         17px;
 
-    display: grid;
+    display: flex;
 
-    place-items: center;
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 21px;
 
     background:
         linear-gradient(
             145deg,
-            #192c4d,
-            #111a28
+            #1b3459,
+            #101a2a
         );
 
     border:
         1px solid
-        rgba(68,143,255,.35);
+        rgba(70,145,255,.38);
 
     box-shadow:
         inset
-        0 0 20px
-        rgba(55,135,255,.08);
+        0 0 22px
+        rgba(50,135,255,.08),
+
+        0 0 22px
+        rgba(40,125,255,.1);
+
+    animation:
+        iconFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+.notice-icon-wrap::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -6px;
+
+    border-radius: 27px;
+
+    border:
+        1px solid
+        rgba(60,145,255,.18);
+
+    animation:
+        iconPulse
+        2s
+        ease-in-out
+        infinite;
 }
 
 .notice-icon {
+
+    position: relative;
+
+    z-index: 2;
+
     font-size: 31px;
 
     line-height: 1;
@@ -701,62 +1008,110 @@ a {
 
 
 /* ==================================================
-   POPUP TEXT
+   POPUP TITLE - CÓ MÀU
 ================================================== */
 
 .notice-title {
+
     position: relative;
 
-    font-size: 22px;
+    font-size: 23px;
 
     font-weight: 900;
 
-    letter-spacing: -.4px;
+    letter-spacing: -.5px;
 
     margin-bottom: 9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #58a7ff 28%,
+            #b7dcff 50%,
+            #58a7ff 72%,
+            #ffffff 100%
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        noticeTextShine
+        3s
+        linear
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(65,145,255,.28)
+        );
 }
 
+
+/* ==================================================
+   POPUP SUBTITLE
+================================================== */
+
 .notice-subtitle {
+
     position: relative;
 
-    color: #666;
+    color: #5798df;
 
     font-size: 9px;
 
     letter-spacing: 2px;
 
-    font-weight: 700;
-
-    margin-bottom: 18px;
-}
-
-.notice-message {
-    position: relative;
-
-    padding: 13px;
+    font-weight: 800;
 
     margin-bottom: 19px;
+
+    text-shadow:
+        0 0 9px
+        rgba(50,135,255,.4);
+}
+
+
+/* ==================================================
+   POPUP MESSAGE
+================================================== */
+
+.notice-message {
+
+    position: relative;
+
+    padding: 14px;
+
+    margin-bottom: 20px;
 
     background:
         rgba(255,255,255,.025);
 
     border:
         1px solid
-        rgba(255,255,255,.06);
+        rgba(255,255,255,.065);
 
-    border-radius: 12px;
+    border-radius: 13px;
 
-    color: #aaa;
+    color: #a4a5ac;
 
     font-size: 13px;
 
-    line-height: 1.6;
-
     font-weight: 500;
+
+    line-height: 1.6;
 }
 
 .notice-message b {
-    color: #fff;
+
+    color: #ffffff;
 
     font-weight: 800;
 }
@@ -767,36 +1122,42 @@ a {
 ================================================== */
 
 .notice-btn {
+
     position: relative;
 
     width: 100%;
 
-    padding: 15px;
+    min-height: 50px;
+
+    padding:
+        14px;
 
     border: 0;
 
-    border-radius: 13px;
+    border-radius: 14px;
 
     background:
         linear-gradient(
             135deg,
-            #3288ff,
-            #1e68d9
+            #3a91ff,
+            #1c65d5
         );
 
     color: #fff;
 
     font-size: 12px;
 
-    font-weight: 800;
+    font-weight: 900;
 
     letter-spacing: -.1px;
 
     cursor: pointer;
 
+    overflow: hidden;
+
     box-shadow:
-        0 8px 25px
-        rgba(40,121,238,.22);
+        0 8px 28px
+        rgba(35,120,255,.24);
 
     transition:
         .2s;
@@ -805,16 +1166,49 @@ a {
         transparent;
 }
 
-.notice-btn:hover {
+.notice-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.38),
+            transparent
+        );
+
     transform:
-        translateY(-1px);
+        skewX(-20deg);
+
+    animation:
+        buttonShine
+        3s
+        infinite;
+}
+
+.notice-btn:hover {
+
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 12px 30px
-        rgba(40,121,238,.32);
+        0 12px 35px
+        rgba(35,120,255,.35);
 }
 
 .notice-btn:active {
+
     transform:
         scale(.97);
 }
@@ -825,6 +1219,7 @@ a {
 ================================================== */
 
 .music-btn {
+
     position: fixed;
 
     right: 17px;
@@ -836,39 +1231,40 @@ a {
     width: 45px;
     height: 45px;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     border-radius: 50%;
 
     border:
         1px solid
-        #29292f;
+        #292a30;
 
-    background: #18181c;
+    background: #17181c;
 
     color: #fff;
 
-    display: grid;
-
-    place-items: center;
-
     font-size: 18px;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0,0,0,.55);
 
     cursor: pointer;
 
-    transition: .2s;
+    box-shadow:
+        0 6px 22px
+        rgba(0,0,0,.55);
 
-    -webkit-tap-highlight-color:
-        transparent;
+    transition: .2s;
 }
 
 .music-btn:hover {
-    transform: scale(1.05);
 
     border-color:
-        #2879ee;
+        #358aff;
+
+    transform:
+        scale(1.05);
 }
 
 
@@ -877,6 +1273,7 @@ a {
 ================================================== */
 
 #youtubePlayer {
+
     position: fixed;
 
     width: 1px;
@@ -892,54 +1289,22 @@ a {
 
 
 /* ==================================================
-   EMPTY SEARCH
-================================================== */
-
-.empty {
-    display: none;
-
-    text-align: center;
-
-    color: #686870;
-
-    font-size: 12px;
-
-    padding: 28px 0;
-}
-
-
-/* ==================================================
-   FOOTER
-================================================== */
-
-footer {
-    text-align: center;
-
-    color: #555;
-
-    font-size: 10px;
-
-    margin-top: 32px;
-
-    font-weight: 500;
-}
-
-
-/* ==================================================
    ANIMATION
 ================================================== */
 
 @keyframes popupIn {
 
     from {
+
         opacity: 0;
 
         transform:
-            translateY(20px)
-            scale(.90);
+            translateY(25px)
+            scale(.88);
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -949,8 +1314,71 @@ footer {
 }
 
 
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-4px);
+    }
+}
+
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+
+        opacity: .3;
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        opacity: .85;
+
+        transform:
+            scale(1.06);
+    }
+}
+
+
+@keyframes noticeTextShine {
+
+    0% {
+        background-position:
+            200% center;
+    }
+
+    100% {
+        background-position:
+            -200% center;
+    }
+}
+
+
+@keyframes buttonShine {
+
+    0% {
+        left: -100%;
+    }
+
+    25%,
+    100% {
+        left: 150%;
+    }
+}
+
+
 /* ==================================================
-   SMALL MOBILE
+   MOBILE
 ================================================== */
 
 @media(max-width:380px) {
@@ -960,34 +1388,27 @@ footer {
         padding-right: 12px;
     }
 
+    .name {
+        font-size: 22px;
+    }
+
     .section-title {
-        font-size: 21px;
-    }
-
-    .card {
-        padding-left: 12px;
-        padding-right: 10px;
-    }
-
-    .icon {
-        width: 49px;
-        height: 49px;
-
-        flex-basis: 49px;
-
-        margin-right: 11px;
-    }
-
-    .title {
-        font-size: 13.5px;
+        font-size: 19px;
     }
 
     .notice-box {
+        max-width: 350px;
+
         padding:
-            30px
+            29px
             17px
             20px;
     }
+
+    .notice-title {
+        font-size: 21px;
+    }
+
 }
 
 
@@ -998,11 +1419,13 @@ footer {
 @media(min-width:700px) {
 
     .page {
-        padding-top: 15px;
+        padding-top: 12px;
     }
+
 }
 
 </style>
+
 </head>
 
 
@@ -1027,6 +1450,7 @@ footer {
 
     <div class="notice-box">
 
+
         <div class="notice-icon-wrap">
 
             <div class="notice-icon">
@@ -1047,8 +1471,10 @@ footer {
 
 
         <div class="notice-message">
+
             Thắc mắc gì thì có thể hỏi
             <b>Admin</b>
+
         </div>
 
 
@@ -1060,13 +1486,14 @@ footer {
             ĐÃ HIỂU, VÀO WEB
         </button>
 
+
     </div>
 
 </div>
 
 
 <!-- ==================================================
-     MUSIC BUTTON
+     MUSIC
 ================================================== -->
 
 <button
@@ -1100,19 +1527,27 @@ footer {
 
     <div class="profile">
 
-        <img
-            class="avatar"
-            src="CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg"
-            alt="ModGameios"
-        >
+
+        <div class="avatar-wrap">
+
+            <img
+                class="avatar"
+                src="CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg"
+                alt="ModGameios"
+            >
+
+        </div>
+
 
         <div class="name">
             ModGameios
         </div>
 
+
         <div class="subtitle">
             APP CRACK • MODS • iOS
         </div>
+
 
     </div>
 
@@ -1153,9 +1588,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🛡️</span>
+                    🛡️
                 </div>
-
 
                 <div class="info">
 
@@ -1189,9 +1623,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🦊</span>
+                    🦊
                 </div>
-
 
                 <div class="info">
 
@@ -1225,9 +1658,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🦊</span>
+                    🦊
                 </div>
-
 
                 <div class="info">
 
@@ -1261,9 +1693,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🎱</span>
+                    🎱
                 </div>
-
 
                 <div class="info">
 
@@ -1275,14 +1706,13 @@ footer {
                         • Đã cập nhật 29/8
                     </div>
 
-
                     <div class="tags">
 
-                        <span class="tag apple">
+                        <span class="tag">
                             iOS
                         </span>
 
-                        <span class="tag shield">
+                        <span class="tag">
                             Antiban
                         </span>
 
@@ -1294,7 +1724,7 @@ footer {
                 <div class="open">
 
                     <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1 1-1V5a1 1 0 0 1 1-1h5"/>
+                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
                     </svg>
 
                 </div>
@@ -1310,9 +1740,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">💙</span>
+                    💙
                 </div>
-
 
                 <div class="info">
 
@@ -1346,9 +1775,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🦉</span>
+                    🦉
                 </div>
-
 
                 <div class="info">
 
@@ -1382,9 +1810,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">💬</span>
+                    💬
                 </div>
-
 
                 <div class="info">
 
@@ -1418,9 +1845,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">▶️</span>
+                    ▶️
                 </div>
-
 
                 <div class="info">
 
@@ -1454,9 +1880,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">✂️</span>
+                    ✂️
                 </div>
-
 
                 <div class="info">
 
@@ -1490,18 +1915,17 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">📁</span>
+                    📁
                 </div>
-
 
                 <div class="info">
 
                     <div class="title">
-                        Filza Mod
+                        FILZA MOD
                     </div>
 
                     <div class="desc">
-                        • Tích Hợp APP 3105, Mond
+                        • Tích Hợp APP 3105, Mod
                     </div>
 
                 </div>
@@ -1533,7 +1957,9 @@ footer {
             NGUỒN HÌNH NỀN + APP
         </h2>
 
+
         <div class="cards">
+
 
             <a
                 class="card"
@@ -1542,9 +1968,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🎮</span>
+                    🎮
                 </div>
-
 
                 <div class="info">
 
@@ -1560,14 +1985,13 @@ footer {
                         • HÌNH NỀN, PHÍM GỌI VIP
                     </div>
 
-
                     <div class="tags">
 
                         <span class="tag">
                             Nhớ Xem Video Hướng Dẫn
                         </span>
 
-                        <span class="tag apple">
+                        <span class="tag">
                             iOS
                         </span>
 
@@ -1602,6 +2026,7 @@ footer {
             FILE BYPASS + ANTIBAN
         </h2>
 
+
         <div class="cards">
 
 
@@ -1612,9 +2037,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">◉</span>
+                    ◉
                 </div>
-
 
                 <div class="info">
 
@@ -1626,14 +2050,13 @@ footer {
                         • DÁN VÀO CHAT
                     </div>
 
-
                     <div class="tags">
 
-                        <span class="tag apple">
+                        <span class="tag">
                             iOS
                         </span>
 
-                        <span class="tag shield">
+                        <span class="tag">
                             Antiban
                         </span>
 
@@ -1657,13 +2080,12 @@ footer {
             <a
                 class="card"
                 href="#"
-                data-search="dns antiban ff ffm app 3105 filza"
+                data-search="dns antiban ff ffm nextdns"
             >
 
                 <div class="icon">
-                    <span class="emoji">🛡️</span>
+                    🛡️
                 </div>
-
 
                 <div class="info">
 
@@ -1679,18 +2101,13 @@ footer {
                         • File Config
                     </div>
 
-                    <div class="desc">
-                        • Các ông tải về rồi vô phần CÀI ĐẶT CHUNG NHÉ!!!
-                    </div>
-
-
                     <div class="tags">
 
-                        <span class="tag apple">
+                        <span class="tag">
                             iOS
                         </span>
 
-                        <span class="tag shield">
+                        <span class="tag">
                             Antiban
                         </span>
 
@@ -1716,7 +2133,7 @@ footer {
 
 
     <!-- ==================================================
-         FILE MOD TỰ DÁN
+         FILE MOD
     ================================================== -->
 
     <section class="section">
@@ -1725,19 +2142,19 @@ footer {
             FILE MOD TỰ DÁN
         </h2>
 
+
         <div class="cards">
 
 
             <a
                 class="card"
                 href="#"
-                data-search="dns antiban ff ffm nextdns tu lam"
+                data-search="dns antiban ff ffm nextdns"
             >
 
                 <div class="icon">
-                    <span class="emoji">🛡️</span>
+                    🛡️
                 </div>
-
 
                 <div class="info">
 
@@ -1750,21 +2167,16 @@ footer {
                     </div>
 
                     <div class="desc">
-                        • FILE CHO ANH EM MUỐN TỰ LÀM ANTIBAN
+                        • FILE CHO AE MUỐN TỰ LÀM ANTIBAN
                     </div>
-
-                    <div class="desc">
-                        • TẢI APP NEXTDNS VỀ RỒI DÁN NHƯ TRONG FILE
-                    </div>
-
 
                     <div class="tags">
 
-                        <span class="tag apple">
+                        <span class="tag">
                             iOS
                         </span>
 
-                        <span class="tag shield">
+                        <span class="tag">
                             Antiban
                         </span>
 
@@ -1788,13 +2200,12 @@ footer {
             <a
                 class="card"
                 href="#"
-                data-search="dinh vi aimbod ffm free fire max"
+                data-search="dinh vi aimbody ffm free fire max"
             >
 
                 <div class="icon">
-                    <span class="emoji">🎯</span>
+                    🎯
                 </div>
-
 
                 <div class="info">
 
@@ -1806,14 +2217,13 @@ footer {
                         • DÀNH CHO FREE FIRE MAX
                     </div>
 
-
                     <div class="tags">
 
-                        <span class="tag apple">
+                        <span class="tag">
                             iOS
                         </span>
 
-                        <span class="tag shield">
+                        <span class="tag">
                             Antiban
                         </span>
 
@@ -1841,9 +2251,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🎯</span>
+                    🎯
                 </div>
-
 
                 <div class="info">
 
@@ -1859,14 +2268,13 @@ footer {
                         • DÀNH CHO FREE FIRE TH
                     </div>
 
-
                     <div class="tags">
 
-                        <span class="tag apple">
+                        <span class="tag">
                             iOS
                         </span>
 
-                        <span class="tag shield">
+                        <span class="tag">
                             Antiban
                         </span>
 
@@ -1901,6 +2309,7 @@ footer {
             PATCH GAME
         </h2>
 
+
         <div class="cards">
 
 
@@ -1911,9 +2320,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🌱</span>
+                    🌱
                 </div>
-
 
                 <div class="info">
 
@@ -1926,17 +2334,12 @@ footer {
                     </div>
 
                     <div class="desc">
-                        • FULL CÂY SHOP ĐỒNG GIÁ 1 ĐỒNG
+                        • FULL CÂY SHOP ĐỒNG GIÁ
                     </div>
-
 
                     <div class="tags">
 
                         <span class="tag">
-                            Nhớ Xem Video PATCH Bằng 3105
-                        </span>
-
-                        <span class="tag apple">
                             iOS
                         </span>
 
@@ -1964,9 +2367,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🍬</span>
+                    🍬
                 </div>
-
 
                 <div class="info">
 
@@ -1982,14 +2384,9 @@ footer {
                         • VÔ HẠN PHỤ TRỢ
                     </div>
 
-
                     <div class="tags">
 
                         <span class="tag">
-                            Nhớ Xem Video PATCH Bằng 3105
-                        </span>
-
-                        <span class="tag apple">
                             iOS
                         </span>
 
@@ -2017,9 +2414,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🏃</span>
+                    🏃
                 </div>
-
 
                 <div class="info">
 
@@ -2035,14 +2431,9 @@ footer {
                         • FULL MỌI THỨ
                     </div>
 
-
                     <div class="tags">
 
                         <span class="tag">
-                            Nhớ Xem Video PATCH Bằng 3105
-                        </span>
-
-                        <span class="tag apple">
                             iOS
                         </span>
 
@@ -2077,19 +2468,19 @@ footer {
             NGUỒN RAW
         </h2>
 
+
         <div class="cards">
 
 
             <a
                 class="card"
                 href="#"
-                data-search="nguon raw full ffth aim dinh vi"
+                data-search="nguon raw full ffth aimbody dinh vi"
             >
 
                 <div class="icon">
-                    <span class="emoji">🎮</span>
+                    🎮
                 </div>
-
 
                 <div class="info">
 
@@ -2105,14 +2496,9 @@ footer {
                         • FULL AIM + ĐỊNH VỊ VIP
                     </div>
 
-
                     <div class="tags">
 
                         <span class="tag">
-                            Nhớ Xem Video Hướng Dẫn
-                        </span>
-
-                        <span class="tag apple">
                             iOS
                         </span>
 
@@ -2140,9 +2526,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🎮</span>
+                    🎮
                 </div>
-
 
                 <div class="info">
 
@@ -2162,14 +2547,9 @@ footer {
                         • UNLOCK FULL SKIN
                     </div>
 
-
                     <div class="tags">
 
                         <span class="tag">
-                            Nhớ Xem Video Hướng Dẫn
-                        </span>
-
-                        <span class="tag apple">
                             iOS
                         </span>
 
@@ -2197,9 +2577,8 @@ footer {
             >
 
                 <div class="icon">
-                    <span class="emoji">🎯</span>
+                    🎯
                 </div>
-
 
                 <div class="info">
 
@@ -2215,14 +2594,9 @@ footer {
                         • ESP, AIMBOT, ...
                     </div>
 
-
                     <div class="tags">
 
                         <span class="tag">
-                            Nhớ Xem Video Hướng Dẫn
-                        </span>
-
-                        <span class="tag apple">
                             iOS
                         </span>
 
@@ -2246,6 +2620,7 @@ footer {
     </section>
 
 
+    <!-- EMPTY -->
 
     <div
         class="empty"
@@ -2255,24 +2630,33 @@ footer {
     </div>
 
 
+    <!-- FOOTER -->
+
     <footer>
         © 2026 ModGameios
     </footer>
 
+
 </main>
 
 
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
 <script>
 
+
 /* ==================================================
-   YOUTUBE PLAYER
+   YOUTUBE
 ================================================== */
 
 let player = null;
 
 let musicPlaying = false;
 
-const videoId = "BUORWKzSl_o";
+const videoId =
+    "BUORWKzSl_o";
 
 
 const youtubeScript =
@@ -2297,7 +2681,8 @@ function onYouTubeIframeAPIReady() {
 
                 height: "1",
 
-                videoId: videoId,
+                videoId:
+                    videoId,
 
                 playerVars: {
 
@@ -2305,7 +2690,12 @@ function onYouTubeIframeAPIReady() {
 
                     controls: 0,
 
-                    rel: 0
+                    rel: 0,
+
+                    loop: 1,
+
+                    playlist:
+                        videoId
 
                 },
 
@@ -2316,8 +2706,7 @@ function onYouTubeIframeAPIReady() {
 
                             try {
 
-                                event
-                                    .target
+                                event.target
                                     .setVolume(100);
 
                             } catch(error) {
@@ -2328,11 +2717,11 @@ function onYouTubeIframeAPIReady() {
 
                         },
 
-
                     onAutoplayBlocked:
                         function() {
 
-                            musicPlaying = false;
+                            musicPlaying =
+                                false;
 
                             updateMusicButton();
 
@@ -2380,30 +2769,17 @@ function enterWeb() {
         );
 
 
-    /*
-       QUAN TRỌNG:
-       ẨN POPUP NGAY KHI BẤM
-    */
+    /* Đóng popup */
 
     if (popup) {
 
         popup.style.display =
             "none";
 
-        popup.removeAttribute(
-            "style"
-        );
-
-        popup.style.display =
-            "none";
     }
 
 
-    /*
-       Cố gắng bật nhạc.
-       Nếu trình duyệt chặn thì
-       web vẫn vào bình thường.
-    */
+    /* Bật nhạc */
 
     if (player) {
 
@@ -2415,14 +2791,15 @@ function enterWeb() {
 
             player.playVideo();
 
-            musicPlaying = true;
+            musicPlaying =
+                true;
 
             updateMusicButton();
 
         } catch(error) {
 
             console.log(
-                "Không thể tự phát nhạc:",
+                "Music error:",
                 error
             );
 
@@ -2434,7 +2811,7 @@ function enterWeb() {
 
 
 /* ==================================================
-   TOGGLE MUSIC
+   MUSIC TOGGLE
 ================================================== */
 
 function toggleMusic() {
@@ -2456,7 +2833,8 @@ function toggleMusic() {
 
         }
 
-        musicPlaying = false;
+        musicPlaying =
+            false;
 
     }
 
@@ -2470,7 +2848,8 @@ function toggleMusic() {
 
             player.playVideo();
 
-            musicPlaying = true;
+            musicPlaying =
+                true;
 
         } catch(error) {
 
@@ -2517,12 +2896,10 @@ function searchCards() {
                     .toLowerCase();
 
 
-                const matched =
+                if (
                     !input ||
-                    text.includes(input);
-
-
-                if (matched) {
+                    text.includes(input)
+                ) {
 
                     card.style.display =
                         "flex";
@@ -2541,10 +2918,6 @@ function searchCards() {
             }
         );
 
-
-    /*
-       Ẩn section không có kết quả
-    */
 
     document
         .querySelectorAll(".section")
@@ -2606,7 +2979,7 @@ function searchCards() {
 
 
 /* ==================================================
-   ENTER WEB BUTTON
+   BUTTON EVENTS
 ================================================== */
 
 document
@@ -2614,6 +2987,22 @@ document
     .addEventListener(
         "click",
         enterWeb
+    );
+
+
+document
+    .getElementById("musicButton")
+    .addEventListener(
+        "click",
+        toggleMusic
+    );
+
+
+document
+    .getElementById("search")
+    .addEventListener(
+        "input",
+        searchCards
     );
 
 
@@ -2640,7 +3029,10 @@ document
         }
     );
 
+
 </script>
 
+
 </body>
+
 </html>
