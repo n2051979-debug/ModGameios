@@ -2,809 +2,867 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ModGameios</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               viewport-fit=cover">
+
+<meta name="theme-color" content="#0d0d10">
+
+<title>NSMOD • APP CRACK + MODS GAME</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #080808;
-    color: #fff;
-    min-height: 100vh;
+html{
+    background:#0d0d10;
 }
 
-/* ==================================================
-   POPUP
-================================================== */
+body{
+    background:#0d0d10;
+    color:#f5f5f7;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        Arial,
+        sans-serif;
 
-.notice-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
+    min-height:100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    background: rgba(0, 0, 0, .86);
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    -webkit-font-smoothing:antialiased;
 }
 
-/* Khung popup */
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-.notice-box {
-    position: relative;
+button,
+input{
+    font:inherit;
+}
 
-    width: 100%;
-    max-width: 390px;
 
-    padding: 34px 22px 22px;
+/* =====================================================
+   PAGE
+===================================================== */
 
-    text-align: center;
+.page{
+    width:100%;
+    max-width:520px;
+
+    margin:auto;
+
+    padding:
+        0
+        15px
+        55px;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+    height:54px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.brand{
+    color:#5da2ff;
+
+    font-size:13px;
+    font-weight:800;
+
+    letter-spacing:.2px;
+}
+
+.brand::before{
+    content:"◉";
+
+    font-size:10px;
+
+    margin-right:6px;
+
+    color:#5da2ff;
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile{
+    text-align:center;
+
+    padding:
+        17px
+        0
+        12px;
+}
+
+.avatar{
+    width:84px;
+    height:84px;
+
+    border-radius:23px;
+
+    object-fit:cover;
+
+    background:#19191d;
+
+    border:
+        1px solid
+        #2c2c31;
+
+    margin-bottom:11px;
+}
+
+.name{
+    font-size:22px;
+    font-weight:900;
+}
+
+.subtitle{
+    color:#707078;
+
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-wrap{
+    position:sticky;
+
+    top:0;
+
+    z-index:50;
+
+    padding:
+        5px
+        0
+        10px;
+
+    background:
+        linear-gradient(
+            #0d0d10 72%,
+            transparent
+        );
+}
+
+.search{
+    width:100%;
+    height:44px;
+
+    border:
+        1px solid
+        #29292f;
+
+    border-radius:13px;
+
+    outline:none;
+
+    background:#17171b;
+
+    color:#fff;
+
+    padding:
+        0
+        15px;
+
+    font-size:13px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.18);
+}
+
+.search::placeholder{
+    color:#707078;
+}
+
+.search:focus{
+    border-color:#44444d;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section{
+    margin-top:17px;
+}
+
+.section-title{
+    font-size:22px;
+
+    line-height:1.15;
+
+    font-weight:900;
+
+    letter-spacing:-.5px;
+
+    margin:
+        18px
+        6px
+        13px;
+
+    text-transform:uppercase;
+}
+
+.cards{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    width:100%;
+
+    min-height:86px;
+
+    padding:
+        13px
+        12px
+        13px
+        14px;
+
+    border:
+        1px solid
+        #2a2a2f;
+
+    border-radius:17px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(27,27,27,.98),
-            rgba(10,10,10,.98)
+            #1e1e22,
+            #19191d
         );
-
-    border-radius: 24px;
-
-    border: 1px solid rgba(0,255,136,.25);
 
     box-shadow:
-        0 0 0 1px rgba(255,255,255,.025),
-        0 0 30px rgba(0,255,136,.10),
-        0 0 80px rgba(0,255,136,.06),
-        0 30px 100px rgba(0,0,0,.9);
+        0 2px 7px
+        rgba(0,0,0,.12);
 
-    overflow: hidden;
+    overflow:hidden;
 
-    animation:
-        popupIn .45s cubic-bezier(.16,1,.3,1);
+    transition:.18s ease;
 }
 
-/* Glow phía trên */
+.card:hover{
+    border-color:#393941;
+}
 
-.notice-box::before {
-    content: "";
+.card:active{
+    transform:scale(.99);
+}
 
-    position: absolute;
 
-    top: -120px;
-    left: 50%;
+/* =====================================================
+   ICON
+===================================================== */
 
-    transform: translateX(-50%);
+.icon{
+    width:51px;
+    height:51px;
 
-    width: 280px;
-    height: 220px;
+    flex:
+        0 0
+        51px;
+
+    margin-right:13px;
+
+    border-radius:13px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#29292e;
+
+    border:
+        1px solid
+        rgba(255,255,255,.04);
+
+    overflow:hidden;
+}
+
+.icon img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.emoji{
+    font-size:27px;
+}
+
+
+/* =====================================================
+   CARD INFO
+===================================================== */
+
+.info{
+    flex:1;
+
+    min-width:0;
+
+    padding-right:7px;
+}
+
+.title{
+    font-size:15px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    margin-bottom:5px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+.desc{
+    color:#8b8b92;
+
+    font-size:11px;
+
+    line-height:1.45;
+}
+
+.tags{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+
+    margin-top:6px;
+}
+
+.tag{
+    color:#d8d8dc;
+
+    background:#303035;
+
+    border-radius:7px;
+
+    padding:
+        3px
+        7px;
+
+    font-size:9px;
+
+    line-height:1;
+
+    font-weight:600;
+}
+
+.tag.apple::before{
+    content:"●";
+
+    font-size:7px;
+
+    margin-right:4px;
+}
+
+.tag.shield::before{
+    content:"◈";
+
+    font-size:8px;
+
+    margin-right:4px;
+}
+
+
+/* =====================================================
+   OPEN BUTTON
+===================================================== */
+
+.open{
+    width:42px;
+    height:42px;
+
+    flex:
+        0 0
+        42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#a3a3aa;
+}
+
+.open svg{
+    width:23px;
+    height:23px;
+
+    stroke:
+        currentColor;
+
+    stroke-width:1.8;
+
+    fill:none;
+}
+
+
+/* =====================================================
+   DOWNLOAD BUTTON
+===================================================== */
+
+.download-btn{
+    width:43px;
+    height:43px;
+
+    flex:
+        0 0
+        43px;
+
+    border:0;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#73b0ff;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(0,255,136,.23),
-            transparent 70%
+        linear-gradient(
+            145deg,
+            #275dab,
+            #173d78
         );
 
-    filter: blur(10px);
+    box-shadow:
+        inset
+        0 1px 0
+        rgba(255,255,255,.05);
 
-    pointer-events: none;
+    cursor:pointer;
 }
 
-/* Viền sáng */
+.download-btn svg{
+    width:21px;
+    height:21px;
 
-.notice-box::after {
-    content: "";
+    stroke:
+        currentColor;
 
-    position: absolute;
+    stroke-width:2.2;
 
-    top: 0;
-    left: 10%;
+    fill:none;
+}
 
-    width: 80%;
-    height: 1px;
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.notice-overlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.84);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+.notice-box{
+    position:relative;
+
+    width:100%;
+
+    max-width:390px;
+
+    padding:
+        32px
+        21px
+        21px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d1d20,
+            #0d0d0f
+        );
+
+    border-radius:23px;
+
+    border:
+        1px solid
+        rgba(40,121,238,.30);
+
+    box-shadow:
+        0 25px 90px
+        rgba(0,0,0,.9);
+
+    overflow:hidden;
+
+    animation:
+        popupIn
+        .42s
+        cubic-bezier(.16,1,.3,1);
+}
+
+.notice-box::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:10%;
+
+    width:80%;
+    height:1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            #00ff88,
+            #428fff,
             #fff,
-            #00ff88,
+            #428fff,
             transparent
         );
 
     box-shadow:
-        0 0 15px rgba(0,255,136,.8);
+        0 0 15px
+        #2879ee;
 }
 
-/* Icon */
+.notice-icon-wrap{
+    width:70px;
+    height:70px;
 
-.notice-icon-wrap {
-    position: relative;
+    border-radius:20px;
 
-    width: 76px;
-    height: 76px;
+    margin:
+        0
+        auto
+        17px;
 
-    margin: 0 auto 18px;
+    display:flex;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 22px;
+    align-items:center;
+    justify-content:center;
 
     background:
         linear-gradient(
             145deg,
-            #1b3027,
-            #101510
+            #192c4d,
+            #111a28
         );
 
-    border: 1px solid rgba(0,255,136,.35);
-
-    box-shadow:
-        inset 0 0 20px rgba(0,255,136,.06),
-        0 0 25px rgba(0,255,136,.12);
-
-    animation: iconFloat 3s ease-in-out infinite;
+    border:
+        1px solid
+        rgba(68,143,255,.35);
 }
 
-.notice-icon {
-    font-size: 34px;
-
-    filter:
-        drop-shadow(
-            0 0 10px
-            rgba(255,255,255,.25)
-        );
+.notice-icon{
+    font-size:31px;
 }
 
-/* Vòng sáng icon */
+.notice-title{
+    font-size:22px;
 
-.notice-icon-wrap::before {
-    content: "";
+    font-weight:900;
 
-    position: absolute;
-
-    inset: -6px;
-
-    border-radius: 27px;
-
-    border: 1px solid rgba(0,255,136,.12);
-
-    animation: iconPulse 2s ease-in-out infinite;
+    margin-bottom:9px;
 }
 
-/* Tiêu đề */
+.notice-subtitle{
+    color:#666;
 
-.notice-title {
-    position: relative;
+    font-size:9px;
 
-    font-size: 23px;
-    font-weight: 900;
+    letter-spacing:2px;
 
-    letter-spacing: .5px;
+    font-weight:700;
 
-    margin-bottom: 11px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #00ff88,
-            #ffffff
-        );
-
-    background-size: 200% auto;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: titleShine 3s linear infinite;
+    margin-bottom:18px;
 }
 
-/* Dòng phụ */
+.notice-message{
+    padding:13px;
 
-.notice-subtitle {
-    position: relative;
-
-    color: #666;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
-
-    margin-bottom: 20px;
-}
-
-/* Nội dung */
-
-.notice-message {
-    position: relative;
-
-    padding: 14px;
-
-    margin-bottom: 21px;
+    margin-bottom:19px;
 
     background:
         rgba(255,255,255,.025);
 
     border:
-        1px solid rgba(255,255,255,.06);
+        1px solid
+        rgba(255,255,255,.06);
 
-    border-radius: 13px;
+    border-radius:12px;
 
-    color: #aaa;
+    color:#aaa;
 
-    font-size: 14px;
+    font-size:13px;
 
-    line-height: 1.6;
+    line-height:1.6;
 }
 
-.notice-message b {
-    color: #fff;
+.notice-message b{
+    color:#fff;
 }
 
-/* Nút */
+.notice-btn{
+    width:100%;
 
-.notice-btn {
-    position: relative;
+    padding:15px;
 
-    width: 100%;
+    border:0;
 
-    padding: 16px;
-
-    border: 0;
-
-    border-radius: 14px;
+    border-radius:13px;
 
     background:
         linear-gradient(
             135deg,
-            #00ff88,
-            #00e879
+            #3288ff,
+            #1e68d9
         );
 
-    color: #001b0d;
+    color:#fff;
 
-    font-size: 13px;
+    font-size:12px;
 
-    font-weight: 900;
+    font-weight:900;
 
-    letter-spacing: .2px;
-
-    cursor: pointer;
+    cursor:pointer;
 
     box-shadow:
-        0 8px 25px rgba(0,255,136,.20);
-
-    overflow: hidden;
-
-    transition: .25s;
+        0 8px 25px
+        rgba(40,121,238,.22);
 }
 
-/* Ánh sáng chạy trên nút */
-
-.notice-btn::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -100%;
-
-    width: 60%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.45),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    animation: buttonShine 3s infinite;
+.notice-btn:active{
+    transform:scale(.98);
 }
 
-.notice-btn:hover {
-    transform: translateY(-2px);
+@keyframes popupIn{
 
-    box-shadow:
-        0 12px 35px rgba(0,255,136,.32);
-}
+    from{
+        opacity:0;
 
-.notice-btn:active {
-    transform: scale(.97);
-}
-
-/* Animation */
-
-@keyframes popupIn {
-    from {
-        opacity: 0;
         transform:
-            translateY(25px)
-            scale(.88);
+            translateY(20px)
+            scale(.9);
     }
 
-    to {
-        opacity: 1;
+    to{
+        opacity:1;
+
         transform:
             translateY(0)
             scale(1);
     }
 }
 
-@keyframes iconFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
 
-    50% {
-        transform: translateY(-4px);
-    }
-}
+/* =====================================================
+   MUSIC
+===================================================== */
 
-@keyframes iconPulse {
-    0%,100% {
-        opacity: .3;
-        transform: scale(1);
-    }
+.music-btn{
+    position:fixed;
 
-    50% {
-        opacity: .8;
-        transform: scale(1.05);
-    }
-}
+    right:17px;
+    bottom:17px;
 
-@keyframes titleShine {
-    to {
-        background-position: 200% center;
-    }
-}
+    z-index:9998;
 
-@keyframes buttonShine {
-    0% {
-        left: -100%;
-    }
+    width:45px;
+    height:45px;
 
-    25%,100% {
-        left: 150%;
-    }
-}
+    border-radius:50%;
 
-/* ==================================================
-   MUSIC BUTTON
-================================================== */
+    border:
+        1px solid
+        #29292f;
 
-.music-btn {
-    position: fixed;
+    background:#18181c;
 
-    right: 18px;
-    bottom: 18px;
+    color:#fff;
 
-    z-index: 9998;
+    display:flex;
 
-    width: 46px;
-    height: 46px;
+    align-items:center;
+    justify-content:center;
 
-    border-radius: 50%;
-
-    border: 1px solid #292929;
-
-    background: #151515;
-
-    color: #fff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 19px;
-
-    cursor: pointer;
+    font-size:18px;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,.5);
+        0 5px 20px
+        rgba(0,0,0,.55);
 
-    transition: .2s;
+    cursor:pointer;
 }
 
-.music-btn:hover {
-    border-color: #00ff88;
-    transform: scale(1.05);
+#youtubePlayer{
+    position:fixed;
+
+    width:1px;
+    height:1px;
+
+    left:-100px;
+    top:-100px;
+
+    opacity:0;
+
+    pointer-events:none;
 }
 
-/* ==================================================
-   YOUTUBE PLAYER
-================================================== */
 
-#youtubePlayer {
-    position: fixed;
+/* =====================================================
+   SEARCH EMPTY
+===================================================== */
 
-    width: 200px;
-    height: 200px;
+.empty{
+    display:none;
 
-    left: -1000px;
-    top: -1000px;
+    text-align:center;
 
-    opacity: 0;
+    color:#686870;
 
-    pointer-events: none;
-}
-
-/* ==================================================
-   MAIN
-================================================== */
-
-.container {
-    width: 100%;
-    max-width: 520px;
-
-    margin: auto;
+    font-size:12px;
 
     padding:
         30px
-        15px
-        45px;
+        0;
 }
 
-.profile {
-    text-align: center;
 
-    display: flex;
+/* =====================================================
+   FOOTER
+===================================================== */
 
-    flex-direction: column;
+footer{
+    text-align:center;
 
-    align-items: center;
+    color:#555;
+
+    font-size:10px;
+
+    margin-top:32px;
 }
 
-.avatar {
-    width: 92px;
-    height: 92px;
 
-    border-radius: 50%;
+/* =====================================================
+   MOBILE
+===================================================== */
 
-    object-fit: cover;
+@media(max-width:380px){
 
-    background: #151515;
-
-    border: 2px solid #242424;
-
-    margin-bottom: 13px;
-}
-
-.name {
-    font-size: 25px;
-    font-weight: 800;
-}
-
-.subtitle {
-    color: #888;
-
-    font-size: 14px;
-
-    margin-top: 6px;
-}
-
-.main-btn {
-    display: block;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    color: #fff;
-
-    background: #151515;
-
-    border: 1px solid #292929;
-
-    border-radius: 13px;
-
-    padding: 15px;
-
-    margin:
-        24px
-        0
-        15px;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition: .2s;
-}
-
-.main-btn:hover {
-    border-color: #00ff88;
-
-    transform:
-        translateY(-1px);
-}
-
-.stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 8px;
-}
-
-.stat {
-    background: #111;
-
-    border: 1px solid #202020;
-
-    border-radius: 12px;
-
-    text-align: center;
-
-    padding: 14px 5px;
-}
-
-.stat b {
-    display: block;
-
-    font-size: 19px;
-
-    margin-bottom: 5px;
-}
-
-.stat span {
-    color: #777;
-
-    font-size: 11px;
-}
-
-.about {
-    background: #111;
-
-    border: 1px solid #202020;
-
-    border-radius: 13px;
-
-    padding: 16px;
-
-    margin-top: 15px;
-}
-
-.about-title {
-    font-size: 16px;
-
-    font-weight: 700;
-
-    margin-bottom: 7px;
-}
-
-.about-text {
-    color: #888;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-}
-
-.social {
-    margin-top: 15px;
-}
-
-.social a {
-    display: block;
-
-    text-decoration: none;
-
-    color: #fff;
-
-    background: #111;
-
-    border: 1px solid #202020;
-
-    border-radius: 12px;
-
-    padding: 14px;
-
-    text-align: center;
-
-    font-size: 14px;
-
-    font-weight: 600;
-}
-
-.search {
-    width: 100%;
-
-    margin-top: 20px;
-
-    padding: 14px 15px;
-
-    border-radius: 12px;
-
-    border: 1px solid #242424;
-
-    outline: none;
-
-    background: #111;
-
-    color: #fff;
-
-    font-size: 13px;
-}
-
-.search::placeholder {
-    color: #666;
-}
-
-.search:focus {
-    border-color: #444;
-}
-
-.section {
-    margin-top: 28px;
-}
-
-.section h2 {
-    font-size: 17px;
-
-    margin-bottom: 11px;
-}
-
-.cards {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 9px;
-}
-
-.card {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    text-decoration: none;
-
-    color: #fff;
-
-    background: #111;
-
-    border: 1px solid #202020;
-
-    border-radius: 12px;
-
-    padding: 14px;
-
-    transition: .2s;
-}
-
-.card:hover {
-    border-color: #00ff88;
-
-    transform:
-        translateY(-1px);
-}
-
-.card-icon {
-    width: 40px;
-    height: 40px;
-
-    border-radius: 10px;
-
-    background: #1a1a1a;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    font-size: 18px;
-}
-
-.card-info {
-    flex: 1;
-}
-
-.card-info b {
-    display: block;
-
-    font-size: 13px;
-
-    margin-bottom: 4px;
-}
-
-.card-info span {
-    color: #707070;
-
-    font-size: 11px;
-}
-
-.arrow {
-    color: #666;
-
-    font-size: 19px;
-}
-
-footer {
-    text-align: center;
-
-    color: #555;
-
-    font-size: 11px;
-
-    margin-top: 35px;
-}
-
-@media (max-width:380px) {
-
-    .container {
-        padding-left: 12px;
-        padding-right: 12px;
+    .page{
+        padding-left:12px;
+        padding-right:12px;
     }
 
-    .avatar {
-        width: 85px;
-        height: 85px;
+    .section-title{
+        font-size:21px;
     }
 
-    .name {
-        font-size: 23px;
+    .card{
+        padding-left:12px;
+        padding-right:10px;
     }
 
-    .notice-box {
-        max-width: 350px;
-        padding: 30px 17px 20px;
+    .icon{
+        width:49px;
+        height:49px;
+
+        flex-basis:49px;
+
+        margin-right:11px;
     }
 
-    .notice-title {
-        font-size: 21px;
+    .title{
+        font-size:14px;
     }
+
 }
 
-@media (min-width:700px) {
-
-    .container {
-        max-width: 520px;
-
-        padding-top: 50px;
-    }
-}
 </style>
 </head>
 
+
 <body>
 
-<!-- ==================================================
+
+<!-- =====================================================
      YOUTUBE PLAYER
-================================================== -->
+===================================================== -->
 
 <div id="youtubePlayer"></div>
 
-<!-- ==================================================
+
+<!-- =====================================================
      POPUP
-================================================== -->
+===================================================== -->
 
 <div
     class="notice-overlay"
@@ -821,388 +879,1369 @@ footer {
 
         </div>
 
+
         <div class="notice-title">
             THÔNG BÁO
         </div>
+
 
         <div class="notice-subtitle">
             MODGAMEIOS • INFORMATION
         </div>
 
+
         <div class="notice-message">
-            Thắc mắc gì thì có thể hỏi <b>Admin</b>
+
+            Thắc mắc gì thì có thể hỏi
+            <b>Admin</b>
+
         </div>
+
 
         <button
             class="notice-btn"
             onclick="enterWeb()"
         >
+
             ĐÃ HIỂU, VÀO WEB
+
         </button>
 
     </div>
 
 </div>
 
-<!-- ==================================================
+
+
+<!-- =====================================================
      MUSIC BUTTON
-================================================== -->
+===================================================== -->
 
 <button
     class="music-btn"
     id="musicButton"
     onclick="toggleMusic()"
 >
+
     🔇
+
 </button>
 
-<!-- ==================================================
-     WEBSITE
-================================================== -->
 
-<div class="container">
 
-    <div class="profile">
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
-        <img
-            class="avatar"
-            src="CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg"
-            alt="ModGameios"
-        >
+<main class="page">
 
-        <div class="name">
-            ModGameios
-        </div>
 
-        <div class="subtitle">
-            MOD GAME • TOOLS • iOS
-        </div>
+<!-- TOP -->
+
+<div class="topbar">
+
+    <div class="brand">
+
+        APP CRACK + MODS GAME
 
     </div>
 
-    <a
-        class="main-btn"
-        href="https://example.com"
-        target="_blank"
+</div>
+
+
+
+<!-- PROFILE -->
+
+<div class="profile">
+
+    <img
+        class="avatar"
+        src="CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg"
+        alt="NSMOD"
     >
-        TẢI GAME NGAY
-    </a>
 
-    <div class="stats">
-
-        <div class="stat">
-            <b>5000</b>
-            <span>Lượt xem</span>
-        </div>
-
-        <div class="stat">
-            <b>2026</b>
-            <span>Cập nhật</span>
-        </div>
-
-        <div class="stat">
-            <b>#1</b>
-            <span>iOS</span>
-        </div>
-
+    <div class="name">
+        NSMOD
     </div>
 
-    <div class="about">
-
-        <div class="about-title">
-            Giới thiệu
-        </div>
-
-        <div class="about-text">
-            ModGameios là trang tổng hợp game,
-            ứng dụng, công cụ và tài nguyên dành cho iOS.
-        </div>
-
+    <div class="subtitle">
+        APP CRACK • MODS • iOS
     </div>
 
-    <div class="social">
+</div>
+
+
+
+<!-- SEARCH -->
+
+<div class="search-wrap">
+
+    <input
+        class="search"
+        id="search"
+        type="search"
+        placeholder="🔍 Tìm kiếm game, app, file..."
+        oninput="searchCards()"
+    >
+
+</div>
+
+
+
+<!-- =====================================================
+     TẢI IPA
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        TẢI IPA
+    </h2>
+
+
+    <div class="cards">
+
+
+        <!-- IPA NEXT DNS -->
 
         <a
-            href="https://discord.com"
-            target="_blank"
+            class="card"
+            href="#"
+            data-search="ipa next dns antiban"
         >
-            💬 DISCORD
+
+            <div class="icon">
+                <span class="emoji">
+                    🛡️
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    IPA NEXT DNS
+                </div>
+
+                <div class="desc">
+                    by NSMOD
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- APP 3105 -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="app 3105 v3 update new"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🦊
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    APP 3105
+                </div>
+
+                <div class="desc">
+                    v3 UPDATE NEW
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- APP 3105 OLD -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="app 3105 v1.1.1"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🦊
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    APP 3105
+                </div>
+
+                <div class="desc">
+                    v1.1.1
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 8 BALL -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="ipa menu no key 8bp ios antiban"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🎱
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    iPA MENU NO KEY 8BP
+                </div>
+
+                <div class="desc">
+                    • Đã cập nhật 29/8
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                    <span class="tag shield">
+                        Antiban
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- 120HZ -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="unlock 120hz ios"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    💙
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    UNLOCK 120HZ IOS
+                </div>
+
+                <div class="desc">
+                    GIÚP MÀN HÌNH MƯỢT HƠN
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- DUOLINGO -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="unlock duolingo max"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🦉
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    UNLOCK DUOLINGO MAX
+                </div>
+
+                <div class="desc">
+                    • CÓ CHẾ ĐỘ GỌI
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MESSENGER -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="messenger vipp"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    💬
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    MESSENGER VIPP
+                </div>
+
+                <div class="desc">
+                    • XEM ĐƯỢC TIN NHẮN THU HỒI, ...
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- YOUTUBE -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="youtube premium"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    ▶️
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    YOUTUBE PREMIUM
+                </div>
+
+                <div class="desc">
+                    • ĐÃ CẬP NHẬT 9/9
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- CAPCUT -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="capcut pro"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    ✂️
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    CAPCUT PRO
+                </div>
+
+                <div class="desc">
+                    • ĐÃ CẬP NHẬT 9/9
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- FILZA -->
+
+        <a
+            class="card"
+            href="#"
+            data-search="filza mod"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    📁
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    Filza Mod
+                </div>
+
+                <div class="desc">
+                    • Tích Hợp APP 3105, Mond
+                </div>
+
+            </div>
+
+
+            <div class="open">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
+                </svg>
+
+            </div>
+
         </a>
 
     </div>
 
-    <input
-        class="search"
-        type="text"
-        placeholder="🔍 Tìm kiếm game, app, file..."
-        onkeyup="searchCards()"
-    >
+</section>
 
-    <div class="section">
 
-        <h2>DOWNLOAD</h2>
 
-        <div class="cards">
+<!-- =====================================================
+     NGUỒN HÌNH NỀN + APP
+===================================================== -->
 
-            <a
-                class="card"
-                href="https://example.com"
-                target="_blank"
-            >
+<section class="section">
 
-                <div class="card-icon">
-                    ⬇️
+    <h2 class="section-title">
+        NGUỒN HÌNH NỀN + APP
+    </h2>
+
+
+    <div class="cards">
+
+        <a
+            class="card"
+            href="#"
+            data-search="nguon hinh nen app capcut dazzcam"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🎮
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    NGUỒN HÌNH NỀN + APP
                 </div>
 
-                <div class="card-info">
-                    <b>Download Game</b>
-                    <span>Tải game</span>
+                <div class="desc">
+                    • CAPCUT, DAZZCAM PRO
                 </div>
 
-                <div class="arrow">
-                    ›
+                <div class="desc">
+                    • HÌNH NỀN, PHÍM GỌI VIP
                 </div>
 
-            </a>
 
-            <a
-                class="card"
-                href="https://example.com"
-                target="_blank"
-            >
+                <div class="tags">
 
-                <div class="card-icon">
-                    📱
+                    <span class="tag">
+                        Nhớ Xem Video Hướng Dẫn
+                    </span>
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
                 </div>
 
-                <div class="card-info">
-                    <b>Ứng dụng iOS</b>
-                    <span>Download</span>
-                </div>
+            </div>
 
-                <div class="arrow">
-                    ›
-                </div>
 
-            </a>
+            <div class="download-btn">
 
-        </div>
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
 
     </div>
 
-    <div class="section">
+</section>
 
-        <h2>TOOLS & TÀI NGUYÊN</h2>
 
-        <div class="cards">
 
-            <a
-                class="card"
-                href="https://example.com"
-                target="_blank"
-            >
+<!-- =====================================================
+     FILE BYPASS + ANTIBAN
+===================================================== -->
 
-                <div class="card-icon">
-                    🛠️
+<section class="section">
+
+    <h2 class="section-title">
+        FILE BYPASS + ANTIBAN
+    </h2>
+
+
+    <div class="cards">
+
+
+        <a
+            class="card"
+            href="#"
+            data-search="file bypass chatgpt"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    ◉
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    FILE BYPASS CHATGPT
                 </div>
 
-                <div class="card-info">
-                    <b>iOS Tools</b>
-                    <span>Công cụ dành cho iOS</span>
+                <div class="desc">
+                    • DÁN VÀO CHAT
                 </div>
 
-                <div class="arrow">
-                    ›
+
+                <div class="tags">
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                    <span class="tag shield">
+                        Antiban
+                    </span>
+
                 </div>
 
-            </a>
+            </div>
 
-            <a
-                class="card"
-                href="https://example.com"
-                target="_blank"
-            >
 
-                <div class="card-icon">
-                    📦
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="card"
+            href="#"
+            data-search="dns antiban ff ffm config"
+        >
+
+            <div class="icon">
+
+                <span class="emoji">
+                    🛡️
+                </span>
+
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    DNS ANTIBAN FF + FFM
                 </div>
 
-                <div class="card-info">
-                    <b>Tài nguyên</b>
-                    <span>Kho tài nguyên ModGameios</span>
+                <div class="desc">
+                    • ANTIBAN CHO APP 3105, FILZA
                 </div>
 
-                <div class="arrow">
-                    ›
+                <div class="desc">
+                    • FILE CONFIG
                 </div>
 
-            </a>
+                <div class="desc">
+                    • CÁC ÔNG TẢI VỀ RỒI VÔ PHẦN CÀI ĐẶT CHUNG NHÉ!!!
+                </div>
 
-        </div>
+
+                <div class="tags">
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                    <span class="tag shield">
+                        Antiban
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
 
     </div>
 
-    <footer>
-        © 2026 ModGameios
-    </footer>
+</section>
 
-</div>
 
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
 
-<script>
+<!-- =====================================================
+     FILE MOD TỰ DÁN
+===================================================== -->
 
-let player = null;
-let musicPlaying = false;
+<section class="section">
 
-const videoId = "BUORWKzSl_o";
+    <h2 class="section-title">
+        FILE MOD TỰ DÁN
+    </h2>
 
-/* Tải YouTube API */
 
-const tag = document.createElement("script");
+    <div class="cards">
 
-tag.src =
-    "https://www.youtube.com/iframe_api";
 
-const firstScript =
-    document.getElementsByTagName("script")[0];
+        <a
+            class="card"
+            href="#"
+            data-search="dns antiban ff ffm"
+        >
 
-firstScript.parentNode.insertBefore(
-    tag,
-    firstScript
-);
+            <div class="icon">
+                <span class="emoji">
+                    🛡️
+                </span>
+            </div>
 
-/* Tạo YouTube Player */
 
-function onYouTubeIframeAPIReady() {
+            <div class="info">
 
-    player = new YT.Player(
-        "youtubePlayer",
-        {
-            width: "200",
-            height: "200",
+                <div class="title">
+                    DNS ANTIBAN FF + FFM
+                </div>
 
-            videoId: videoId,
+                <div class="desc">
+                    • ANTIBAN CHO APP 3105, FILZA
+                </div>
 
-            playerVars: {
-                playsinline: 1,
-                controls: 0,
-                rel: 0
-            },
+                <div class="desc">
+                    • FILE CHO ANH EM MUỐN TỰ LÀM ANTIBAN
+                </div>
 
-            events: {
-                onReady: function(event) {
+                <div class="desc">
+                    • TẢI APP NEXTDNS VỀ RỒI DÁN NHƯ TRONG FILE
+                </div>
 
-                    event.target.setVolume(100);
 
-                },
+                <div class="tags">
 
-                onAutoplayBlocked:
-                    function() {
+                    <span class="tag apple">
+                        iOS
+                    </span>
 
-                        musicPlaying = false;
+                    <span class="tag shield">
+                        Antiban
+                    </span>
 
-                        document
-                            .getElementById("musicButton")
-                            .innerHTML = "🔇";
+                </div>
 
-                    }
-            }
-        }
-    );
-}
+            </div>
 
-/* Bấm vào web */
 
-function enterWeb() {
+            <div class="download-btn">
 
-    document
-        .getElementById("noticePopup")
-        .style.display = "none";
+                <svg viewBox="0 0 24 24">
 
-    if (player) {
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
 
-        player.unMute();
+                </svg>
 
-        player.setVolume(100);
+            </div>
 
-        player.playVideo();
+        </a>
 
-        musicPlaying = true;
 
-        document
-            .getElementById("musicButton")
-            .innerHTML = "🔊";
-    }
-}
 
-/* Bật / tắt nhạc */
+        <a
+            class="card"
+            href="#"
+            data-search="dinh vi aimbody ffm"
+        >
 
-function toggleMusic() {
+            <div class="icon">
+                <span class="emoji">
+                    🎯
+                </span>
+            </div>
 
-    if (!player) return;
 
-    if (musicPlaying) {
+            <div class="info">
 
-        player.pauseVideo();
+                <div class="title">
+                    ĐỊNH VỊ + AIMBODY FFM
+                </div>
 
-        musicPlaying = false;
+                <div class="desc">
+                    • DÀNH CHO FREE FIRE MAX
+                </div>
 
-        document
-            .getElementById("musicButton")
-            .innerHTML = "🔇";
 
-    } else {
+                <div class="tags">
 
-        player.unMute();
+                    <span class="tag apple">
+                        iOS
+                    </span>
 
-        player.setVolume(100);
+                    <span class="tag shield">
+                        Antiban
+                    </span>
 
-        player.playVideo();
+                </div>
 
-        musicPlaying = true;
+            </div>
 
-        document
-            .getElementById("musicButton")
-            .innerHTML = "🔊";
-    }
-}
 
-/* Tìm kiếm */
+            <div class="download-btn">
 
-function searchCards() {
+                <svg viewBox="0 0 24 24">
 
-    let input =
-        document
-            .querySelector(".search")
-            .value
-            .toLowerCase();
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
 
-    let cards =
-        document
-            .querySelectorAll(".card");
+                </svg>
 
-    cards.forEach(function(card) {
+            </div>
 
-        let text =
-            card.innerText.toLowerCase();
+        </a>
 
-        if (text.includes(input)) {
 
-            card.style.display = "flex";
 
-        } else {
+        <a
+            class="card"
+            href="#"
+            data-search="full aim ffth"
+        >
 
-            card.style.display = "none";
+            <div class="icon">
+                <span class="emoji">
+                    🎯
+                </span>
+            </div>
 
-        }
 
-    });
-}
+            <div class="info">
 
-</script>
+                <div class="title">
+                    FULL AIM FFTH
+                </div>
 
-</body>
-</html>
+                <div class="desc">
+                    • FILE CHO AE TỰ DÁN
+                </div>
+
+                <div class="desc">
+                    • DÀNH CHO FREE FIRE TH
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                    <span class="tag shield">
+                        Antiban
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PATCH GAME
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        PATCH GAME
+    </h2>
+
+
+    <div class="cards">
+
+
+        <a
+            class="card"
+            href="#"
+            data-search="patch hack pvz2"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🌱
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH HACK PVZ2
+                </div>
+
+                <div class="desc">
+                    • DÙNG CHO APP 3105
+                </div>
+
+                <div class="desc">
+                    • FULL CÂY SHOP ĐỒNG GIÁ
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Nhớ Xem Video PATCH
+                    </span>
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="card"
+            href="#"
+            data-search="patch cady crush"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🍬
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH CADY CRUSH
+                </div>
+
+                <div class="desc">
+                    • DÙNG CHO APP 3105
+                </div>
+
+                <div class="desc">
+                    • VÔ HẠN PHỤ TRỢ
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Nhớ Xem Video PATCH
+                    </span>
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="card"
+            href="#"
+            data-search="patch subway surfers"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🏃
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH SUBWAY SURFERS
+                </div>
+
+                <div class="desc">
+                    • DÙNG CHO APP 3105
+                </div>
+
+                <div class="desc">
+                    • FULL MỌI THỨ
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Nhớ Xem Video PATCH
+                    </span>
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NGUỒN RAW
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        NGUỒN RAW
+    </h2>
+
+
+    <div class="cards">
+
+
+        <a
+            class="card"
+            href="#"
+            data-search="nguon raw full ffth"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🎮
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    NGUỒN RAW FULL FFTH
+                </div>
+
+                <div class="desc">
+                    • DÁN VÀO APP 3105
+                </div>
+
+                <div class="desc">
+                    • FULL AIM + ĐỊNH VỊ VIP
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Nhớ Xem Video Hướng Dẫn
+                    </span>
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="card"
+            href="#"
+            data-search="nguon raw full lq"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🎮
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    NGUỒN RAW FULL LQ
+                </div>
+
+                <div class="desc">
+                    • DÁN VÀO APP 3105
+                </div>
+
+                <div class="desc">
+                    • FULL FILE HACK MAP
+                </div>
+
+                <div class="desc">
+                    • UNLOCK FULL SKIN
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Nhớ Xem Video Hướng Dẫn
+                    </span>
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            class="card"
+            href="#"
+            data-search="nguon raw pubg"
+        >
+
+            <div class="icon">
+                <span class="emoji">
+                    🎯
+                </span>
+            </div>
+
+
+            <div class="info">
+
+                <div class="title">
+                    NGUỒN RAW PUBG
+                </div>
+
+                <div class="desc">
+                    • DÁN VÀO APP 3105
+                </div>
+
+                <div class="desc">
+                    • ESP, AIMBOT, ...
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Nhớ Xem Video Hướng Dẫn
+                    </span>
+
+                    <span class="tag apple">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="download-btn">
+
+                <svg viewBox="0 0 24 24">
