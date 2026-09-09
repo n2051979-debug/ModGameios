@@ -1,44 +1,11 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
->
-
-<meta name="theme-color" content="#08090c">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ModGameios</title>
 
-
-<!-- ==================================================
-     FONT
-================================================== -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
-
-
 <style>
-
-/* ==================================================
-   RESET
-================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -46,154 +13,461 @@
 }
 
 html {
-    background: #08090c;
+    scroll-behavior: smooth;
 }
 
 body {
-
-    min-height: 100vh;
-
+    font-family: Arial, Helvetica, sans-serif;
     background:
         radial-gradient(
             circle at 50% -10%,
-            rgba(38,120,255,.08),
+            rgba(0,255,136,.08),
             transparent 35%
         ),
-        #08090c;
-
+        #050505;
     color: #fff;
-
-    font-family:
-        "Inter",
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "SF Pro Text",
-        Arial,
-        sans-serif;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
 }
 
-button,
-input {
-    font-family: inherit;
+/* =========================
+   POPUP
+========================= */
+
+.notice-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.88);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+.notice-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 390px;
+
+    padding: 34px 22px 22px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,30,28,.98),
+            rgba(7,9,8,.99)
+        );
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(0,255,136,.28);
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.025),
+        0 0 30px rgba(0,255,136,.12),
+        0 0 80px rgba(0,255,136,.07),
+        0 30px 100px rgba(0,0,0,.95);
+
+    overflow: hidden;
+
+    animation:
+        popupIn .45s cubic-bezier(.16,1,.3,1);
 }
 
+.notice-box::before {
+    content: "";
 
-/* ==================================================
-   PAGE
-================================================== */
+    position: absolute;
 
-.page {
+    top: -130px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 300px;
+    height: 230px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,255,136,.25),
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
+}
+
+.notice-box::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+
+    width: 84%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00ff88,
+            #fff,
+            #00d9ff,
+            #00ff88,
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(0,255,136,.9);
+}
+
+/* =========================
+   POPUP ICON
+========================= */
+
+.notice-icon-wrap {
+    position: relative;
+
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #173326,
+            #0b110e
+        );
+
+    border: 1px solid rgba(0,255,136,.35);
+
+    box-shadow:
+        inset 0 0 20px rgba(0,255,136,.07),
+        0 0 25px rgba(0,255,136,.14);
+
+    animation:
+        iconFloat 3s ease-in-out infinite;
+}
+
+.notice-icon {
+    font-size: 34px;
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255,255,255,.25)
+        );
+}
+
+.notice-icon-wrap::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -6px;
+
+    border-radius: 27px;
+
+    border: 1px solid rgba(0,255,136,.15);
+
+    animation:
+        iconPulse 2s ease-in-out infinite;
+}
+
+/* =========================
+   POPUP TEXT
+========================= */
+
+.notice-title {
+    position: relative;
+
+    font-size: 24px;
+    font-weight: 900;
+
+    letter-spacing: .8px;
+
+    margin-bottom: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #00ff88,
+            #00d9ff,
+            #fff
+        );
+
+    background-size: 220% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    animation:
+        titleShine 4s ease-in-out infinite;
+}
+
+.notice-subtitle {
+    position: relative;
+
+    color: #00d98a;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 10px rgba(0,255,136,.25);
+}
+
+.notice-message {
+    position: relative;
+
+    padding: 15px;
+
+    margin-bottom: 21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.035),
+            rgba(0,255,136,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 14px;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.notice-message b {
+    color: #00ff88;
+
+    text-shadow:
+        0 0 8px rgba(0,255,136,.3);
+}
+
+/* =========================
+   POPUP BUTTON
+========================= */
+
+.notice-btn {
+    position: relative;
 
     width: 100%;
 
+    padding: 16px;
+
+    border: 0;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00ff88,
+            #00e879,
+            #00d9a0
+        );
+
+    color: #001b0d;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: .3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,255,136,.22);
+
+    overflow: hidden;
+
+    transition: .25s;
+}
+
+.notice-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.5),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation:
+        buttonShine 3s infinite;
+}
+
+.notice-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 35px rgba(0,255,136,.35);
+}
+
+.notice-btn:active {
+    transform: scale(.97);
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+
+    right: 18px;
+    bottom: 18px;
+
+    z-index: 9998;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    border: 1px solid #292929;
+
+    background: #151515;
+
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.5);
+
+    transition: .2s;
+}
+
+.music-btn:hover {
+    border-color: #00ff88;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(0,255,136,.2);
+}
+
+/* =========================
+   YOUTUBE
+========================= */
+
+#youtubePlayer {
+    position: fixed;
+
+    width: 200px;
+    height: 200px;
+
+    left: -1000px;
+    top: -1000px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    width: 100%;
     max-width: 520px;
 
     margin: auto;
 
     padding:
-        0
-        14px
-        55px;
+        35px 15px 45px;
 }
 
-
-/* ==================================================
-   TOP BAR
-================================================== */
-
-.topbar {
-
-    height: 55px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.brand {
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    color: #5ea7ff;
-
-    letter-spacing: .5px;
-}
-
-.brand::before {
-
-    content: "●";
-
-    font-size: 7px;
-
-    margin-right: 6px;
-
-    color: #4e9bff;
-
-    text-shadow:
-        0 0 8px
-        #348aff;
-}
-
-
-/* ==================================================
+/* =========================
    PROFILE
-================================================== */
+========================= */
 
 .profile {
+    text-align: center;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
-
-    text-align: center;
-
-    padding:
-        18px
-        0
-        8px;
 }
 
-
-/* ==================================================
-   AVATAR WRAP
-================================================== */
+/* =========================
+   AVATAR
+========================= */
 
 .avatar-wrap {
-
     position: relative;
 
-    width: 100px;
-    height: 100px;
+    width: 108px;
+    height: 108px;
+
+    margin-bottom: 14px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    margin-bottom: 16px;
 }
 
-
-/* vòng gradient xoay */
-
 .avatar-wrap::before {
-
     content: "";
 
     position: absolute;
@@ -205,261 +479,350 @@ a {
     background:
         conic-gradient(
             from 0deg,
-            #1765d8,
-            #58adff,
-            #ffffff,
-            #2785ff,
-            #124b9e,
-            #1765d8
+            #00ff88,
+            #00d9ff,
+            #7c3cff,
+            #00ff88
         );
 
     animation:
-        avatarRotate
-        4s
-        linear
-        infinite;
+        avatarRotate 4s linear infinite;
 
     filter:
-        drop-shadow(
-            0 0 8px
-            rgba(40,130,255,.75)
-        );
+        blur(.2px);
 
     z-index: 0;
 }
 
-
-/* vòng pulse */
-
 .avatar-wrap::after {
-
     content: "";
 
     position: absolute;
 
-    inset: -11px;
+    inset: -10px;
 
     border-radius: 50%;
 
-    border:
-        1px solid
-        rgba(50,140,255,.55);
+    border: 1px solid rgba(0,255,136,.25);
 
     box-shadow:
-        0 0 12px
-        rgba(40,130,255,.5),
-
-        0 0 28px
-        rgba(40,130,255,.2);
+        0 0 20px rgba(0,255,136,.2),
+        inset 0 0 20px rgba(0,255,136,.08);
 
     animation:
-        avatarPulse
-        2s
-        ease-in-out
-        infinite;
-
-    z-index: 0;
+        avatarRing 2.5s ease-in-out infinite;
 }
 
-
-/* avatar */
-
 .avatar {
-
     position: relative;
 
     z-index: 2;
 
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
+
+    padding: 3px;
 
     border-radius: 50%;
 
     object-fit: cover;
 
-    display: block;
+    background:
+        #080808;
 
-    background: #15161a;
-
-    border:
-        3px solid
-        #0c0d11;
+    border: 3px solid #080808;
 
     box-shadow:
+        0 0 20px rgba(0,255,136,.35),
+        0 0 45px rgba(0,217,255,.15);
 
-        0 0 0 1px
-        rgba(255,255,255,.08),
-
-        0 0 18px
-        rgba(40,125,255,.4);
+    transition: .3s;
 }
 
+.avatar:hover {
+    transform: scale(1.05);
 
-@keyframes avatarRotate {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
+    box-shadow:
+        0 0 25px rgba(0,255,136,.55),
+        0 0 55px rgba(0,217,255,.3);
 }
 
-
-@keyframes avatarPulse {
-
-    0%,
-    100% {
-
-        transform:
-            scale(.96);
-
-        opacity: .4;
-    }
-
-    50% {
-
-        transform:
-            scale(1.08);
-
-        opacity: 1;
-    }
-
-}
-
-
-/* ==================================================
+/* =========================
    NAME
-================================================== */
+========================= */
 
 .name {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    font-size: 23px;
+    font-size: 27px;
 
     font-weight: 900;
 
-    letter-spacing: -.7px;
-
-    color: #fff;
-
-    text-shadow:
-        0 2px 15px
-        rgba(255,255,255,.08);
-}
-
-.subtitle {
-
-    margin-top: 5px;
-
-    color: #73747c;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: .3px;
-}
-
-
-/* ==================================================
-   SEARCH
-================================================== */
-
-.search-wrap {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 50;
-
-    padding:
-        8px
-        0
-        11px;
+    letter-spacing: .4px;
 
     background:
         linear-gradient(
-            #08090c 70%,
-            transparent
+            90deg,
+            #ffffff 0%,
+            #dffff1 25%,
+            #00ff88 55%,
+            #00d9ff 80%,
+            #ffffff 100%
+        );
+
+    background-size: 220% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    animation:
+        modNameShine 5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(0,255,136,.25)
         );
 }
 
-.search {
+.subtitle {
+    color: #777;
 
-    width: 100%;
+    font-size: 13px;
 
-    height: 45px;
+    margin-top: 6px;
 
-    padding:
-        0
-        15px;
+    letter-spacing: .5px;
+}
 
-    border:
-        1px solid
-        #25262c;
+/* =========================
+   MAIN BUTTON
+========================= */
 
-    border-radius: 13px;
+.main-btn {
+    display: block;
 
-    outline: none;
+    text-align: center;
 
-    background: #15161a;
+    text-decoration: none;
 
     color: #fff;
 
-    font-size: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            #151515,
+            #0e0e0e
+        );
 
-    font-weight: 500;
+    border: 1px solid #292929;
+
+    border-radius: 13px;
+
+    padding: 15px;
+
+    margin:
+        24px 0 15px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.main-btn:hover {
+    border-color: #00ff88;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0,255,136,.1);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 8px;
+}
+
+.stat {
+    background: #111;
+
+    border: 1px solid #202020;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    padding: 14px 5px;
+
+    transition: .2s;
+}
+
+.stat:hover {
+    border-color:
+        rgba(0,255,136,.3);
+}
+
+.stat b {
+    display: block;
+
+    font-size: 19px;
+
+    margin-bottom: 5px;
+
+    color: #00ff88;
+}
+
+.stat span {
+    color: #777;
+
+    font-size: 11px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: #111;
+
+    border: 1px solid #202020;
+
+    border-radius: 13px;
+
+    padding: 16px;
+
+    margin-top: 15px;
+}
+
+.about-title {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+    color: #fff;
+}
+
+.about-text {
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social {
+    margin-top: 15px;
+}
+
+.social a {
+    display: block;
+
+    text-decoration: none;
+
+    color: #fff;
+
+    background: #111;
+
+    border: 1px solid #202020;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.social a:hover {
+    border-color: #5865F2;
+
+    box-shadow:
+        0 0 20px rgba(88,101,242,.12);
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 14px 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid #242424;
+
+    outline: none;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: 13px;
 
     transition: .2s;
 }
 
 .search::placeholder {
-    color: #666870;
+    color: #666;
 }
 
 .search:focus {
-    border-color: #3b3d45;
+    border-color: #00ff88;
 
     box-shadow:
-        0 0 0 3px
-        rgba(50,130,255,.05);
+        0 0 15px rgba(0,255,136,.08);
 }
 
-
-/* ==================================================
+/* =========================
    SECTION
-================================================== */
+========================= */
 
 .section {
-
-    margin-top: 14px;
+    margin-top: 28px;
 }
 
-.section-title {
+.section h2 {
+    font-size: 17px;
 
-    margin:
-        20px
-        6px
-        12px;
+    margin-bottom: 11px;
 
-    font-size: 20px;
-
-    font-weight: 900;
-
-    line-height: 1.1;
-
-    letter-spacing: -.7px;
-
-    color: #f5f5f7;
+    color: #f5f5f5;
 }
+
+/* =========================
+   CARDS
+========================= */
 
 .cards {
-
     display: flex;
 
     flex-direction: column;
@@ -467,835 +830,120 @@ a {
     gap: 9px;
 }
 
-
-/* ==================================================
-   CARD
-================================================== */
-
 .card {
-
-    position: relative;
-
-    width: 100%;
-
-    min-height: 78px;
-
     display: flex;
 
     align-items: center;
 
-    padding:
-        12px;
+    gap: 12px;
 
-    border:
-        1px solid
-        #25262b;
+    text-decoration: none;
 
-    border-radius: 16px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #1a1b1f,
-            #15161a
-        );
-
-    overflow: hidden;
-
-    transition:
-        transform .18s ease,
-        border-color .18s ease,
-        background .18s ease;
-}
-
-.card::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -100%;
-
-    width: 45%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.025),
-            transparent
-        );
-
-    transform:
-        skewX(-20deg);
-
-    transition: .5s;
-}
-
-.card:hover {
-
-    border-color: #35373e;
-
-    transform:
-        translateY(-1px);
-}
-
-.card:hover::after {
-    left: 130%;
-}
-
-.card:active {
-    transform:
-        scale(.985);
-}
-
-
-/* ==================================================
-   ICON
-================================================== */
-
-.icon {
-
-    width: 50px;
-    height: 50px;
-
-    flex:
-        0 0 50px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-right: 12px;
-
-    border-radius: 13px;
-
-    background:
-        #292a2f;
-
-    border:
-        1px solid
-        rgba(255,255,255,.04);
-
-    font-size: 25px;
-}
-
-
-/* ==================================================
-   INFO
-================================================== */
-
-.info {
-
-    min-width: 0;
-
-    flex: 1;
-}
-
-.title {
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    line-height: 1.25;
-
-    margin-bottom: 4px;
-
-    letter-spacing: -.15px;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-}
-
-.desc {
-
-    color: #81828a;
-
-    font-size: 10px;
-
-    font-weight: 500;
-
-    line-height: 1.5;
-}
-
-
-/* ==================================================
-   TAG
-================================================== */
-
-.tags {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 5px;
-
-    margin-top: 6px;
-}
-
-.tag {
-
-    padding:
-        4px
-        7px;
-
-    border-radius: 7px;
-
-    background: #303137;
-
-    color: #d5d6db;
-
-    font-size: 8px;
-
-    line-height: 1;
-
-    font-weight: 700;
-}
-
-
-/* ==================================================
-   OPEN ICON
-================================================== */
-
-.open {
-
-    width: 39px;
-    height: 39px;
-
-    flex:
-        0 0 39px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #92949d;
-}
-
-.open svg {
-
-    width: 21px;
-    height: 21px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.8;
-}
-
-
-/* ==================================================
-   DOWNLOAD
-================================================== */
-
-.download-btn {
-
-    width: 40px;
-    height: 40px;
-
-    flex:
-        0 0 40px;
-
-    border: 0;
-
-    border-radius: 11px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #67adff;
-
-    background:
-        linear-gradient(
-            145deg,
-            #214f91,
-            #17345f
-        );
-}
-
-.download-btn svg {
-
-    width: 19px;
-    height: 19px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 2.1;
-}
-
-
-/* ==================================================
-   EMPTY
-================================================== */
-
-.empty {
-
-    display: none;
-
-    text-align: center;
-
-    padding: 30px 0;
-
-    color: #666870;
-
-    font-size: 12px;
-}
-
-
-/* ==================================================
-   FOOTER
-================================================== */
-
-footer {
-
-    margin-top: 35px;
-
-    text-align: center;
-
-    color: #4d4e55;
-
-    font-size: 10px;
-
-    font-weight: 500;
-}
-
-
-/* ==================================================
-   POPUP
-================================================== */
-
-.notice-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 99999;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
-
-    background:
-        rgba(0,0,0,.88);
-
-    backdrop-filter:
-        blur(15px);
-
-    -webkit-backdrop-filter:
-        blur(15px);
-}
-
-
-/* ==================================================
-   POPUP BOX
-================================================== */
-
-.notice-box {
-
-    position: relative;
-
-    width: 100%;
-
-    max-width: 390px;
-
-    padding:
-        33px
-        21px
-        21px;
-
-    text-align: center;
-
-    border-radius: 24px;
-
-    border:
-        1px solid
-        rgba(48,135,255,.3);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(28,29,34,.99),
-            rgba(11,12,15,.99)
-        );
-
-    box-shadow:
-
-        0 0 0 1px
-        rgba(255,255,255,.02),
-
-        0 0 35px
-        rgba(30,120,255,.1),
-
-        0 30px 100px
-        rgba(0,0,0,.9);
-
-    overflow: hidden;
-
-    animation:
-        popupIn
-        .45s
-        cubic-bezier(.16,1,.3,1);
-}
-
-
-/* glow trên popup */
-
-.notice-box::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: -120px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    width: 280px;
-    height: 220px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(45,135,255,.22),
-            transparent 70%
-        );
-
-    filter:
-        blur(10px);
-
-    pointer-events: none;
-}
-
-
-/* đường sáng */
-
-.notice-box::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 10%;
-
-    width: 80%;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #398cff,
-            #fff,
-            #398cff,
-            transparent
-        );
-
-    box-shadow:
-        0 0 16px
-        rgba(55,140,255,.9);
-}
-
-
-/* ==================================================
-   POPUP ICON
-================================================== */
-
-.notice-icon-wrap {
-
-    position: relative;
-
-    width: 72px;
-    height: 72px;
-
-    margin:
-        0
-        auto
-        17px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 21px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #1b3459,
-            #101a2a
-        );
-
-    border:
-        1px solid
-        rgba(70,145,255,.38);
-
-    box-shadow:
-        inset
-        0 0 22px
-        rgba(50,135,255,.08),
-
-        0 0 22px
-        rgba(40,125,255,.1);
-
-    animation:
-        iconFloat
-        3s
-        ease-in-out
-        infinite;
-}
-
-.notice-icon-wrap::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: -6px;
-
-    border-radius: 27px;
-
-    border:
-        1px solid
-        rgba(60,145,255,.18);
-
-    animation:
-        iconPulse
-        2s
-        ease-in-out
-        infinite;
-}
-
-.notice-icon {
-
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 31px;
-
-    line-height: 1;
-}
-
-
-/* ==================================================
-   POPUP TITLE - CÓ MÀU
-================================================== */
-
-.notice-title {
-
-    position: relative;
-
-    font-size: 23px;
-
-    font-weight: 900;
-
-    letter-spacing: -.5px;
-
-    margin-bottom: 9px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff 0%,
-            #58a7ff 28%,
-            #b7dcff 50%,
-            #58a7ff 72%,
-            #ffffff 100%
-        );
-
-    background-size: 200% auto;
-
-    -webkit-background-clip: text;
-
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    animation:
-        noticeTextShine
-        3s
-        linear
-        infinite;
-
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(65,145,255,.28)
-        );
-}
-
-
-/* ==================================================
-   POPUP SUBTITLE
-================================================== */
-
-.notice-subtitle {
-
-    position: relative;
-
-    color: #5798df;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    font-weight: 800;
-
-    margin-bottom: 19px;
-
-    text-shadow:
-        0 0 9px
-        rgba(50,135,255,.4);
-}
-
-
-/* ==================================================
-   POPUP MESSAGE
-================================================== */
-
-.notice-message {
-
-    position: relative;
-
-    padding: 14px;
-
-    margin-bottom: 20px;
-
-    background:
-        rgba(255,255,255,.025);
-
-    border:
-        1px solid
-        rgba(255,255,255,.065);
-
-    border-radius: 13px;
-
-    color: #a4a5ac;
-
-    font-size: 13px;
-
-    font-weight: 500;
-
-    line-height: 1.6;
-}
-
-.notice-message b {
-
-    color: #ffffff;
-
-    font-weight: 800;
-}
-
-
-/* ==================================================
-   POPUP BUTTON
-================================================== */
-
-.notice-btn {
-
-    position: relative;
-
-    width: 100%;
-
-    min-height: 50px;
-
-    padding:
-        14px;
-
-    border: 0;
-
-    border-radius: 14px;
+    color: #fff;
 
     background:
         linear-gradient(
             135deg,
-            #3a91ff,
-            #1c65d5
+            #111,
+            #0d0d0d
         );
 
-    color: #fff;
+    border: 1px solid #202020;
 
-    font-size: 12px;
+    border-radius: 12px;
 
-    font-weight: 900;
+    padding: 14px;
 
-    letter-spacing: -.1px;
-
-    cursor: pointer;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 8px 28px
-        rgba(35,120,255,.24);
-
-    transition:
-        .2s;
-
-    -webkit-tap-highlight-color:
-        transparent;
+    transition: .25s;
 }
 
-.notice-btn::before {
+.card:hover {
+    border-color: #00ff88;
 
-    content: "";
+    transform: translateY(-2px);
 
-    position: absolute;
+    box-shadow:
+        0 8px 25px rgba(0,255,136,.08);
+}
 
-    top: 0;
+.card-icon {
+    width: 40px;
+    height: 40px;
 
-    left: -100%;
-
-    width: 60%;
-
-    height: 100%;
+    border-radius: 10px;
 
     background:
         linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.38),
-            transparent
+            135deg,
+            #1b1b1b,
+            #121212
         );
-
-    transform:
-        skewX(-20deg);
-
-    animation:
-        buttonShine
-        3s
-        infinite;
-}
-
-.notice-btn:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 12px 35px
-        rgba(35,120,255,.35);
-}
-
-.notice-btn:active {
-
-    transform:
-        scale(.97);
-}
-
-
-/* ==================================================
-   MUSIC BUTTON
-================================================== */
-
-.music-btn {
-
-    position: fixed;
-
-    right: 17px;
-
-    bottom: 17px;
-
-    z-index: 9998;
-
-    width: 45px;
-    height: 45px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    border-radius: 50%;
-
-    border:
-        1px solid
-        #292a30;
-
-    background: #17181c;
-
-    color: #fff;
+    flex-shrink: 0;
 
     font-size: 18px;
 
-    cursor: pointer;
+    border: 1px solid #252525;
+}
 
-    box-shadow:
-        0 6px 22px
-        rgba(0,0,0,.55);
+.card-info {
+    flex: 1;
+}
+
+.card-info b {
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.card-info span {
+    color: #707070;
+
+    font-size: 11px;
+}
+
+.arrow {
+    color: #666;
+
+    font-size: 19px;
 
     transition: .2s;
 }
 
-.music-btn:hover {
-
-    border-color:
-        #358aff;
+.card:hover .arrow {
+    color: #00ff88;
 
     transform:
-        scale(1.05);
+        translateX(3px);
 }
 
+/* =========================
+   FOOTER
+========================= */
 
-/* ==================================================
-   YOUTUBE
-================================================== */
+footer {
+    text-align: center;
 
-#youtubePlayer {
+    color: #555;
 
-    position: fixed;
+    font-size: 11px;
 
-    width: 1px;
-    height: 1px;
-
-    left: -100px;
-    top: -100px;
-
-    opacity: 0;
-
-    pointer-events: none;
+    margin-top: 35px;
 }
 
-
-/* ==================================================
+/* =========================
    ANIMATION
-================================================== */
+========================= */
 
 @keyframes popupIn {
-
     from {
-
         opacity: 0;
 
         transform:
@@ -1304,7 +952,6 @@ footer {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -1313,11 +960,8 @@ footer {
     }
 }
 
-
 @keyframes iconFloat {
-
-    0%,
-    100% {
+    0%,100% {
         transform:
             translateY(0);
     }
@@ -1328,109 +972,133 @@ footer {
     }
 }
 
-
 @keyframes iconPulse {
-
-    0%,
-    100% {
-
+    0%,100% {
         opacity: .3;
-
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
     50% {
-
-        opacity: .85;
-
-        transform:
-            scale(1.06);
+        opacity: .8;
+        transform: scale(1.05);
     }
 }
 
-
-@keyframes noticeTextShine {
-
+@keyframes titleShine {
     0% {
-        background-position:
-            200% center;
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
     }
 
     100% {
-        background-position:
-            -200% center;
+        background-position: 0% center;
     }
 }
 
-
 @keyframes buttonShine {
-
     0% {
         left: -100%;
     }
 
-    25%,
-    100% {
+    25%,100% {
         left: 150%;
     }
 }
 
+@keyframes avatarRotate {
+    from {
+        transform:
+            rotate(0deg);
+    }
 
-/* ==================================================
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+@keyframes avatarRing {
+    0%,100% {
+        opacity: .4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .9;
+        transform: scale(1.04);
+    }
+}
+
+@keyframes modNameShine {
+    0% {
+        background-position:
+            0% center;
+    }
+
+    50% {
+        background-position:
+            100% center;
+    }
+
+    100% {
+        background-position:
+            0% center;
+    }
+}
+
+/* =========================
    MOBILE
-================================================== */
+========================= */
 
-@media(max-width:380px) {
+@media (max-width:380px) {
 
-    .page {
+    .container {
         padding-left: 12px;
         padding-right: 12px;
     }
 
-    .name {
-        font-size: 22px;
+    .avatar-wrap {
+        width: 98px;
+        height: 98px;
     }
 
-    .section-title {
-        font-size: 19px;
+    .avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    .name {
+        font-size: 23px;
     }
 
     .notice-box {
         max-width: 350px;
 
         padding:
-            29px
-            17px
-            20px;
+            30px 17px 20px;
     }
 
     .notice-title {
         font-size: 21px;
     }
-
 }
 
+@media (min-width:700px) {
 
-/* ==================================================
-   DESKTOP
-================================================== */
+    .container {
+        max-width: 520px;
 
-@media(min-width:700px) {
-
-    .page {
-        padding-top: 12px;
+        padding-top: 50px;
     }
-
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- ==================================================
      YOUTUBE PLAYER
@@ -1450,42 +1118,33 @@ footer {
 
     <div class="notice-box">
 
-
         <div class="notice-icon-wrap">
-
             <div class="notice-icon">
                 📢
             </div>
-
         </div>
-
 
         <div class="notice-title">
             THÔNG BÁO
         </div>
 
-
         <div class="notice-subtitle">
             MODGAMEIOS • INFORMATION
         </div>
 
-
         <div class="notice-message">
-
             Thắc mắc gì thì có thể hỏi
             <b>Admin</b>
-
         </div>
-
 
         <button
             type="button"
             class="notice-btn"
             id="enterButton"
+            onclick="enterWeb()"
         >
             ĐÃ HIỂU, VÀO WEB
         </button>
-
 
     </div>
 
@@ -1493,40 +1152,28 @@ footer {
 
 
 <!-- ==================================================
-     MUSIC
+     MUSIC BUTTON
 ================================================== -->
 
 <button
     type="button"
     class="music-btn"
     id="musicButton"
+    onclick="toggleMusic()"
 >
     🔇
 </button>
 
 
 <!-- ==================================================
-     WEBSITE
+     MAIN WEBSITE
 ================================================== -->
 
-<main class="page">
-
-
-    <!-- TOP -->
-
-    <div class="topbar">
-
-        <div class="brand">
-            APP CRACK + MODS GAME
-        </div>
-
-    </div>
-
+<div class="container">
 
     <!-- PROFILE -->
 
     <div class="profile">
-
 
         <div class="avatar-wrap">
 
@@ -1538,1095 +1185,239 @@ footer {
 
         </div>
 
-
         <div class="name">
             ModGameios
         </div>
 
-
         <div class="subtitle">
-            APP CRACK • MODS • iOS
+            MOD GAME • TOOLS • iOS
         </div>
 
+    </div>
+
+
+    <!-- MAIN BUTTON -->
+
+    <a
+        class="main-btn"
+        href="https://example.com"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        TẢI GAME NGAY
+    </a>
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat">
+            <b>5000</b>
+            <span>Lượt xem</span>
+        </div>
+
+        <div class="stat">
+            <b>2026</b>
+            <span>Cập nhật</span>
+        </div>
+
+        <div class="stat">
+            <b>#1</b>
+            <span>iOS</span>
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <div class="about">
+
+        <div class="about-title">
+            Giới thiệu
+        </div>
+
+        <div class="about-text">
+            ModGameios là trang tổng hợp game,
+            ứng dụng, công cụ và tài nguyên
+            dành cho iOS.
+        </div>
+
+    </div>
+
+
+    <!-- DISCORD -->
+
+    <div class="social">
+
+        <a
+            href="https://discord.com"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            💬 DISCORD
+        </a>
 
     </div>
 
 
     <!-- SEARCH -->
 
-    <div class="search-wrap">
+    <input
+        class="search"
+        id="searchInput"
+        type="text"
+        placeholder="🔍 Tìm kiếm game, app, file..."
+        oninput="searchCards()"
+    >
 
-        <input
-            class="search"
-            id="search"
-            type="search"
-            autocomplete="off"
-            placeholder="🔍 Tìm kiếm game, app, file..."
-        >
+
+    <!-- DOWNLOAD -->
+
+    <div class="section">
+
+        <h2>
+            DOWNLOAD
+        </h2>
+
+        <div class="cards">
+
+            <a
+                class="card"
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="card-icon">
+                    ⬇️
+                </div>
+
+                <div class="card-info">
+
+                    <b>
+                        Download Game
+                    </b>
+
+                    <span>
+                        Tải game
+                    </span>
+
+                </div>
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+            <a
+                class="card"
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="card-icon">
+                    📱
+                </div>
+
+                <div class="card-info">
+
+                    <b>
+                        Ứng dụng iOS
+                    </b>
+
+                    <span>
+                        Download
+                    </span>
+
+                </div>
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+        </div>
 
     </div>
 
 
-    <!-- ==================================================
-         TẢI IPA
-    ================================================== -->
+    <!-- TOOLS -->
 
-    <section class="section">
+    <div class="section">
 
-        <h2 class="section-title">
-            TẢI IPA
+        <h2>
+            TOOLS & TÀI NGUYÊN
         </h2>
-
 
         <div class="cards">
 
-
             <a
                 class="card"
-                href="#"
-                data-search="ipa next dns antiban"
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
             >
 
-                <div class="icon">
-                    🛡️
+                <div class="card-icon">
+                    🛠️
                 </div>
 
-                <div class="info">
+                <div class="card-info">
 
-                    <div class="title">
-                        IPA NEXT DNS
-                    </div>
+                    <b>
+                        iOS Tools
+                    </b>
 
-                    <div class="desc">
-                        by ModGameios
-                    </div>
+                    <span>
+                        Công cụ dành cho iOS
+                    </span>
 
                 </div>
 
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
+                <div class="arrow">
+                    ›
                 </div>
 
             </a>
 
 
-
             <a
                 class="card"
-                href="#"
-                data-search="app 3105 v3 update new"
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
             >
 
-                <div class="icon">
-                    🦊
+                <div class="card-icon">
+                    📦
                 </div>
 
-                <div class="info">
+                <div class="card-info">
 
-                    <div class="title">
-                        APP 3105
-                    </div>
+                    <b>
+                        Tài nguyên
+                    </b>
 
-                    <div class="desc">
-                        v3 UPDATE NEW
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
+                    <span>
+                        Kho tài nguyên ModGameios
+                    </span>
 
                 </div>
 
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="app 3105 v1.1.1"
-            >
-
-                <div class="icon">
-                    🦊
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        APP 3105
-                    </div>
-
-                    <div class="desc">
-                        v1.1.1
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="ipa menu no key 8bp ios antiban"
-            >
-
-                <div class="icon">
-                    🎱
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        iPA MENU NO KEY 8BP
-                    </div>
-
-                    <div class="desc">
-                        • Đã cập nhật 29/8
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                        <span class="tag">
-                            Antiban
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="unlock 120hz ios"
-            >
-
-                <div class="icon">
-                    💙
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        UNLOCK 120HZ IOS
-                    </div>
-
-                    <div class="desc">
-                        GIÚP MÀN HÌNH MƯỢT HƠN
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="unlock duolingo max"
-            >
-
-                <div class="icon">
-                    🦉
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        UNLOCK DUOLINGO MAX
-                    </div>
-
-                    <div class="desc">
-                        • CÓ CHẾ ĐỘ GỌI
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="messenger vipp tin nhan thu hoi"
-            >
-
-                <div class="icon">
-                    💬
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        MESSENGER VIPP
-                    </div>
-
-                    <div class="desc">
-                        • XEM ĐƯỢC TIN NHẮN THU HỒI, ...
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="youtube premium cap nhat"
-            >
-
-                <div class="icon">
-                    ▶️
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        YOUTUBE PREMIUM
-                    </div>
-
-                    <div class="desc">
-                        • ĐÃ CẬP NHẬT 9/9
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="capcut pro"
-            >
-
-                <div class="icon">
-                    ✂️
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        CAPCUT PRO
-                    </div>
-
-                    <div class="desc">
-                        • ĐÃ CẬP NHẬT 9/9
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="filza mod app 3105"
-            >
-
-                <div class="icon">
-                    📁
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        FILZA MOD
-                    </div>
-
-                    <div class="desc">
-                        • Tích Hợp APP 3105, Mod
-                    </div>
-
-                </div>
-
-
-                <div class="open">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-                    </svg>
-
+                <div class="arrow">
+                    ›
                 </div>
 
             </a>
 
         </div>
 
-    </section>
-
-
-
-    <!-- ==================================================
-         NGUỒN HÌNH NỀN + APP
-    ================================================== -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            NGUỒN HÌNH NỀN + APP
-        </h2>
-
-
-        <div class="cards">
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="nguon hinh nen app capcut dazzcam pro"
-            >
-
-                <div class="icon">
-                    🎮
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        NGUỒN HÌNH NỀN + APP
-                    </div>
-
-                    <div class="desc">
-                        • CAPCUT, DAZZCAM PRO
-                    </div>
-
-                    <div class="desc">
-                        • HÌNH NỀN, PHÍM GỌI VIP
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            Nhớ Xem Video Hướng Dẫn
-                        </span>
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         FILE BYPASS
-    ================================================== -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            FILE BYPASS + ANTIBAN
-        </h2>
-
-
-        <div class="cards">
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="file bypass chatgpt ios antiban"
-            >
-
-                <div class="icon">
-                    ◉
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        FILE BYPASS CHATGPT
-                    </div>
-
-                    <div class="desc">
-                        • DÁN VÀO CHAT
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                        <span class="tag">
-                            Antiban
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="dns antiban ff ffm nextdns"
-            >
-
-                <div class="icon">
-                    🛡️
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        DNS ANTIBAN FF + FFM
-                    </div>
-
-                    <div class="desc">
-                        • ANTIBAN CHO APP 3105, FILZA
-                    </div>
-
-                    <div class="desc">
-                        • File Config
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                        <span class="tag">
-                            Antiban
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         FILE MOD
-    ================================================== -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            FILE MOD TỰ DÁN
-        </h2>
-
-
-        <div class="cards">
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="dns antiban ff ffm nextdns"
-            >
-
-                <div class="icon">
-                    🛡️
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        DNS ANTIBAN FF + FFM
-                    </div>
-
-                    <div class="desc">
-                        • ANTIBAN CHO APP 3105, FILZA
-                    </div>
-
-                    <div class="desc">
-                        • FILE CHO AE MUỐN TỰ LÀM ANTIBAN
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                        <span class="tag">
-                            Antiban
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="dinh vi aimbody ffm free fire max"
-            >
-
-                <div class="icon">
-                    🎯
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        ĐỊNH VỊ + AIMBODY FFM
-                    </div>
-
-                    <div class="desc">
-                        • DÀNH CHO FREE FIRE MAX
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                        <span class="tag">
-                            Antiban
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="full aim ffth free fire"
-            >
-
-                <div class="icon">
-                    🎯
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        FULL AIM FFTH
-                    </div>
-
-                    <div class="desc">
-                        • FILE CHO AE TỰ DÁN
-                    </div>
-
-                    <div class="desc">
-                        • DÀNH CHO FREE FIRE TH
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                        <span class="tag">
-                            Antiban
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         PATCH GAME
-    ================================================== -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            PATCH GAME
-        </h2>
-
-
-        <div class="cards">
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="patch hack pvz2 app 3105"
-            >
-
-                <div class="icon">
-                    🌱
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        PATCH HACK PVZ2
-                    </div>
-
-                    <div class="desc">
-                        • DÙNG CHO APP 3105
-                    </div>
-
-                    <div class="desc">
-                        • FULL CÂY SHOP ĐỒNG GIÁ
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="patch candy crush app 3105"
-            >
-
-                <div class="icon">
-                    🍬
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        PATCH CANDY CRUSH
-                    </div>
-
-                    <div class="desc">
-                        • DÙNG CHO APP 3105
-                    </div>
-
-                    <div class="desc">
-                        • VÔ HẠN PHỤ TRỢ
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="patch subway surfers app 3105"
-            >
-
-                <div class="icon">
-                    🏃
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        PATCH SUBWAY SURFERS
-                    </div>
-
-                    <div class="desc">
-                        • DÙNG CHO APP 3105
-                    </div>
-
-                    <div class="desc">
-                        • FULL MỌI THỨ
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         NGUỒN RAW
-    ================================================== -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            NGUỒN RAW
-        </h2>
-
-
-        <div class="cards">
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="nguon raw full ffth aimbody dinh vi"
-            >
-
-                <div class="icon">
-                    🎮
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        NGUỒN RAW FULL FFTH
-                    </div>
-
-                    <div class="desc">
-                        • DÁN VÀO APP 3105
-                    </div>
-
-                    <div class="desc">
-                        • FULL AIM + ĐỊNH VỊ VIP
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="nguon raw full lq hack map skin"
-            >
-
-                <div class="icon">
-                    🎮
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        NGUỒN RAW FULL LQ
-                    </div>
-
-                    <div class="desc">
-                        • DÁN VÀO APP 3105
-                    </div>
-
-                    <div class="desc">
-                        • FULL FILE HACK MAP
-                    </div>
-
-                    <div class="desc">
-                        • UNLOCK FULL SKIN
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                class="card"
-                href="#"
-                data-search="nguon raw pubg esp aimbot"
-            >
-
-                <div class="icon">
-                    🎯
-                </div>
-
-                <div class="info">
-
-                    <div class="title">
-                        NGUỒN RAW PUBG
-                    </div>
-
-                    <div class="desc">
-                        • DÁN VÀO APP 3105
-                    </div>
-
-                    <div class="desc">
-                        • ESP, AIMBOT, ...
-                    </div>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            iOS
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="download-btn">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                    </svg>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- EMPTY -->
-
-    <div
-        class="empty"
-        id="empty"
-    >
-        Không tìm thấy nội dung phù hợp.
     </div>
 
 
@@ -2636,8 +1427,7 @@ footer {
         © 2026 ModGameios
     </footer>
 
-
-</main>
+</div>
 
 
 <!-- ==================================================
@@ -2646,120 +1436,91 @@ footer {
 
 <script>
 
-
-/* ==================================================
-   YOUTUBE
-================================================== */
+/* =========================
+   VARIABLES
+========================= */
 
 let player = null;
-
 let musicPlaying = false;
 
-const videoId =
-    "BUORWKzSl_o";
+const videoId = "BUORWKzSl_o";
 
 
-const youtubeScript =
+/* =========================
+   LOAD YOUTUBE API
+========================= */
+
+const tag =
     document.createElement("script");
 
-youtubeScript.src =
+tag.src =
     "https://www.youtube.com/iframe_api";
 
-document.head.appendChild(
-    youtubeScript
+const firstScript =
+    document.getElementsByTagName("script")[0];
+
+firstScript.parentNode.insertBefore(
+    tag,
+    firstScript
 );
 
 
+/* =========================
+   YOUTUBE READY
+========================= */
+
 function onYouTubeIframeAPIReady() {
 
-    player =
-        new YT.Player(
-            "youtubePlayer",
-            {
+    player = new YT.Player(
+        "youtubePlayer",
+        {
+            width: "200",
+            height: "200",
 
-                width: "1",
+            videoId: videoId,
 
-                height: "1",
+            playerVars: {
+                playsinline: 1,
+                controls: 0,
+                rel: 0,
+                loop: 1,
+                playlist: videoId
+            },
 
-                videoId:
-                    videoId,
+            events: {
 
-                playerVars: {
+                onReady: function(event) {
 
-                    playsinline: 1,
-
-                    controls: 0,
-
-                    rel: 0,
-
-                    loop: 1,
-
-                    playlist:
-                        videoId
+                    event.target.setVolume(100);
 
                 },
 
-                events: {
+                onStateChange:
+                    function(event) {
 
-                    onReady:
-                        function(event) {
+                        if (
+                            event.data ===
+                            YT.PlayerState.ENDED
+                        ) {
 
-                            try {
-
-                                event.target
-                                    .setVolume(100);
-
-                            } catch(error) {
-
-                                console.log(error);
-
-                            }
-
-                        },
-
-                    onAutoplayBlocked:
-                        function() {
-
-                            musicPlaying =
-                                false;
-
-                            updateMusicButton();
+                            event
+                                .target
+                                .playVideo();
 
                         }
 
-                }
+                    }
 
             }
-        );
+        }
+    );
 
 }
 
 
-/* ==================================================
-   MUSIC BUTTON
-================================================== */
-
-function updateMusicButton() {
-
-    const button =
-        document.getElementById(
-            "musicButton"
-        );
-
-    if (!button) {
-        return;
-    }
-
-    button.textContent =
-        musicPlaying
-            ? "🔊"
-            : "🔇";
-}
-
-
-/* ==================================================
-   ENTER WEB
-================================================== */
+/* =========================
+   ENTER WEBSITE
+========================= */
 
 function enterWeb() {
 
@@ -2768,38 +1529,48 @@ function enterWeb() {
             "noticePopup"
         );
 
+    /*
+       Ẩn popup ngay lập tức
+    */
 
-    /* Đóng popup */
+    popup.style.opacity = "0";
+    popup.style.visibility = "hidden";
+    popup.style.pointerEvents = "none";
 
-    if (popup) {
+    /*
+       Xóa khỏi màn hình sau animation
+    */
 
-        popup.style.display =
-            "none";
+    setTimeout(function() {
 
-    }
+        popup.style.display = "none";
+
+    }, 300);
 
 
-    /* Bật nhạc */
+    /*
+       Phát nhạc nếu YouTube
+       đã load xong
+    */
 
     if (player) {
 
         try {
 
             player.unMute();
-
             player.setVolume(100);
-
             player.playVideo();
 
-            musicPlaying =
-                true;
+            musicPlaying = true;
 
-            updateMusicButton();
+            document.getElementById(
+                "musicButton"
+            ).innerHTML = "🔊";
 
         } catch(error) {
 
             console.log(
-                "Music error:",
+                "Không thể phát nhạc:",
                 error
             );
 
@@ -2810,9 +1581,9 @@ function enterWeb() {
 }
 
 
-/* ==================================================
+/* =========================
    MUSIC TOGGLE
-================================================== */
+========================= */
 
 function toggleMusic() {
 
@@ -2823,216 +1594,83 @@ function toggleMusic() {
 
     if (musicPlaying) {
 
-        try {
+        player.pauseVideo();
 
-            player.pauseVideo();
+        musicPlaying = false;
 
-        } catch(error) {
-
-            console.log(error);
-
-        }
-
-        musicPlaying =
-            false;
+        document.getElementById(
+            "musicButton"
+        ).innerHTML = "🔇";
 
     }
 
     else {
 
-        try {
+        player.unMute();
 
-            player.unMute();
+        player.setVolume(100);
 
-            player.setVolume(100);
+        player.playVideo();
 
-            player.playVideo();
+        musicPlaying = true;
 
-            musicPlaying =
-                true;
-
-        } catch(error) {
-
-            console.log(error);
-
-        }
+        document.getElementById(
+            "musicButton"
+        ).innerHTML = "🔊";
 
     }
-
-
-    updateMusicButton();
 
 }
 
 
-/* ==================================================
+/* =========================
    SEARCH
-================================================== */
+========================= */
 
 function searchCards() {
 
     const input =
         document
-            .getElementById("search")
+            .getElementById("searchInput")
             .value
             .toLowerCase()
             .trim();
 
 
-    let visible =
-        0;
-
-
-    document
-        .querySelectorAll(".card")
-        .forEach(
-            function(card) {
-
-                const text =
-                    (
-                        card.dataset.search ||
-                        card.innerText
-                    )
-                    .toLowerCase();
-
-
-                if (
-                    !input ||
-                    text.includes(input)
-                ) {
-
-                    card.style.display =
-                        "flex";
-
-                    visible++;
-
-                }
-
-                else {
-
-                    card.style.display =
-                        "none";
-
-                }
-
-            }
+    const cards =
+        document.querySelectorAll(
+            ".card"
         );
 
 
-    document
-        .querySelectorAll(".section")
-        .forEach(
-            function(section) {
+    cards.forEach(function(card) {
 
-                const cards =
-                    section.querySelectorAll(
-                        ".card"
-                    );
+        const text =
+            card.innerText
+                .toLowerCase();
 
 
-                let hasVisible =
-                    false;
+        if (
+            text.includes(input)
+        ) {
 
+            card.style.display =
+                "flex";
 
-                cards.forEach(
-                    function(card) {
+        }
 
-                        if (
-                            card.style.display !==
-                            "none"
-                        ) {
+        else {
 
-                            hasVisible =
-                                true;
+            card.style.display =
+                "none";
 
-                        }
+        }
 
-                    }
-                );
-
-
-                section.style.display =
-                    hasVisible
-                        ? "block"
-                        : "none";
-
-            }
-        );
-
-
-    const empty =
-        document.getElementById(
-            "empty"
-        );
-
-
-    if (empty) {
-
-        empty.style.display =
-            visible === 0
-                ? "block"
-                : "none";
-
-    }
+    });
 
 }
 
-
-/* ==================================================
-   BUTTON EVENTS
-================================================== */
-
-document
-    .getElementById("enterButton")
-    .addEventListener(
-        "click",
-        enterWeb
-    );
-
-
-document
-    .getElementById("musicButton")
-    .addEventListener(
-        "click",
-        toggleMusic
-    );
-
-
-document
-    .getElementById("search")
-    .addEventListener(
-        "input",
-        searchCards
-    );
-
-
-/* ==================================================
-   CARD PLACEHOLDER
-================================================== */
-
-document
-    .querySelectorAll(
-        '.card[href="#"]'
-    )
-    .forEach(
-        function(card) {
-
-            card.addEventListener(
-                "click",
-                function(event) {
-
-                    event.preventDefault();
-
-                }
-            );
-
-        }
-    );
-
-
 </script>
 
-
 </body>
-
 </html>
