@@ -1,77 +1,752 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ModGameios</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#0d0e13;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-.container{width:92%;max-width:850px;margin:28px auto 50px}
-.header{text-align:center;margin:15px 0 35px}
-.logo{width:90px;height:90px;border-radius:25px;background:#20222a;display:inline-flex;align-items:center;justify-content:center;font-size:38px;font-weight:800}
-.header h1{margin:12px 0 5px;font-size:30px}
-.header p{margin:0;color:#9b9da8}
-.section{margin:28px 0 14px}
-.section-title{display:inline-block;padding:10px 18px;border:1px solid #343640;border-radius:30px;color:#69a7ff;font-weight:700}
-.card{display:flex;align-items:center;gap:18px;background:#1a1b21;border:1px solid #30313a;border-radius:25px;padding:18px;margin:14px 0;box-shadow:0 4px 18px #0003}
-.thumb{width:92px;height:92px;border-radius:20px;background:#282a32;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0}
-.info{flex:1;min-width:0}
-.info h2{margin:0 0 7px;font-size:21px}
-.info p{margin:5px 0;color:#a4a5ae}
-.tags{margin-top:11px}
-.tag{display:inline-block;background:#303138;color:#ddd;padding:7px 11px;border-radius:10px;margin:3px 4px 0 0;font-size:13px}
-.download{width:66px;height:66px;border-radius:21px;background:#19345f;color:#62a2ff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:29px;flex-shrink:0;transition:.15s}
-.download:hover{transform:scale(1.06)}
-@media(max-width:600px){
-.container{width:94%;margin-top:18px}
-.card{gap:12px;padding:15px;border-radius:22px}
-.thumb{width:76px;height:76px;border-radius:17px;font-size:28px}
-.info h2{font-size:17px}
-.info p{font-size:13px}
-.download{width:55px;height:55px;border-radius:18px;font-size:23px}
-.header h1{font-size:27px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ModGameios</title>
+  <meta name="description" content="ModGameios - All Links">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      background: #080a0f;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
+      background: rgba(8, 10, 15, .85);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      z-index: 999;
+    }
+
+    .logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #756cff;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* ===== HERO ===== */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(117,108,255,.22),
+          transparent 38%
+        );
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(117,108,255,.45);
+      border-radius: 50px;
+      color: #aaa;
+      font-size: 12px;
+      margin-bottom: 22px;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: clamp(45px, 9vw, 82px);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: #756cff;
+    }
+
+    .hero-text {
+      color: #929292;
+      font-size: 16px;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 14px 22px;
+      border-radius: 10px;
+      background: #756cff;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: .9;
+    }
+
+    .btn.dark {
+      background: #151821;
+      border: 1px solid rgba(255,255,255,.09);
+    }
+
+    /* ===== SECTION ===== */
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      text-align: center;
+      color: #888;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    /* ===== LINKS ===== */
+
+    #links {
+      background: #0d1017;
+    }
+
+    .link-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      padding: 19px 22px;
+
+      color: white;
+      text-decoration: none;
+
+      background: #151821;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+
+      transition: .25s;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(117,108,255,.5);
+      background: #191c26;
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 10px;
+      background: #202431;
+      font-size: 19px;
+    }
+
+    .link-name {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .link-desc {
+      color: #777;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .arrow {
+      color: #777;
+      font-size: 20px;
+    }
+
+    /* ===== ABOUT ===== */
+
+    .about-box {
+      padding: 30px;
+      background: #151821;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .about-box p {
+      color: #8c8c8c;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    /* ===== GUIDE ===== */
+
+    #guide {
+      background: #0d1017;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .step {
+      background: #151821;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .number {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      background: #756cff;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #808080;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ===== FAQ ===== */
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: #151821;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    details p {
+      color: #858585;
+      font-size: 13px;
+      line-height: 1.7;
+      padding-top: 13px;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+      padding: 35px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #666;
+      font-size: 12px;
+    }
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 650px) {
+
+      header {
+        padding: 0 20px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      section {
+        padding: 70px 15px;
+      }
+
+      .hero {
+        padding-top: 100px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .about-box {
+        padding: 22px;
+      }
+
+      .link-card {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-  <header class="header">
-    <div class="logo">MG</div>
-    <h1>ModGameios</h1>
-    <p>Kho liên kết và tài nguyên iOS</p>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <a href="#home" class="logo">
+      Mod<span>Gameios</span>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#links">Links</a>
+      <a href="#guide">Guide</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
   </header>
 
-  <div class="section"><span class="section-title">🎮 FILE DOWNLOAD</span></div>
 
-  <!-- Nhân bản card bên dưới để thêm mục mới -->
-  <div class="card">
-    <div class="thumb">📦</div>
-    <div class="info">
-      <h2>FILE DOWNLOAD 01</h2>
-      <p>• Phiên bản mới nhất</p>
-      <p>• Nội dung của bạn</p>
-      <div class="tags">
-        <span class="tag">⬇️ Download</span>
-        <span class="tag"> iOS</span>
-      </div>
-    </div>
-    <a class="download" href="https://example.com" target="_blank" rel="noopener">☁️</a>
-  </div>
+  <!-- HOME -->
 
-  <div class="card">
-    <div class="thumb">📱</div>
-    <div class="info">
-      <h2>HƯỚNG DẪN</h2>
-      <p>• Hướng dẫn sử dụng</p>
-      <p>• Cập nhật mới</p>
-      <div class="tags">
-        <span class="tag">🎥 Hướng dẫn</span>
-        <span class="tag"> iOS</span>
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        MODGAMEIOS
       </div>
+
+      <h1>
+        Welcome to <span>ModGameios</span>
+      </h1>
+
+      <p class="hero-text">
+        Nơi tổng hợp các liên kết và thông tin của ModGameios.
+        Chọn một liên kết bên dưới để tiếp tục.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#links" class="btn">
+          Xem liên kết
+        </a>
+
+        <a href="#about" class="btn dark">
+          Giới thiệu
+        </a>
+
+      </div>
+
     </div>
-    <a class="download" href="https://example.com" target="_blank" rel="noopener">›</a>
-  </div>
-</div>
+
+  </section>
+
+
+  <!-- LINKS -->
+
+  <section id="links">
+
+    <div class="container">
+
+      <h2 class="title">
+        Liên kết
+      </h2>
+
+      <p class="description">
+        Tất cả liên kết của ModGameios
+      </p>
+
+      <div class="link-list">
+
+
+        <!-- LINK 1 -->
+
+        <a
+          href="https://example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+
+          <div class="link-left">
+
+            <div class="icon">🔗</div>
+
+            <div>
+              <div class="link-name">
+                Link chính
+              </div>
+
+              <div class="link-desc">
+                Truy cập liên kết chính
+              </div>
+            </div>
+
+          </div>
+
+          <div class="arrow">›</div>
+
+        </a>
+
+
+        <!-- LINK 2 -->
+
+        <a
+          href="https://example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+
+          <div class="link-left">
+
+            <div class="icon">📱</div>
+
+            <div>
+              <div class="link-name">
+                Telegram
+              </div>
+
+              <div class="link-desc">
+                Tham gia kênh Telegram
+              </div>
+            </div>
+
+          </div>
+
+          <div class="arrow">›</div>
+
+        </a>
+
+
+        <!-- LINK 3 -->
+
+        <a
+          href="https://example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+
+          <div class="link-left">
+
+            <div class="icon">⬇️</div>
+
+            <div>
+              <div class="link-name">
+                Download
+              </div>
+
+              <div class="link-desc">
+                Tải xuống
+              </div>
+            </div>
+
+          </div>
+
+          <div class="arrow">›</div>
+
+        </a>
+
+
+        <!-- LINK 4 -->
+
+        <a
+          href="https://example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+
+          <div class="link-left">
+
+            <div class="icon">💬</div>
+
+            <div>
+              <div class="link-name">
+                Hỗ trợ
+              </div>
+
+              <div class="link-desc">
+                Liên hệ hỗ trợ
+              </div>
+            </div>
+
+          </div>
+
+          <div class="arrow">›</div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <h2 class="title">
+        Về ModGameios
+      </h2>
+
+      <p class="description">
+        Thông tin
+      </p>
+
+      <div class="about-box">
+
+        <p>
+          Chào mừng bạn đến với ModGameios.
+          Đây là trang tổng hợp các liên kết chính,
+          thông tin và tài nguyên được cung cấp bởi ModGameios.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GUIDE -->
+
+  <section id="guide">
+
+    <div class="container">
+
+      <h2 class="title">
+        Hướng dẫn
+      </h2>
+
+      <p class="description">
+        Cách sử dụng trang
+      </p>
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="number">1</div>
+
+          <h3>
+            Chọn liên kết
+          </h3>
+
+          <p>
+            Chọn một trong các liên kết bên trên.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="number">2</div>
+
+          <h3>
+            Truy cập
+          </h3>
+
+          <p>
+            Bạn sẽ được chuyển đến trang tương ứng.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="number">3</div>
+
+          <h3>
+            Hoàn tất
+          </h3>
+
+          <p>
+            Làm theo hướng dẫn trên trang được chuyển đến.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section id="faq">
+
+    <div class="container">
+
+      <h2 class="title">
+        FAQ
+      </h2>
+
+      <p class="description">
+        Một số câu hỏi thường gặp
+      </p>
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            ModGameios là gì?
+          </summary>
+
+          <p>
+            Đây là trang tổng hợp các liên kết và thông tin
+            liên quan đến ModGameios.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Làm sao để truy cập liên kết?
+          </summary>
+
+          <p>
+            Chọn nút liên kết bạn muốn sử dụng ở phần
+            “Liên kết”.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Có thể dùng trên điện thoại không?
+          </summary>
+
+          <p>
+            Có. Trang được thiết kế để hoạt động trên
+            điện thoại, máy tính bảng và PC.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 ModGameios. All rights reserved.
+
+  </footer>
+
 </body>
 </html>
