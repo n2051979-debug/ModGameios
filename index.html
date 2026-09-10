@@ -404,36 +404,36 @@ a{
     transform:scale(.985);
 }
 
-/* ICON */
+/* IMAGE */
 
-.icon{
+.item-image{
     width:50px;
     height:50px;
     flex:0 0 50px;
     margin-right:12px;
-    display:grid;
-    place-items:center;
+    display:block;
     border-radius:14px;
+    object-fit:cover;
     background:linear-gradient(
         145deg,
         #302a3b,
         #201d27
     );
-    border:1px solid rgba(255,255,255,.05);
-    color:#b99aff;
-    box-shadow:inset 0 0 18px rgba(255,255,255,.025);
-    font-size:24px;
+    border:1px solid rgba(255,255,255,.07);
+    box-shadow:
+        0 0 15px rgba(120,60,255,.12),
+        inset 0 0 18px rgba(255,255,255,.025);
 }
 
-.icon svg{
-    width:25px;
-    height:25px;
-    fill:none;
-    stroke:currentColor;
-    stroke-width:1.8;
-    stroke-linecap:round;
-    stroke-linejoin:round;
+/* fallback nếu ảnh lỗi */
+
+.item-image[src=""],
+.item-image.image-error{
+    object-fit:contain;
+    padding:10px;
 }
+
+/* INFO */
 
 .info{
     min-width:0;
@@ -549,7 +549,7 @@ footer{
     font-weight:600;
 }
 
-/* MUSIC BUTTON */
+/* MUSIC */
 
 .music-btn{
     position:fixed;
@@ -578,18 +578,6 @@ footer{
 .music-btn.on{
     border-color:#7d4dff;
     box-shadow:0 0 20px rgba(115,58,255,.3);
-}
-
-/* YOUTUBE PLAYER ẨN */
-
-#youtubePlayer{
-    position:fixed;
-    width:1px;
-    height:1px;
-    left:-10px;
-    bottom:-10px;
-    opacity:.001;
-    pointer-events:none;
 }
 
 /* POPUP */
@@ -871,7 +859,6 @@ footer{
 /* RESPONSIVE */
 
 @media(max-width:380px){
-
     .page{
         padding-left:12px;
         padding-right:12px;
@@ -892,10 +879,16 @@ footer{
     .notice-title{
         font-size:21px;
     }
+
+    .item-image{
+        width:47px;
+        height:47px;
+        flex-basis:47px;
+        margin-right:10px;
+    }
 }
 
 @media(min-width:700px){
-
     body{
         padding-top:10px;
     }
@@ -944,11 +937,16 @@ footer{
 
 </div>
 
-<!-- ================= YOUTUBE PLAYER ================= -->
+<!-- ================= MUSIC ================= -->
 
-<div id="youtubePlayer"></div>
-
-<!-- ================= MUSIC BUTTON ================= -->
+<audio
+    id="backgroundMusic"
+    preload="auto"
+    loop
+    playsinline
+>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <button
     class="music-btn"
@@ -958,8 +956,6 @@ footer{
 >
     🔇
 </button>
-
-<!-- TOAST -->
 
 <div class="toast" id="toast"></div>
 
@@ -1091,13 +1087,16 @@ footer{
 
     <div class="cards">
 
-        <a class="card" href="YOUR_NEXTDNS_LINK" data-search="ipa next dns antiban">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4z"/>
-                    <path d="M9 12l2 2 4-4"/>
-                </svg>
-            </div>
+        <!-- NEXT DNS -->
+
+        <a class="card"
+           href="YOUR_NEXTDNS_LINK"
+           data-search="ipa next dns antiban">
+
+            <img class="item-image"
+                 src="images/nextdns.jpg"
+                 alt="IPA NEXT DNS"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">IPA NEXT DNS</div>
@@ -1117,15 +1116,16 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_APP3105_V3_LINK" data-search="app 3105 v3 update new">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <rect x="4" y="3" width="16" height="18" rx="3"/>
-                    <path d="M8 7h8"/>
-                    <path d="M8 11h8"/>
-                    <circle cx="12" cy="17" r="1"/>
-                </svg>
-            </div>
+        <!-- APP 3105 V3 -->
+
+        <a class="card"
+           href="YOUR_APP3105_V3_LINK"
+           data-search="app 3105 v3 update new">
+
+            <img class="item-image"
+                 src="images/app3105.jpg"
+                 alt="APP 3105 V3"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">APP 3105</div>
@@ -1141,15 +1141,16 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_APP3105_V111_LINK" data-search="app 3105 v1.1.1">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <rect x="4" y="3" width="16" height="18" rx="3"/>
-                    <path d="M8 7h8"/>
-                    <path d="M8 11h8"/>
-                    <circle cx="12" cy="17" r="1"/>
-                </svg>
-            </div>
+        <!-- APP 3105 V1.1.1 -->
+
+        <a class="card"
+           href="YOUR_APP3105_V111_LINK"
+           data-search="app 3105 v1.1.1">
+
+            <img class="item-image"
+                 src="images/app3105.jpg"
+                 alt="APP 3105 V1.1.1"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">APP 3105</div>
@@ -1165,13 +1166,16 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_8BP_LINK" data-search="ipa menu no key 8bp ios antiban">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="8"/>
-                    <circle cx="12" cy="12" r="3"/>
-                </svg>
-            </div>
+        <!-- 8BP -->
+
+        <a class="card"
+           href="YOUR_8BP_LINK"
+           data-search="ipa menu no key 8bp ios antiban">
+
+            <img class="item-image"
+                 src="images/8bp.jpg"
+                 alt="IPA MENU NO KEY 8BP"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">IPA MENU NO KEY 8BP</div>
@@ -1192,14 +1196,16 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_120HZ_LINK" data-search="unlock 120hz ios">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M4 12a8 8 0 1 0 3-6"/>
-                    <path d="M4 5v5h5"/>
-                    <path d="M12 8v4l3 2"/>
-                </svg>
-            </div>
+        <!-- 120HZ -->
+
+        <a class="card"
+           href="YOUR_120HZ_LINK"
+           data-search="unlock 120hz ios">
+
+            <img class="item-image"
+                 src="images/120hz.jpg"
+                 alt="UNLOCK 120HZ IOS"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">UNLOCK 120HZ IOS</div>
@@ -1215,8 +1221,16 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_DUOLINGO_LINK" data-search="unlock duolingo max">
-            <div class="icon">🦉</div>
+        <!-- DUOLINGO -->
+
+        <a class="card"
+           href="YOUR_DUOLINGO_LINK"
+           data-search="unlock duolingo max">
+
+            <img class="item-image"
+                 src="images/duolingo.jpg"
+                 alt="UNLOCK DUOLINGO MAX"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">UNLOCK DUOLINGO MAX</div>
@@ -1232,13 +1246,16 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_MESSENGER_LINK" data-search="messenger vipp tin nhan thu hoi">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M4 11.5a8 7 0 1 1 15 4.2L20 20l-4-2a9 9 0 0 1-4 1"/>
-                    <path d="M8 13l3-3 2 2 3-3"/>
-                </svg>
-            </div>
+        <!-- MESSENGER -->
+
+        <a class="card"
+           href="YOUR_MESSENGER_LINK"
+           data-search="messenger vipp tin nhan thu hoi">
+
+            <img class="item-image"
+                 src="images/messenger.jpg"
+                 alt="MESSENGER VIPP"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">MESSENGER VIPP</div>
@@ -1254,13 +1271,16 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_YOUTUBE_PREMIUM_LINK" data-search="youtube premium cap nhat">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <rect x="3" y="6" width="18" height="12" rx="4"/>
-                    <path d="M10 9l5 3-5 3z"/>
-                </svg>
-            </div>
+        <!-- YOUTUBE -->
+
+        <a class="card"
+           href="YOUR_YOUTUBE_PREMIUM_LINK"
+           data-search="youtube premium cap nhat">
+
+            <img class="item-image"
+                 src="images/youtube.jpg"
+                 alt="YOUTUBE PREMIUM"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">YOUTUBE PREMIUM</div>
@@ -1276,12 +1296,16 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_FILZA_LINK" data-search="filza mod app 3105">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                </svg>
-            </div>
+        <!-- FILZA -->
+
+        <a class="card"
+           href="YOUR_FILZA_LINK"
+           data-search="filza mod app 3105">
+
+            <img class="item-image"
+                 src="images/filza.jpg"
+                 alt="FILZA MOD"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">FILZA MOD</div>
@@ -1310,8 +1334,14 @@ footer{
 
     <div class="cards">
 
-        <a class="card" href="YOUR_CHATGPT_BYPASS_LINK" data-search="file bypass chatgpt ios antiban">
-            <div class="icon">🤖</div>
+        <a class="card"
+           href="YOUR_CHATGPT_BYPASS_LINK"
+           data-search="file bypass chatgpt ios antiban">
+
+            <img class="item-image"
+                 src="images/chatgpt.jpg"
+                 alt="FILE BYPASS CHATGPT"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">FILE BYPASS CHATGPT</div>
@@ -1332,8 +1362,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_CLAUDE_BYPASS_LINK" data-search="file bypass ai claude claude ios antiban">
-            <div class="icon">🧠</div>
+        <a class="card"
+           href="YOUR_CLAUDE_BYPASS_LINK"
+           data-search="file bypass ai claude claude ios antiban">
+
+            <img class="item-image"
+                 src="images/claude.jpg"
+                 alt="FILE BYPASS AI CLAUDE"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">FILE BYPASS AI CLAUDE</div>
@@ -1354,14 +1390,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_DNS_ANTIBAN_LINK" data-search="dns antiban ff ffm nextdns">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4z"/>
-                    <path d="M12 8v5"/>
-                    <circle cx="12" cy="16" r=".8"/>
-                </svg>
-            </div>
+        <a class="card"
+           href="YOUR_DNS_ANTIBAN_LINK"
+           data-search="dns antiban ff ffm nextdns">
+
+            <img class="item-image"
+                 src="images/dns.jpg"
+                 alt="DNS ANTIBAN FF + FFM"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">DNS ANTIBAN FF + FFM</div>
@@ -1396,8 +1432,14 @@ footer{
 
     <div class="cards">
 
-        <a class="card" href="YOUR_PVZ2_LINK" data-search="patch hack pvz2 app 3105">
-            <div class="icon">🌱</div>
+        <a class="card"
+           href="YOUR_PVZ2_LINK"
+           data-search="patch hack pvz2 app 3105">
+
+            <img class="item-image"
+                 src="images/pvz2.jpg"
+                 alt="PATCH HACK PVZ2"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH HACK PVZ2</div>
@@ -1418,8 +1460,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_CANDY_CRUSH_LINK" data-search="patch candy crush app 3105">
-            <div class="icon">🍬</div>
+        <a class="card"
+           href="YOUR_CANDY_CRUSH_LINK"
+           data-search="patch candy crush app 3105">
+
+            <img class="item-image"
+                 src="images/candycrush.jpg"
+                 alt="PATCH CANDY CRUSH"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH CANDY CRUSH</div>
@@ -1440,8 +1488,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_SUBWAY_LINK" data-search="patch subway surfers app 3105">
-            <div class="icon">🏃</div>
+        <a class="card"
+           href="YOUR_SUBWAY_LINK"
+           data-search="patch subway surfers app 3105">
+
+            <img class="item-image"
+                 src="images/subway.jpg"
+                 alt="PATCH SUBWAY SURFERS"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH SUBWAY SURFERS</div>
@@ -1462,8 +1516,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_MOD_PUBG_LINK" data-search="mod pubg pubg mobile patch hack ios">
-            <div class="icon">🎯</div>
+        <a class="card"
+           href="YOUR_MOD_PUBG_LINK"
+           data-search="mod pubg pubg mobile patch hack ios">
+
+            <img class="item-image"
+                 src="images/pubg.jpg"
+                 alt="MOD PUBG"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">MOD PUBG</div>
@@ -1484,8 +1544,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_PATCH_HACK_MAP_LINK" data-search="patch hack map">
-            <div class="icon">🗺️</div>
+        <a class="card"
+           href="YOUR_PATCH_HACK_MAP_LINK"
+           data-search="patch hack map">
+
+            <img class="item-image"
+                 src="images/map.jpg"
+                 alt="PATCH HACK MAP"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH HACK MAP</div>
@@ -1505,8 +1571,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_PATCH_UNLOCKSKIN_LINK" data-search="patch unlockskin unlock skin">
-            <div class="icon">👕</div>
+        <a class="card"
+           href="YOUR_PATCH_UNLOCKSKIN_LINK"
+           data-search="patch unlockskin unlock skin">
+
+            <img class="item-image"
+                 src="images/unlockskin.jpg"
+                 alt="PATCH UNLOCKSKIN"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH UNLOCKSKIN</div>
@@ -1526,8 +1598,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_PATCH_UNLOCKSKIN_CAMXA_NOMAP_LINK" data-search="patch unlockskin cam xa no map">
-            <div class="icon">🎥</div>
+        <a class="card"
+           href="YOUR_PATCH_UNLOCKSKIN_CAMXA_NOMAP_LINK"
+           data-search="patch unlockskin cam xa no map">
+
+            <img class="item-image"
+                 src="images/camxa.jpg"
+                 alt="PATCH UNLOCKSKIN CAM XA NO MAP"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH UNLOCKSKIN CAM XA NO MAP</div>
@@ -1547,8 +1625,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_PATCH_LQ_UNLOCKSKIN_LINK" data-search="patch lq unlock skin lien quan">
-            <div class="icon">⚔️</div>
+        <a class="card"
+           href="YOUR_PATCH_LQ_UNLOCKSKIN_LINK"
+           data-search="patch lq unlock skin lien quan">
+
+            <img class="item-image"
+                 src="images/lq.jpg"
+                 alt="PATCH LQ UNLOCK SKIN"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH LQ UNLOCK SKIN</div>
@@ -1568,8 +1652,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_PATCH_AIM_FFM_LINK" data-search="patch aim ffm">
-            <div class="icon">🎯</div>
+        <a class="card"
+           href="YOUR_PATCH_AIM_FFM_LINK"
+           data-search="patch aim ffm">
+
+            <img class="item-image"
+                 src="images/aimffm.jpg"
+                 alt="PATCH AIM FFM"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH AIM FFM</div>
@@ -1589,8 +1679,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_PATCH_DINHVI_AIMBODY_FFM_LINK" data-search="patch dinh vi aimbody ffm">
-            <div class="icon">📍</div>
+        <a class="card"
+           href="YOUR_PATCH_DINHVI_AIMBODY_FFM_LINK"
+           data-search="patch dinh vi aimbody ffm">
+
+            <img class="item-image"
+                 src="images/dinhvi.jpg"
+                 alt="PATCH ĐỊNH VỊ + AIMBODY FFM"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH ĐỊNH VỊ + AIMBODY FFM</div>
@@ -1611,8 +1707,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_PATCH_AIM_FFTH_LINK" data-search="patch aim ffth free fire th">
-            <div class="icon">🎯</div>
+        <a class="card"
+           href="YOUR_PATCH_AIM_FFTH_LINK"
+           data-search="patch aim ffth free fire th">
+
+            <img class="item-image"
+                 src="images/aimffth.jpg"
+                 alt="PATCH AIM FFTH"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">PATCH AIM FFTH</div>
@@ -1633,8 +1735,14 @@ footer{
             </span>
         </a>
 
-        <a class="card" href="YOUR_CAPCUT_PRO_PATCH_LINK" data-search="capcut pro patch mod">
-            <div class="icon">✂️</div>
+        <a class="card"
+           href="YOUR_CAPCUT_PRO_PATCH_LINK"
+           data-search="capcut pro patch mod">
+
+            <img class="item-image"
+                 src="images/capcut.jpg"
+                 alt="CAPCUT PRO"
+                 loading="lazy">
 
             <div class="info">
                 <div class="title">CAPCUT PRO</div>
@@ -1678,34 +1786,15 @@ footer{
 
 </main>
 
-<!-- ================= YOUTUBE API ================= -->
-
-<script src="https://www.youtube.com/iframe_api"></script>
-
 <script>
-/* =========================================================
-   CONFIG
-========================================================= */
+/* ================= CONFIG ================= */
 
 const CONFIG = {
     popupAlwaysShow: true,
-    viewsStorageKey: "modgameios_views",
-
-    /*
-     * VIDEO YOUTUBE BẠN ĐÃ GỬI
-     */
-    youtubeVideoId: "BUORWKzSl_o",
-
-    /*
-     * ÂM LƯỢNG
-     */
-    musicVolume: 65
+    viewsStorageKey: "modgameios_views"
 };
 
-
-/* =========================================================
-   ELEMENTS
-========================================================= */
+/* ================= ELEMENTS ================= */
 
 const searchInput =
     document.getElementById("search");
@@ -1722,6 +1811,9 @@ const enterButton =
 const musicButton =
     document.getElementById("musicButton");
 
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
 const empty =
     document.getElementById("empty");
 
@@ -1731,19 +1823,13 @@ const toast =
 const viewsElement =
     document.getElementById("views");
 
-
-/* =========================================================
-   POPUP
-========================================================= */
+/* ================= POPUP ================= */
 
 if(CONFIG.popupAlwaysShow){
     popup.style.display = "flex";
 }
 
-
-/* =========================================================
-   TOAST
-========================================================= */
+/* ================= TOAST ================= */
 
 let toastTimer = null;
 
@@ -1757,276 +1843,59 @@ function showToast(message){
 
     toastTimer = setTimeout(
         function(){
-
             toast.classList.remove("show");
-
         },
         2200
     );
 }
 
+/* ================= MUSIC ================= */
 
-/* =========================================================
-   YOUTUBE PLAYER
-========================================================= */
+async function startMusic(){
 
-let youtubePlayer = null;
+    try{
 
-let youtubeReady = false;
+        backgroundMusic.volume = 0.65;
 
-let musicPlaying = false;
-
-
-/*
- * Hàm này được YouTube gọi tự động
- * sau khi API tải xong.
- */
-
-function onYouTubeIframeAPIReady(){
-
-    youtubePlayer =
-        new YT.Player(
-            "youtubePlayer",
-            {
-                width:"1",
-                height:"1",
-
-                videoId:
-                    CONFIG.youtubeVideoId,
-
-                playerVars:{
-                    autoplay:0,
-                    controls:0,
-                    disablekb:1,
-                    fs:0,
-                    iv_load_policy:3,
-                    modestbranding:1,
-                    playsinline:1,
-                    rel:0
-                },
-
-                events:{
-                    onReady:onYouTubeReady,
-                    onStateChange:onYouTubeStateChange,
-                    onError:onYouTubeError
-                }
-            }
-        );
-}
-
-
-/*
- * Player đã sẵn sàng
- */
-
-function onYouTubeReady(){
-
-    youtubeReady = true;
-
-    youtubePlayer.setVolume(
-        CONFIG.musicVolume
-    );
-}
-
-
-/*
- * Trạng thái nhạc
- */
-
-function onYouTubeStateChange(event){
-
-    if(
-        event.data ===
-        YT.PlayerState.PLAYING
-    ){
-
-        musicPlaying = true;
+        await backgroundMusic.play();
 
         musicButton.textContent = "🔊";
-
         musicButton.classList.add("on");
-    }
 
-    else if(
-        event.data ===
-        YT.PlayerState.PAUSED ||
-        event.data ===
-        YT.PlayerState.ENDED
-    ){
+        return true;
 
-        musicPlaying = false;
+    }catch(error){
 
         musicButton.textContent = "🔇";
-
         musicButton.classList.remove("on");
+
+        return false;
     }
 }
-
 
 /*
- * Lỗi YouTube
- */
-
-function onYouTubeError(){
-
-    musicPlaying = false;
-
-    musicButton.textContent = "🔇";
-
-    musicButton.classList.remove("on");
-
-    showToast(
-        "YouTube không cho phát bài nhạc này."
-    );
-}
-
-
-/* =========================================================
-   START MUSIC
-========================================================= */
-
-function startMusic(){
-
-    return new Promise(
-        function(resolve){
-
-            /*
-             * Nếu API chưa load xong
-             */
-            if(!youtubeReady || !youtubePlayer){
-
-                showToast(
-                    "Đang tải trình phát nhạc..."
-                );
-
-                /*
-                 * Thử lại một chút sau
-                 */
-                setTimeout(
-                    function(){
-
-                        if(
-                            youtubeReady &&
-                            youtubePlayer
-                        ){
-
-                            try{
-
-                                youtubePlayer.setVolume(
-                                    CONFIG.musicVolume
-                                );
-
-                                youtubePlayer.playVideo();
-
-                                resolve(true);
-
-                            }catch(error){
-
-                                resolve(false);
-                            }
-
-                        }else{
-
-                            resolve(false);
-                        }
-
-                    },
-                    1000
-                );
-
-                return;
-            }
-
-
-            try{
-
-                youtubePlayer.setVolume(
-                    CONFIG.musicVolume
-                );
-
-                youtubePlayer.playVideo();
-
-                resolve(true);
-
-            }catch(error){
-
-                console.error(error);
-
-                resolve(false);
-            }
-
-        }
-    );
-}
-
-
-/* =========================================================
-   STOP MUSIC
-========================================================= */
-
-function stopMusic(){
-
-    if(
-        youtubeReady &&
-        youtubePlayer
-    ){
-
-        try{
-
-            youtubePlayer.pauseVideo();
-
-        }catch(error){
-
-            console.error(error);
-
-        }
-
-    }
-
-    musicPlaying = false;
-
-    musicButton.textContent = "🔇";
-
-    musicButton.classList.remove("on");
-}
-
-
-/* =========================================================
-   POPUP BUTTON
-========================================================= */
+    Trên điện thoại, trình duyệt thường chặn
+    autoplay. Vì vậy nhạc được bắt đầu sau khi
+    người dùng bấm nút "ĐÃ HIỂU, VÀO WEB".
+*/
 
 enterButton.addEventListener(
     "click",
     async function(){
 
-        /*
-         * Đóng popup
-         */
         popup.style.display = "none";
 
-
-        /*
-         * Bắt đầu nhạc ngay trong
-         * thao tác click của người dùng.
-         */
         const started =
             await startMusic();
-
 
         if(!started){
 
             showToast(
-                "Không thể phát nhạc YouTube"
+                "Không phát được music.mp3"
             );
         }
-
     }
 );
-
-
-/* =========================================================
-   ESC
-========================================================= */
 
 document.addEventListener(
     "keydown",
@@ -2037,58 +1906,11 @@ document.addEventListener(
             popup.style.display = "none";
 
             await startMusic();
-
         }
-
     }
 );
 
-
-/* =========================================================
-   MUSIC BUTTON
-========================================================= */
-
-musicButton.addEventListener(
-    "click",
-    async function(){
-
-        if(!youtubeReady){
-
-            showToast(
-                "Đang tải nhạc..."
-            );
-
-            return;
-        }
-
-
-        if(musicPlaying){
-
-            stopMusic();
-
-        }else{
-
-            const started =
-                await startMusic();
-
-
-            if(!started){
-
-                showToast(
-                    "Không thể phát nhạc YouTube"
-                );
-
-            }
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
+/* ================= SEARCH ================= */
 
 function normalizeText(text){
 
@@ -2099,7 +1921,6 @@ function normalizeText(text){
         .replace(/đ/g,"d");
 }
 
-
 function searchCards(){
 
     const value =
@@ -2107,84 +1928,61 @@ function searchCards(){
             searchInput.value.trim()
         );
 
-
     clearButton.classList.toggle(
         "show",
         !!value
     );
 
-
     let visible = 0;
-
 
     document
         .querySelectorAll(".section")
-        .forEach(
-            function(section){
+        .forEach(function(section){
 
-                let sectionVisible = 0;
+            let sectionVisible = 0;
 
+            section
+                .querySelectorAll(".card")
+                .forEach(function(card){
 
-                section
-                    .querySelectorAll(".card")
-                    .forEach(
-                        function(card){
+                    const searchText =
+                        normalizeText(
+                            (
+                                card.dataset.search ||
+                                ""
+                            )
+                            + " "
+                            + card.innerText
+                        );
 
-                            const searchText =
-                                normalizeText(
-                                    (
-                                        card.dataset.search ||
-                                        ""
-                                    )
-                                    + " "
-                                    + card.innerText
-                                );
+                    const matched =
+                        !value ||
+                        searchText.includes(value);
 
+                    card.style.display =
+                        matched ? "flex" : "none";
 
-                            const matched =
-                                !value ||
-                                searchText.includes(value);
+                    if(matched){
 
+                        visible++;
+                        sectionVisible++;
+                    }
+                });
 
-                            card.style.display =
-                                matched
-                                    ? "flex"
-                                    : "none";
-
-
-                            if(matched){
-
-                                visible++;
-
-                                sectionVisible++;
-
-                            }
-
-                        }
-                    );
-
-
-                section.style.display =
-                    sectionVisible
-                        ? "block"
-                        : "none";
-
-            }
-        );
-
+            section.style.display =
+                sectionVisible
+                    ? "block"
+                    : "none";
+        });
 
     empty.style.display =
-        visible
-            ? "none"
-            : "block";
+        visible ? "none" : "block";
 }
-
 
 searchInput.addEventListener(
     "input",
     searchCards
 );
-
 
 clearButton.addEventListener(
     "click",
@@ -2195,52 +1993,38 @@ clearButton.addEventListener(
         searchCards();
 
         searchInput.focus();
-
     }
 );
 
-
-/* =========================================================
-   PLACEHOLDER LINK
-========================================================= */
+/* ================= PLACEHOLDER LINKS ================= */
 
 document
     .querySelectorAll(".card")
-    .forEach(
-        function(card){
+    .forEach(function(card){
 
-            card.addEventListener(
-                "click",
-                function(event){
+        card.addEventListener(
+            "click",
+            function(event){
 
-                    const href =
-                        card.getAttribute("href") ||
-                        "";
+                const href =
+                    card.getAttribute("href") || "";
 
+                if(
+                    !href ||
+                    href.startsWith("YOUR_")
+                ){
 
-                    if(
-                        !href ||
-                        href.startsWith("YOUR_")
-                    ){
+                    event.preventDefault();
 
-                        event.preventDefault();
-
-                        showToast(
-                            "Bạn chưa gắn link cho mục này"
-                        );
-
-                    }
-
+                    showToast(
+                        "Bạn chưa gắn link cho mục này"
+                    );
                 }
-            );
+            }
+        );
+    });
 
-        }
-    );
-
-
-/* =========================================================
-   VIEWS
-========================================================= */
+/* ================= VIEWS ================= */
 
 let views =
     Number(
@@ -2249,39 +2033,116 @@ let views =
         ) || "0"
     );
 
-
 views++;
-
 
 localStorage.setItem(
     CONFIG.viewsStorageKey,
     String(views)
 );
 
-
 viewsElement.textContent =
     views.toLocaleString("vi-VN");
 
+/* ================= MUSIC BUTTON ================= */
 
-/* =========================================================
-   TOUCH
-========================================================= */
+musicButton.addEventListener(
+    "click",
+    async function(){
+
+        if(backgroundMusic.paused){
+
+            const started =
+                await startMusic();
+
+            if(!started){
+
+                showToast(
+                    "Hãy đặt file music.mp3 cùng thư mục với HTML"
+                );
+            }
+
+        }else{
+
+            backgroundMusic.pause();
+
+            musicButton.textContent = "🔇";
+
+            musicButton.classList.remove("on");
+        }
+    }
+);
+
+/* ================= MUSIC STATE ================= */
+
+backgroundMusic.addEventListener(
+    "play",
+    function(){
+
+        musicButton.textContent = "🔊";
+
+        musicButton.classList.add("on");
+    }
+);
+
+backgroundMusic.addEventListener(
+    "pause",
+    function(){
+
+        musicButton.textContent = "🔇";
+
+        musicButton.classList.remove("on");
+    }
+);
+
+backgroundMusic.addEventListener(
+    "error",
+    function(){
+
+        showToast(
+            "Không tìm thấy music.mp3"
+        );
+    }
+);
+
+/* ================= IMAGE ERROR ================= */
 
 document
-    .querySelectorAll(".card")
-    .forEach(
-        function(card){
+    .querySelectorAll(".item-image")
+    .forEach(function(image){
 
-            card.addEventListener(
-                "touchstart",
-                function(){},
-                {
-                    passive:true
-                }
-            );
+        image.addEventListener(
+            "error",
+            function(){
 
-        }
-    );
+                this.classList.add("image-error");
+
+                /*
+                    Nếu ảnh không tồn tại,
+                    hiện biểu tượng thay thế.
+                */
+
+                this.src =
+                    "data:image/svg+xml;charset=UTF-8," +
+                    encodeURIComponent(`
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="100"
+                             height="100"
+                             viewBox="0 0 100 100">
+                            <rect width="100"
+                                  height="100"
+                                  rx="20"
+                                  fill="#251d35"/>
+                            <text x="50"
+                                  y="58"
+                                  text-anchor="middle"
+                                  font-size="38"
+                                  fill="#9b6cff">MG</text>
+                        </svg>
+                    `);
+            }
+        );
+    });
+
 </script>
 
 </body>
