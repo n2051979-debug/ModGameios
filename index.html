@@ -404,36 +404,36 @@ a{
     transform:scale(.985);
 }
 
-/* IMAGE */
+/* ICON */
 
-.item-image{
+.icon{
     width:50px;
     height:50px;
     flex:0 0 50px;
     margin-right:12px;
-    display:block;
+    display:grid;
+    place-items:center;
     border-radius:14px;
-    object-fit:cover;
     background:linear-gradient(
         145deg,
         #302a3b,
         #201d27
     );
-    border:1px solid rgba(255,255,255,.07);
-    box-shadow:
-        0 0 15px rgba(120,60,255,.12),
-        inset 0 0 18px rgba(255,255,255,.025);
+    border:1px solid rgba(255,255,255,.05);
+    color:#b99aff;
+    box-shadow:inset 0 0 18px rgba(255,255,255,.025);
+    font-size:24px;
 }
 
-/* fallback nếu ảnh lỗi */
-
-.item-image[src=""],
-.item-image.image-error{
-    object-fit:contain;
-    padding:10px;
+.icon svg{
+    width:25px;
+    height:25px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
-
-/* INFO */
 
 .info{
     min-width:0;
@@ -578,6 +578,18 @@ footer{
 .music-btn.on{
     border-color:#7d4dff;
     box-shadow:0 0 20px rgba(115,58,255,.3);
+}
+
+/* YOUTUBE PLAYER ẨN */
+
+#youtubePlayer{
+    position:fixed;
+    width:1px;
+    height:1px;
+    left:-9999px;
+    top:-9999px;
+    opacity:0;
+    pointer-events:none;
 }
 
 /* POPUP */
@@ -859,6 +871,7 @@ footer{
 /* RESPONSIVE */
 
 @media(max-width:380px){
+
     .page{
         padding-left:12px;
         padding-right:12px;
@@ -879,16 +892,10 @@ footer{
     .notice-title{
         font-size:21px;
     }
-
-    .item-image{
-        width:47px;
-        height:47px;
-        flex-basis:47px;
-        margin-right:10px;
-    }
 }
 
 @media(min-width:700px){
+
     body{
         padding-top:10px;
     }
@@ -937,16 +944,9 @@ footer{
 
 </div>
 
-<!-- ================= MUSIC ================= -->
+<!-- ================= YOUTUBE MUSIC ================= -->
 
-<audio
-    id="backgroundMusic"
-    preload="auto"
-    loop
-    playsinline
->
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+<div id="youtubePlayer"></div>
 
 <button
     class="music-btn"
@@ -956,6 +956,8 @@ footer{
 >
     🔇
 </button>
+
+<!-- TOAST -->
 
 <div class="toast" id="toast"></div>
 
@@ -1087,16 +1089,18 @@ footer{
 
     <div class="cards">
 
-        <!-- NEXT DNS -->
+        <a
+            class="card"
+            href="YOUR_NEXTDNS_LINK"
+            data-search="ipa next dns antiban"
+        >
 
-        <a class="card"
-           href="YOUR_NEXTDNS_LINK"
-           data-search="ipa next dns antiban">
-
-            <img class="item-image"
-                 src="images/nextdns.jpg"
-                 alt="IPA NEXT DNS"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">IPA NEXT DNS</div>
@@ -1114,18 +1118,23 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <!-- APP 3105 V3 -->
+        <a
+            class="card"
+            href="YOUR_APP3105_V3_LINK"
+            data-search="app 3105 v3 update new"
+        >
 
-        <a class="card"
-           href="YOUR_APP3105_V3_LINK"
-           data-search="app 3105 v3 update new">
-
-            <img class="item-image"
-                 src="images/app3105.jpg"
-                 alt="APP 3105 V3"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="4" y="3" width="16" height="18" rx="3"/>
+                    <path d="M8 7h8"/>
+                    <path d="M8 11h8"/>
+                    <circle cx="12" cy="17" r="1"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">APP 3105</div>
@@ -1139,18 +1148,23 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <!-- APP 3105 V1.1.1 -->
+        <a
+            class="card"
+            href="YOUR_APP3105_V111_LINK"
+            data-search="app 3105 v1.1.1"
+        >
 
-        <a class="card"
-           href="YOUR_APP3105_V111_LINK"
-           data-search="app 3105 v1.1.1">
-
-            <img class="item-image"
-                 src="images/app3105.jpg"
-                 alt="APP 3105 V1.1.1"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="4" y="3" width="16" height="18" rx="3"/>
+                    <path d="M8 7h8"/>
+                    <path d="M8 11h8"/>
+                    <circle cx="12" cy="17" r="1"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">APP 3105</div>
@@ -1164,18 +1178,21 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <!-- 8BP -->
+        <a
+            class="card"
+            href="YOUR_8BP_LINK"
+            data-search="ipa menu no key 8bp ios antiban"
+        >
 
-        <a class="card"
-           href="YOUR_8BP_LINK"
-           data-search="ipa menu no key 8bp ios antiban">
-
-            <img class="item-image"
-                 src="images/8bp.jpg"
-                 alt="IPA MENU NO KEY 8BP"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">IPA MENU NO KEY 8BP</div>
@@ -1194,18 +1211,22 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <!-- 120HZ -->
+        <a
+            class="card"
+            href="YOUR_120HZ_LINK"
+            data-search="unlock 120hz ios"
+        >
 
-        <a class="card"
-           href="YOUR_120HZ_LINK"
-           data-search="unlock 120hz ios">
-
-            <img class="item-image"
-                 src="images/120hz.jpg"
-                 alt="UNLOCK 120HZ IOS"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 12a8 8 0 1 0 3-6"/>
+                    <path d="M4 5v5h5"/>
+                    <path d="M12 8v4l3 2"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">UNLOCK 120HZ IOS</div>
@@ -1219,18 +1240,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <!-- DUOLINGO -->
+        <a
+            class="card"
+            href="YOUR_DUOLINGO_LINK"
+            data-search="unlock duolingo max"
+        >
 
-        <a class="card"
-           href="YOUR_DUOLINGO_LINK"
-           data-search="unlock duolingo max">
-
-            <img class="item-image"
-                 src="images/duolingo.jpg"
-                 alt="UNLOCK DUOLINGO MAX"
-                 loading="lazy">
+            <div class="icon">🦉</div>
 
             <div class="info">
                 <div class="title">UNLOCK DUOLINGO MAX</div>
@@ -1244,18 +1263,21 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <!-- MESSENGER -->
+        <a
+            class="card"
+            href="YOUR_MESSENGER_LINK"
+            data-search="messenger vipp tin nhan thu hoi"
+        >
 
-        <a class="card"
-           href="YOUR_MESSENGER_LINK"
-           data-search="messenger vipp tin nhan thu hoi">
-
-            <img class="item-image"
-                 src="images/messenger.jpg"
-                 alt="MESSENGER VIPP"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 11.5a8 7 0 1 1 15 4.2L20 20l-4-2a9 9 0 0 1-4 1"/>
+                    <path d="M8 13l3-3 2 2 3-3"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">MESSENGER VIPP</div>
@@ -1269,18 +1291,21 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <!-- YOUTUBE -->
+        <a
+            class="card"
+            href="YOUR_YOUTUBE_PREMIUM_LINK"
+            data-search="youtube premium cap nhat"
+        >
 
-        <a class="card"
-           href="YOUR_YOUTUBE_PREMIUM_LINK"
-           data-search="youtube premium cap nhat">
-
-            <img class="item-image"
-                 src="images/youtube.jpg"
-                 alt="YOUTUBE PREMIUM"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="6" width="18" height="12" rx="4"/>
+                    <path d="M10 9l5 3-5 3z"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">YOUTUBE PREMIUM</div>
@@ -1294,18 +1319,20 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <!-- FILZA -->
+        <a
+            class="card"
+            href="YOUR_FILZA_LINK"
+            data-search="filza mod app 3105"
+        >
 
-        <a class="card"
-           href="YOUR_FILZA_LINK"
-           data-search="filza mod app 3105">
-
-            <img class="item-image"
-                 src="images/filza.jpg"
-                 alt="FILZA MOD"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">FILZA MOD</div>
@@ -1319,6 +1346,7 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
     </div>
@@ -1334,14 +1362,13 @@ footer{
 
     <div class="cards">
 
-        <a class="card"
-           href="YOUR_CHATGPT_BYPASS_LINK"
-           data-search="file bypass chatgpt ios antiban">
+        <a
+            class="card"
+            href="YOUR_CHATGPT_BYPASS_LINK"
+            data-search="file bypass chatgpt ios antiban"
+        >
 
-            <img class="item-image"
-                 src="images/chatgpt.jpg"
-                 alt="FILE BYPASS CHATGPT"
-                 loading="lazy">
+            <div class="icon">🤖</div>
 
             <div class="info">
                 <div class="title">FILE BYPASS CHATGPT</div>
@@ -1360,16 +1387,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_CLAUDE_BYPASS_LINK"
-           data-search="file bypass ai claude claude ios antiban">
+        <a
+            class="card"
+            href="YOUR_CLAUDE_BYPASS_LINK"
+            data-search="file bypass ai claude claude ios antiban"
+        >
 
-            <img class="item-image"
-                 src="images/claude.jpg"
-                 alt="FILE BYPASS AI CLAUDE"
-                 loading="lazy">
+            <div class="icon">🧠</div>
 
             <div class="info">
                 <div class="title">FILE BYPASS AI CLAUDE</div>
@@ -1388,16 +1415,22 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_DNS_ANTIBAN_LINK"
-           data-search="dns antiban ff ffm nextdns">
+        <a
+            class="card"
+            href="YOUR_DNS_ANTIBAN_LINK"
+            data-search="dns antiban ff ffm nextdns"
+        >
 
-            <img class="item-image"
-                 src="images/dns.jpg"
-                 alt="DNS ANTIBAN FF + FFM"
-                 loading="lazy">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4z"/>
+                    <path d="M12 8v5"/>
+                    <circle cx="12" cy="16" r=".8"/>
+                </svg>
+            </div>
 
             <div class="info">
                 <div class="title">DNS ANTIBAN FF + FFM</div>
@@ -1417,6 +1450,7 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
     </div>
@@ -1432,14 +1466,13 @@ footer{
 
     <div class="cards">
 
-        <a class="card"
-           href="YOUR_PVZ2_LINK"
-           data-search="patch hack pvz2 app 3105">
+        <a
+            class="card"
+            href="YOUR_PVZ2_LINK"
+            data-search="patch hack pvz2 app 3105"
+        >
 
-            <img class="item-image"
-                 src="images/pvz2.jpg"
-                 alt="PATCH HACK PVZ2"
-                 loading="lazy">
+            <div class="icon">🌱</div>
 
             <div class="info">
                 <div class="title">PATCH HACK PVZ2</div>
@@ -1458,16 +1491,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_CANDY_CRUSH_LINK"
-           data-search="patch candy crush app 3105">
+        <a
+            class="card"
+            href="YOUR_CANDY_CRUSH_LINK"
+            data-search="patch candy crush app 3105"
+        >
 
-            <img class="item-image"
-                 src="images/candycrush.jpg"
-                 alt="PATCH CANDY CRUSH"
-                 loading="lazy">
+            <div class="icon">🍬</div>
 
             <div class="info">
                 <div class="title">PATCH CANDY CRUSH</div>
@@ -1486,16 +1519,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_SUBWAY_LINK"
-           data-search="patch subway surfers app 3105">
+        <a
+            class="card"
+            href="YOUR_SUBWAY_LINK"
+            data-search="patch subway surfers app 3105"
+        >
 
-            <img class="item-image"
-                 src="images/subway.jpg"
-                 alt="PATCH SUBWAY SURFERS"
-                 loading="lazy">
+            <div class="icon">🏃</div>
 
             <div class="info">
                 <div class="title">PATCH SUBWAY SURFERS</div>
@@ -1514,16 +1547,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_MOD_PUBG_LINK"
-           data-search="mod pubg pubg mobile patch hack ios">
+        <a
+            class="card"
+            href="YOUR_MOD_PUBG_LINK"
+            data-search="mod pubg pubg mobile patch hack ios"
+        >
 
-            <img class="item-image"
-                 src="images/pubg.jpg"
-                 alt="MOD PUBG"
-                 loading="lazy">
+            <div class="icon">🎯</div>
 
             <div class="info">
                 <div class="title">MOD PUBG</div>
@@ -1542,16 +1575,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_PATCH_HACK_MAP_LINK"
-           data-search="patch hack map">
+        <a
+            class="card"
+            href="YOUR_PATCH_HACK_MAP_LINK"
+            data-search="patch hack map"
+        >
 
-            <img class="item-image"
-                 src="images/map.jpg"
-                 alt="PATCH HACK MAP"
-                 loading="lazy">
+            <div class="icon">🗺️</div>
 
             <div class="info">
                 <div class="title">PATCH HACK MAP</div>
@@ -1569,16 +1602,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_PATCH_UNLOCKSKIN_LINK"
-           data-search="patch unlockskin unlock skin">
+        <a
+            class="card"
+            href="YOUR_PATCH_UNLOCKSKIN_LINK"
+            data-search="patch unlockskin unlock skin"
+        >
 
-            <img class="item-image"
-                 src="images/unlockskin.jpg"
-                 alt="PATCH UNLOCKSKIN"
-                 loading="lazy">
+            <div class="icon">👕</div>
 
             <div class="info">
                 <div class="title">PATCH UNLOCKSKIN</div>
@@ -1596,16 +1629,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_PATCH_UNLOCKSKIN_CAMXA_NOMAP_LINK"
-           data-search="patch unlockskin cam xa no map">
+        <a
+            class="card"
+            href="YOUR_PATCH_UNLOCKSKIN_CAMXA_NOMAP_LINK"
+            data-search="patch unlockskin cam xa no map"
+        >
 
-            <img class="item-image"
-                 src="images/camxa.jpg"
-                 alt="PATCH UNLOCKSKIN CAM XA NO MAP"
-                 loading="lazy">
+            <div class="icon">🎥</div>
 
             <div class="info">
                 <div class="title">PATCH UNLOCKSKIN CAM XA NO MAP</div>
@@ -1623,16 +1656,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_PATCH_LQ_UNLOCKSKIN_LINK"
-           data-search="patch lq unlock skin lien quan">
+        <a
+            class="card"
+            href="YOUR_PATCH_LQ_UNLOCKSKIN_LINK"
+            data-search="patch lq unlock skin lien quan"
+        >
 
-            <img class="item-image"
-                 src="images/lq.jpg"
-                 alt="PATCH LQ UNLOCK SKIN"
-                 loading="lazy">
+            <div class="icon">⚔️</div>
 
             <div class="info">
                 <div class="title">PATCH LQ UNLOCK SKIN</div>
@@ -1650,16 +1683,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_PATCH_AIM_FFM_LINK"
-           data-search="patch aim ffm">
+        <a
+            class="card"
+            href="YOUR_PATCH_AIM_FFM_LINK"
+            data-search="patch aim ffm"
+        >
 
-            <img class="item-image"
-                 src="images/aimffm.jpg"
-                 alt="PATCH AIM FFM"
-                 loading="lazy">
+            <div class="icon">🎯</div>
 
             <div class="info">
                 <div class="title">PATCH AIM FFM</div>
@@ -1677,16 +1710,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_PATCH_DINHVI_AIMBODY_FFM_LINK"
-           data-search="patch dinh vi aimbody ffm">
+        <a
+            class="card"
+            href="YOUR_PATCH_DINHVI_AIMBODY_FFM_LINK"
+            data-search="patch dinh vi aimbody ffm"
+        >
 
-            <img class="item-image"
-                 src="images/dinhvi.jpg"
-                 alt="PATCH ĐỊNH VỊ + AIMBODY FFM"
-                 loading="lazy">
+            <div class="icon">📍</div>
 
             <div class="info">
                 <div class="title">PATCH ĐỊNH VỊ + AIMBODY FFM</div>
@@ -1705,20 +1738,19 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_PATCH_AIM_FFTH_LINK"
-           data-search="patch aim ffth free fire th">
+        <a
+            class="card"
+            href="YOUR_PATCH_AIM_FFTH_LINK"
+            data-search="patch aim ffth free fire th"
+        >
 
-            <img class="item-image"
-                 src="images/aimffth.jpg"
-                 alt="PATCH AIM FFTH"
-                 loading="lazy">
+            <div class="icon">🎯</div>
 
             <div class="info">
                 <div class="title">PATCH AIM FFTH</div>
-
                 <div class="desc">DÀNH CHO FREE FIRE TH</div>
 
                 <div class="tags">
@@ -1733,16 +1765,16 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
-        <a class="card"
-           href="YOUR_CAPCUT_PRO_PATCH_LINK"
-           data-search="capcut pro patch mod">
+        <a
+            class="card"
+            href="YOUR_CAPCUT_PRO_PATCH_LINK"
+            data-search="capcut pro patch mod"
+        >
 
-            <img class="item-image"
-                 src="images/capcut.jpg"
-                 alt="CAPCUT PRO"
-                 loading="lazy">
+            <div class="icon">✂️</div>
 
             <div class="info">
                 <div class="title">CAPCUT PRO</div>
@@ -1761,6 +1793,7 @@ footer{
                     <path d="M5 20h14"/>
                 </svg>
             </span>
+
         </a>
 
     </div>
@@ -1791,7 +1824,8 @@ footer{
 
 const CONFIG = {
     popupAlwaysShow: true,
-    viewsStorageKey: "modgameios_views"
+    viewsStorageKey: "modgameios_views",
+    youtubeVideoId: "BUORWKzSl_o"
 };
 
 /* ================= ELEMENTS ================= */
@@ -1810,9 +1844,6 @@ const enterButton =
 
 const musicButton =
     document.getElementById("musicButton");
-
-const backgroundMusic =
-    document.getElementById("backgroundMusic");
 
 const empty =
     document.getElementById("empty");
@@ -1849,64 +1880,239 @@ function showToast(message){
     );
 }
 
-/* ================= MUSIC ================= */
+/* ================= YOUTUBE MUSIC ================= */
 
-async function startMusic(){
+let youtubePlayer = null;
+let youtubeReady = false;
+let musicPlaying = false;
+
+function loadYouTubeAPI(){
+
+    if(
+        window.YT &&
+        window.YT.Player
+    ){
+        createYouTubePlayer();
+        return;
+    }
+
+    const script =
+        document.createElement("script");
+
+    script.src =
+        "https://www.youtube.com/iframe_api";
+
+    script.async = true;
+
+    document.head.appendChild(script);
+}
+
+window.onYouTubeIframeAPIReady =
+    function(){
+
+        createYouTubePlayer();
+
+    };
+
+function createYouTubePlayer(){
+
+    if(youtubePlayer) return;
+
+    youtubePlayer =
+        new YT.Player(
+            "youtubePlayer",
+            {
+                width:"1",
+                height:"1",
+
+                videoId:
+                    CONFIG.youtubeVideoId,
+
+                playerVars:{
+                    autoplay:0,
+                    controls:0,
+                    loop:1,
+                    playlist:
+                        CONFIG.youtubeVideoId,
+                    playsinline:1,
+                    rel:0,
+                    modestbranding:1
+                },
+
+                events:{
+
+                    onReady:function(){
+
+                        youtubeReady = true;
+
+                    },
+
+                    onStateChange:
+                        function(event){
+
+                            if(
+                                event.data ===
+                                YT.PlayerState.PLAYING
+                            ){
+
+                                musicPlaying = true;
+
+                                musicButton.textContent =
+                                    "🔊";
+
+                                musicButton.classList.add(
+                                    "on"
+                                );
+
+                            }
+
+                            if(
+                                event.data ===
+                                YT.PlayerState.PAUSED ||
+                                event.data ===
+                                YT.PlayerState.ENDED
+                            ){
+
+                                musicPlaying = false;
+
+                                musicButton.textContent =
+                                    "🔇";
+
+                                musicButton.classList.remove(
+                                    "on"
+                                );
+
+                            }
+
+                        },
+
+                    onError:function(){
+
+                        musicPlaying = false;
+
+                        musicButton.textContent =
+                            "🔇";
+
+                        musicButton.classList.remove(
+                            "on"
+                        );
+
+                        showToast(
+                            "Không thể phát video YouTube"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+}
+
+function startMusic(){
+
+    if(
+        !youtubeReady ||
+        !youtubePlayer
+    ){
+
+        showToast(
+            "Đang tải nhạc YouTube..."
+        );
+
+        return;
+
+    }
 
     try{
 
-        backgroundMusic.volume = 0.65;
+        youtubePlayer.playVideo();
 
-        await backgroundMusic.play();
+        musicPlaying = true;
 
-        musicButton.textContent = "🔊";
-        musicButton.classList.add("on");
+        musicButton.textContent =
+            "🔊";
 
-        return true;
+        musicButton.classList.add(
+            "on"
+        );
 
     }catch(error){
 
-        musicButton.textContent = "🔇";
-        musicButton.classList.remove("on");
+        showToast(
+            "Không thể phát nhạc YouTube"
+        );
 
-        return false;
     }
 }
 
-/*
-    Trên điện thoại, trình duyệt thường chặn
-    autoplay. Vì vậy nhạc được bắt đầu sau khi
-    người dùng bấm nút "ĐÃ HIỂU, VÀO WEB".
-*/
+function stopMusic(){
+
+    if(!youtubePlayer) return;
+
+    try{
+
+        youtubePlayer.pauseVideo();
+
+    }catch(error){}
+
+    musicPlaying = false;
+
+    musicButton.textContent =
+        "🔇";
+
+    musicButton.classList.remove(
+        "on"
+    );
+}
+
+/* ================= ENTER BUTTON ================= */
 
 enterButton.addEventListener(
     "click",
-    async function(){
+    function(){
 
         popup.style.display = "none";
 
-        const started =
-            await startMusic();
+        startMusic();
 
-        if(!started){
-
-            showToast(
-                "Không phát được music.mp3"
-            );
-        }
     }
 );
 
+/* ================= ESC ================= */
+
 document.addEventListener(
     "keydown",
-    async function(event){
+    function(event){
 
         if(event.key === "Escape"){
 
-            popup.style.display = "none";
+            popup.style.display =
+                "none";
 
-            await startMusic();
+            startMusic();
+
         }
+
+    }
+);
+
+/* ================= MUSIC BUTTON ================= */
+
+musicButton.addEventListener(
+    "click",
+    function(){
+
+        if(musicPlaying){
+
+            stopMusic();
+
+        }else{
+
+            startMusic();
+
+        }
+
     }
 );
 
@@ -1917,8 +2123,14 @@ function normalizeText(text){
     return text
         .toLowerCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g,"")
-        .replace(/đ/g,"d");
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+        .replace(
+            /đ/g,
+            "d"
+        );
 }
 
 function searchCards(){
@@ -1937,46 +2149,59 @@ function searchCards(){
 
     document
         .querySelectorAll(".section")
-        .forEach(function(section){
+        .forEach(
+            function(section){
 
-            let sectionVisible = 0;
+                let sectionVisible = 0;
 
-            section
-                .querySelectorAll(".card")
-                .forEach(function(card){
+                section
+                    .querySelectorAll(".card")
+                    .forEach(
+                        function(card){
 
-                    const searchText =
-                        normalizeText(
-                            (
-                                card.dataset.search ||
-                                ""
-                            )
-                            + " "
-                            + card.innerText
-                        );
+                            const searchText =
+                                normalizeText(
+                                    (
+                                        card.dataset.search ||
+                                        ""
+                                    )
+                                    + " "
+                                    + card.innerText
+                                );
 
-                    const matched =
-                        !value ||
-                        searchText.includes(value);
+                            const matched =
+                                !value ||
+                                searchText.includes(
+                                    value
+                                );
 
-                    card.style.display =
-                        matched ? "flex" : "none";
+                            card.style.display =
+                                matched
+                                    ? "flex"
+                                    : "none";
 
-                    if(matched){
+                            if(matched){
 
-                        visible++;
-                        sectionVisible++;
-                    }
-                });
+                                visible++;
+                                sectionVisible++;
 
-            section.style.display =
-                sectionVisible
-                    ? "block"
-                    : "none";
-        });
+                            }
+
+                        }
+                    );
+
+                section.style.display =
+                    sectionVisible
+                        ? "block"
+                        : "none";
+
+            }
+        );
 
     empty.style.display =
-        visible ? "none" : "block";
+        visible
+            ? "none"
+            : "block";
 }
 
 searchInput.addEventListener(
@@ -1993,36 +2218,46 @@ clearButton.addEventListener(
         searchCards();
 
         searchInput.focus();
+
     }
 );
 
-/* ================= PLACEHOLDER LINKS ================= */
+/* ================= LINK PLACEHOLDER ================= */
 
 document
     .querySelectorAll(".card")
-    .forEach(function(card){
+    .forEach(
+        function(card){
 
-        card.addEventListener(
-            "click",
-            function(event){
+            card.addEventListener(
+                "click",
+                function(event){
 
-                const href =
-                    card.getAttribute("href") || "";
+                    const href =
+                        card.getAttribute(
+                            "href"
+                        ) || "";
 
-                if(
-                    !href ||
-                    href.startsWith("YOUR_")
-                ){
+                    if(
+                        !href ||
+                        href.startsWith(
+                            "YOUR_"
+                        )
+                    ){
 
-                    event.preventDefault();
+                        event.preventDefault();
 
-                    showToast(
-                        "Bạn chưa gắn link cho mục này"
-                    );
+                        showToast(
+                            "Bạn chưa gắn link cho mục này"
+                        );
+
+                    }
+
                 }
-            }
-        );
-    });
+            );
+
+        }
+    );
 
 /* ================= VIEWS ================= */
 
@@ -2041,108 +2276,31 @@ localStorage.setItem(
 );
 
 viewsElement.textContent =
-    views.toLocaleString("vi-VN");
+    views.toLocaleString(
+        "vi-VN"
+    );
 
-/* ================= MUSIC BUTTON ================= */
-
-musicButton.addEventListener(
-    "click",
-    async function(){
-
-        if(backgroundMusic.paused){
-
-            const started =
-                await startMusic();
-
-            if(!started){
-
-                showToast(
-                    "Hãy đặt file music.mp3 cùng thư mục với HTML"
-                );
-            }
-
-        }else{
-
-            backgroundMusic.pause();
-
-            musicButton.textContent = "🔇";
-
-            musicButton.classList.remove("on");
-        }
-    }
-);
-
-/* ================= MUSIC STATE ================= */
-
-backgroundMusic.addEventListener(
-    "play",
-    function(){
-
-        musicButton.textContent = "🔊";
-
-        musicButton.classList.add("on");
-    }
-);
-
-backgroundMusic.addEventListener(
-    "pause",
-    function(){
-
-        musicButton.textContent = "🔇";
-
-        musicButton.classList.remove("on");
-    }
-);
-
-backgroundMusic.addEventListener(
-    "error",
-    function(){
-
-        showToast(
-            "Không tìm thấy music.mp3"
-        );
-    }
-);
-
-/* ================= IMAGE ERROR ================= */
+/* ================= TOUCH ================= */
 
 document
-    .querySelectorAll(".item-image")
-    .forEach(function(image){
+    .querySelectorAll(".card")
+    .forEach(
+        function(card){
 
-        image.addEventListener(
-            "error",
-            function(){
+            card.addEventListener(
+                "touchstart",
+                function(){},
+                {
+                    passive:true
+                }
+            );
 
-                this.classList.add("image-error");
+        }
+    );
 
-                /*
-                    Nếu ảnh không tồn tại,
-                    hiện biểu tượng thay thế.
-                */
+/* ================= LOAD YOUTUBE ================= */
 
-                this.src =
-                    "data:image/svg+xml;charset=UTF-8," +
-                    encodeURIComponent(`
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             width="100"
-                             height="100"
-                             viewBox="0 0 100 100">
-                            <rect width="100"
-                                  height="100"
-                                  rx="20"
-                                  fill="#251d35"/>
-                            <text x="50"
-                                  y="58"
-                                  text-anchor="middle"
-                                  font-size="38"
-                                  fill="#9b6cff">MG</text>
-                        </svg>
-                    `);
-            }
-        );
-    });
-
+loadYouTubeAPI();
 </script>
 
 </body>
