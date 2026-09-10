@@ -437,8 +437,16 @@ a{
     border-radius:11px;
     background:linear-gradient(145deg,#3d237e,#28194f);
     color:#bc9cff;
-    font-size:22px;
-    font-weight:700;
+}
+
+.download-btn svg{
+    width:19px;
+    height:19px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
 /* MUSIC */
@@ -599,9 +607,7 @@ footer{
 /* ANIMATION */
 
 @keyframes avatarSpin{
-    to{
-        transform:rotate(360deg);
-    }
+    to{transform:rotate(360deg);}
 }
 
 @keyframes avatarPulse{
@@ -609,7 +615,6 @@ footer{
         transform:scale(.96);
         opacity:.35;
     }
-
     50%{
         transform:scale(1.08);
         opacity:1;
@@ -617,13 +622,8 @@ footer{
 }
 
 @keyframes textShine{
-    0%{
-        background-position:200% center;
-    }
-
-    100%{
-        background-position:-200% center;
-    }
+    0%{background-position:200% center;}
+    100%{background-position:-200% center;}
 }
 
 @keyframes popupIn{
@@ -631,7 +631,6 @@ footer{
         opacity:0;
         transform:translateY(24px) scale(.88);
     }
-
     to{
         opacity:1;
         transform:translateY(0) scale(1);
@@ -639,7 +638,6 @@ footer{
 }
 
 @media(max-width:380px){
-
     .page{
         padding-left:12px;
         padding-right:12px;
@@ -724,10 +722,9 @@ footer{
 
         <span class="avatar-fallback">MG</span>
 
-        <!-- AVATAR TỪ GITHUB -->
         <img
             class="avatar"
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg"
+            src="CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg"
             alt="ModGameios"
             onerror="this.style.display='none'"
         >
@@ -767,21 +764,17 @@ footer{
 
 <div class="socials">
 
-    <a
-        class="social tiktok"
-        href="YOUR_TIKTOK_LINK"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
+    <a class="social tiktok"
+       href="YOUR_TIKTOK_LINK"
+       target="_blank"
+       rel="noopener noreferrer">
         ♪ TikTok
     </a>
 
-    <a
-        class="social discord"
-        href="YOUR_DISCORD_LINK"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
+    <a class="social discord"
+       href="YOUR_DISCORD_LINK"
+       target="_blank"
+       rel="noopener noreferrer">
         ● Kênh Discord
     </a>
 
@@ -803,11 +796,7 @@ footer{
             placeholder="Tìm kiếm game, app, file..."
         >
 
-        <button
-            id="clearSearch"
-            class="clear"
-            type="button"
-        >
+        <button id="clearSearch" class="clear" type="button">
             ×
         </button>
 
@@ -817,7 +806,7 @@ footer{
 
 <div id="content">
 
-<!-- ================= TẢI IPA ================= -->
+<!-- TẢI IPA -->
 
 <section class="section">
 
@@ -825,16 +814,9 @@ footer{
 
 <div class="cards">
 
-<a
-    class="card"
-    href="YOUR_NEXTDNS_LINK"
-    data-search="ipa next dns antiban"
->
+<a class="card" href="YOUR_NEXTDNS_LINK" data-search="ipa next dns antiban">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/nextdns.jpg"
-            alt="IPA NEXT DNS"
-        >
+        <img src="images/nextdns.jpg" alt="IPA NEXT DNS">
     </div>
 
     <div class="info">
@@ -846,20 +828,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_APP3105_V3_LINK"
-    data-search="app 3105 v3 update new"
->
+<a class="card" href="YOUR_APP3105_V3_LINK" data-search="app 3105 v3 update new">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/app3105.jpg"
-            alt="APP 3105"
-        >
+        <img src="images/app3105.jpg" alt="APP 3105">
     </div>
 
     <div class="info">
@@ -867,20 +848,19 @@ footer{
         <div class="desc">V3 UPDATE NEW</div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_APP3105_V111_LINK"
-    data-search="app 3105 v1.1.1"
->
+<a class="card" href="YOUR_APP3105_V111_LINK" data-search="app 3105 v1.1.1">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/app3105.jpg"
-            alt="APP 3105"
-        >
+        <img src="images/app3105.jpg" alt="APP 3105">
     </div>
 
     <div class="info">
@@ -888,20 +868,19 @@ footer{
         <div class="desc">V1.1.1</div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_DUOLINGO_LINK"
-    data-search="unlock duolingo max"
->
+<a class="card" href="YOUR_DUOLINGO_LINK" data-search="unlock duolingo max">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/duolingo.jpg"
-            alt="UNLOCK DUOLINGO MAX"
-        >
+        <img src="images/duolingo.jpg" alt="UNLOCK DUOLINGO MAX">
     </div>
 
     <div class="info">
@@ -909,20 +888,19 @@ footer{
         <div class="desc">CÓ CHẾ ĐỘ GỌI</div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_MESSENGER_LINK"
-    data-search="messenger vipp tin nhan thu hoi"
->
+<a class="card" href="YOUR_MESSENGER_LINK" data-search="messenger vipp tin nhan thu hoi">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/messenger.jpg"
-            alt="MESSENGER VIPP"
-        >
+        <img src="images/messenger.jpg" alt="MESSENGER VIPP">
     </div>
 
     <div class="info">
@@ -930,20 +908,19 @@ footer{
         <div class="desc">XEM ĐƯỢC TIN NHẮN THU HỒI, ...</div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_YOUTUBE_PREMIUM_LINK"
-    data-search="youtube premium cap nhat"
->
+<a class="card" href="YOUR_YOUTUBE_PREMIUM_LINK" data-search="youtube premium cap nhat">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/Youtube.jpg"
-            alt="YOUTUBE PREMIUM"
-        >
+        <img src="images/youtube.jpg" alt="YOUTUBE PREMIUM">
     </div>
 
     <div class="info">
@@ -951,20 +928,19 @@ footer{
         <div class="desc">ĐÃ CẬP NHẬT 9/9</div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_FILZA_LINK"
-    data-search="filza mod app 3105"
->
+<a class="card" href="YOUR_FILZA_LINK" data-search="filza mod app 3105">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/filza.jpg"
-            alt="FILZA MOD"
-        >
+        <img src="images/filza.jpg" alt="FILZA MOD">
     </div>
 
     <div class="info">
@@ -972,14 +948,20 @@ footer{
         <div class="desc">TÍCH HỢP APP 3105, MOD</div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 </div>
 </section>
 
 
-<!-- ================= FILE BYPASS ================= -->
+<!-- FILE BYPASS -->
 
 <section class="section">
 
@@ -987,16 +969,9 @@ footer{
 
 <div class="cards">
 
-<a
-    class="card"
-    href="YOUR_CHATGPT_BYPASS_LINK"
-    data-search="bypass chatgpt ios antiban"
->
+<a class="card" href="YOUR_CHATGPT_BYPASS_LINK" data-search="bypass chatgpt ios antiban">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg"
-            alt="CHATGPT"
-        >
+        <img src="images/chatgpt.jpg" alt="CHATGPT">
     </div>
 
     <div class="info">
@@ -1009,20 +984,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_CLAUDE_BYPASS_LINK"
-    data-search="bypass ai claude ios antiban"
->
+<a class="card" href="YOUR_CLAUDE_BYPASS_LINK" data-search="bypass ai claude ios antiban">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/claude.jpg"
-            alt="CLAUDE"
-        >
+        <img src="images/claude.jpg" alt="CLAUDE">
     </div>
 
     <div class="info">
@@ -1035,20 +1009,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_DNS_ANTIBAN_LINK"
-    data-search="dns antiban ff ffm nextdns"
->
+<a class="card" href="YOUR_DNS_ANTIBAN_LINK" data-search="dns antiban ff ffm nextdns">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/dns.jpg"
-            alt="DNS ANTIBAN"
-        >
+        <img src="images/dns.jpg" alt="DNS ANTIBAN">
     </div>
 
     <div class="info">
@@ -1062,14 +1035,20 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 </div>
 </section>
 
 
-<!-- ================= PATCHGAME ================= -->
+<!-- PATCHGAME -->
 
 <section class="section">
 
@@ -1077,16 +1056,9 @@ footer{
 
 <div class="cards">
 
-<a
-    class="card"
-    href="YOUR_PVZ2_LINK"
-    data-search="patch hack pvz2 app 3105"
->
+<a class="card" href="YOUR_PVZ2_LINK" data-search="patch hack pvz2 app 3105">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pvz2.jpg"
-            alt="PVZ2"
-        >
+        <img src="images/pvz2.jpg" alt="PVZ2">
     </div>
 
     <div class="info">
@@ -1099,20 +1071,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_CANDY_CRUSH_LINK"
-    data-search="patch candy crush app 3105"
->
+<a class="card" href="YOUR_CANDY_CRUSH_LINK" data-search="patch candy crush app 3105">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/candycrush.jpg"
-            alt="CANDY CRUSH"
-        >
+        <img src="images/candycrush.jpg" alt="CANDY CRUSH">
     </div>
 
     <div class="info">
@@ -1125,20 +1096,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_SUBWAY_LINK"
-    data-search="patch subway surfers app 3105"
->
+<a class="card" href="YOUR_SUBWAY_LINK" data-search="patch subway surfers app 3105">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/subway.jpg"
-            alt="SUBWAY SURFERS"
-        >
+        <img src="images/subway.jpg" alt="SUBWAY SURFERS">
     </div>
 
     <div class="info">
@@ -1151,20 +1121,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_MOD_PUBG_LINK"
-    data-search="mod pubg pubg mobile patch hack ios"
->
+<a class="card" href="YOUR_MOD_PUBG_LINK" data-search="mod pubg pubg mobile patch hack ios">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg"
-            alt="MOD PUBG"
-        >
+        <img src="images/pubg.jpg" alt="MOD PUBG">
     </div>
 
     <div class="info">
@@ -1177,20 +1146,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_PATCH_HACK_MAP_LINK"
-    data-search="patch hack map"
->
+<a class="card" href="YOUR_PATCH_HACK_MAP_LINK" data-search="patch hack map">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/map.jpg"
-            alt="PATCH HACK MAP"
-        >
+        <img src="images/map.jpg" alt="PATCH HACK MAP">
     </div>
 
     <div class="info">
@@ -1202,20 +1170,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_PATCH_UNLOCKSKIN_LINK"
-    data-search="patch unlockskin unlock skin"
->
+<a class="card" href="YOUR_PATCH_UNLOCKSKIN_LINK" data-search="patch unlockskin unlock skin">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg"
-            alt="PATCH UNLOCKSKIN"
-        >
+        <img src="images/unlockskin.jpg" alt="PATCH UNLOCKSKIN">
     </div>
 
     <div class="info">
@@ -1227,20 +1194,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_PATCH_UNLOCKSKIN_CAMXA_NOMAP_LINK"
-    data-search="patch unlockskin cam xa no map"
->
+<a class="card" href="YOUR_PATCH_UNLOCKSKIN_CAMXA_NOMAP_LINK" data-search="patch unlockskin cam xa no map">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/camxa.jpg"
-            alt="PATCH UNLOCKSKIN CAM XA NO MAP"
-        >
+        <img src="images/camxa.jpg" alt="PATCH UNLOCKSKIN CAM XA NO MAP">
     </div>
 
     <div class="info">
@@ -1252,20 +1218,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_PATCH_LQ_UNLOCKSKIN_LINK"
-    data-search="patch lq unlock skin lien quan"
->
+<a class="card" href="YOUR_PATCH_LQ_UNLOCKSKIN_LINK" data-search="patch lq unlock skin lien quan">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/lq.jpg"
-            alt="PATCH LQ UNLOCK SKIN"
-        >
+        <img src="images/lq.jpg" alt="PATCH LQ UNLOCK SKIN">
     </div>
 
     <div class="info">
@@ -1277,20 +1242,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_PATCH_AIM_FFM_LINK"
-    data-search="patch aim ffm"
->
+<a class="card" href="YOUR_PATCH_AIM_FFM_LINK" data-search="patch aim ffm">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/aimffm.jpg"
-            alt="PATCH AIM FFM"
-        >
+        <img src="images/aimffm.jpg" alt="PATCH AIM FFM">
     </div>
 
     <div class="info">
@@ -1302,20 +1266,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_PATCH_DINHVI_AIMBODY_FFM_LINK"
-    data-search="patch dinh vi aimbody ffm"
->
+<a class="card" href="YOUR_PATCH_DINHVI_AIMBODY_FFM_LINK" data-search="patch dinh vi aimbody ffm">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg"
-            alt="PATCH DINH VI AIMBODY FFM"
-        >
+        <img src="images/dinhvi.jpg" alt="PATCH DINH VI AIMBODY FFM">
     </div>
 
     <div class="info">
@@ -1328,20 +1291,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_PATCH_AIM_FFTH_LINK"
-    data-search="patch aim ffth free fire th"
->
+<a class="card" href="YOUR_PATCH_AIM_FFTH_LINK" data-search="patch aim ffth free fire th">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/aimffth.jpg"
-            alt="PATCH AIM FFTH"
-        >
+        <img src="images/aimffth.jpg" alt="PATCH AIM FFTH">
     </div>
 
     <div class="info">
@@ -1354,20 +1316,19 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 
-<a
-    class="card"
-    href="YOUR_CAPCUT_PRO_PATCH_LINK"
-    data-search="capcut pro patch mod"
->
+<a class="card" href="YOUR_CAPCUT_PRO_PATCH_LINK" data-search="capcut pro patch mod">
     <div class="icon">
-        <img
-            src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/capcut.jpg"
-            alt="CAPCUT PRO"
-        >
+        <img src="images/capcut.jpg" alt="CAPCUT PRO">
     </div>
 
     <div class="info">
@@ -1380,11 +1341,18 @@ footer{
         </div>
     </div>
 
-    <span class="download-btn">↓</span>
+    <span class="download-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14"></path>
+        </svg>
+    </span>
 </a>
 
 </div>
 </section>
+
 
 <div class="empty" id="empty">
     🔎<br><br>
@@ -1404,17 +1372,10 @@ footer{
 
 /* ================= POPUP ================= */
 
-const popup =
-    document.getElementById("noticePopup");
-
-const enterButton =
-    document.getElementById("enterButton");
-
-const musicButton =
-    document.getElementById("musicButton");
-
-const toast =
-    document.getElementById("toast");
+const popup = document.getElementById("noticePopup");
+const enterButton = document.getElementById("enterButton");
+const musicButton = document.getElementById("musicButton");
+const toast = document.getElementById("toast");
 
 
 /* ================= YOUTUBE MUSIC ================= */
@@ -1432,13 +1393,10 @@ function loadYouTube(){
         return;
     }
 
-    const script =
-        document.createElement("script");
+    const script = document.createElement("script");
 
     script.id = "youtube-api";
-
-    script.src =
-        "https://www.youtube.com/iframe_api";
+    script.src = "https://www.youtube.com/iframe_api";
 
     document.body.appendChild(script);
 }
@@ -1446,35 +1404,33 @@ function loadYouTube(){
 
 function onYouTubeIframeAPIReady(){
 
-    player =
-        new YT.Player(
-            "youtubePlayer",
-            {
-                height:"1",
-                width:"1",
+    player = new YT.Player("youtubePlayer",{
 
-                videoId:youtubeVideoId,
+        height:"1",
+        width:"1",
 
-                playerVars:{
-                    autoplay:0,
-                    controls:0,
-                    loop:1,
-                    playlist:youtubeVideoId,
-                    playsinline:1,
-                    rel:0
-                },
+        videoId:youtubeVideoId,
 
-                events:{
-                    onReady:function(){
+        playerVars:{
+            autoplay:0,
+            controls:0,
+            loop:1,
+            playlist:youtubeVideoId,
+            playsinline:1,
+            rel:0
+        },
 
-                        musicReady = true;
+        events:{
+            onReady:function(){
 
-                        player.setVolume(65);
+                musicReady = true;
 
-                    }
-                }
+                player.setVolume(65);
+
             }
-        );
+        }
+
+    });
 }
 
 
@@ -1514,7 +1470,9 @@ function startMusic(){
 function stopMusic(){
 
     if(player){
+
         player.pauseVideo();
+
     }
 
     musicStarted = false;
@@ -1570,15 +1528,14 @@ function showToast(message){
 
     clearTimeout(toastTimer);
 
-    toastTimer =
-        setTimeout(
-            function(){
+    toastTimer = setTimeout(
+        function(){
 
-                toast.classList.remove("show");
+            toast.classList.remove("show");
 
-            },
-            2200
-        );
+        },
+        2200
+    );
 }
 
 
@@ -1599,14 +1556,8 @@ function normalizeText(text){
     return text
         .toLowerCase()
         .normalize("NFD")
-        .replace(
-            /[\u0300-\u036f]/g,
-            ""
-        )
-        .replace(
-            /đ/g,
-            "d"
-        );
+        .replace(/[\u0300-\u036f]/g,"")
+        .replace(/đ/g,"d");
 }
 
 
@@ -1627,55 +1578,51 @@ function searchCards(){
 
     document
         .querySelectorAll(".section")
-        .forEach(
-            function(section){
+        .forEach(function(section){
 
-                let sectionVisible = 0;
-
-
-                section
-                    .querySelectorAll(".card")
-                    .forEach(
-                        function(card){
-
-                            const searchText =
-                                normalizeText(
-                                    (card.dataset.search || "")
-                                    + " "
-                                    + card.innerText
-                                );
+            let sectionVisible = 0;
 
 
-                            const matched =
-                                !value ||
-                                searchText.includes(value);
+            section
+                .querySelectorAll(".card")
+                .forEach(function(card){
+
+                    const searchText =
+                        normalizeText(
+                            (card.dataset.search || "")
+                            + " "
+                            + card.innerText
+                        );
 
 
-                            card.style.display =
-                                matched
-                                    ? "flex"
-                                    : "none";
+                    const matched =
+                        !value ||
+                        searchText.includes(value);
 
 
-                            if(matched){
-
-                                visible++;
-
-                                sectionVisible++;
-
-                            }
-
-                        }
-                    );
+                    card.style.display =
+                        matched
+                            ? "flex"
+                            : "none";
 
 
-                section.style.display =
-                    sectionVisible
-                        ? "block"
-                        : "none";
+                    if(matched){
 
-            }
-        );
+                        visible++;
+
+                        sectionVisible++;
+
+                    }
+
+                });
+
+
+            section.style.display =
+                sectionVisible
+                    ? "block"
+                    : "none";
+
+        });
 
 
     empty.style.display =
@@ -1709,35 +1656,33 @@ clearButton.addEventListener(
 
 document
     .querySelectorAll(".card")
-    .forEach(
-        function(card){
+    .forEach(function(card){
 
-            card.addEventListener(
-                "click",
-                function(event){
+        card.addEventListener(
+            "click",
+            function(event){
 
-                    const href =
-                        card.getAttribute("href") || "";
+                const href =
+                    card.getAttribute("href") || "";
 
 
-                    if(
-                        !href ||
-                        href.startsWith("YOUR_")
-                    ){
+                if(
+                    !href ||
+                    href.startsWith("YOUR_")
+                ){
 
-                        event.preventDefault();
+                    event.preventDefault();
 
-                        showToast(
-                            "Bạn chưa gắn link cho mục này"
-                        );
-
-                    }
+                    showToast(
+                        "Bạn chưa gắn link cho mục này"
+                    );
 
                 }
-            );
 
-        }
-    );
+            }
+        );
+
+    });
 
 
 /* ================= VIEWS ================= */
