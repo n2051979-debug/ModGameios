@@ -54,6 +54,7 @@ html {
 body {
     min-height: 100vh;
     color: #fff;
+
     font-family:
         "Inter",
         -apple-system,
@@ -93,32 +94,51 @@ a {
 .page {
     width: min(100%, 520px);
     margin: auto;
+
     padding:
         env(safe-area-inset-top)
         14px
         calc(70px + env(safe-area-inset-bottom));
 }
 
+/* ==============================
+   TOPBAR
+============================== */
+
 .topbar {
     height: 52px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     color: #8aaeff;
+
     font-size: 10px;
     font-weight: 900;
+
     letter-spacing: 1px;
 }
 
 .brand-dot {
     display: inline-block;
+
     width: 6px;
     height: 6px;
+
     border-radius: 50%;
+
     background: #65a8ff;
-    box-shadow: 0 0 10px #438dff;
+
+    box-shadow:
+        0 0 10px #438dff;
+
     margin-right: 7px;
 }
+
+/* ==============================
+   PROFILE
+============================== */
 
 .profile {
     text-align: center;
@@ -127,17 +147,22 @@ a {
 
 .avatar-wrap {
     position: relative;
+
     width: 116px;
     height: 116px;
+
     margin: 0 auto 17px;
+
     display: grid;
     place-items: center;
 }
 
 .avatar-wrap::before {
     content: "";
+
     position: absolute;
     inset: 0;
+
     border-radius: 50%;
 
     background:
@@ -166,10 +191,15 @@ a {
 
 .avatar-wrap::after {
     content: "";
+
     position: absolute;
     inset: -9px;
+
     border-radius: 50%;
-    border: 1px solid rgba(164, 83, 255, .55);
+
+    border:
+        1px solid
+        rgba(164, 83, 255, .55);
 
     box-shadow:
         0 0 18px rgba(134, 55, 255, .45),
@@ -185,9 +215,12 @@ a {
 .avatar {
     position: relative;
     z-index: 2;
+
     width: 104px;
     height: 104px;
+
     border-radius: 50%;
+
     object-fit: cover;
 
     background:
@@ -208,14 +241,17 @@ a {
 .avatar-fallback {
     position: absolute;
     z-index: 1;
+
     font-size: 32px;
     font-weight: 900;
+
     color: #fff;
 }
 
 .name {
     font-size: 25px;
     font-weight: 900;
+
     letter-spacing: -1px;
 
     background:
@@ -242,60 +278,94 @@ a {
 
 .subtitle {
     margin-top: 5px;
+
     color: #817c8c;
+
     font-size: 10px;
     font-weight: 700;
+
     letter-spacing: .5px;
 }
 
+/* ==============================
+   STATS
+============================== */
+
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 8px;
+
     margin: 13px 0;
 }
 
 .stat {
     padding: 12px 5px;
+
     text-align: center;
 
-    border: 1px solid #282530;
+    border:
+        1px solid
+        #282530;
+
     border-radius: 15px;
-    background: rgba(25,23,31,.85);
+
+    background:
+        rgba(25,23,31,.85);
 }
 
 .stat strong {
     display: block;
+
     font-size: 18px;
     font-weight: 900;
 }
 
 .stat span {
     display: block;
+
     margin-top: 4px;
+
     color: #77727f;
+
     font-size: 9px;
     font-weight: 600;
 }
 
+/* ==============================
+   SOCIAL
+============================== */
+
 .socials {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap: 9px;
+
     margin-top: 9px;
 }
 
 .social {
     height: 46px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 8px;
 
     border-radius: 13px;
+
     font-size: 11px;
     font-weight: 800;
+
     border: 1px solid;
+
     transition: .2s;
 }
 
@@ -304,14 +374,21 @@ a {
 }
 
 .tiktok {
-    background: rgba(255,255,255,.04);
+    background:
+        rgba(255,255,255,.04);
+
     border-color: #3a3641;
+
     color: #eee;
 }
 
 .discord {
-    background: rgba(125,87,255,.1);
-    border-color: rgba(139,98,255,.5);
+    background:
+        rgba(125,87,255,.1);
+
+    border-color:
+        rgba(139,98,255,.5);
+
     color: #ae96ff;
 
     box-shadow:
@@ -319,9 +396,15 @@ a {
         rgba(123,77,255,.08);
 }
 
+/* ==============================
+   SEARCH
+============================== */
+
 .search-wrap {
     position: sticky;
+
     top: 0;
+
     z-index: 40;
 
     padding: 10px 0 13px;
@@ -338,6 +421,7 @@ a {
 
     display: flex;
     align-items: center;
+
     gap: 9px;
 
     padding:
@@ -346,7 +430,10 @@ a {
         0
         14px;
 
-    border: 1px solid #302d39;
+    border:
+        1px solid
+        #302d39;
+
     border-radius: 15px;
 
     background:
@@ -363,8 +450,11 @@ a {
     border-color: #6946b8;
 
     box-shadow:
-        0 0 0 3px rgba(116,66,255,.08),
-        0 10px 30px rgba(0,0,0,.3);
+        0 0 0 3px
+        rgba(116,66,255,.08),
+
+        0 10px 30px
+        rgba(0,0,0,.3);
 }
 
 .search-icon {
@@ -375,10 +465,14 @@ a {
 .search {
     width: 100%;
     height: 100%;
+
     border: 0;
     outline: 0;
+
     background: transparent;
+
     color: #fff;
+
     font-size: 12px;
     font-weight: 600;
 }
@@ -389,6 +483,7 @@ a {
 
 .clear {
     display: none;
+
     width: 32px;
     height: 32px;
 
@@ -396,6 +491,7 @@ a {
     border-radius: 10px;
 
     background: #25212e;
+
     color: #aaa;
 
     cursor: pointer;
@@ -405,6 +501,10 @@ a {
     display: block;
 }
 
+/* ==============================
+   SECTION
+============================== */
+
 .section {
     margin-top: 17px;
 }
@@ -412,6 +512,7 @@ a {
 .section-title {
     display: flex;
     align-items: center;
+
     gap: 9px;
 
     margin:
@@ -421,14 +522,18 @@ a {
 
     font-size: 19px;
     line-height: 1.15;
+
     font-weight: 900;
+
     letter-spacing: -.7px;
 }
 
 .section-title::before {
     content: "";
+
     width: 4px;
     height: 20px;
+
     border-radius: 8px;
 
     background:
@@ -444,12 +549,19 @@ a {
 
 .cards {
     display: flex;
+
     flex-direction: column;
+
     gap: 9px;
 }
 
+/* ==============================
+   CARD
+============================== */
+
 .card {
     position: relative;
+
     min-height: 78px;
 
     display: flex;
@@ -457,7 +569,10 @@ a {
 
     padding: 11px;
 
-    border: 1px solid #292631;
+    border:
+        1px solid
+        #292631;
+
     border-radius: 16px;
 
     background:
@@ -481,6 +596,7 @@ a {
 
 .card::before {
     content: "";
+
     position: absolute;
     inset: 0;
 
@@ -492,12 +608,16 @@ a {
             transparent
         );
 
-    transform: translateX(-110%);
+    transform:
+        translateX(-110%);
+
     transition: .6s;
 }
 
 .card:hover {
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
+
     border-color: #40384e;
 
     box-shadow:
@@ -506,16 +626,19 @@ a {
 }
 
 .card:hover::before {
-    transform: translateX(110%);
+    transform:
+        translateX(110%);
 }
 
 .card:active {
-    transform: scale(.985);
+    transform:
+        scale(.985);
 }
 
 .icon {
     width: 50px;
     height: 50px;
+
     flex: 0 0 50px;
 
     margin-right: 12px;
@@ -546,44 +669,59 @@ a {
 
 .info {
     min-width: 0;
+
     flex: 1;
 }
 
 .title {
     font-size: 13px;
     font-weight: 900;
+
     line-height: 1.25;
+
     letter-spacing: -.2px;
 
     white-space: nowrap;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
 }
 
 .desc {
     margin-top: 4px;
+
     color: #85808e;
+
     font-size: 10px;
     font-weight: 500;
+
     line-height: 1.45;
 }
 
 .tags {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 5px;
+
     margin-top: 6px;
 }
 
 .tag {
     padding: 4px 7px;
+
     border-radius: 7px;
 
     background: #302c39;
+
     color: #d6d0df;
 
     font-size: 8px;
+
     line-height: 1;
+
     font-weight: 800;
 }
 
@@ -602,6 +740,7 @@ a {
 .download-btn {
     width: 39px;
     height: 39px;
+
     flex: 0 0 39px;
 
     display: grid;
@@ -638,34 +777,56 @@ svg {
     height: 20px;
 
     fill: none;
-    stroke: currentColor;
+
+    stroke:
+        currentColor;
+
     stroke-width: 2;
+
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
+/* ==============================
+   EMPTY
+============================== */
+
 .empty {
     display: none;
+
     text-align: center;
+
     padding: 38px 10px;
 
     color: #706b78;
+
     font-size: 12px;
 }
 
 .empty-icon {
     font-size: 28px;
+
     margin-bottom: 8px;
 }
 
+/* ==============================
+   FOOTER
+============================== */
+
 footer {
     text-align: center;
+
     margin-top: 34px;
 
     color: #4f4a57;
+
     font-size: 9px;
     font-weight: 600;
 }
+
+/* ==============================
+   MUSIC
+============================== */
 
 .music-btn {
     position: fixed;
@@ -683,10 +844,14 @@ footer {
     width: 46px;
     height: 46px;
 
-    border: 1px solid #332e3d;
+    border:
+        1px solid
+        #332e3d;
+
     border-radius: 50%;
 
     background: #19171f;
+
     color: #fff;
 
     display: grid;
@@ -699,11 +864,13 @@ footer {
         rgba(0,0,0,.55);
 
     cursor: pointer;
+
     transition: .2s;
 }
 
 .music-btn:hover {
     transform: scale(1.05);
+
     border-color: #7d4dff;
 }
 
@@ -721,20 +888,26 @@ footer {
 
 .overlay {
     position: fixed;
+
     inset: 0;
 
     z-index: 1000;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     padding: 20px;
 
-    background: rgba(0,0,0,.86);
+    background:
+        rgba(0,0,0,.86);
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
 }
 
 .overlay.hidden {
@@ -744,7 +917,8 @@ footer {
 .notice {
     position: relative;
 
-    width: min(100%,390px);
+    width:
+        min(100%,390px);
 
     padding:
         31px
@@ -851,6 +1025,7 @@ footer {
     content: "";
 
     position: absolute;
+
     inset: -6px;
 
     border-radius: 27px;
@@ -868,6 +1043,7 @@ footer {
 
 .notice-title {
     font-size: 23px;
+
     font-weight: 900;
 
     background:
@@ -883,6 +1059,7 @@ footer {
 
     -webkit-background-clip: text;
     background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     animation:
@@ -893,17 +1070,21 @@ footer {
 }
 
 .notice-sub {
-    margin: 8px 0 18px;
+    margin:
+        8px 0 18px;
 
     color: #9b6cff;
 
     font-size: 9px;
+
     font-weight: 900;
+
     letter-spacing: 2px;
 }
 
 .notice-message {
     padding: 14px;
+
     margin-bottom: 19px;
 
     border:
@@ -918,6 +1099,7 @@ footer {
     color: #aaa4b1;
 
     font-size: 13px;
+
     line-height: 1.6;
 }
 
@@ -929,9 +1111,11 @@ footer {
     position: relative;
 
     width: 100%;
+
     min-height: 50px;
 
     border: 0;
+
     border-radius: 14px;
 
     background:
@@ -944,9 +1128,11 @@ footer {
     color: #fff;
 
     font-size: 12px;
+
     font-weight: 900;
 
     cursor: pointer;
+
     overflow: hidden;
 
     box-shadow:
@@ -975,7 +1161,8 @@ footer {
             transparent
         );
 
-    transform: skewX(-20deg);
+    transform:
+        skewX(-20deg);
 
     animation:
         buttonShine
@@ -984,7 +1171,8 @@ footer {
 }
 
 .notice-btn:hover {
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
     box-shadow:
         0 13px 35px
@@ -992,8 +1180,13 @@ footer {
 }
 
 .notice-btn:active {
-    transform: scale(.97);
+    transform:
+        scale(.97);
 }
+
+/* ==============================
+   TOAST
+============================== */
 
 .toast {
     position: fixed;
@@ -1022,14 +1215,17 @@ footer {
     border-radius: 12px;
 
     background: #1a1720;
+
     color: #ddd;
 
     font-size: 10px;
+
     font-weight: 700;
 
     pointer-events: none;
 
     transition: .25s;
+
     white-space: nowrap;
 }
 
@@ -1040,35 +1236,53 @@ footer {
         translate(-50%,0);
 }
 
+/* ==============================
+   ANIMATIONS
+============================== */
+
 @keyframes avatarSpin {
+
     to {
-        transform: rotate(360deg);
+        transform:
+            rotate(360deg);
     }
+
 }
 
 @keyframes avatarPulse {
+
     0%,100% {
-        transform: scale(.96);
+        transform:
+            scale(.96);
+
         opacity: .35;
     }
 
     50% {
-        transform: scale(1.08);
+        transform:
+            scale(1.08);
+
         opacity: 1;
     }
+
 }
 
 @keyframes textShine {
+
     0% {
-        background-position: 200% center;
+        background-position:
+            200% center;
     }
 
     100% {
-        background-position: -200% center;
+        background-position:
+            -200% center;
     }
+
 }
 
 @keyframes popupIn {
+
     from {
         opacity: 0;
 
@@ -1084,19 +1298,25 @@ footer {
             translateY(0)
             scale(1);
     }
+
 }
 
 @keyframes floatIcon {
+
     0%,100% {
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-4px);
+        transform:
+            translateY(-4px);
     }
+
 }
 
 @keyframes buttonShine {
+
     0% {
         left: -100%;
     }
@@ -1104,7 +1324,12 @@ footer {
     25%,100% {
         left: 150%;
     }
+
 }
+
+/* ==============================
+   RESPONSIVE
+============================== */
 
 @media(max-width:380px) {
 
@@ -1131,6 +1356,7 @@ footer {
     .notice-title {
         font-size: 21px;
     }
+
 }
 
 @media(min-width:700px) {
@@ -1142,6 +1368,7 @@ footer {
     .page {
         padding-bottom: 100px;
     }
+
 }
 
 </style>
@@ -1151,7 +1378,7 @@ footer {
 
 <!-- ==================================================
      POPUP THÔNG BÁO
-     LUÔN HIỆN MỖI LẦN MỞ WEB
+     HIỆN MỖI LẦN MỞ WEB
 ================================================== -->
 
 <div
@@ -1174,8 +1401,10 @@ footer {
         </div>
 
         <div class="notice-message">
+
             Thắc mắc gì thì có thể hỏi
             <b>Admin</b>
+
         </div>
 
         <button
@@ -1190,7 +1419,9 @@ footer {
 
 </div>
 
-<!-- MUSIC BUTTON -->
+<!-- ==================================================
+     MUSIC BUTTON
+================================================== -->
 
 <button
     class="music-btn"
@@ -1201,14 +1432,18 @@ footer {
     🔇
 </button>
 
-<!-- TOAST -->
+<!-- ==================================================
+     TOAST
+================================================== -->
 
 <div
     class="toast"
     id="toast"
 ></div>
 
-<!-- WEBSITE -->
+<!-- ==================================================
+     WEBSITE
+================================================== -->
 
 <main class="page">
 
@@ -1219,6 +1454,10 @@ footer {
     APP CRACK + MODS GAME
 
 </header>
+
+<!-- ==================================================
+     PROFILE
+================================================== -->
 
 <section class="profile">
 
@@ -1246,6 +1485,10 @@ footer {
     </div>
 
 </section>
+
+<!-- ==================================================
+     STATS
+================================================== -->
 
 <div class="stats">
 
@@ -1287,6 +1530,10 @@ footer {
 
 </div>
 
+<!-- ==================================================
+     SOCIAL
+================================================== -->
+
 <div class="socials">
 
     <a
@@ -1308,6 +1555,10 @@ footer {
     </a>
 
 </div>
+
+<!-- ==================================================
+     SEARCH
+================================================== -->
 
 <div class="search-wrap">
 
@@ -1351,6 +1602,8 @@ footer {
 
     <div class="cards">
 
+        <!-- IPA NEXT DNS -->
+
         <a
             class="card"
             href="YOUR_NEXTDNS_LINK"
@@ -1384,12 +1637,18 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- APP 3105 V3 -->
 
         <a
             class="card"
@@ -1416,12 +1675,18 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- APP 3105 V1.1.1 -->
 
         <a
             class="card"
@@ -1448,12 +1713,18 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1 1h5"/>
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- 8BP -->
 
         <a
             class="card"
@@ -1492,12 +1763,18 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1 1h5"/>
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- 120HZ -->
 
         <a
             class="card"
@@ -1524,12 +1801,18 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- DUOLINGO -->
 
         <a
             class="card"
@@ -1556,12 +1839,18 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- MESSENGER -->
 
         <a
             class="card"
@@ -1588,12 +1877,18 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- YOUTUBE PREMIUM -->
 
         <a
             class="card"
@@ -1620,44 +1915,18 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
 
-        <a
-            class="card"
-            href="YOUR_CAPCUT_LINK"
-            data-search="capcut pro"
-        >
-
-            <div class="icon">
-                ✂️
-            </div>
-
-            <div class="info">
-
-                <div class="title">
-                    CAPCUT PRO
-                </div>
-
-                <div class="desc">
-                    ĐÃ CẬP NHẬT 9/9
-                </div>
-
-            </div>
-
-            <span class="open">
-
-                <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1V5a1 1 0 0 1 1-1h5"/>
-                </svg>
-
-            </span>
-
-        </a>
+        <!-- FILZA MOD -->
 
         <a
             class="card"
@@ -1684,7 +1953,11 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+
+                    <path
+                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
+                    />
+
                 </svg>
 
             </span>
@@ -1706,6 +1979,8 @@ footer {
     </h2>
 
     <div class="cards">
+
+        <!-- CHATGPT -->
 
         <a
             class="card"
@@ -1744,12 +2019,73 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- CLAUDE -->
+        <!-- Nằm ngay dưới FILE BYPASS CHATGPT -->
+
+        <a
+            class="card"
+            href="YOUR_CLAUDE_BYPASS_LINK"
+            data-search="file bypass ai claude claude ai ios antiban"
+        >
+
+            <div class="icon">
+                🤖
+            </div>
+
+            <div class="info">
+
+                <div class="title">
+                    FILE BYPASS AI CLAUDE
+                </div>
+
+                <div class="desc">
+                    DÀNH CHO CLAUDE AI
+                </div>
+
+                <div class="desc">
+                    FILE BYPASS iOS
+                </div>
+
+                <div class="tags">
+
+                    <span class="tag blue">
+                        iOS
+                    </span>
+
+                    <span class="tag">
+                        Antiban
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </span>
+
+        </a>
+
+        <!-- DNS ANTIBAN -->
 
         <a
             class="card"
@@ -1792,7 +2128,11 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
                 </svg>
 
             </span>
@@ -1804,172 +2144,18 @@ footer {
 </section>
 
 <!-- ==================================================
-     FILE MOD TỰ DÁN
+     PATCHGAME + MOD
 ================================================== -->
 
 <section class="section">
 
     <h2 class="section-title">
-        FILE MOD TỰ DÁN
+        PATCHGAME + MOD
     </h2>
 
     <div class="cards">
 
-        <a
-            class="card"
-            href="YOUR_DNS_SELF_LINK"
-            data-search="dns antiban ff ffm nextdns"
-        >
-
-            <div class="icon">
-                🛡️
-            </div>
-
-            <div class="info">
-
-                <div class="title">
-                    DNS ANTIBAN FF + FFM
-                </div>
-
-                <div class="desc">
-                    ANTIBAN CHO APP 3105, FILZA
-                </div>
-
-                <div class="desc">
-                    FILE CHO AE MUỐN TỰ LÀM ANTIBAN
-                </div>
-
-                <div class="tags">
-
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
-                    <span class="tag">
-                        Antiban
-                    </span>
-
-                </div>
-
-            </div>
-
-            <span class="download-btn">
-
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                </svg>
-
-            </span>
-
-        </a>
-
-        <a
-            class="card"
-            href="YOUR_AIMBODY_LINK"
-            data-search="dinh vi aimbody ffm free fire max"
-        >
-
-            <div class="icon">
-                🎯
-            </div>
-
-            <div class="info">
-
-                <div class="title">
-                    ĐỊNH VỊ + AIMBODY FFM
-                </div>
-
-                <div class="desc">
-                    DÀNH CHO FREE FIRE MAX
-                </div>
-
-                <div class="tags">
-
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
-                    <span class="tag">
-                        Antiban
-                    </span>
-
-                </div>
-
-            </div>
-
-            <span class="download-btn">
-
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                </svg>
-
-            </span>
-
-        </a>
-
-        <a
-            class="card"
-            href="YOUR_FULL_AIM_LINK"
-            data-search="full aim ffth free fire"
-        >
-
-            <div class="icon">
-                🎯
-            </div>
-
-            <div class="info">
-
-                <div class="title">
-                    FULL AIM FFTH
-                </div>
-
-                <div class="desc">
-                    FILE CHO AE TỰ DÁN
-                </div>
-
-                <div class="desc">
-                    DÀNH CHO FREE FIRE TH
-                </div>
-
-                <div class="tags">
-
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
-                    <span class="tag">
-                        Antiban
-                    </span>
-
-                </div>
-
-            </div>
-
-            <span class="download-btn">
-
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
-                </svg>
-
-            </span>
-
-        </a>
-
-    </div>
-
-</section>
-
-<!-- ==================================================
-     PATCH GAME
-================================================== -->
-
-<section class="section">
-
-    <h2 class="section-title">
-        PATCH GAME
-    </h2>
-
-    <div class="cards">
+        <!-- PVZ2 -->
 
         <a
             class="card"
@@ -2008,12 +2194,18 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- CANDY CRUSH -->
 
         <a
             class="card"
@@ -2052,12 +2244,18 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- SUBWAY -->
 
         <a
             class="card"
@@ -2096,7 +2294,11 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
                 </svg>
 
             </span>
@@ -2142,7 +2344,66 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
+                </svg>
+
+            </span>
+
+        </a>
+
+        <!-- CAPCUT PRO -->
+        <!-- Đã chuyển từ TẢI IPA xuống PATCHGAME + MOD -->
+
+        <a
+            class="card"
+            href="YOUR_CAPCUT_PRO_PATCH_LINK"
+            data-search="capcut pro patch mod capcut ios"
+        >
+
+            <div class="icon">
+                ✂️
+            </div>
+
+            <div class="info">
+
+                <div class="title">
+                    CAPCUT PRO
+                </div>
+
+                <div class="desc">
+                    CAPCUT PRO MOD
+                </div>
+
+                <div class="desc">
+                    ĐÃ CẬP NHẬT 9/9
+                </div>
+
+                <div class="tags">
+
+                    <span class="tag blue">
+                        iOS
+                    </span>
+
+                    <span class="tag">
+                        MOD
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
+                    />
+
                 </svg>
 
             </span>
@@ -2153,7 +2414,9 @@ footer {
 
 </section>
 
-<!-- EMPTY -->
+<!-- ==================================================
+     EMPTY SEARCH
+================================================== -->
 
 <div
     class="empty"
@@ -2170,20 +2433,41 @@ footer {
 
 </div>
 
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
 <footer>
+
     © 2026 ModGameios • APP CRACK • MODS • iOS
+
 </footer>
 
 </main>
 
 <script>
 
+/* ==============================
+   CONFIG
+============================== */
+
 const CONFIG = {
+
+    /*
+     Popup luôn hiện mỗi lần tải lại
+     KHÔNG lưu trạng thái đã xem
+    */
+
+    popupAlwaysShow: true,
 
     viewsStorageKey:
         "modgameios_views"
 
 };
+
+/* ==============================
+   ELEMENTS
+============================== */
 
 const searchInput =
     document.getElementById("search");
@@ -2206,26 +2490,24 @@ const empty =
 const toast =
     document.getElementById("toast");
 
-
 /* ==============================
    POPUP THÔNG BÁO
-   LUÔN HIỆN MỖI LẦN MỞ WEB
+   HIỆN MỖI LẦN VÀO WEB
 ============================== */
 
+if (CONFIG.popupAlwaysShow) {
+
+    popup.classList.remove("hidden");
+
+}
+
 /*
-   Không dùng localStorage cho popup nữa.
+   Khi bấm "ĐÃ HIỂU, VÀO WEB"
+   chỉ đóng popup trong phiên hiện tại.
 
-   Mỗi lần trang được tải:
-   popup mặc định hiển thị.
-
-   Khi bấm "ĐÃ HIỂU, VÀO WEB":
-   chỉ đóng popup trong lần truy cập hiện tại.
-
-   Lần sau mở lại web:
-   popup sẽ hiện lại.
+   Không dùng localStorage cho popup,
+   nên lần sau mở web popup vẫn hiện.
 */
-
-popup.classList.remove("hidden");
 
 enterButton.addEventListener(
     "click",
@@ -2235,7 +2517,6 @@ enterButton.addEventListener(
 
     }
 );
-
 
 /* ==============================
    TOAST
@@ -2262,11 +2543,11 @@ function showToast(message) {
             },
             2200
         );
+
 }
 
-
 /* ==============================
-   TÌM KIẾM KHÔNG DẤU
+   SEARCH KHÔNG DẤU
 ============================== */
 
 function normalizeText(text) {
@@ -2364,6 +2645,10 @@ searchInput.addEventListener(
     searchCards
 );
 
+/* ==============================
+   CLEAR SEARCH
+============================== */
+
 clearButton.addEventListener(
     "click",
     function() {
@@ -2376,7 +2661,6 @@ clearButton.addEventListener(
 
     }
 );
-
 
 /* ==============================
    LINK PLACEHOLDER
@@ -2417,7 +2701,6 @@ document
         }
     );
 
-
 /* ==============================
    LƯỢT XEM
 ============================== */
@@ -2443,7 +2726,6 @@ document.getElementById(
         "vi-VN"
     );
 
-
 /* ==============================
    NÚT NHẠC
 ============================== */
@@ -2461,9 +2743,8 @@ musicButton.addEventListener(
     }
 );
 
-
 /* ==============================
-   CHỐNG ZOOM DOUBLE TAP
+   CHỐNG DOUBLE TAP
 ============================== */
 
 document
@@ -2482,9 +2763,8 @@ document
         }
     );
 
-
 /* ==============================
-   ESC ĐỂ ĐÓNG POPUP
+   ESC ĐÓNG POPUP
 ============================== */
 
 document.addEventListener(
