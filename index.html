@@ -36,7 +36,8 @@ body{
     -webkit-font-smoothing:antialiased;
 }
 
-button,input{
+button,
+input{
     font-family:inherit;
 }
 
@@ -54,7 +55,7 @@ a{
         calc(70px + env(safe-area-inset-bottom));
 }
 
-/* TOPBAR */
+/* ================= TOPBAR ================= */
 
 .topbar{
     height:52px;
@@ -77,7 +78,7 @@ a{
     margin-right:7px;
 }
 
-/* PROFILE */
+/* ================= PROFILE ================= */
 
 .profile{
     text-align:center;
@@ -177,7 +178,7 @@ a{
     letter-spacing:.5px;
 }
 
-/* STATS */
+/* ================= STATS ================= */
 
 .stats{
     display:grid;
@@ -208,7 +209,7 @@ a{
     font-weight:600;
 }
 
-/* SOCIAL */
+/* ================= SOCIAL ================= */
 
 .socials{
     display:grid;
@@ -256,7 +257,7 @@ a{
     box-shadow:0 0 15px rgba(123,77,255,.08);
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 .search-wrap{
     position:sticky;
@@ -321,7 +322,7 @@ a{
     display:block;
 }
 
-/* SECTION */
+/* ================= SECTION ================= */
 
 .section{
     margin-top:17px;
@@ -353,7 +354,7 @@ a{
     gap:9px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .card{
     position:relative;
@@ -404,7 +405,7 @@ a{
     transform:scale(.985);
 }
 
-/* ICON */
+/* ================= ICON ================= */
 
 .icon{
     width:50px;
@@ -481,7 +482,7 @@ a{
     border:1px solid rgba(67,139,255,.15);
 }
 
-/* DOWNLOAD */
+/* ================= DOWNLOAD ================= */
 
 .download-btn{
     width:39px;
@@ -524,7 +525,7 @@ a{
     box-shadow:0 0 20px rgba(111,49,255,.25);
 }
 
-/* EMPTY */
+/* ================= EMPTY ================= */
 
 .empty{
     display:none;
@@ -539,7 +540,7 @@ a{
     margin-bottom:8px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     text-align:center;
@@ -549,7 +550,17 @@ footer{
     font-weight:600;
 }
 
-/* MUSIC */
+/* ================= MUSIC ================= */
+
+#youtubePlayer{
+    position:fixed;
+    left:-9999px;
+    top:-9999px;
+    width:1px;
+    height:1px;
+    opacity:0;
+    pointer-events:none;
+}
 
 .music-btn{
     position:fixed;
@@ -577,10 +588,12 @@ footer{
 
 .music-btn.on{
     border-color:#7d4dff;
-    box-shadow:0 0 20px rgba(115,58,255,.3);
+    box-shadow:
+        0 0 20px rgba(115,58,255,.3),
+        0 0 40px rgba(115,58,255,.12);
 }
 
-/* POPUP */
+/* ================= POPUP ================= */
 
 .overlay{
     position:fixed;
@@ -746,7 +759,7 @@ footer{
     transform:scale(.97);
 }
 
-/* TOAST */
+/* ================= TOAST ================= */
 
 .toast{
     position:fixed;
@@ -772,7 +785,7 @@ footer{
     transform:translate(-50%,0);
 }
 
-/* ANIMATION */
+/* ================= ANIMATION ================= */
 
 @keyframes avatarSpin{
     to{
@@ -856,9 +869,10 @@ footer{
     }
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:380px){
+
     .page{
         padding-left:12px;
         padding-right:12px;
@@ -882,6 +896,7 @@ footer{
 }
 
 @media(min-width:700px){
+
     body{
         padding-top:10px;
     }
@@ -930,16 +945,9 @@ footer{
 
 </div>
 
-<!-- ================= MUSIC ================= -->
+<!-- ================= YOUTUBE MUSIC ================= -->
 
-<audio
-    id="backgroundMusic"
-    preload="auto"
-    loop
-    playsinline
->
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+<div id="youtubePlayer"></div>
 
 <button
     class="music-btn"
@@ -963,7 +971,7 @@ footer{
     APP CRACK + MODS GAME
 </header>
 
-<!-- PROFILE -->
+<!-- ================= PROFILE ================= -->
 
 <section class="profile">
 
@@ -993,7 +1001,7 @@ footer{
 
 </section>
 
-<!-- STATS -->
+<!-- ================= STATS ================= -->
 
 <div class="stats">
 
@@ -1014,7 +1022,7 @@ footer{
 
 </div>
 
-<!-- SOCIAL -->
+<!-- ================= SOCIAL ================= -->
 
 <div class="socials">
 
@@ -1040,7 +1048,7 @@ footer{
 
 </div>
 
-<!-- SEARCH -->
+<!-- ================= SEARCH ================= -->
 
 <div class="search-wrap">
 
@@ -1800,7 +1808,7 @@ footer{
     </div>
 </section>
 
-<!-- EMPTY -->
+<!-- ================= EMPTY ================= -->
 
 <div class="empty" id="empty">
 
@@ -1820,13 +1828,21 @@ footer{
 
 </main>
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 /* ================= CONFIG ================= */
 
 const CONFIG = {
+
     popupAlwaysShow: true,
-    viewsStorageKey: "modgameios_views",
-    musicFile: "music.mp3"
+
+    viewsStorageKey:
+        "modgameios_views",
+
+    youtubeVideoId:
+        "BUORWKzSl_o"
+
 };
 
 /* ================= ELEMENTS ================= */
@@ -1846,9 +1862,6 @@ const enterButton =
 const musicButton =
     document.getElementById("musicButton");
 
-const backgroundMusic =
-    document.getElementById("backgroundMusic");
-
 const empty =
     document.getElementById("empty");
 
@@ -1861,61 +1874,14 @@ const viewsElement =
 /* ================= POPUP ================= */
 
 if(CONFIG.popupAlwaysShow){
+
     popup.style.display = "flex";
+
+}else{
+
+    popup.style.display = "none";
+
 }
-
-async function startMusic(){
-
-    try{
-
-        backgroundMusic.volume = 0.65;
-
-        await backgroundMusic.play();
-
-        musicButton.textContent = "🔊";
-        musicButton.classList.add("on");
-
-        return true;
-
-    }catch(error){
-
-        musicButton.textContent = "🔇";
-        musicButton.classList.remove("on");
-
-        return false;
-    }
-}
-
-enterButton.addEventListener(
-    "click",
-    async function(){
-
-        popup.style.display = "none";
-
-        const started =
-            await startMusic();
-
-        if(!started){
-
-            showToast(
-                "Không phát được music.mp3"
-            );
-        }
-    }
-);
-
-document.addEventListener(
-    "keydown",
-    async function(event){
-
-        if(event.key === "Escape"){
-
-            popup.style.display = "none";
-
-            await startMusic();
-        }
-    }
-);
 
 /* ================= TOAST ================= */
 
@@ -1923,20 +1889,24 @@ let toastTimer = null;
 
 function showToast(message){
 
-    toast.textContent = message;
+    toast.textContent =
+        message;
 
     toast.classList.add("show");
 
     clearTimeout(toastTimer);
 
-    toastTimer = setTimeout(
-        function(){
+    toastTimer =
+        setTimeout(
+            function(){
 
-            toast.classList.remove("show");
+                toast.classList.remove(
+                    "show"
+                );
 
-        },
-        2200
-    );
+            },
+            2200
+        );
 }
 
 /* ================= SEARCH ================= */
@@ -1946,8 +1916,14 @@ function normalizeText(text){
     return text
         .toLowerCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g,"")
-        .replace(/đ/g,"d");
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+        .replace(
+            /đ/g,
+            "d"
+        );
 }
 
 function searchCards(){
@@ -1966,46 +1942,59 @@ function searchCards(){
 
     document
         .querySelectorAll(".section")
-        .forEach(function(section){
+        .forEach(
+            function(section){
 
-            let sectionVisible = 0;
+                let sectionVisible = 0;
 
-            section
-                .querySelectorAll(".card")
-                .forEach(function(card){
+                section
+                    .querySelectorAll(".card")
+                    .forEach(
+                        function(card){
 
-                    const searchText =
-                        normalizeText(
-                            (
-                                card.dataset.search ||
-                                ""
-                            )
-                            + " "
-                            + card.innerText
-                        );
+                            const searchText =
+                                normalizeText(
+                                    (
+                                        card.dataset.search ||
+                                        ""
+                                    )
+                                    + " "
+                                    + card.innerText
+                                );
 
-                    const matched =
-                        !value ||
-                        searchText.includes(value);
+                            const matched =
+                                !value ||
+                                searchText.includes(
+                                    value
+                                );
 
-                    card.style.display =
-                        matched ? "flex" : "none";
+                            card.style.display =
+                                matched
+                                    ? "flex"
+                                    : "none";
 
-                    if(matched){
+                            if(matched){
 
-                        visible++;
-                        sectionVisible++;
-                    }
-                });
+                                visible++;
+                                sectionVisible++;
 
-            section.style.display =
-                sectionVisible
-                    ? "block"
-                    : "none";
-        });
+                            }
+
+                        }
+                    );
+
+                section.style.display =
+                    sectionVisible
+                        ? "block"
+                        : "none";
+
+            }
+        );
 
     empty.style.display =
-        visible ? "none" : "block";
+        visible
+            ? "none"
+            : "block";
 }
 
 searchInput.addEventListener(
@@ -2022,36 +2011,44 @@ clearButton.addEventListener(
         searchCards();
 
         searchInput.focus();
+
     }
 );
 
-/* ================= LINK PLACEHOLDER ================= */
+/* ================= PLACEHOLDER LINKS ================= */
 
 document
     .querySelectorAll(".card")
-    .forEach(function(card){
+    .forEach(
+        function(card){
 
-        card.addEventListener(
-            "click",
-            function(event){
+            card.addEventListener(
+                "click",
+                function(event){
 
-                const href =
-                    card.getAttribute("href") || "";
+                    const href =
+                        card.getAttribute(
+                            "href"
+                        ) || "";
 
-                if(
-                    !href ||
-                    href.startsWith("YOUR_")
-                ){
+                    if(
+                        !href ||
+                        href.startsWith("YOUR_")
+                    ){
 
-                    event.preventDefault();
+                        event.preventDefault();
 
-                    showToast(
-                        "Bạn chưa gắn link cho mục này"
-                    );
+                        showToast(
+                            "Bạn chưa gắn link cho mục này"
+                        );
+
+                    }
+
                 }
-            }
-        );
-    });
+            );
+
+        }
+    );
 
 /* ================= VIEWS ================= */
 
@@ -2070,91 +2067,374 @@ localStorage.setItem(
 );
 
 viewsElement.textContent =
-    views.toLocaleString("vi-VN");
+    views.toLocaleString(
+        "vi-VN"
+    );
 
-/* ================= MUSIC BUTTON ================= */
+/* =========================================================
+   YOUTUBE MUSIC
+   Video:
+   https://www.youtube.com/watch?v=BUORWKzSl_o
+========================================================= */
+
+let youtubePlayer = null;
+
+let youtubeReady = false;
 
 let musicPlaying = false;
 
+/* ================= LOAD YOUTUBE API ================= */
+
+function loadYouTubeAPI(){
+
+    if(
+        window.YT &&
+        window.YT.Player
+    ){
+
+        createYouTubePlayer();
+
+        return;
+    }
+
+    if(
+        document.getElementById(
+            "youtube-api-script"
+        )
+    ){
+
+        return;
+    }
+
+    const script =
+        document.createElement(
+            "script"
+        );
+
+    script.id =
+        "youtube-api-script";
+
+    script.src =
+        "https://www.youtube.com/iframe_api";
+
+    script.async = true;
+
+    document.head.appendChild(
+        script
+    );
+}
+
+/* ================= YOUTUBE API READY ================= */
+
+window.onYouTubeIframeAPIReady =
+    function(){
+
+        createYouTubePlayer();
+
+    };
+
+/* ================= CREATE PLAYER ================= */
+
+function createYouTubePlayer(){
+
+    if(youtubePlayer){
+
+        return;
+
+    }
+
+    if(
+        !window.YT ||
+        !window.YT.Player
+    ){
+
+        return;
+
+    }
+
+    youtubePlayer =
+        new YT.Player(
+            "youtubePlayer",
+            {
+
+                width:"1",
+
+                height:"1",
+
+                videoId:
+                    CONFIG.youtubeVideoId,
+
+                playerVars:{
+
+                    autoplay:0,
+
+                    controls:0,
+
+                    disablekb:1,
+
+                    fs:0,
+
+                    loop:1,
+
+                    playlist:
+                        CONFIG.youtubeVideoId,
+
+                    playsinline:1,
+
+                    rel:0,
+
+                    modestbranding:1
+
+                },
+
+                events:{
+
+                    onReady:
+                        function(event){
+
+                            youtubeReady =
+                                true;
+
+                            try{
+
+                                event.target.setVolume(
+                                    65
+                                );
+
+                            }catch(error){}
+
+                        },
+
+                    onStateChange:
+                        function(event){
+
+                            if(
+                                event.data ===
+                                YT.PlayerState.PLAYING
+                            ){
+
+                                musicPlaying =
+                                    true;
+
+                                musicButton.textContent =
+                                    "🔊";
+
+                                musicButton.classList.add(
+                                    "on"
+                                );
+
+                            }
+
+                            else if(
+                                event.data ===
+                                YT.PlayerState.PAUSED ||
+                                event.data ===
+                                YT.PlayerState.ENDED
+                            ){
+
+                                musicPlaying =
+                                    false;
+
+                                musicButton.textContent =
+                                    "🔇";
+
+                                musicButton.classList.remove(
+                                    "on"
+                                );
+
+                            }
+
+                        },
+
+                    onError:
+                        function(){
+
+                            musicPlaying =
+                                false;
+
+                            musicButton.textContent =
+                                "🔇";
+
+                            musicButton.classList.remove(
+                                "on"
+                            );
+
+                            showToast(
+                                "Không thể phát nhạc YouTube"
+                            );
+
+                        }
+
+                }
+
+            }
+        );
+
+}
+
+/* ================= START MUSIC ================= */
+
+function startMusic(){
+
+    if(!youtubeReady){
+
+        showToast(
+            "YouTube đang tải, thử lại sau giây lát"
+        );
+
+        loadYouTubeAPI();
+
+        return;
+
+    }
+
+    if(!youtubePlayer){
+
+        showToast(
+            "Trình phát nhạc chưa sẵn sàng"
+        );
+
+        return;
+
+    }
+
+    try{
+
+        youtubePlayer.playVideo();
+
+        youtubePlayer.setVolume(
+            65
+        );
+
+        musicPlaying =
+            true;
+
+        musicButton.textContent =
+            "🔊";
+
+        musicButton.classList.add(
+            "on"
+        );
+
+    }catch(error){
+
+        showToast(
+            "Không thể phát nhạc"
+        );
+
+    }
+
+}
+
+/* ================= STOP MUSIC ================= */
+
+function stopMusic(){
+
+    if(!youtubePlayer){
+
+        return;
+
+    }
+
+    try{
+
+        youtubePlayer.pauseVideo();
+
+    }catch(error){}
+
+    musicPlaying =
+        false;
+
+    musicButton.textContent =
+        "🔇";
+
+    musicButton.classList.remove(
+        "on"
+    );
+
+}
+
+/* ================= MUSIC BUTTON ================= */
+
 musicButton.addEventListener(
     "click",
-    async function(){
+    function(){
 
-        if(backgroundMusic.paused){
+        if(musicPlaying){
 
-            const started =
-                await startMusic();
-
-            if(!started){
-
-                showToast(
-                    "Hãy đặt file music.mp3 cùng thư mục với HTML"
-                );
-            }
+            stopMusic();
 
         }else{
 
-            backgroundMusic.pause();
+            startMusic();
 
-            musicPlaying = false;
-
-            musicButton.textContent = "🔇";
-
-            musicButton.classList.remove("on");
         }
+
     }
 );
 
-/* ================= MUSIC STATE ================= */
+/* ================= ENTER WEBSITE ================= */
 
-backgroundMusic.addEventListener(
-    "play",
+enterButton.addEventListener(
+    "click",
     function(){
 
-        musicPlaying = true;
+        popup.style.display =
+            "none";
 
-        musicButton.textContent = "🔊";
+        /*
+         * Người dùng vừa tương tác
+         * nên trình duyệt có thể cho phép
+         * YouTube bắt đầu phát âm thanh.
+         */
 
-        musicButton.classList.add("on");
+        startMusic();
+
     }
 );
 
-backgroundMusic.addEventListener(
-    "pause",
-    function(){
+/* ================= ESCAPE ================= */
 
-        musicPlaying = false;
+document.addEventListener(
+    "keydown",
+    function(event){
 
-        musicButton.textContent = "🔇";
+        if(
+            event.key ===
+            "Escape"
+        ){
 
-        musicButton.classList.remove("on");
+            popup.style.display =
+                "none";
+
+            startMusic();
+
+        }
+
     }
 );
 
-backgroundMusic.addEventListener(
-    "error",
-    function(){
+/* ================= INIT ================= */
 
-        showToast(
-            "Không tìm thấy music.mp3"
-        );
-    }
-);
+loadYouTubeAPI();
 
 /* ================= TOUCH ================= */
 
 document
     .querySelectorAll(".card")
-    .forEach(function(card){
+    .forEach(
+        function(card){
 
-        card.addEventListener(
-            "touchstart",
-            function(){},
-            {
-                passive:true
-            }
-        );
-    });
+            card.addEventListener(
+                "touchstart",
+                function(){},
+                {
+                    passive:true
+                }
+            );
+
+        }
+    );
 </script>
 
 </body>
