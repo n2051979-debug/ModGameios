@@ -2,36 +2,18 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
->
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#08070d">
-
-<meta
-    name="apple-mobile-web-app-capable"
-    content="yes"
->
-
-<meta
-    name="apple-mobile-web-app-status-bar-style"
-    content="black-translucent"
->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <title>ModGameios • IPA Crack + Mod</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -56,16 +38,8 @@ body {
         sans-serif;
 
     background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(125, 61, 255, .14),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 10% 40%,
-            rgba(31, 121, 255, .05),
-            transparent 25%
-        ),
+        radial-gradient(circle at 50% 0%, rgba(125,61,255,.14), transparent 28%),
+        radial-gradient(circle at 10% 40%, rgba(31,121,255,.05), transparent 25%),
         #08070d;
 
     -webkit-font-smoothing: antialiased;
@@ -85,51 +59,36 @@ a {
 .page {
     width: min(100%, 520px);
     margin: auto;
-
     padding:
         env(safe-area-inset-top)
         14px
         calc(70px + env(safe-area-inset-bottom));
 }
 
-/* =========================
-   TOPBAR
-========================= */
+/* TOPBAR */
 
 .topbar {
     height: 52px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #8aaeff;
-
     font-size: 10px;
     font-weight: 900;
-
     letter-spacing: 1px;
 }
 
 .brand-dot {
     display: inline-block;
-
     width: 6px;
     height: 6px;
-
     border-radius: 50%;
-
     background: #65a8ff;
-
-    box-shadow:
-        0 0 10px #438dff;
-
+    box-shadow: 0 0 10px #438dff;
     margin-right: 7px;
 }
 
-/* =========================
-   PROFILE
-========================= */
+/* PROFILE */
 
 .profile {
     text-align: center;
@@ -138,24 +97,18 @@ a {
 
 .avatar-wrap {
     position: relative;
-
     width: 116px;
     height: 116px;
-
     margin: 0 auto 17px;
-
     display: grid;
     place-items: center;
 }
 
 .avatar-wrap::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
     border-radius: 50%;
-
     background:
         conic-gradient(
             from 0deg,
@@ -166,54 +119,29 @@ a {
             #39118e,
             #6124ff
         );
-
-    filter:
-        drop-shadow(
-            0 0 12px
-            rgba(137, 61, 255, .85)
-        );
-
-    animation:
-        avatarSpin
-        5s
-        linear
-        infinite;
+    filter: drop-shadow(0 0 12px rgba(137,61,255,.85));
+    animation: avatarSpin 5s linear infinite;
 }
 
 .avatar-wrap::after {
     content: "";
-
     position: absolute;
     inset: -9px;
-
     border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(164, 83, 255, .55);
-
+    border: 1px solid rgba(164,83,255,.55);
     box-shadow:
-        0 0 18px rgba(134, 55, 255, .45),
-        0 0 42px rgba(102, 40, 255, .18);
-
-    animation:
-        avatarPulse
-        2.4s
-        ease-in-out
-        infinite;
+        0 0 18px rgba(134,55,255,.45),
+        0 0 42px rgba(102,40,255,.18);
+    animation: avatarPulse 2.4s ease-in-out infinite;
 }
 
 .avatar {
     position: relative;
     z-index: 2;
-
     width: 104px;
     height: 104px;
-
     border-radius: 50%;
-
     object-fit: cover;
-
     background:
         radial-gradient(
             circle at 50% 30%,
@@ -221,11 +149,7 @@ a {
             #1b0e37 65%,
             #09070e
         );
-
-    border:
-        4px solid
-        #0c0a11;
-
+    border: 4px solid #0c0a11;
     box-shadow:
         0 0 0 1px rgba(255,255,255,.08),
         0 0 25px rgba(135,62,255,.55);
@@ -234,17 +158,14 @@ a {
 .avatar-fallback {
     position: absolute;
     z-index: 1;
-
     font-size: 32px;
     font-weight: 900;
-
     color: #fff;
 }
 
 .name {
     font-size: 25px;
     font-weight: 900;
-
     letter-spacing: -1px;
 
     background:
@@ -260,125 +181,79 @@ a {
 
     -webkit-background-clip: text;
     background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
-    animation:
-        textShine
-        4s
-        linear
-        infinite;
+    animation: textShine 4s linear infinite;
 }
 
 .subtitle {
     margin-top: 5px;
-
     color: #817c8c;
-
     font-size: 10px;
     font-weight: 700;
-
     letter-spacing: .5px;
 }
 
-/* =========================
-   STATS
-========================= */
+/* STATS */
 
 .stats {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-
     margin: 13px 0;
 }
 
 .stat {
     padding: 12px 5px;
-
     text-align: center;
-
-    border:
-        1px solid
-        #282530;
-
+    border: 1px solid #282530;
     border-radius: 15px;
-
-    background:
-        rgba(25,23,31,.85);
+    background: rgba(25,23,31,.85);
 }
 
 .stat strong {
     display: block;
-
     font-size: 18px;
     font-weight: 900;
 }
 
 .stat span {
     display: block;
-
     margin-top: 4px;
-
     color: #77727f;
-
     font-size: 9px;
     font-weight: 600;
 }
 
-/* =========================
-   SOCIAL
-========================= */
+/* SOCIAL */
 
 .socials {
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 9px;
-
     margin-top: 9px;
 }
 
 .social {
     height: 46px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
-
     border-radius: 13px;
-
     font-size: 11px;
     font-weight: 800;
-
     border: 1px solid;
-
-    transition:
-        transform .2s,
-        box-shadow .2s;
+    transition: transform .2s, box-shadow .2s;
 }
 
 .social:hover {
     transform: translateY(-2px);
 }
 
-/* ICON NHÚN */
-
 .social-icon {
     display: inline-block;
-
-    animation:
-        socialBounce
-        1.8s
-        ease-in-out
-        infinite;
+    animation: socialBounce 1.8s ease-in-out infinite;
 }
 
 .social:nth-child(2) .social-icon {
@@ -386,87 +261,46 @@ a {
 }
 
 .tiktok {
-    background:
-        rgba(255,255,255,.04);
-
+    background: rgba(255,255,255,.04);
     border-color: #3a3641;
-
     color: #eee;
 }
 
 .discord {
-    background:
-        rgba(125,87,255,.1);
-
-    border-color:
-        rgba(139,98,255,.5);
-
+    background: rgba(125,87,255,.1);
+    border-color: rgba(139,98,255,.5);
     color: #ae96ff;
-
-    box-shadow:
-        0 0 15px
-        rgba(123,77,255,.08);
+    box-shadow: 0 0 15px rgba(123,77,255,.08);
 }
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
 .search-wrap {
     position: sticky;
-
     top: 0;
-
     z-index: 40;
-
     padding: 10px 0 13px;
-
-    background:
-        linear-gradient(
-            #08070d 72%,
-            transparent
-        );
+    background: linear-gradient(#08070d 72%, transparent);
 }
 
 .search-box {
     height: 48px;
-
     display: flex;
     align-items: center;
-
     gap: 9px;
-
-    padding:
-        0
-        7px
-        0
-        14px;
-
-    border:
-        1px solid
-        #302d39;
-
+    padding: 0 7px 0 14px;
+    border: 1px solid #302d39;
     border-radius: 15px;
-
-    background:
-        rgba(22,20,29,.96);
-
-    box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.25);
-
+    background: rgba(22,20,29,.96);
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
     transition: .2s;
 }
 
 .search-box:focus-within {
     border-color: #6946b8;
-
     box-shadow:
-        0 0 0 3px
-        rgba(116,66,255,.08),
-
-        0 10px 30px
-        rgba(0,0,0,.3);
+        0 0 0 3px rgba(116,66,255,.08),
+        0 10px 30px rgba(0,0,0,.3);
 }
 
 .search-icon {
@@ -477,14 +311,10 @@ a {
 .search {
     width: 100%;
     height: 100%;
-
     border: 0;
     outline: 0;
-
     background: transparent;
-
     color: #fff;
-
     font-size: 12px;
     font-weight: 600;
 }
@@ -495,18 +325,12 @@ a {
 
 .clear {
     display: none;
-
     width: 32px;
     height: 32px;
-
     border: 0;
-
     border-radius: 10px;
-
     background: #25212e;
-
     color: #aaa;
-
     cursor: pointer;
 }
 
@@ -514,9 +338,7 @@ a {
     display: block;
 }
 
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 
 .section {
     margin-top: 17px;
@@ -525,67 +347,38 @@ a {
 .section-title {
     display: flex;
     align-items: center;
-
     gap: 9px;
-
-    margin:
-        21px
-        5px
-        11px;
-
+    margin: 21px 5px 11px;
     font-size: 19px;
     line-height: 1.15;
-
     font-weight: 900;
-
     letter-spacing: -.7px;
 }
 
 .section-title::before {
     content: "";
-
     width: 4px;
     height: 20px;
-
     border-radius: 8px;
-
-    background:
-        linear-gradient(
-            #bd70ff,
-            #5b73ff
-        );
-
-    box-shadow:
-        0 0 12px
-        #8a45ff;
+    background: linear-gradient(#bd70ff,#5b73ff);
+    box-shadow: 0 0 12px #8a45ff;
 }
 
 .cards {
     display: flex;
-
     flex-direction: column;
-
     gap: 9px;
 }
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 
 .card {
     position: relative;
-
     min-height: 78px;
-
     display: flex;
     align-items: center;
-
     padding: 11px;
-
-    border:
-        1px solid
-        #292631;
-
+    border: 1px solid #292631;
     border-radius: 16px;
 
     background:
@@ -597,9 +390,7 @@ a {
 
     overflow: hidden;
 
-    box-shadow:
-        0 8px 22px
-        rgba(0,0,0,.16);
+    box-shadow: 0 8px 22px rgba(0,0,0,.16);
 
     transition:
         transform .18s,
@@ -609,7 +400,6 @@ a {
 
 .card::before {
     content: "";
-
     position: absolute;
     inset: 0;
 
@@ -621,39 +411,30 @@ a {
             transparent
         );
 
-    transform:
-        translateX(-110%);
-
+    transform: translateX(-110%);
     transition: .6s;
 }
 
 .card:hover {
-    transform:
-        translateY(-2px);
-
+    transform: translateY(-2px);
     border-color: #40384e;
-
-    box-shadow:
-        0 18px 55px
-        rgba(0,0,0,.42);
+    box-shadow: 0 18px 55px rgba(0,0,0,.42);
 }
 
 .card:hover::before {
-    transform:
-        translateX(110%);
+    transform: translateX(110%);
 }
 
 .card:active {
-    transform:
-        scale(.985);
+    transform: scale(.985);
 }
+
+/* ICON */
 
 .icon {
     width: 50px;
     height: 50px;
-
     flex: 0 0 50px;
-
     margin-right: 12px;
 
     display: grid;
@@ -668,109 +449,82 @@ a {
             #201d27
         );
 
-    border:
-        1px solid
-        rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.05);
 
-    font-size: 24px;
+    color: #b99aff;
 
     box-shadow:
-        inset
-        0 0 18px
-        rgba(255,255,255,.025);
+        inset 0 0 18px rgba(255,255,255,.025);
+}
+
+.icon svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .info {
     min-width: 0;
-
     flex: 1;
 }
 
 .title {
     font-size: 13px;
     font-weight: 900;
-
     line-height: 1.25;
-
     letter-spacing: -.2px;
-
     white-space: nowrap;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
 }
 
 .desc {
     margin-top: 4px;
-
     color: #85808e;
-
     font-size: 10px;
-
     font-weight: 500;
-
     line-height: 1.45;
 }
 
 .tags {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 5px;
-
     margin-top: 6px;
 }
 
 .tag {
     padding: 4px 7px;
-
     border-radius: 7px;
-
     background: #302c39;
-
     color: #d6d0df;
-
     font-size: 8px;
-
     line-height: 1;
-
     font-weight: 800;
 }
 
 .tag.blue {
-    background:
-        rgba(67,139,255,.12);
-
+    background: rgba(67,139,255,.12);
     color: #72adff;
-
-    border:
-        1px solid
-        rgba(67,139,255,.15);
+    border: 1px solid rgba(67,139,255,.15);
 }
 
-.open,
+/* DOWNLOAD */
+
 .download-btn {
     width: 39px;
     height: 39px;
-
     flex: 0 0 39px;
 
     display: grid;
     place-items: center;
 
+    border: 1px solid rgba(117,73,255,.25);
     border-radius: 11px;
-}
-
-.open {
-    color: #9993a5;
-}
-
-.download-btn {
-    border:
-        1px solid
-        rgba(117,73,255,.25);
 
     background:
         linear-gradient(
@@ -782,91 +536,98 @@ a {
     color: #bc9cff;
 
     box-shadow:
-        0 0 16px
-        rgba(111,49,255,.12);
+        0 0 16px rgba(111,49,255,.12);
+
+    transition:
+        transform .18s,
+        background .18s,
+        box-shadow .18s;
 }
 
-svg {
-    width: 20px;
-    height: 20px;
-
+.download-btn svg {
+    width: 19px;
+    height: 19px;
     fill: none;
-
     stroke: currentColor;
-
     stroke-width: 2;
-
     stroke-linecap: round;
-
     stroke-linejoin: round;
 }
 
-/* =========================
-   EMPTY
-========================= */
+.card:hover .download-btn {
+    transform: translateY(-1px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #5130a0,
+            #322060
+        );
+
+    box-shadow:
+        0 0 20px rgba(111,49,255,.25);
+}
+
+.open {
+    width: 39px;
+    height: 39px;
+    flex: 0 0 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    color: #9993a5;
+}
+
+.open svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* EMPTY */
 
 .empty {
     display: none;
-
     text-align: center;
-
     padding: 38px 10px;
-
     color: #706b78;
-
     font-size: 12px;
 }
 
 .empty-icon {
     font-size: 28px;
-
     margin-bottom: 8px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     text-align: center;
-
     margin-top: 34px;
-
     color: #4f4a57;
-
     font-size: 9px;
-
     font-weight: 600;
 }
 
-/* =========================
-   MUSIC
-========================= */
+/* MUSIC */
 
 .music-btn {
     position: fixed;
-
     right: 17px;
-
-    bottom:
-        calc(
-            17px +
-            env(safe-area-inset-bottom)
-        );
-
+    bottom: calc(17px + env(safe-area-inset-bottom));
     z-index: 80;
 
     width: 46px;
     height: 46px;
 
-    border:
-        1px solid
-        #332e3d;
-
+    border: 1px solid #332e3d;
     border-radius: 50%;
 
     background: #19171f;
-
     color: #fff;
 
     display: grid;
@@ -874,74 +635,50 @@ footer {
 
     font-size: 18px;
 
-    box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.55);
+    box-shadow: 0 8px 25px rgba(0,0,0,.55);
 
     cursor: pointer;
-
     transition: .2s;
 }
 
 .music-btn:hover {
     transform: scale(1.05);
-
     border-color: #7d4dff;
 }
 
 .music-btn.on {
     border-color: #7d4dff;
-
-    box-shadow:
-        0 0 20px
-        rgba(115,58,255,.3);
+    box-shadow: 0 0 20px rgba(115,58,255,.3);
 }
 
-/* =========================
-   POPUP THÔNG BÁO
-========================= */
+/* POPUP */
 
 .overlay {
     position: fixed;
-
     inset: 0;
-
     z-index: 1000;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
 
-    background:
-        rgba(0,0,0,.86);
+    background: rgba(0,0,0,.86);
 
-    backdrop-filter:
-        blur(16px);
-
-    -webkit-backdrop-filter:
-        blur(16px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .notice {
     position: relative;
-
     width: min(100%,390px);
 
-    padding:
-        31px
-        20px
-        20px;
+    padding: 31px 20px 20px;
 
     text-align: center;
 
-    border:
-        1px solid
-        rgba(132,76,255,.38);
-
+    border: 1px solid rgba(132,76,255,.38);
     border-radius: 24px;
 
     background:
@@ -952,28 +689,20 @@ footer {
         );
 
     box-shadow:
-        0 30px 100px
-        rgba(0,0,0,.85),
-
-        0 0 35px
-        rgba(112,48,255,.12);
+        0 30px 100px rgba(0,0,0,.85),
+        0 0 35px rgba(112,48,255,.12);
 
     overflow: hidden;
 
     animation:
-        popupIn
-        .42s
-        cubic-bezier(.16,1,.3,1);
+        popupIn .42s cubic-bezier(.16,1,.3,1);
 }
 
 .notice::after {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 9%;
-
     width: 82%;
     height: 1px;
 
@@ -987,9 +716,7 @@ footer {
             transparent
         );
 
-    box-shadow:
-        0 0 15px
-        #8b4fff;
+    box-shadow: 0 0 15px #8b4fff;
 }
 
 .notice-icon {
@@ -998,10 +725,7 @@ footer {
     width: 72px;
     height: 72px;
 
-    margin:
-        0
-        auto
-        16px;
+    margin: 0 auto 16px;
 
     display: grid;
     place-items: center;
@@ -1015,46 +739,27 @@ footer {
             #171225
         );
 
-    border:
-        1px solid
-        rgba(159,96,255,.42);
+    border: 1px solid rgba(159,96,255,.42);
 
     font-size: 30px;
 
     box-shadow:
-        0 0 24px
-        rgba(116,57,255,.16);
+        0 0 24px rgba(116,57,255,.16);
 
-    animation:
-        floatIcon
-        3s
-        ease-in-out
-        infinite;
+    animation: floatIcon 3s ease-in-out infinite;
 }
 
 .notice-icon::before {
     content: "";
-
     position: absolute;
-
     inset: -6px;
-
     border-radius: 27px;
-
-    border:
-        1px solid
-        rgba(142,76,255,.22);
-
-    animation:
-        avatarPulse
-        2s
-        ease-in-out
-        infinite;
+    border: 1px solid rgba(142,76,255,.22);
+    animation: avatarPulse 2s ease-in-out infinite;
 }
 
 .notice-title {
     font-size: 23px;
-
     font-weight: 900;
 
     background:
@@ -1069,51 +774,32 @@ footer {
     background-size: 200% auto;
 
     -webkit-background-clip: text;
-
     background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
-    animation:
-        textShine
-        3s
-        linear
-        infinite;
+    animation: textShine 3s linear infinite;
 }
 
 .notice-sub {
-    margin:
-        8px
-        0
-        18px;
-
+    margin: 8px 0 18px;
     color: #9b6cff;
-
     font-size: 9px;
-
     font-weight: 900;
-
     letter-spacing: 2px;
 }
 
 .notice-message {
     padding: 14px;
-
     margin-bottom: 19px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.07);
-
+    border: 1px solid rgba(255,255,255,.07);
     border-radius: 13px;
 
-    background:
-        rgba(255,255,255,.025);
+    background: rgba(255,255,255,.025);
 
     color: #aaa4b1;
 
     font-size: 13px;
-
     line-height: 1.6;
 }
 
@@ -1125,11 +811,9 @@ footer {
     position: relative;
 
     width: 100%;
-
     min-height: 50px;
 
     border: 0;
-
     border-radius: 14px;
 
     background:
@@ -1142,25 +826,20 @@ footer {
     color: #fff;
 
     font-size: 12px;
-
     font-weight: 900;
 
     cursor: pointer;
-
     overflow: hidden;
 
     box-shadow:
-        0 9px 28px
-        rgba(106,54,230,.3);
+        0 9px 28px rgba(106,54,230,.3);
 
     transition: .2s;
 }
 
 .notice-btn::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: -100%;
 
@@ -1175,36 +854,26 @@ footer {
             transparent
         );
 
-    transform:
-        skewX(-20deg);
+    transform: skewX(-20deg);
 
-    animation:
-        buttonShine
-        3s
-        infinite;
+    animation: buttonShine 3s infinite;
 }
 
 .notice-btn:hover {
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 
     box-shadow:
-        0 13px 35px
-        rgba(106,54,230,.4);
+        0 13px 35px rgba(106,54,230,.4);
 }
 
 .notice-btn:active {
-    transform:
-        scale(.97);
+    transform: scale(.97);
 }
 
-/* =========================
-   TOAST
-========================= */
+/* TOAST */
 
 .toast {
     position: fixed;
-
     left: 50%;
 
     bottom:
@@ -1215,31 +884,21 @@ footer {
 
     z-index: 1200;
 
-    transform:
-        translate(-50%,15px);
-
+    transform: translate(-50%,15px);
     opacity: 0;
 
-    padding:
-        10px
-        14px;
+    padding: 10px 14px;
 
-    border:
-        1px solid
-        #38323f;
-
+    border: 1px solid #38323f;
     border-radius: 12px;
 
     background: #1a1720;
-
     color: #ddd;
 
     font-size: 10px;
-
     font-weight: 700;
 
     pointer-events: none;
-
     transition: .25s;
 
     white-space: nowrap;
@@ -1247,61 +906,42 @@ footer {
 
 .toast.show {
     opacity: 1;
-
-    transform:
-        translate(-50%,0);
+    transform: translate(-50%,0);
 }
 
-/* =========================
-   ANIMATION
-========================= */
+/* ANIMATION */
 
 @keyframes avatarSpin {
-
     to {
-        transform:
-            rotate(360deg);
+        transform: rotate(360deg);
     }
-
 }
 
 @keyframes avatarPulse {
-
     0%,100% {
-        transform:
-            scale(.96);
-
+        transform: scale(.96);
         opacity: .35;
     }
 
     50% {
-        transform:
-            scale(1.08);
-
+        transform: scale(1.08);
         opacity: 1;
     }
-
 }
 
 @keyframes textShine {
-
     0% {
-        background-position:
-            200% center;
+        background-position: 200% center;
     }
 
     100% {
-        background-position:
-            -200% center;
+        background-position: -200% center;
     }
-
 }
 
 @keyframes popupIn {
-
     from {
         opacity: 0;
-
         transform:
             translateY(24px)
             scale(.88);
@@ -1309,30 +949,23 @@ footer {
 
     to {
         opacity: 1;
-
         transform:
             translateY(0)
             scale(1);
     }
-
 }
 
 @keyframes floatIcon {
-
     0%,100% {
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     50% {
-        transform:
-            translateY(-4px);
+        transform: translateY(-4px);
     }
-
 }
 
 @keyframes buttonShine {
-
     0% {
         left: -100%;
     }
@@ -1340,11 +973,9 @@ footer {
     25%,100% {
         left: 150%;
     }
-
 }
 
 @keyframes socialBounce {
-
     0%,100% {
         transform:
             translateY(0)
@@ -1374,15 +1005,11 @@ footer {
             translateY(0)
             rotate(0deg);
     }
-
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:380px) {
-
     .page {
         padding-left: 12px;
         padding-right: 12px;
@@ -1397,20 +1024,15 @@ footer {
     }
 
     .notice {
-        padding:
-            28px
-            17px
-            19px;
+        padding: 28px 17px 19px;
     }
 
     .notice-title {
         font-size: 21px;
     }
-
 }
 
 @media(min-width:700px) {
-
     body {
         padding-top: 10px;
     }
@@ -1418,23 +1040,15 @@ footer {
     .page {
         padding-bottom: 100px;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ==================================================
-     POPUP THÔNG BÁO
-     POPUP SẼ HIỆN MỖI LẦN MỞ WEB
-================================================== -->
+<!-- POPUP -->
 
-<div
-    class="overlay"
-    id="noticePopup"
->
+<div class="overlay" id="noticePopup">
 
     <div class="notice">
 
@@ -1467,9 +1081,7 @@ footer {
 
 </div>
 
-<!-- ==================================================
-     MUSIC BUTTON
-================================================== -->
+<!-- MUSIC -->
 
 <button
     class="music-btn"
@@ -1480,27 +1092,17 @@ footer {
     🔇
 </button>
 
-<!-- ==================================================
-     TOAST
-================================================== -->
+<!-- TOAST -->
 
-<div
-    class="toast"
-    id="toast"
-></div>
+<div class="toast" id="toast"></div>
 
-<!-- ==================================================
-     WEBSITE
-================================================== -->
+<!-- WEBSITE -->
 
 <main class="page">
 
 <header class="topbar">
-
     <span class="brand-dot"></span>
-
     APP CRACK + MODS GAME
-
 </header>
 
 <!-- PROFILE -->
@@ -1537,39 +1139,18 @@ footer {
 <div class="stats">
 
     <div class="stat">
-
-        <strong id="views">
-            0
-        </strong>
-
-        <span>
-            Lượt xem
-        </span>
-
+        <strong id="views">0</strong>
+        <span>Lượt xem</span>
     </div>
 
     <div class="stat">
-
-        <strong>
-            2026
-        </strong>
-
-        <span>
-            Cập nhật
-        </span>
-
+        <strong>2026</strong>
+        <span>Cập nhật</span>
     </div>
 
     <div class="stat">
-
-        <strong>
-            VN
-        </strong>
-
-        <span>
-            Khu vực
-        </span>
-
+        <strong>VN</strong>
+        <span>Khu vực</span>
     </div>
 
 </div>
@@ -1584,10 +1165,7 @@ footer {
         target="_blank"
         rel="noopener noreferrer"
     >
-        <span class="social-icon">
-            ♪
-        </span>
-
+        <span class="social-icon">♪</span>
         TikTok
     </a>
 
@@ -1597,10 +1175,7 @@ footer {
         target="_blank"
         rel="noopener noreferrer"
     >
-        <span class="social-icon">
-            ●
-        </span>
-
+        <span class="social-icon">●</span>
         Kênh Discord
     </a>
 
@@ -1650,6 +1225,8 @@ footer {
 
     <div class="cards">
 
+        <!-- NEXT DNS -->
+
         <a
             class="card"
             href="YOUR_NEXTDNS_LINK"
@@ -1657,7 +1234,10 @@ footer {
         >
 
             <div class="icon">
-                🛡️
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1671,11 +1251,7 @@ footer {
                 </div>
 
                 <div class="tags">
-
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
@@ -1683,12 +1259,16 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- APP 3105 V3 -->
 
         <a
             class="card"
@@ -1697,7 +1277,12 @@ footer {
         >
 
             <div class="icon">
-                🦊
+                <svg viewBox="0 0 24 24">
+                    <rect x="4" y="3" width="16" height="18" rx="3"/>
+                    <path d="M8 7h8"/>
+                    <path d="M8 11h8"/>
+                    <circle cx="12" cy="17" r="1"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1712,15 +1297,19 @@ footer {
 
             </div>
 
-            <span class="open">
+            <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1 1-1V5a1 1 0 0 1 1-1h5"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- APP 3105 V1.1.1 -->
 
         <a
             class="card"
@@ -1729,7 +1318,12 @@ footer {
         >
 
             <div class="icon">
-                🦊
+                <svg viewBox="0 0 24 24">
+                    <rect x="4" y="3" width="16" height="18" rx="3"/>
+                    <path d="M8 7h8"/>
+                    <path d="M8 11h8"/>
+                    <circle cx="12" cy="17" r="1"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1744,15 +1338,19 @@ footer {
 
             </div>
 
-            <span class="open">
+            <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1V5a1 1 0 0 1 1-1h5"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- 8BP -->
 
         <a
             class="card"
@@ -1761,7 +1359,10 @@ footer {
         >
 
             <div class="icon">
-                🎱
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1775,28 +1376,25 @@ footer {
                 </div>
 
                 <div class="tags">
-
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
-                    <span class="tag">
-                        ANTIBAN
-                    </span>
-
+                    <span class="tag blue">iOS</span>
+                    <span class="tag">ANTIBAN</span>
                 </div>
 
             </div>
 
-            <span class="open">
+            <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- 120HZ -->
 
         <a
             class="card"
@@ -1805,7 +1403,11 @@ footer {
         >
 
             <div class="icon">
-                💙
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 12a8 8 0 1 0 3-6"/>
+                    <path d="M4 5v5h5"/>
+                    <path d="M12 8v4l3 2"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1820,15 +1422,19 @@ footer {
 
             </div>
 
-            <span class="open">
+            <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- DUOLINGO -->
 
         <a
             class="card"
@@ -1837,7 +1443,12 @@ footer {
         >
 
             <div class="icon">
-                🦉
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="9" cy="10" r="1"/>
+                    <circle cx="15" cy="10" r="1"/>
+                    <path d="M8 14c1.2 1.5 2.8 2 4 2s2.8-.5 4-2"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1852,15 +1463,19 @@ footer {
 
             </div>
 
-            <span class="open">
+            <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- MESSENGER -->
 
         <a
             class="card"
@@ -1869,7 +1484,10 @@ footer {
         >
 
             <div class="icon">
-                💬
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 11.5a8 7 0 1 1 15 4.2L20 20l-4-2a9 9 0 0 1-4 1"/>
+                    <path d="M8 13l3-3 2 2 3-3"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1884,15 +1502,19 @@ footer {
 
             </div>
 
-            <span class="open">
+            <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- YOUTUBE -->
 
         <a
             class="card"
@@ -1901,7 +1523,10 @@ footer {
         >
 
             <div class="icon">
-                ▶️
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="6" width="18" height="12" rx="4"/>
+                    <path d="M10 9l5 3-5 3z"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1916,15 +1541,19 @@ footer {
 
             </div>
 
-            <span class="open">
+            <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
+
+        <!-- FILZA -->
 
         <a
             class="card"
@@ -1933,7 +1562,9 @@ footer {
         >
 
             <div class="icon">
-                📁
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1948,10 +1579,12 @@ footer {
 
             </div>
 
-            <span class="open">
+            <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
 
             </span>
@@ -1983,7 +1616,11 @@ footer {
         >
 
             <div class="icon">
-                ◉
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="8"/>
+                    <path d="M8 12h8"/>
+                    <path d="M12 8v8"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -1997,25 +1634,18 @@ footer {
                 </div>
 
                 <div class="tags">
-
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
-                    <span class="tag">
-                        ANTIBAN
-                    </span>
-
+                    <span class="tag blue">iOS</span>
+                    <span class="tag">ANTIBAN</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
-
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
-
             </span>
 
         </a>
@@ -2029,7 +1659,13 @@ footer {
         >
 
             <div class="icon">
-                🤖
+                <svg viewBox="0 0 24 24">
+                    <path d="M7 4h10"/>
+                    <path d="M6 8h12"/>
+                    <path d="M5 12h14"/>
+                    <path d="M7 16h10"/>
+                    <path d="M9 20h6"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -2043,25 +1679,18 @@ footer {
                 </div>
 
                 <div class="tags">
-
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
-                    <span class="tag">
-                        ANTIBAN
-                    </span>
-
+                    <span class="tag blue">iOS</span>
+                    <span class="tag">ANTIBAN</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
-
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
-
             </span>
 
         </a>
@@ -2075,7 +1704,11 @@ footer {
         >
 
             <div class="icon">
-                🛡️
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4z"/>
+                    <path d="M12 8v5"/>
+                    <circle cx="12" cy="16" r=".8"/>
+                </svg>
             </div>
 
             <div class="info">
@@ -2093,25 +1726,18 @@ footer {
                 </div>
 
                 <div class="tags">
-
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
-                    <span class="tag">
-                        ANTIBAN
-                    </span>
-
+                    <span class="tag blue">iOS</span>
+                    <span class="tag">ANTIBAN</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
-
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
-
             </span>
 
         </a>
@@ -2140,9 +1766,7 @@ footer {
             data-search="patch hack pvz2 app 3105"
         >
 
-            <div class="icon">
-                🌱
-            </div>
+            <div class="icon">🌱</div>
 
             <div class="info">
 
@@ -2159,16 +1783,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2182,9 +1806,7 @@ footer {
             data-search="patch candy crush app 3105"
         >
 
-            <div class="icon">
-                🍬
-            </div>
+            <div class="icon">🍬</div>
 
             <div class="info">
 
@@ -2201,16 +1823,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2224,9 +1846,7 @@ footer {
             data-search="patch subway surfers app 3105"
         >
 
-            <div class="icon">
-                🏃
-            </div>
+            <div class="icon">🏃</div>
 
             <div class="info">
 
@@ -2243,16 +1863,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2266,9 +1886,7 @@ footer {
             data-search="mod pubg pubg mobile patch hack ios"
         >
 
-            <div class="icon">
-                🎯
-            </div>
+            <div class="icon">🎯</div>
 
             <div class="info">
 
@@ -2285,16 +1903,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2308,9 +1926,7 @@ footer {
             data-search="patch hack map"
         >
 
-            <div class="icon">
-                🗺️
-            </div>
+            <div class="icon">🗺️</div>
 
             <div class="info">
 
@@ -2323,16 +1939,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2346,9 +1962,7 @@ footer {
             data-search="patch unlockskin unlock skin"
         >
 
-            <div class="icon">
-                👕
-            </div>
+            <div class="icon">👕</div>
 
             <div class="info">
 
@@ -2361,16 +1975,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2384,9 +1998,7 @@ footer {
             data-search="patch unlockskin cam xa no map"
         >
 
-            <div class="icon">
-                🎥
-            </div>
+            <div class="icon">🎥</div>
 
             <div class="info">
 
@@ -2399,16 +2011,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2422,9 +2034,7 @@ footer {
             data-search="patch lq unlock skin lien quan"
         >
 
-            <div class="icon">
-                ⚔️
-            </div>
+            <div class="icon">⚔️</div>
 
             <div class="info">
 
@@ -2437,16 +2047,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2460,9 +2070,7 @@ footer {
             data-search="patch aim ffm"
         >
 
-            <div class="icon">
-                🎯
-            </div>
+            <div class="icon">🎯</div>
 
             <div class="info">
 
@@ -2475,16 +2083,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2498,9 +2106,7 @@ footer {
             data-search="patch dinh vi aimbody ffm"
         >
 
-            <div class="icon">
-                📍
-            </div>
+            <div class="icon">📍</div>
 
             <div class="info">
 
@@ -2513,20 +2119,17 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
-
-                    <span class="tag">
-                        ANTIBAN
-                    </span>
+                    <span class="tag blue">iOS</span>
+                    <span class="tag">ANTIBAN</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2540,9 +2143,7 @@ footer {
             data-search="patch aim ffth free fire th"
         >
 
-            <div class="icon">
-                🎯
-            </div>
+            <div class="icon">🎯</div>
 
             <div class="info">
 
@@ -2559,16 +2160,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2582,9 +2183,7 @@ footer {
             data-search="capcut pro patch mod"
         >
 
-            <div class="icon">
-                ✂️
-            </div>
+            <div class="icon">✂️</div>
 
             <div class="info">
 
@@ -2601,16 +2200,16 @@ footer {
                 </div>
 
                 <div class="tags">
-                    <span class="tag blue">
-                        iOS
-                    </span>
+                    <span class="tag blue">iOS</span>
                 </div>
 
             </div>
 
             <span class="download-btn">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                    <path d="M12 3v11"/>
+                    <path d="M7 10l5 5 5-5"/>
+                    <path d="M5 20h14"/>
                 </svg>
             </span>
 
@@ -2622,10 +2221,7 @@ footer {
 
 <!-- EMPTY -->
 
-<div
-    class="empty"
-    id="empty"
->
+<div class="empty" id="empty">
 
     <div class="empty-icon">
         🔎
@@ -2644,32 +2240,14 @@ footer {
 </main>
 
 <script>
-
-/* ==================================================
-   CONFIG
-================================================== */
+/* CONFIG */
 
 const CONFIG = {
-
-    /*
-     * Popup không lưu trạng thái.
-     * Vì vậy mỗi lần tải/reload trang popup đều hiện.
-     */
-
     popupAlwaysShow: true,
-
-    /*
-     * Key lưu lượt xem trên thiết bị.
-     */
-
-    viewsStorageKey:
-        "modgameios_views"
-
+    viewsStorageKey: "modgameios_views"
 };
 
-/* ==================================================
-   ELEMENT
-================================================== */
+/* ELEMENT */
 
 const searchInput =
     document.getElementById("search");
@@ -2695,91 +2273,48 @@ const toast =
 const viewsElement =
     document.getElementById("views");
 
-/* ==================================================
-   POPUP THÔNG BÁO
-   HIỆN MỖI LẦN VÀO WEB
-================================================== */
+/* POPUP */
 
 if (CONFIG.popupAlwaysShow) {
-
-    popup.classList.remove("hidden");
-
+    popup.style.display = "flex";
 }
 
-enterButton.addEventListener(
-    "click",
-    function() {
+enterButton.addEventListener("click", function() {
+    popup.style.display = "none";
+});
 
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
         popup.style.display = "none";
-
     }
-);
+});
 
-/* ESC */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            popup.style.display =
-                "none";
-
-        }
-
-    }
-);
-
-/* ==================================================
-   TOAST
-================================================== */
+/* TOAST */
 
 let toastTimer = null;
 
 function showToast(message) {
 
-    toast.textContent =
-        message;
+    toast.textContent = message;
 
     toast.classList.add("show");
 
     clearTimeout(toastTimer);
 
-    toastTimer =
-        setTimeout(
-            function() {
-
-                toast.classList.remove(
-                    "show"
-                );
-
-            },
-            2200
-        );
-
+    toastTimer = setTimeout(function() {
+        toast.classList.remove("show");
+    }, 2200);
 }
 
-/* ==================================================
-   TÌM KIẾM KHÔNG DẤU
-================================================== */
+/* SEARCH */
 
 function normalizeText(text) {
 
     return text
         .toLowerCase()
         .normalize("NFD")
-        .replace(
-            /[\u0300-\u036f]/g,
-            ""
-        )
-        .replace(
-            /đ/g,
-            "d"
-        );
-
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d");
 }
 
 function searchCards() {
@@ -2798,62 +2333,45 @@ function searchCards() {
 
     document
         .querySelectorAll(".section")
-        .forEach(
-            function(section) {
+        .forEach(function(section) {
 
-                let sectionVisible = 0;
+            let sectionVisible = 0;
 
-                section
-                    .querySelectorAll(".card")
-                    .forEach(
-                        function(card) {
+            section
+                .querySelectorAll(".card")
+                .forEach(function(card) {
 
-                            const searchText =
-                                normalizeText(
-                                    (
-                                        card.dataset.search ||
-                                        ""
-                                    )
-                                    +
-                                    " "
-                                    +
-                                    card.innerText
-                                );
+                    const searchText =
+                        normalizeText(
+                            (
+                                card.dataset.search ||
+                                ""
+                            )
+                            + " "
+                            + card.innerText
+                        );
 
-                            const matched =
-                                !value ||
-                                searchText.includes(
-                                    value
-                                );
+                    const matched =
+                        !value ||
+                        searchText.includes(value);
 
-                            card.style.display =
-                                matched
-                                    ? "flex"
-                                    : "none";
+                    card.style.display =
+                        matched ? "flex" : "none";
 
-                            if (matched) {
+                    if (matched) {
+                        visible++;
+                        sectionVisible++;
+                    }
+                });
 
-                                visible++;
-                                sectionVisible++;
-
-                            }
-
-                        }
-                    );
-
-                section.style.display =
-                    sectionVisible
-                        ? "block"
-                        : "none";
-
-            }
-        );
+            section.style.display =
+                sectionVisible
+                    ? "block"
+                    : "none";
+        });
 
     empty.style.display =
-        visible
-            ? "none"
-            : "block";
-
+        visible ? "none" : "block";
 }
 
 searchInput.addEventListener(
@@ -2870,66 +2388,38 @@ clearButton.addEventListener(
         searchCards();
 
         searchInput.focus();
-
     }
 );
 
-/* ==================================================
-   LINK PLACEHOLDER
-================================================== */
+/* LINK PLACEHOLDER */
 
 document
     .querySelectorAll(".card")
-    .forEach(
-        function(card) {
+    .forEach(function(card) {
 
-            card.addEventListener(
-                "click",
-                function(event) {
+        card.addEventListener(
+            "click",
+            function(event) {
 
-                    const href =
-                        card.getAttribute(
-                            "href"
-                        ) || "";
+                const href =
+                    card.getAttribute("href") || "";
 
-                    if (
-                        !href ||
-                        href.startsWith(
-                            "YOUR_"
-                        )
-                    ) {
+                if (
+                    !href ||
+                    href.startsWith("YOUR_")
+                ) {
 
-                        event.preventDefault();
+                    event.preventDefault();
 
-                        showToast(
-                            "Bạn chưa gắn link cho mục này"
-                        );
-
-                    }
-
+                    showToast(
+                        "Bạn chưa gắn link cho mục này"
+                    );
                 }
-            );
+            }
+        );
+    });
 
-        }
-    );
-
-/* ==================================================
-   LƯỢT XEM
-================================================== */
-
-/*
- * BẮT ĐẦU TỪ 0.
- *
- * Mỗi lần mở/truy cập trang:
- *  - lấy số cũ
- *  - +1
- *  - lưu lại
- *
- * Ví dụ:
- * 0 → mở web → 1
- * 1 → mở web → 2
- * 2 → mở web → 3
- */
+/* LƯỢT XEM */
 
 let views =
     Number(
@@ -2938,27 +2428,17 @@ let views =
         ) || "0"
     );
 
-/* TĂNG 1 MỖI LẦN VÀO WEB */
-
 views++;
-
-/* LƯU LẠI */
 
 localStorage.setItem(
     CONFIG.viewsStorageKey,
     String(views)
 );
 
-/* HIỂN THỊ */
-
 viewsElement.textContent =
-    views.toLocaleString(
-        "vi-VN"
-    );
+    views.toLocaleString("vi-VN");
 
-/* ==================================================
-   NÚT NHẠC
-================================================== */
+/* MUSIC */
 
 let musicPlaying = false;
 
@@ -2966,17 +2446,13 @@ musicButton.addEventListener(
     "click",
     function() {
 
-        musicPlaying =
-            !musicPlaying;
+        musicPlaying = !musicPlaying;
 
         if (musicPlaying) {
 
-            musicButton.textContent =
-                "🔊";
+            musicButton.textContent = "🔊";
 
-            musicButton.classList.add(
-                "on"
-            );
+            musicButton.classList.add("on");
 
             showToast(
                 "Bạn chưa thêm file nhạc MP3"
@@ -2984,38 +2460,27 @@ musicButton.addEventListener(
 
         } else {
 
-            musicButton.textContent =
-                "🔇";
+            musicButton.textContent = "🔇";
 
-            musicButton.classList.remove(
-                "on"
-            );
-
+            musicButton.classList.remove("on");
         }
-
     }
 );
 
-/* ==================================================
-   TOUCH
-================================================== */
+/* TOUCH */
 
 document
     .querySelectorAll(".card")
-    .forEach(
-        function(card) {
+    .forEach(function(card) {
 
-            card.addEventListener(
-                "touchstart",
-                function() {},
-                {
-                    passive: true
-                }
-            );
-
-        }
-    );
-
+        card.addEventListener(
+            "touchstart",
+            function() {},
+            {
+                passive: true
+            }
+        );
+    });
 </script>
 
 </body>
