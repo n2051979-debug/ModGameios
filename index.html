@@ -54,7 +54,6 @@ html {
 body {
     min-height: 100vh;
     color: #fff;
-
     font-family:
         "Inter",
         -apple-system,
@@ -94,7 +93,6 @@ a {
 .page {
     width: min(100%, 520px);
     margin: auto;
-
     padding:
         env(safe-area-inset-top)
         14px
@@ -107,32 +105,22 @@ a {
 
 .topbar {
     height: 52px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #8aaeff;
-
     font-size: 10px;
     font-weight: 900;
-
     letter-spacing: 1px;
 }
 
 .brand-dot {
     display: inline-block;
-
     width: 6px;
     height: 6px;
-
     border-radius: 50%;
-
     background: #65a8ff;
-
-    box-shadow:
-        0 0 10px #438dff;
-
+    box-shadow: 0 0 10px #438dff;
     margin-right: 7px;
 }
 
@@ -147,22 +135,17 @@ a {
 
 .avatar-wrap {
     position: relative;
-
     width: 116px;
     height: 116px;
-
     margin: 0 auto 17px;
-
     display: grid;
     place-items: center;
 }
 
 .avatar-wrap::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
     border-radius: 50%;
 
     background:
@@ -191,15 +174,10 @@ a {
 
 .avatar-wrap::after {
     content: "";
-
     position: absolute;
     inset: -9px;
-
     border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(164, 83, 255, .55);
+    border: 1px solid rgba(164, 83, 255, .55);
 
     box-shadow:
         0 0 18px rgba(134, 55, 255, .45),
@@ -215,12 +193,9 @@ a {
 .avatar {
     position: relative;
     z-index: 2;
-
     width: 104px;
     height: 104px;
-
     border-radius: 50%;
-
     object-fit: cover;
 
     background:
@@ -241,17 +216,14 @@ a {
 .avatar-fallback {
     position: absolute;
     z-index: 1;
-
     font-size: 32px;
     font-weight: 900;
-
     color: #fff;
 }
 
 .name {
     font-size: 25px;
     font-weight: 900;
-
     letter-spacing: -1px;
 
     background:
@@ -278,12 +250,9 @@ a {
 
 .subtitle {
     margin-top: 5px;
-
     color: #817c8c;
-
     font-size: 10px;
     font-weight: 700;
-
     letter-spacing: .5px;
 }
 
@@ -293,44 +262,30 @@ a {
 
 .stats {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-
     margin: 13px 0;
 }
 
 .stat {
     padding: 12px 5px;
-
     text-align: center;
 
-    border:
-        1px solid
-        #282530;
-
+    border: 1px solid #282530;
     border-radius: 15px;
-
-    background:
-        rgba(25,23,31,.85);
+    background: rgba(25,23,31,.85);
 }
 
 .stat strong {
     display: block;
-
     font-size: 18px;
     font-weight: 900;
 }
 
 .stat span {
     display: block;
-
     margin-top: 4px;
-
     color: #77727f;
-
     font-size: 9px;
     font-weight: 600;
 }
@@ -341,31 +296,22 @@ a {
 
 .socials {
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 9px;
-
     margin-top: 9px;
 }
 
 .social {
     height: 46px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
 
     border-radius: 13px;
-
     font-size: 11px;
     font-weight: 800;
-
     border: 1px solid;
-
     transition: .2s;
 }
 
@@ -374,21 +320,14 @@ a {
 }
 
 .tiktok {
-    background:
-        rgba(255,255,255,.04);
-
+    background: rgba(255,255,255,.04);
     border-color: #3a3641;
-
     color: #eee;
 }
 
 .discord {
-    background:
-        rgba(125,87,255,.1);
-
-    border-color:
-        rgba(139,98,255,.5);
-
+    background: rgba(125,87,255,.1);
+    border-color: rgba(139,98,255,.5);
     color: #ae96ff;
 
     box-shadow:
@@ -402,9 +341,7 @@ a {
 
 .search-wrap {
     position: sticky;
-
     top: 0;
-
     z-index: 40;
 
     padding: 10px 0 13px;
@@ -421,7 +358,6 @@ a {
 
     display: flex;
     align-items: center;
-
     gap: 9px;
 
     padding:
@@ -430,10 +366,7 @@ a {
         0
         14px;
 
-    border:
-        1px solid
-        #302d39;
-
+    border: 1px solid #302d39;
     border-radius: 15px;
 
     background:
@@ -450,11 +383,8 @@ a {
     border-color: #6946b8;
 
     box-shadow:
-        0 0 0 3px
-        rgba(116,66,255,.08),
-
-        0 10px 30px
-        rgba(0,0,0,.3);
+        0 0 0 3px rgba(116,66,255,.08),
+        0 10px 30px rgba(0,0,0,.3);
 }
 
 .search-icon {
@@ -465,14 +395,10 @@ a {
 .search {
     width: 100%;
     height: 100%;
-
     border: 0;
     outline: 0;
-
     background: transparent;
-
     color: #fff;
-
     font-size: 12px;
     font-weight: 600;
 }
@@ -483,7 +409,6 @@ a {
 
 .clear {
     display: none;
-
     width: 32px;
     height: 32px;
 
@@ -491,7 +416,6 @@ a {
     border-radius: 10px;
 
     background: #25212e;
-
     color: #aaa;
 
     cursor: pointer;
@@ -512,7 +436,6 @@ a {
 .section-title {
     display: flex;
     align-items: center;
-
     gap: 9px;
 
     margin:
@@ -522,18 +445,14 @@ a {
 
     font-size: 19px;
     line-height: 1.15;
-
     font-weight: 900;
-
     letter-spacing: -.7px;
 }
 
 .section-title::before {
     content: "";
-
     width: 4px;
     height: 20px;
-
     border-radius: 8px;
 
     background:
@@ -549,9 +468,7 @@ a {
 
 .cards {
     display: flex;
-
     flex-direction: column;
-
     gap: 9px;
 }
 
@@ -561,7 +478,6 @@ a {
 
 .card {
     position: relative;
-
     min-height: 78px;
 
     display: flex;
@@ -569,10 +485,7 @@ a {
 
     padding: 11px;
 
-    border:
-        1px solid
-        #292631;
-
+    border: 1px solid #292631;
     border-radius: 16px;
 
     background:
@@ -596,7 +509,6 @@ a {
 
 .card::before {
     content: "";
-
     position: absolute;
     inset: 0;
 
@@ -608,16 +520,12 @@ a {
             transparent
         );
 
-    transform:
-        translateX(-110%);
-
+    transform: translateX(-110%);
     transition: .6s;
 }
 
 .card:hover {
-    transform:
-        translateY(-2px);
-
+    transform: translateY(-2px);
     border-color: #40384e;
 
     box-shadow:
@@ -626,19 +534,16 @@ a {
 }
 
 .card:hover::before {
-    transform:
-        translateX(110%);
+    transform: translateX(110%);
 }
 
 .card:active {
-    transform:
-        scale(.985);
+    transform: scale(.985);
 }
 
 .icon {
     width: 50px;
     height: 50px;
-
     flex: 0 0 50px;
 
     margin-right: 12px;
@@ -669,59 +574,44 @@ a {
 
 .info {
     min-width: 0;
-
     flex: 1;
 }
 
 .title {
     font-size: 13px;
     font-weight: 900;
-
     line-height: 1.25;
-
     letter-spacing: -.2px;
 
     white-space: nowrap;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
 }
 
 .desc {
     margin-top: 4px;
-
     color: #85808e;
-
     font-size: 10px;
     font-weight: 500;
-
     line-height: 1.45;
 }
 
 .tags {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 5px;
-
     margin-top: 6px;
 }
 
 .tag {
     padding: 4px 7px;
-
     border-radius: 7px;
 
     background: #302c39;
-
     color: #d6d0df;
 
     font-size: 8px;
-
     line-height: 1;
-
     font-weight: 800;
 }
 
@@ -740,7 +630,6 @@ a {
 .download-btn {
     width: 39px;
     height: 39px;
-
     flex: 0 0 39px;
 
     display: grid;
@@ -777,12 +666,8 @@ svg {
     height: 20px;
 
     fill: none;
-
-    stroke:
-        currentColor;
-
+    stroke: currentColor;
     stroke-width: 2;
-
     stroke-linecap: round;
     stroke-linejoin: round;
 }
@@ -793,19 +678,15 @@ svg {
 
 .empty {
     display: none;
-
     text-align: center;
-
     padding: 38px 10px;
 
     color: #706b78;
-
     font-size: 12px;
 }
 
 .empty-icon {
     font-size: 28px;
-
     margin-bottom: 8px;
 }
 
@@ -815,11 +696,9 @@ svg {
 
 footer {
     text-align: center;
-
     margin-top: 34px;
 
     color: #4f4a57;
-
     font-size: 9px;
     font-weight: 600;
 }
@@ -844,14 +723,10 @@ footer {
     width: 46px;
     height: 46px;
 
-    border:
-        1px solid
-        #332e3d;
-
+    border: 1px solid #332e3d;
     border-radius: 50%;
 
     background: #19171f;
-
     color: #fff;
 
     display: grid;
@@ -864,13 +739,11 @@ footer {
         rgba(0,0,0,.55);
 
     cursor: pointer;
-
     transition: .2s;
 }
 
 .music-btn:hover {
     transform: scale(1.05);
-
     border-color: #7d4dff;
 }
 
@@ -888,26 +761,20 @@ footer {
 
 .overlay {
     position: fixed;
-
     inset: 0;
 
     z-index: 1000;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     padding: 20px;
 
-    background:
-        rgba(0,0,0,.86);
+    background: rgba(0,0,0,.86);
 
-    backdrop-filter:
-        blur(16px);
-
-    -webkit-backdrop-filter:
-        blur(16px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .overlay.hidden {
@@ -917,8 +784,7 @@ footer {
 .notice {
     position: relative;
 
-    width:
-        min(100%,390px);
+    width: min(100%,390px);
 
     padding:
         31px
@@ -1025,7 +891,6 @@ footer {
     content: "";
 
     position: absolute;
-
     inset: -6px;
 
     border-radius: 27px;
@@ -1043,7 +908,6 @@ footer {
 
 .notice-title {
     font-size: 23px;
-
     font-weight: 900;
 
     background:
@@ -1059,7 +923,6 @@ footer {
 
     -webkit-background-clip: text;
     background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
     animation:
@@ -1070,21 +933,17 @@ footer {
 }
 
 .notice-sub {
-    margin:
-        8px 0 18px;
+    margin: 8px 0 18px;
 
     color: #9b6cff;
 
     font-size: 9px;
-
     font-weight: 900;
-
     letter-spacing: 2px;
 }
 
 .notice-message {
     padding: 14px;
-
     margin-bottom: 19px;
 
     border:
@@ -1099,7 +958,6 @@ footer {
     color: #aaa4b1;
 
     font-size: 13px;
-
     line-height: 1.6;
 }
 
@@ -1111,11 +969,9 @@ footer {
     position: relative;
 
     width: 100%;
-
     min-height: 50px;
 
     border: 0;
-
     border-radius: 14px;
 
     background:
@@ -1128,11 +984,9 @@ footer {
     color: #fff;
 
     font-size: 12px;
-
     font-weight: 900;
 
     cursor: pointer;
-
     overflow: hidden;
 
     box-shadow:
@@ -1161,8 +1015,7 @@ footer {
             transparent
         );
 
-    transform:
-        skewX(-20deg);
+    transform: skewX(-20deg);
 
     animation:
         buttonShine
@@ -1171,8 +1024,7 @@ footer {
 }
 
 .notice-btn:hover {
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 
     box-shadow:
         0 13px 35px
@@ -1180,8 +1032,7 @@ footer {
 }
 
 .notice-btn:active {
-    transform:
-        scale(.97);
+    transform: scale(.97);
 }
 
 /* ==============================
@@ -1215,17 +1066,14 @@ footer {
     border-radius: 12px;
 
     background: #1a1720;
-
     color: #ddd;
 
     font-size: 10px;
-
     font-weight: 700;
 
     pointer-events: none;
 
     transition: .25s;
-
     white-space: nowrap;
 }
 
@@ -1237,52 +1085,38 @@ footer {
 }
 
 /* ==============================
-   ANIMATIONS
+   ANIMATION
 ============================== */
 
 @keyframes avatarSpin {
-
     to {
-        transform:
-            rotate(360deg);
+        transform: rotate(360deg);
     }
-
 }
 
 @keyframes avatarPulse {
-
     0%,100% {
-        transform:
-            scale(.96);
-
+        transform: scale(.96);
         opacity: .35;
     }
 
     50% {
-        transform:
-            scale(1.08);
-
+        transform: scale(1.08);
         opacity: 1;
     }
-
 }
 
 @keyframes textShine {
-
     0% {
-        background-position:
-            200% center;
+        background-position: 200% center;
     }
 
     100% {
-        background-position:
-            -200% center;
+        background-position: -200% center;
     }
-
 }
 
 @keyframes popupIn {
-
     from {
         opacity: 0;
 
@@ -1298,25 +1132,19 @@ footer {
             translateY(0)
             scale(1);
     }
-
 }
 
 @keyframes floatIcon {
-
     0%,100% {
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     50% {
-        transform:
-            translateY(-4px);
+        transform: translateY(-4px);
     }
-
 }
 
 @keyframes buttonShine {
-
     0% {
         left: -100%;
     }
@@ -1324,7 +1152,6 @@ footer {
     25%,100% {
         left: 150%;
     }
-
 }
 
 /* ==============================
@@ -1356,7 +1183,6 @@ footer {
     .notice-title {
         font-size: 21px;
     }
-
 }
 
 @media(min-width:700px) {
@@ -1368,7 +1194,6 @@ footer {
     .page {
         padding-bottom: 100px;
     }
-
 }
 
 </style>
@@ -1378,7 +1203,7 @@ footer {
 
 <!-- ==================================================
      POPUP THÔNG BÁO
-     HIỆN MỖI LẦN MỞ WEB
+     HIỆN MỖI LẦN VÀO WEB
 ================================================== -->
 
 <div
@@ -1401,10 +1226,8 @@ footer {
         </div>
 
         <div class="notice-message">
-
             Thắc mắc gì thì có thể hỏi
             <b>Admin</b>
-
         </div>
 
         <button
@@ -1621,7 +1444,7 @@ footer {
                 </div>
 
                 <div class="desc">
-                    by ModGameios
+                    BY MODGAMEIOS
                 </div>
 
                 <div class="tags">
@@ -1637,11 +1460,7 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
@@ -1667,7 +1486,7 @@ footer {
                 </div>
 
                 <div class="desc">
-                    v3 UPDATE NEW
+                    V3 UPDATE NEW
                 </div>
 
             </div>
@@ -1675,11 +1494,7 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
-                    />
-
+                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1 1h5"/>
                 </svg>
 
             </span>
@@ -1705,7 +1520,7 @@ footer {
                 </div>
 
                 <div class="desc">
-                    v1.1.1
+                    V1.1.1
                 </div>
 
             </div>
@@ -1713,11 +1528,7 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
-                    />
-
+                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1 1h5"/>
                 </svg>
 
             </span>
@@ -1739,11 +1550,11 @@ footer {
             <div class="info">
 
                 <div class="title">
-                    iPA MENU NO KEY 8BP
+                    IPA MENU NO KEY 8BP
                 </div>
 
                 <div class="desc">
-                    Đã cập nhật 29/8
+                    ĐÃ CẬP NHẬT 29/8
                 </div>
 
                 <div class="tags">
@@ -1753,7 +1564,7 @@ footer {
                     </span>
 
                     <span class="tag">
-                        Antiban
+                        ANTIBAN
                     </span>
 
                 </div>
@@ -1763,11 +1574,7 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
-                    />
-
+                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1 1h5"/>
                 </svg>
 
             </span>
@@ -1801,11 +1608,7 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
-                    />
-
+                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1 1h5"/>
                 </svg>
 
             </span>
@@ -1839,11 +1642,7 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
-                    />
-
+                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1 1h5"/>
                 </svg>
 
             </span>
@@ -1877,18 +1676,14 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
-                    />
-
+                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
                 </svg>
 
             </span>
 
         </a>
 
-        <!-- YOUTUBE PREMIUM -->
+        <!-- YOUTUBE -->
 
         <a
             class="card"
@@ -1915,18 +1710,14 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
-                    />
-
+                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
                 </svg>
 
             </span>
 
         </a>
 
-        <!-- FILZA MOD -->
+        <!-- FILZA -->
 
         <a
             class="card"
@@ -1945,7 +1736,7 @@ footer {
                 </div>
 
                 <div class="desc">
-                    Tích hợp APP 3105, Mod
+                    TÍCH HỢP APP 3105, MOD
                 </div>
 
             </div>
@@ -1953,11 +1744,7 @@ footer {
             <span class="open">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"
-                    />
-
+                    <path d="M14 4h6v6M20 4l-9 9M20 14v5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
                 </svg>
 
             </span>
@@ -2009,7 +1796,7 @@ footer {
                     </span>
 
                     <span class="tag">
-                        Antiban
+                        ANTIBAN
                     </span>
 
                 </div>
@@ -2019,11 +1806,7 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
@@ -2031,12 +1814,11 @@ footer {
         </a>
 
         <!-- CLAUDE -->
-        <!-- Nằm ngay dưới FILE BYPASS CHATGPT -->
 
         <a
             class="card"
             href="YOUR_CLAUDE_BYPASS_LINK"
-            data-search="file bypass ai claude claude ai ios antiban"
+            data-search="file bypass ai claude claude ios antiban"
         >
 
             <div class="icon">
@@ -2050,11 +1832,7 @@ footer {
                 </div>
 
                 <div class="desc">
-                    DÀNH CHO CLAUDE AI
-                </div>
-
-                <div class="desc">
-                    FILE BYPASS iOS
+                    FILE BYPASS AI CLAUDE
                 </div>
 
                 <div class="tags">
@@ -2064,7 +1842,7 @@ footer {
                     </span>
 
                     <span class="tag">
-                        Antiban
+                        ANTIBAN
                     </span>
 
                 </div>
@@ -2074,11 +1852,7 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
@@ -2108,7 +1882,7 @@ footer {
                 </div>
 
                 <div class="desc">
-                    File Config
+                    FILE CONFIG
                 </div>
 
                 <div class="tags">
@@ -2118,7 +1892,7 @@ footer {
                     </span>
 
                     <span class="tag">
-                        Antiban
+                        ANTIBAN
                     </span>
 
                 </div>
@@ -2128,11 +1902,7 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
@@ -2194,11 +1964,7 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
@@ -2244,11 +2010,7 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
@@ -2294,18 +2056,14 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
 
-        <!-- MOD PUBG -->
+        <!-- PUBG -->
 
         <a
             class="card"
@@ -2328,7 +2086,7 @@ footer {
                 </div>
 
                 <div class="desc">
-                    FILE MOD DÀNH CHO iOS
+                    FILE MOD DÀNH CHO IOS
                 </div>
 
                 <div class="tags">
@@ -2344,24 +2102,271 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
 
         </a>
 
-        <!-- CAPCUT PRO -->
-        <!-- Đã chuyển từ TẢI IPA xuống PATCHGAME + MOD -->
+        <!-- HACK MAP + UNLOCKSKIN -->
 
         <a
             class="card"
-            href="YOUR_CAPCUT_PRO_PATCH_LINK"
-            data-search="capcut pro patch mod capcut ios"
+            href="YOUR_HACK_MAP_UNLOCKSKIN_LINK"
+            data-search="patch hack map unlockskin"
+        >
+
+            <div class="icon">
+                🗺️
+            </div>
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH HACK MAP + UNLOCKSKIN
+                </div>
+
+                <div class="desc">
+                    PATCH GAME + MOD
+                </div>
+
+                <div class="tags">
+
+                    <span class="tag blue">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                </svg>
+
+            </span>
+
+        </a>
+
+        <!-- UNLOCKSKIN CAM XA NO MAP -->
+
+        <a
+            class="card"
+            href="YOUR_UNLOCKSKIN_CAMXA_NOMAP_LINK"
+            data-search="patch unlockskin cam xa no map"
+        >
+
+            <div class="icon">
+                🎨
+            </div>
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH UNLOCKSKIN CAM XA NO MAP
+                </div>
+
+                <div class="desc">
+                    UNLOCK SKIN + CAM XA
+                </div>
+
+                <div class="tags">
+
+                    <span class="tag blue">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                </svg>
+
+            </span>
+
+        </a>
+
+        <!-- LQ UNLOCK SKIN -->
+
+        <a
+            class="card"
+            href="YOUR_LQ_UNLOCKSKIN_LINK"
+            data-search="patch lq unlock skin lien quan"
+        >
+
+            <div class="icon">
+                ⚔️
+            </div>
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH LQ UNLOCK SKIN
+                </div>
+
+                <div class="desc">
+                    PATCH UNLOCK SKIN LQ
+                </div>
+
+                <div class="tags">
+
+                    <span class="tag blue">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                </svg>
+
+            </span>
+
+        </a>
+
+        <!-- AIM FFM -->
+
+        <a
+            class="card"
+            href="YOUR_AIM_FFM_LINK"
+            data-search="patch aim ffm free fire max"
+        >
+
+            <div class="icon">
+                🎯
+            </div>
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH AIM FFM
+                </div>
+
+                <div class="desc">
+                    PATCH AIM FREE FIRE MAX
+                </div>
+
+                <div class="tags">
+
+                    <span class="tag blue">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                </svg>
+
+            </span>
+
+        </a>
+
+        <!-- ĐỊNH VỊ + AIMBODY FFM -->
+
+        <a
+            class="card"
+            href="YOUR_AIMBODY_LINK"
+            data-search="patch dinh vi aimbody ffm free fire max"
+        >
+
+            <div class="icon">
+                📍
+            </div>
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH ĐỊNH VỊ + AIMBODY FFM
+                </div>
+
+                <div class="desc">
+                    DÀNH CHO FREE FIRE MAX
+                </div>
+
+                <div class="tags">
+
+                    <span class="tag blue">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                </svg>
+
+            </span>
+
+        </a>
+
+        <!-- AIM FFTH -->
+
+        <a
+            class="card"
+            href="YOUR_FULL_AIM_LINK"
+            data-search="patch aim ffth free fire th"
+        >
+
+            <div class="icon">
+                🎯
+            </div>
+
+            <div class="info">
+
+                <div class="title">
+                    PATCH AIM FFTH
+                </div>
+
+                <div class="desc">
+                    FILE PATCH DÀNH CHO FREE FIRE TH
+                </div>
+
+                <div class="tags">
+
+                    <span class="tag blue">
+                        iOS
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="download-btn">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
+                </svg>
+
+            </span>
+
+        </a>
+
+        <!-- CAPCUT PRO ĐƯỢC CHUYỂN VÀO PATCH -->
+
+        <a
+            class="card"
+            href="YOUR_CAPCUT_LINK"
+            data-search="patch capcut pro capcut"
         >
 
             <div class="icon">
@@ -2375,7 +2380,7 @@ footer {
                 </div>
 
                 <div class="desc">
-                    CAPCUT PRO MOD
+                    PATCH CAPCUT PRO
                 </div>
 
                 <div class="desc">
@@ -2388,10 +2393,6 @@ footer {
                         iOS
                     </span>
 
-                    <span class="tag">
-                        MOD
-                    </span>
-
                 </div>
 
             </div>
@@ -2399,11 +2400,7 @@ footer {
             <span class="download-btn">
 
                 <svg viewBox="0 0 24 24">
-
-                    <path
-                        d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"
-                    />
-
+                    <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>
                 </svg>
 
             </span>
@@ -2438,9 +2435,7 @@ footer {
 ================================================== -->
 
 <footer>
-
     © 2026 ModGameios • APP CRACK • MODS • iOS
-
 </footer>
 
 </main>
@@ -2454,9 +2449,9 @@ footer {
 const CONFIG = {
 
     /*
-     Popup luôn hiện mỗi lần tải lại
-     KHÔNG lưu trạng thái đã xem
-    */
+     * Không dùng popupStorageKey nữa.
+     * Popup sẽ hiện lại MỖI LẦN tải trang.
+     */
 
     popupAlwaysShow: true,
 
@@ -2466,7 +2461,7 @@ const CONFIG = {
 };
 
 /* ==============================
-   ELEMENTS
+   ELEMENT
 ============================== */
 
 const searchInput =
@@ -2492,22 +2487,10 @@ const toast =
 
 /* ==============================
    POPUP THÔNG BÁO
-   HIỆN MỖI LẦN VÀO WEB
+   LUÔN HIỆN MỖI LẦN VÀO WEB
 ============================== */
 
-if (CONFIG.popupAlwaysShow) {
-
-    popup.classList.remove("hidden");
-
-}
-
-/*
-   Khi bấm "ĐÃ HIỂU, VÀO WEB"
-   chỉ đóng popup trong phiên hiện tại.
-
-   Không dùng localStorage cho popup,
-   nên lần sau mở web popup vẫn hiện.
-*/
+popup.classList.remove("hidden");
 
 enterButton.addEventListener(
     "click",
@@ -2543,11 +2526,10 @@ function showToast(message) {
             },
             2200
         );
-
 }
 
 /* ==============================
-   SEARCH KHÔNG DẤU
+   TÌM KIẾM KHÔNG DẤU
 ============================== */
 
 function normalizeText(text) {
@@ -2645,10 +2627,6 @@ searchInput.addEventListener(
     searchCards
 );
 
-/* ==============================
-   CLEAR SEARCH
-============================== */
-
 clearButton.addEventListener(
     "click",
     function() {
@@ -2744,7 +2722,7 @@ musicButton.addEventListener(
 );
 
 /* ==============================
-   CHỐNG DOUBLE TAP
+   CHỐNG ZOOM DOUBLE TAP
 ============================== */
 
 document
@@ -2764,7 +2742,7 @@ document
     );
 
 /* ==============================
-   ESC ĐÓNG POPUP
+   ESC ĐỂ ĐÓNG POPUP
 ============================== */
 
 document.addEventListener(
