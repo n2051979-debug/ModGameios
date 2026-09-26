@@ -687,7 +687,7 @@ footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
     <span>Bypass</span>
   </div>
   <div class="nav-item" data-filter="patch" onclick="setTab(this,'patch')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7 4A2 2 0 0 0 21 16z"/></svg>
     <span>Game</span>
   </div>
 </nav>
@@ -796,15 +796,21 @@ function setTab(el,filter){
 }
 tabPills.forEach(btn=>btn.addEventListener("click",()=>setTab(btn,btn.dataset.filter)));
 
-/* ── VIEW COUNTER (animate) ── */
+/* ── VIEW COUNTER (thật: xuất phát 0, mỗi lượt truy cập +1) ── */
 const viewsEl=document.getElementById("views");
-let views=Number(localStorage.getItem("modgameios_views")||"3892");
-views++;localStorage.setItem("modgameios_views",String(views));
+const COUNTER_API="https://abacus.jasoncameron.dev/hit/modgameios/views";
 function animateCount(el,target,dur){
   let start=0,step=target/60;
   const t=setInterval(()=>{start=Math.min(start+step,target);el.textContent=Math.floor(start).toLocaleString("vi-VN");if(start>=target)clearInterval(t)},dur/60);
 }
-setTimeout(()=>animateCount(viewsEl,views,1200),600);
+fetch(COUNTER_API)
+  .then(r=>r.json())
+  .then(d=>animateCount(viewsEl,Number(d.value)||0,1200))
+  .catch(()=>{
+    let v=Number(localStorage.getItem("modgameios_views_v2")||"0")+1;
+    localStorage.setItem("modgameios_views_v2",String(v));
+    animateCount(viewsEl,v,1200);
+  });
 
 /* ── TOTAL APPS COUNT ── */
 const totalAppsEl=document.getElementById("totalApps");
