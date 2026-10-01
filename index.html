@@ -13,6 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg">
+<link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ModGameios">
 <meta property="og:title" content="ModGameios • Kho IPA Crack + Mod iOS VIP">
@@ -114,15 +115,21 @@ button,input{font-family:inherit}
 .live-dot::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:1.5px solid var(--green);opacity:.6;animation:ringPulse 2s ease-in-out infinite}
 
 /* ── SOCIAL ── */
-.socials-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:6px}
-.social-btn{position:relative;height:50px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:16px;font-size:12px;font-weight:800;overflow:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);border:1px solid}
-.social-btn svg{width:20px;height:20px;flex-shrink:0;transition:transform .25s ease}
+.socials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.social-btn{position:relative;height:50px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:16px;font-size:11px;font-weight:800;overflow:hidden;white-space:nowrap;transition:all .25s cubic-bezier(.16,1,.3,1);border:1px solid}
+.social-btn svg{width:18px;height:18px;flex-shrink:0;transition:transform .25s ease}
 .social-btn:hover{transform:translateY(-3px)}
 .social-btn:hover svg{transform:scale(1.18)}
 .social-tiktok{background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border-color:rgba(255,255,255,.12);color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.2)}
 .social-tiktok:hover{border-color:rgba(255,255,255,.3);box-shadow:0 10px 30px rgba(238,29,82,.3),0 0 25px rgba(105,201,208,.2)}
 .social-discord{background:linear-gradient(135deg,rgba(88,101,242,.2),rgba(88,101,242,.05));border-color:rgba(88,101,242,.4);color:#c4b5fd;box-shadow:0 4px 20px rgba(88,101,242,.15)}
 .social-discord:hover{background:linear-gradient(135deg,rgba(88,101,242,.3),rgba(88,101,242,.1));border-color:rgba(88,101,242,.8);box-shadow:0 10px 35px rgba(88,101,242,.4);color:#fff}
+.social-youtube{background:linear-gradient(135deg,rgba(255,0,0,.18),rgba(255,0,0,.04));border-color:rgba(255,0,0,.4);color:#fca5a5;box-shadow:0 4px 20px rgba(255,0,0,.12)}
+.social-youtube:hover{background:linear-gradient(135deg,rgba(255,0,0,.3),rgba(255,0,0,.1));border-color:rgba(255,0,0,.85);box-shadow:0 10px 35px rgba(255,0,0,.4);color:#fff}
+.social-share{grid-column:1/-1;height:50px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:16px;font-size:12px;font-weight:800;border:1px solid rgba(6,182,212,.4);background:linear-gradient(135deg,rgba(6,182,212,.16),rgba(59,130,246,.08));color:#67e8f9;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.social-share svg{width:18px;height:18px;transition:transform .25s ease}
+.social-share:hover{border-color:rgba(6,182,212,.8);color:#fff;box-shadow:0 10px 30px rgba(6,182,212,.3);transform:translateY(-3px)}
+.social-share:hover svg{transform:scale(1.15)}
 
 /* ── TABS ── */
 .quick-tabs{display:flex;gap:8px;overflow-x:auto;padding:14px 2px 4px;margin-top:8px;scrollbar-width:none}
@@ -197,6 +204,7 @@ button,input{font-family:inherit}
 .tag-antiban{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.3)}
 .tag-vip{background:linear-gradient(135deg,rgba(236,72,153,.22),rgba(168,85,247,.22));color:#f472b6;border:1px solid rgba(236,72,153,.38)}
 .tag-green{background:rgba(16,185,129,.15);color:#6ee7b7;border:1px solid rgba(16,185,129,.3)}
+.tag-dl{background:rgba(249,115,22,.15);color:#fdba74;border:1px solid rgba(249,115,22,.32)}
 
 .download-action{width:46px;height:46px;flex:0 0 46px;margin-left:10px;display:grid;place-items:center;border-radius:var(--rb);background:linear-gradient(145deg,rgba(168,85,247,.35),rgba(88,28,135,.75));border:1px solid rgba(192,132,252,.38);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 18px rgba(147,51,234,.3);transition:all .22s cubic-bezier(.16,1,.3,1)}
 .download-action svg{width:20px;height:20px;display:block;filter:drop-shadow(0 2px 6px rgba(168,85,247,.7));transition:transform .22s ease}
@@ -212,9 +220,9 @@ button,input{font-family:inherit}
 .nav-item.active svg,.nav-item:hover svg{transform:scale(1.15)}
 
 /* ── MUSIC WIDGET ── */
-.music-widget{position:fixed;right:16px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:80;display:flex;align-items:center;gap:9px;padding:9px 15px 9px 11px;border-radius:999px;background:rgba(14,11,26,.9);border:1px solid rgba(168,85,247,.32);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 10px 35px rgba(0,0,0,.65),0 0 22px rgba(147,51,234,.22);cursor:pointer;transition:all .25s ease}
+.music-widget{position:fixed;right:16px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:80;display:flex;align-items:center;gap:8px;padding:9px 13px 9px 11px;border-radius:999px;background:rgba(14,11,26,.9);border:1px solid rgba(168,85,247,.32);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 10px 35px rgba(0,0,0,.65),0 0 22px rgba(147,51,234,.22);cursor:pointer;transition:all .25s ease}
 .music-widget:hover{transform:translateY(-2px);border-color:rgba(168,85,247,.65);box-shadow:0 14px 40px rgba(0,0,0,.75),0 0 30px rgba(147,51,234,.45)}
-.music-icon-wrap{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#9333ea,#4f46e5);display:grid;place-items:center;font-size:15px;box-shadow:0 2px 10px rgba(147,51,234,.5)}
+.music-icon-wrap{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#9333ea,#4f46e5);display:grid;place-items:center;font-size:15px;box-shadow:0 2px 10px rgba(147,51,234,.5);flex-shrink:0}
 .sound-bars{display:flex;align-items:flex-end;gap:2.5px;height:14px}
 .sound-bar{width:2.5px;height:4px;background:#c084fc;border-radius:2px}
 .music-widget.playing .sound-bar:nth-child(1){animation:wave 1.2s ease infinite .1s}
@@ -223,6 +231,11 @@ button,input{font-family:inherit}
 .music-widget.playing .sound-bar:nth-child(4){animation:wave 1.2s ease infinite .2s}
 @keyframes wave{0%,100%{height:3px}50%{height:14px}}
 .music-label{font-size:11px;font-weight:800;color:#e2e8f0;letter-spacing:.3px}
+.mctrl{border:0;background:rgba(255,255,255,.08);color:#e2e8f0;width:26px;height:26px;border-radius:50%;font-size:10px;cursor:pointer;display:grid;place-items:center;transition:all .2s;flex-shrink:0;padding:0}
+.mctrl:hover{background:rgba(168,85,247,.45);color:#fff}
+.mvol{-webkit-appearance:none;appearance:none;width:54px;height:4px;border-radius:99px;background:rgba(255,255,255,.18);outline:0;cursor:pointer;flex-shrink:0}
+.mvol::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:11px;height:11px;border-radius:50%;background:#c084fc;box-shadow:0 0 8px rgba(192,132,252,.8);cursor:pointer}
+.mvol::-moz-range-thumb{width:11px;height:11px;border:0;border-radius:50%;background:#c084fc;cursor:pointer}
 
 /* ── SCROLL TOP ── */
 .scroll-top{position:fixed;left:16px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:80;width:44px;height:44px;border-radius:50%;background:rgba(14,11,26,.9);border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s ease;backdrop-filter:blur(16px)}
@@ -252,32 +265,6 @@ button,input{font-family:inherit}
 .notice-action-btn:hover::before{opacity:1}
 .notice-action-btn:active{transform:scale(.98)}
 
-/* ── TOAST ── */
-.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));z-index:1200;transform:translate(-50%,20px) scale(.95);opacity:0;padding:12px 20px;border-radius:999px;background:rgba(20,16,34,.97);border:1px solid rgba(168,85,247,.42);box-shadow:0 10px 35px rgba(0,0,0,.65),0 0 22px rgba(147,51,234,.28);backdrop-filter:blur(18px);color:#fff;font-size:12px;font-weight:700;pointer-events:none;transition:all .28s cubic-bezier(.16,1,.3,1);white-space:nowrap;display:flex;align-items:center;gap:8px}
-.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
-
-/* ── EMPTY ── */
-.empty-state{display:none;text-align:center;padding:60px 20px;color:var(--sub)}
-.empty-icon{font-size:42px;margin-bottom:14px}
-.empty-text{font-size:14px;font-weight:700;color:var(--muted)}
-
-/* ── FOOTER ── */
-footer{text-align:center;margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.05);color:var(--sub);font-size:11px;font-weight:600;letter-spacing:.3px}
-footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
-
-/* ── FAV HEART ── */
-.fav-btn{position:absolute;top:8px;right:10px;z-index:6;width:30px;height:30px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(10,8,20,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:grid;place-items:center;cursor:pointer;transition:all .2s ease;color:#64748b}
-.fav-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.fav-btn:hover{transform:scale(1.15);border-color:rgba(236,72,153,.6);color:#f472b6}
-.fav-btn.on{color:#ec4899;border-color:rgba(236,72,153,.55);background:rgba(236,72,153,.16);box-shadow:0 0 12px rgba(236,72,153,.35)}
-.fav-btn.on svg{fill:#ec4899;stroke:#ec4899}
-
-/* ── SHARE BUTTON ── */
-.social-share{grid-column:1/-1;height:50px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:16px;font-size:12px;font-weight:800;border:1px solid rgba(6,182,212,.4);background:linear-gradient(135deg,rgba(6,182,212,.16),rgba(59,130,246,.08));color:#67e8f9;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1)}
-.social-share svg{width:18px;height:18px;transition:transform .25s ease}
-.social-share:hover{border-color:rgba(6,182,212,.8);color:#fff;box-shadow:0 10px 30px rgba(6,182,212,.3);transform:translateY(-3px)}
-.social-share:hover svg{transform:scale(1.15)}
-
 /* ── APP DETAIL MODAL ── */
 .app-modal{position:relative;width:min(100%,400px);padding:26px 22px 22px;border-radius:30px;background:linear-gradient(165deg,rgba(28,22,48,.97),rgba(12,9,22,.99));border:1px solid rgba(168,85,247,.38);box-shadow:0 32px 100px rgba(0,0,0,.95),0 0 50px rgba(147,51,234,.2);animation:popupSpring .4s cubic-bezier(.16,1,.3,1);max-height:86vh;overflow-y:auto}
 .am-top{display:flex;gap:14px;align-items:center;margin-bottom:4px}
@@ -299,6 +286,26 @@ footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
 .am-dl:hover{transform:translateY(-2px);box-shadow:0 16px 45px rgba(147,51,234,.65)}
 .am-dl svg{width:18px;height:18px}
 
+/* ── TOAST ── */
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));z-index:1200;transform:translate(-50%,20px) scale(.95);opacity:0;padding:12px 20px;border-radius:999px;background:rgba(20,16,34,.97);border:1px solid rgba(168,85,247,.42);box-shadow:0 10px 35px rgba(0,0,0,.65),0 0 22px rgba(147,51,234,.28);backdrop-filter:blur(18px);color:#fff;font-size:12px;font-weight:700;pointer-events:none;transition:all .28s cubic-bezier(.16,1,.3,1);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+
+/* ── EMPTY ── */
+.empty-state{display:none;text-align:center;padding:60px 20px;color:var(--sub)}
+.empty-icon{font-size:42px;margin-bottom:14px}
+.empty-text{font-size:14px;font-weight:700;color:var(--muted)}
+
+/* ── FOOTER ── */
+footer{text-align:center;margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.05);color:var(--sub);font-size:11px;font-weight:600;letter-spacing:.3px}
+footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
+
+/* ── FAV HEART ── */
+.fav-btn{position:absolute;top:8px;right:10px;z-index:6;width:30px;height:30px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(10,8,20,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:grid;place-items:center;cursor:pointer;transition:all .2s ease;color:#64748b}
+.fav-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.fav-btn:hover{transform:scale(1.15);border-color:rgba(236,72,153,.6);color:#f472b6}
+.fav-btn.on{color:#ec4899;border-color:rgba(236,72,153,.55);background:rgba(236,72,153,.16);box-shadow:0 0 12px rgba(236,72,153,.35)}
+.fav-btn.on svg{fill:#ec4899;stroke:#ec4899}
+
 /* ── SCROLL REVEAL + 3D TILT ── */
 .card.rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s cubic-bezier(.16,1,.3,1)}
 .card.rv.in{opacity:1;transform:none}
@@ -319,6 +326,10 @@ footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
   .card{padding:11px 12px}
   .card-icon{width:50px;height:50px;flex:0 0 50px;margin-right:11px}
   .download-action{width:40px;height:40px;flex:0 0 40px}
+  .mvol{width:40px}
+  .socials-grid{gap:7px}
+  .social-btn{gap:6px;font-size:10.5px;border-radius:13px}
+  .social-btn svg{width:16px;height:16px}
 }
 </style>
 </head>
@@ -362,11 +373,15 @@ footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
   <div class="music-icon-wrap"><span id="musicEmoji">🎧</span></div>
   <div class="sound-bars"><div class="sound-bar"></div><div class="sound-bar"></div><div class="sound-bar"></div><div class="sound-bar"></div></div>
   <span class="music-label" id="musicText">BẬT NHẠC</span>
+  <button class="mctrl" id="prevTrackBtn" type="button" title="Bài trước">⏮</button>
+  <button class="mctrl" id="nextTrackBtn" type="button" title="Bài tiếp theo">⏭</button>
+  <input class="mvol" id="volSlider" type="range" min="0" max="100" value="65" title="Âm lượng">
 </div>
 
 <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
 </div>
+
 <!-- APP DETAIL MODAL -->
 <div class="overlay" id="appModal" style="display:none">
   <div class="app-modal">
@@ -444,6 +459,10 @@ footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.195.373.288a.077.077 0 0 1-.006.127c-.598.35-1.22.648-1.873.891-.041.016-.062.066-.041.107.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
       <span>Kênh Discord</span>
     </a>
+    <a class="social-btn social-youtube" href="https://www.youtube.com/channel/UCXZ-E233Kbbf_j39MWeQbcw" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+      <span>Kênh YouTube</span>
+    </a>
     <button class="social-share" id="shareBtn" type="button">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
       <span>Chia sẻ web — nhận quà 🎁</span>
@@ -478,206 +497,31 @@ footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
 
   <div id="content">
 
-    <!-- TẢI IPA -->
+    <!-- TẢI IPA — thẻ app tự sinh từ danh sách APPS trong <script> -->
     <section class="section" data-category="ipa">
       <div class="section-header">
         <div class="section-title-wrap"><span class="section-indicator"></span><h2 class="section-title">TẢI IPA VIP</h2></div>
-        <span class="section-badge">9 APPS</span>
+        <span class="section-badge">0 APPS</span>
       </div>
-      <div class="cards-stack">
-
-        <a class="card" href="https://anonlink.io/8bwJ" data-search="ipa next dns antiban nextdns app crack" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/nextdns.jpg" alt="IPA NEXT DNS" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🌐</div></div>
-          <div class="card-info"><div class="card-title">IPA NEXT DNS</div><div class="card-desc">BY MODGAMEIOS • CHẶN QUẢNG CÁO & ANTIBAN</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-antiban">ANTIBAN</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-        <a class="card" href="https://anonlink.io/L9nAIeY" data-search="app 3105 v2 update new cài mod" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><span class="card-badge badge-hot">HOT</span><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/app3105.jpg" alt="APP 3105" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">📦</div></div>
-          <div class="card-info"><div class="card-title">APP 3105 V2</div><div class="card-desc">V3 UPDATE NEW • QUẢN LÝ TỆP & MOD IPA</div><div class="card-tags"><span class="tag tag-purple">HOT</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-        <a class="card" href="https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file" data-search="app 3105 v1.1.1 mediafire" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/app3105.jpg" alt="APP 3105" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">📦</div></div>
-          <div class="card-info"><div class="card-title">APP 3105 (V1.1.1)</div><div class="card-desc">BẢN DỰ PHÒNG ỔN ĐỊNH • MEDIAFIRE LINK</div><div class="card-tags"><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-        <a class="card" href="https://anonlink.io/FaiC" data-search="unlock duolingo max hoc tieng anh pro" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/duolingo.jpg" alt="DUOLINGO MAX" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🦉</div></div>
-          <div class="card-info"><div class="card-title">UNLOCK DUOLINGO MAX</div><div class="card-desc">CÓ CHẾ ĐỘ GỌI ĐIỆN VỚI AI LILY • FULL TÍNH NĂNG</div><div class="card-tags"><span class="tag tag-vip">MAX VIP</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-        <a class="card" href="https://anonlink.io/yniZ1fz" data-search="messenger vipp xem tin nhan thu hoi facebook" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/messenger.jpg" alt="MESSENGER VIPP" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">💬</div></div>
-          <div class="card-info"><div class="card-title">MESSENGER VIPP</div><div class="card-desc">XEM TIN NHẮN ĐÃ THU HỒI, CHẶN SEEN, ONLINE ẨN</div><div class="card-tags"><span class="tag tag-vip">PREMIUM</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-        <a class="card" href="https://anonlink.io/PVIZ" data-search="youtube premium cap nhat chan quang cao nghe nhac tat man hinh" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/Youtube.jpg" alt="YOUTUBE PREMIUM" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">▶️</div></div>
-          <div class="card-info"><div class="card-title">YOUTUBE PREMIUM</div><div class="card-desc">MỚI NHẤT • CHẶN QUẢNG CÁO, CHẠY NỀN, PIP</div><div class="card-tags"><span class="tag tag-vip">VIP</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-        <a class="card" href="https://anonlink.io/ONMdtq" data-search="soundcloud go plus plus nghe nhac offline ipa crack mod premium" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><span class="card-badge badge-new">NEW</span><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/soundcloud.jpg" alt="SOUNDCLOUD GO++" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🎵</div></div>
-          <div class="card-info"><div class="card-title">SOUNDCLOUD GO++</div><div class="card-desc">NGHE NHẠC OFFLINE, KHÔNG QUẢNG CÁO • MỞ KHÓA GO++</div><div class="card-tags"><span class="tag tag-vip">GO++</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-        <a class="card" href="https://anonlink.io/tMfcciI" data-search="spotify premium ipa crack mod nghe nhac offline khong quang cao skip vo han" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><span class="card-badge badge-new">NEW</span><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/spotify.jpg" alt="SPOTIFY PREMIUM" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🎶</div></div>
-          <div class="card-info"><div class="card-title">SPOTIFY PREMIUM</div><div class="card-desc">MỚI NHẤT • CHẶN QUẢNG CÁO, NGHE OFFLINE, SKIP VÔ HẠN</div><div class="card-tags"><span class="tag tag-green">PREMIUM</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-        <a class="card" href="https://anonlink.io/DZGlv2cs" data-search="filza mod app 3105 quan ly file no jailbreak" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/filza.jpg" alt="FILZA MOD" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">📁</div></div>
-          <div class="card-info"><div class="card-title">FILZA MOD</div><div class="card-desc">TÍCH HỢP SẴN APP 3105 • TRÌNH QUẢN LÝ FILE HỆ THỐNG</div><div class="card-tags"><span class="tag tag-purple">FILE MANAGER</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-
-      </div>
+      <div class="cards-stack"></div>
     </section>
 
-    <!-- FILE BYPASS -->
+    <!-- FILE BYPASS — thẻ app tự sinh từ danh sách APPS trong <script> -->
     <section class="section" data-category="bypass">
       <div class="section-header">
         <div class="section-title-wrap"><span class="section-indicator" style="background:linear-gradient(to bottom,#10b981,#06b6d4);box-shadow:0 0 16px #10b981"></span><h2 class="section-title">FILE BYPASS + ANTIBAN</h2></div>
-        <span class="section-badge">3 FILES</span>
+        <span class="section-badge">0 FILES</span>
       </div>
-      <div class="cards-stack">
-        <a class="card" href="https://anonlink.io/M9S1" data-search="bypass chatgpt ios antiban prompt gpt" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg" alt="CHATGPT" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🤖</div></div>
-          <div class="card-info"><div class="card-title">BYPASS CHATGPT</div><div class="card-desc">DÁN VÀO CHAT TRỰC TIẾP • BỎ QUA GIỚI HẠN & KIỂM DUYỆT</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-antiban">ANTIBAN</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/0whZz" data-search="bypass ai claude ios antiban sonnet opus" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/claude.jpg" alt="CLAUDE" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">✨</div></div>
-          <div class="card-info"><div class="card-title">BYPASS AI CLAUDE</div><div class="card-desc">BYPASS PROMPT MỞ KHÓA KHẢ NĂNG CAO CẤP</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-antiban">ANTIBAN</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/WiTmFh" data-search="dns antiban ff ffm nextdns config free fire max filza app 3105" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/dns.jpg" alt="DNS ANTIBAN" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🛡️</div></div>
-          <div class="card-info"><div class="card-title">DNS ANTIBAN DÀNH CHO FF</div><div class="card-desc">DNS ANTIBAN RIÊNG CHO FREE FIRE • FILE CONFIG AN TOÀN</div><div class="card-tags"><span class="tag tag-antiban">ANTIBAN 100%</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-      </div>
+      <div class="cards-stack"></div>
     </section>
 
-    <!-- PATCHGAME -->
+    <!-- PATCHGAME — thẻ app tự sinh từ danh sách APPS trong <script> -->
     <section class="section" data-category="patch">
       <div class="section-header">
         <div class="section-title-wrap"><span class="section-indicator" style="background:linear-gradient(to bottom,#ec4899,#f59e0b);box-shadow:0 0 16px #ec4899"></span><h2 class="section-title">PATCHGAME + MOD</h2></div>
-        <span class="section-badge">15 MODS</span>
+        <span class="section-badge">0 MODS</span>
       </div>
-      <div class="cards-stack">
-        <a class="card" href="https://anonlink.io/z8ddEc" data-search="patch hack pvz2 app 3105 full cay plants vs zombies" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pvz2.jpg" alt="PVZ2" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🌻</div></div>
-          <div class="card-info"><div class="card-title">PATCH HACK PVZ2</div><div class="card-desc">DÙNG CHO APP 3105 • FULL CÂY TRỒNG, SHOP ĐỒNG GIÁ 1 XU</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-purple">FULL UNLOCK</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/I7r0fTtU" data-search="patch candy crush app 3105 vo han tro luc moves" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/candycrush.jpg" alt="CANDY CRUSH" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🍬</div></div>
-          <div class="card-info"><div class="card-title">PATCH CANDY CRUSH</div><div class="card-desc">DÙNG CHO APP 3105 • VÔ HẠN PHỤ TRỢ, BƯỚC ĐI KHÔNG GIỚI HẠN</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-purple">VÔ HẠN</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/I7r0fTtU" data-search="patch subway surfers app 3105 full moi thu tien vang chia khoa" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/subway.jpg" alt="SUBWAY SURFERS" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🏄</div></div>
-          <div class="card-info"><div class="card-title">PATCH SUBWAY SURFERS</div><div class="card-desc">DÙNG CHO APP 3105 • FULL VÀNG, CHÌA KHÓA, MỞ KHÓA TOÀN BỘ NHÂN VẬT</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-purple">FULL MAX</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/6T67753" data-search="menu pubg vip pubg mobile mod menu hack esp aimbot no ban ios" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg" alt="MENU PUBG VIP" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🎯</div></div>
-          <div class="card-info"><div class="card-title">MENU PUBG VIP</div><div class="card-desc">MENU MOD CAO CẤP • ESP, AIMBOT & AN TOÀN CHỐNG KHÓA NICK</div><div class="card-tags"><span class="tag tag-vip">MENU VIP</span><span class="tag tag-antiban">ANTI-BAN</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href=" https://anonlink.io/qyTtFA" data-search="mod pubg vip pubg mobile hack patch ios esp aimbot no ban menu" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg" alt="MOD PUBG VIP" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🎯</div></div>
-          <div class="card-info"><div class="card-title">MOD PUBG VIP</div><div class="card-desc">BẢN VIP ĐẶC QUYỀN • MODSKIN VIP</div><div class="card-tags"><span class="tag tag-vip">VIP PRO</span><span class="tag tag-antiban">ANTI-BAN</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/BN5yUBP" data-search="mod pubg pubg mobile patch hack ios no ban esp" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg" alt="MOD PUBG" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🎯</div></div>
-          <div class="card-info"><div class="card-title">MOD PUBG MOBILE</div><div class="card-desc">MOD BẢN CHUẨN CHO iOS • HỖ TRỢ CHIẾN MƯỢT MÀ</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-vip">VIP</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/x03DO" data-search="mod pubg global pubg mobile quoc te ios hack patch esp no ban" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg" alt="MOD PUBG GLOBAL" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🌍</div></div>
-          <div class="card-info"><div class="card-title">MOD PUBG (GLOBAL)</div><div class="card-desc">BẢN QUỐC TẾ (GLOBAL) CHO iOS • HỖ TRỢ CHIẾN MƯỢT MÀ</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-vip">GLOBAL</span><span class="tag tag-antiban">ANTI-BAN</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/HHDo4" data-search="patch hack map lien quan lien minh toc chien" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/map.jpg" alt="PATCH HACK MAP" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🗺️</div></div>
-          <div class="card-info"><div class="card-title">PATCH HACK MAP SÁNG</div><div class="card-desc">QUAN SÁT TẦM NHÌN TOÀN BẢN ĐỒ SIÊU RÕ</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-purple">MAP SÁNG</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/9SQbfeP" data-search="patch unlockskin unlock skin lien quan" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg" alt="PATCH UNLOCKSKIN" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">👗</div></div>
-          <div class="card-info"><div class="card-title">PATCH UNLOCK ALL SKIN</div><div class="card-desc">MỞ KHÓA TRANG PHỤC HIỆU ỨNG ÂM THANH ĐẦY ĐỦ</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-vip">SKIN MOD</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/fT8GLeZ" data-search="patch unlockskin cam xa no map lien quan" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/camxa.jpg" alt="CAM XA" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🔭</div></div>
-          <div class="card-info"><div class="card-title">PATCH UNLOCKSKIN + CAM XA</div><div class="card-desc">GÓC NHÌN CAO RỘNG • BẢN NO MAP AN TOÀN CAO</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-antiban">SAFE</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/7OBq" data-search="patch lq unlock skin lien quan map cam xa combo" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/lq.jpg" alt="PATCH LQ" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">⚔️</div></div>
-          <div class="card-info"><div class="card-title">PATCH LQ ALL-IN-ONE</div><div class="card-desc">COMBO UNLOCK SKIN + MAP SÁNG + CAM SIÊU XA</div><div class="card-tags"><span class="tag tag-vip">COMBO VIP</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/G8Fm18eL" data-search="patch aim ffm free fire max tu ke tam headshot" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/aimffm.jpg" alt="PATCH AIM FFM" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🎯</div></div>
-          <div class="card-info"><div class="card-title">PATCH AIM FREE FIRE MAX</div><div class="card-desc">TỰ ĐỘNG KHÓA MỤC TIÊU • GIM TÂM CHUẨN XÁC</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-purple">AIMLOCK</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/wTMGTLHP" data-search="patch dinh vi aimbody ffm free fire max antiban" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg" alt="PATCH DINH VI" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">📍</div></div>
-          <div class="card-info"><div class="card-title">PATCH ESP + AIM FFM</div><div class="card-desc">DÀNH CHO FREE FIRE MAX • HIỂN THỊ VỊ TRÍ ĐỊCH + AIM</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-antiban">ANTIBAN</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/q1BnSEUB" data-search="patch aim ffth ESP AIM free fire thai" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/aimffth.jpg" alt="PATCH AIM FFTH" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🔫</div></div>
-          <div class="card-info"><div class="card-title">PATCH FFTH ESP + AIM</div><div class="card-desc">FREE FIRE THAILAND • ESP + AIMBOT CHÍNH XÁC</div><div class="card-tags"><span class="tag tag-blue">iOS</span><span class="tag tag-purple">AIMBOT</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-        <a class="card" href="https://anonlink.io/nqiI" data-search="capcut pro patch mod edit video khong logo" target="_blank" rel="noopener">
-          <div class="card-shimmer"></div>
-          <div class="card-icon"><img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/capcut.jpg" alt="CAPCUT PRO" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">🎬</div></div>
-          <div class="card-info"><div class="card-title">CAPCUT PRO MOD</div><div class="card-desc">MỞ KHÓA MỌI TÍNH NĂNG PRO • XUẤT 4K KHÔNG WATERMARK</div><div class="card-tags"><span class="tag tag-vip">PRO VIP</span><span class="tag tag-blue">iOS</span></div></div>
-          <span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        </a>
-      </div>
+      <div class="cards-stack"></div>
     </section>
 
     <div class="empty-state" id="empty">
@@ -689,7 +533,7 @@ footer p:last-child{margin-top:6px;color:#475569;font-size:10px}
 
   <footer>
     <p>© 2026 ModGameios • KHO TẢI IPA CRACK & MOD GAME iOS HÀNG ĐẦU</p>
-    <p>Phiên bản V4 • Giao diện Liquid Cyber Dark Pro</p>
+    <p>Phiên bản V5 • Giao diện Liquid Cyber Dark Pro</p>
   </footer>
 </main>
 
@@ -752,14 +596,17 @@ function createParticles(){
 }
 createParticles();
 
-/* ── NHẠC NỀN (YouTube — bài cũ) ── */
+/* ── NHẠC NỀN (YouTube) — bài đầu là bài cũ, bấm ⏭ để chuyển bài
+   (các bài sau lấy tự động từ kênh "Drill My Chill", link không bao giờ chết) ── */
 const popup=document.getElementById("noticePopup");
 const musicButton=document.getElementById("musicButton");
 const musicText=document.getElementById("musicText");
 const musicEmoji=document.getElementById("musicEmoji");
 const toast=document.getElementById("toast");
-let player=null,musicReady=false,musicStarted=false;
-const youtubeVideoId="BUORWKzSl_o";
+const volSlider=document.getElementById("volSlider");
+let player=null,musicReady=false,musicStarted=false,playlistOn=false;
+const START_VIDEO="BUORWKzSl_o";
+const CHANNEL_ID="UCY4J_kmDLkpyc23Zeye5PfA";
 
 function loadYouTube(){
   if(document.getElementById("youtube-api"))return;
@@ -768,7 +615,13 @@ function loadYouTube(){
   document.body.appendChild(s);
 }
 function onYouTubeIframeAPIReady(){
-  player=new YT.Player("youtubePlayer",{height:"1",width:"1",videoId:youtubeVideoId,playerVars:{autoplay:0,controls:0,loop:1,playlist:youtubeVideoId,playsinline:1,rel:0},events:{onReady:()=>{musicReady=true;player.setVolume(65)}}});
+  player=new YT.Player("youtubePlayer",{height:"1",width:"1",videoId:START_VIDEO,
+    playerVars:{autoplay:0,controls:0,playsinline:1,rel:0},
+    events:{
+      onReady:()=>{musicReady=true;player.setVolume(Number(volSlider.value)||65)},
+      onStateChange:e=>{if(e.data===YT.PlayerState.ENDED)playNext(true)},
+      onError:()=>playNext(true)
+    }});
 }
 window.onYouTubeIframeAPIReady=onYouTubeIframeAPIReady;
 loadYouTube();
@@ -781,6 +634,27 @@ function stopMusic(){
   if(player)player.pauseVideo();
   musicStarted=false;musicButton.classList.remove("playing");musicText.textContent="BẬT NHẠC";musicEmoji.textContent="🔇";showToast("🔇 Đã tắt nhạc");
 }
+function playNext(silent){
+  if(!player||!musicReady)return;
+  try{
+    if(!playlistOn){playlistOn=true;player.loadPlaylist({list:CHANNEL_ID,listType:"user_uploads",index:0});}
+    else player.nextVideo();
+    player.playVideo();
+    if(!silent)showToast("🎵 Đã chuyển bài tiếp theo");
+  }catch(e){}
+}
+function playPrev(){
+  if(!player||!musicReady)return;
+  try{
+    if(playlistOn){player.previousVideo();player.playVideo();showToast("🎵 Bài trước đó");}
+    else showToast("🎵 Đây là bài đầu tiên rồi!");
+  }catch(e){}
+}
+document.getElementById("nextTrackBtn").addEventListener("click",e=>{e.stopPropagation();playNext();});
+document.getElementById("prevTrackBtn").addEventListener("click",e=>{e.stopPropagation();playPrev();});
+volSlider.addEventListener("input",()=>{if(player&&musicReady)player.setVolume(Number(volSlider.value))});
+volSlider.addEventListener("click",e=>e.stopPropagation());
+volSlider.addEventListener("pointerdown",e=>e.stopPropagation());
 
 /* ── POPUP ── */
 document.getElementById("enterButton").addEventListener("click",()=>{
@@ -790,7 +664,10 @@ document.getElementById("enterButton").addEventListener("click",()=>{
 document.getElementById("closeModalBtn").addEventListener("click",()=>{
   popup.style.opacity="0";setTimeout(()=>popup.style.display="none",280);
 });
-musicButton.addEventListener("click",()=>musicStarted?stopMusic():startMusic());
+musicButton.addEventListener("click",e=>{
+  if(e.target.closest(".mctrl,.mvol"))return;
+  musicStarted?stopMusic():startMusic();
+});
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"){popup.style.display="none";closeApp();}
   if(e.key==="/"&&!/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)){e.preventDefault();searchInput.focus()}
@@ -880,6 +757,73 @@ fetch("https://abacus.jasoncameron.dev/hit/modgameios-v3/views")
     animateCount(viewsEl,v,1200);
   });
 
+/* ═══ DANH SÁCH APP — thêm / sửa app ở đây, thẻ tự hiện ra web ═══
+   Thêm app mới: copy 1 dòng dưới đây, đổi thông tin là xong (số đếm mục tự cập nhật).
+   cat: "ipa" | "bypass" | "patch"   •   badge: "HOT" | "NEW" hoặc bỏ ""
+   icon: đường dẫn ảnh trong repo   •   fb: emoji dự phòng khi ảnh lỗi
+   id: tên ngắn riêng (không trùng) — dùng để đếm lượt tải riêng cho app đó */
+const REPO="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
+const APPS=[
+ {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"BY MODGAMEIOS • CHẶN QUẢNG CÁO & ANTIBAN",href:"https://anonlink.io/8bwJ",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns app crack"},
+ {cat:"ipa",id:"app3105v2",title:"APP 3105 V2",desc:"V3 UPDATE NEW • QUẢN LÝ TỆP & MOD IPA",href:"https://anonlink.io/L9nAIeY",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","HOT"],["tag-blue","iOS"]],search:"app 3105 v2 update new cài mod"},
+ {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"BẢN DỰ PHÒNG ỔN ĐỊNH • MEDIAFIRE LINK",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","iOS"]],search:"app 3105 v1.1.1 mediafire"},
+ {cat:"ipa",id:"duolingo",title:"UNLOCK DUOLINGO MAX",desc:"CÓ CHẾ ĐỘ GỌI ĐIỆN VỚI AI LILY • FULL TÍNH NĂNG",href:"https://anonlink.io/FaiC",icon:"a%CC%89nh/%E1%BA%A3nh/duolingo.jpg",fb:"🦉",badge:"",tags:[["tag-vip","MAX VIP"],["tag-blue","iOS"]],search:"unlock duolingo max hoc tieng anh pro"},
+ {cat:"ipa",id:"messenger",title:"MESSENGER VIPP",desc:"XEM TIN NHẮN ĐÃ THU HỒI, CHẶN SEEN, ONLINE ẨN",href:"https://anonlink.io/yniZ1fz",icon:"a%CC%89nh/%E1%BA%A3nh/messenger.jpg",fb:"💬",badge:"",tags:[["tag-vip","PREMIUM"],["tag-blue","iOS"]],search:"messenger vipp xem tin nhan thu hoi facebook"},
+ {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"MỚI NHẤT • CHẶN QUẢNG CÁO, CHẠY NỀN, PIP",href:"https://anonlink.io/PVIZ",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"",tags:[["tag-vip","VIP"],["tag-blue","iOS"]],search:"youtube premium cap nhat chan quang cao nghe nhac tat man hinh"},
+ {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"NGHE NHẠC OFFLINE, KHÔNG QUẢNG CÁO • MỞ KHÓA GO++",href:"https://anonlink.io/ONMdtq",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"],["tag-blue","iOS"]],search:"soundcloud go plus plus nghe nhac offline ipa crack mod premium"},
+ {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"MỚI NHẤT • CHẶN QUẢNG CÁO, NGHE OFFLINE, SKIP VÔ HẠN",href:"https://anonlink.io/tMfcciI",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"],["tag-blue","iOS"]],search:"spotify premium ipa crack mod nghe nhac offline khong quang cao skip vo han"},
+ {cat:"ipa",id:"filza",title:"FILZA MOD",desc:"TÍCH HỢP SẴN APP 3105 • TRÌNH QUẢN LÝ FILE HỆ THỐNG",href:"https://anonlink.io/DZGlv2cs",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📁",badge:"",tags:[["tag-purple","FILE MANAGER"],["tag-blue","iOS"]],search:"filza mod app 3105 quan ly file no jailbreak"},
+ {cat:"bypass",id:"bchatgpt",title:"BYPASS CHATGPT",desc:"DÁN VÀO CHAT TRỰC TIẾP • BỎ QUA GIỚI HẠN & KIỂM DUYỆT",href:"https://anonlink.io/M9S1",icon:"a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg",fb:"🤖",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"bypass chatgpt ios antiban prompt gpt"},
+ {cat:"bypass",id:"bclaude",title:"BYPASS AI CLAUDE",desc:"BYPASS PROMPT MỞ KHÓA KHẢ NĂNG CAO CẤP",href:"https://anonlink.io/0whZz",icon:"a%CC%89nh/%E1%BA%A3nh/claude.jpg",fb:"✨",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"bypass ai claude ios antiban sonnet opus"},
+ {cat:"bypass",id:"dnsff",title:"DNS ANTIBAN DÀNH CHO FF",desc:"DNS ANTIBAN RIÊNG CHO FREE FIRE • FILE CONFIG AN TOÀN",href:"https://anonlink.io/WiTmFh",icon:"a%CC%89nh/%E1%BA%A3nh/dns.jpg",fb:"🛡️",badge:"",tags:[["tag-antiban","ANTIBAN 100%"],["tag-blue","iOS"]],search:"dns antiban ff ffm nextdns config free fire max"},
+ {cat:"patch",id:"pvz2",title:"PATCH HACK PVZ2",desc:"DÙNG CHO APP 3105 • FULL CÂY TRỒNG, SHOP ĐỒNG GIÁ 1 XU",href:"https://anonlink.io/z8ddEc",icon:"a%CC%89nh/%E1%BA%A3nh/pvz2.jpg",fb:"🌻",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FULL UNLOCK"]],search:"patch hack pvz2 app 3105 full cay plants vs zombies"},
+ {cat:"patch",id:"candy",title:"PATCH CANDY CRUSH",desc:"DÙNG CHO APP 3105 • VÔ HẠN PHỤ TRỢ, BƯỚC ĐI KHÔNG GIỚI HẠN",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/candycrush.jpg",fb:"🍬",badge:"",tags:[["tag-blue","iOS"],["tag-purple","VÔ HẠN"]],search:"patch candy crush app 3105 vo han tro luc moves"},
+ {cat:"patch",id:"subway",title:"PATCH SUBWAY SURFERS",desc:"DÙNG CHO APP 3105 • FULL VÀNG, CHÌA KHÓA, MỞ KHÓA TOÀN BỘ NHÂN VẬT",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/subway.jpg",fb:"🏄",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FULL MAX"]],search:"patch subway surfers app 3105 full moi thu tien vang chia khoa"},
+ {cat:"patch",id:"menupubg",title:"MENU PUBG VIP",desc:"MENU MOD CAO CẤP • ESP, AIMBOT & AN TOÀN CHỐNG KHÓA NICK",href:"https://anonlink.io/6T67753",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-vip","MENU VIP"],["tag-antiban","ANTI-BAN"],["tag-blue","iOS"]],search:"menu pubg vip pubg mobile mod menu hack esp aimbot no ban ios"},
+ {cat:"patch",id:"modpubgvip",title:"MOD PUBG VIP",desc:"BẢN VIP ĐẶC QUYỀN • MODSKIN VIP",href:"https://anonlink.io/8RS1",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-vip","VIP PRO"],["tag-antiban","ANTI-BAN"],["tag-blue","iOS"]],search:"mod pubg vip pubg mobile hack patch ios esp aimbot no ban menu"},
+ {cat:"patch",id:"modpubg",title:"MOD PUBG MOBILE",desc:"MOD BẢN CHUẨN CHO iOS • HỖ TRỢ CHIẾN MƯỢT MÀ",href:"https://anonlink.io/BN5yUBP",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-blue","iOS"],["tag-vip","VIP"]],search:"mod pubg pubg mobile patch hack ios no ban esp"},
+ {cat:"patch",id:"pubgglobal",title:"MOD PUBG (GLOBAL)",desc:"BẢN QUỐC TẾ (GLOBAL) CHO iOS • HỖ TRỢ CHIẾN MƯỢT MÀ",href:"https://anonlink.io/x03DO",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🌍",badge:"",tags:[["tag-blue","iOS"],["tag-vip","GLOBAL"],["tag-antiban","ANTI-BAN"]],search:"mod pubg global pubg mobile quoc te ios hack patch esp no ban"},
+ {cat:"patch",id:"mapsang",title:"PATCH HACK MAP SÁNG",desc:"QUAN SÁT TẦM NHÌN TOÀN BẢN ĐỒ SIÊU RÕ",href:"https://anonlink.io/HHDo4",icon:"a%CC%89nh/%E1%BA%A3nh/map.jpg",fb:"🗺️",badge:"",tags:[["tag-blue","iOS"],["tag-purple","MAP SÁNG"]],search:"patch hack map lien quan lien minh toc chien"},
+ {cat:"patch",id:"unlockskin",title:"PATCH UNLOCK ALL SKIN",desc:"MỞ KHÓA TRANG PHỤC HIỆU ỨNG ÂM THANH ĐẦY ĐỦ",href:"https://anonlink.io/84WCgtE",icon:"a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg",fb:"👗",badge:"",tags:[["tag-blue","iOS"],["tag-vip","SKIN MOD"]],search:"patch unlockskin unlock skin lien quan"},
+ {cat:"patch",id:"camxa",title:"PATCH UNLOCKSKIN + CAM XA",desc:"GÓC NHÌN CAO RỘNG • BẢN NO MAP AN TOÀN CAO",href:"https://anonlink.io/fT8GLeZ",icon:"a%CC%89nh/%E1%BA%A3nh/camxa.jpg",fb:"🔭",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","SAFE"]],search:"patch unlockskin cam xa no map lien quan"},
+ {cat:"patch",id:"lq",title:"PATCH LQ ALL-IN-ONE",desc:"COMBO UNLOCK SKIN + MAP SÁNG + CAM SIÊU XA",href:"https://anonlink.io/7OBq",icon:"a%CC%89nh/%E1%BA%A3nh/lq.jpg",fb:"⚔️",badge:"",tags:[["tag-vip","COMBO VIP"],["tag-blue","iOS"]],search:"patch lq unlock skin lien quan map cam xa combo"},
+ {cat:"patch",id:"aimffm",title:"PATCH AIM FREE FIRE MAX",desc:"TỰ ĐỘNG KHÓA MỤC TIÊU • GIM TÂM CHUẨN XÁC",href:"https://anonlink.io/G8Fm18eL",icon:"a%CC%89nh/%E1%BA%A3nh/aimffm.jpg",fb:"🎯",badge:"",tags:[["tag-blue","iOS"],["tag-purple","AIMLOCK"]],search:"patch aim ffm free fire max tu ke tam headshot"},
+ {cat:"patch",id:"espffm",title:"PATCH ESP + AIM FFM",desc:"DÀNH CHO FREE FIRE MAX • HIỂN THỊ VỊ TRÍ ĐỊCH + AIM",href:"https://anonlink.io/wTMGTLHP",icon:"a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg",fb:"📍",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"patch dinh vi aimbody ffm free fire max antiban"},
+ {cat:"patch",id:"ffth",title:"PATCH FFTH ESP + AIM",desc:"FREE FIRE THAILAND • ESP + AIMBOT CHÍNH XÁC",href:"https://anonlink.io/q1BnSEUB",icon:"a%CC%89nh/%E1%BA%A3nh/aimffth.jpg",fb:"🔫",badge:"",tags:[["tag-blue","iOS"],["tag-purple","AIMBOT"]],search:"patch aim ffth ESP AIM free fire thai"},
+ {cat:"patch",id:"capcut",title:"CAPCUT PRO MOD",desc:"MỞ KHÓA MỌI TÍNH NĂNG PRO • XUẤT 4K KHÔNG WATERMARK",href:"https://anonlink.io/nqiI",icon:"a%CC%89nh/%E1%BA%A3nh/capcut.jpg",fb:"🎬",badge:"",tags:[["tag-vip","PRO VIP"],["tag-blue","iOS"]],search:"capcut pro patch mod edit video khong logo"}
+];
+
+/* ── SINH THẺ APP TỪ DANH SÁCH ── */
+const SVG_DL='<span class="download-action"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 11.5 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>';
+function cardHTML(a){
+  const badge=a.badge==="HOT"?'<span class="card-badge badge-hot">HOT</span>':a.badge==="NEW"?'<span class="card-badge badge-new">NEW</span>':"";
+  const tags=(a.tags||[]).map(t=>`<span class="tag ${t[0]}">${t[1]}</span>`).join("");
+  return `<a class="card" href="${a.href}" data-appid="${a.id}" data-search="${a.search||""}" target="_blank" rel="noopener"><div class="card-shimmer"></div><div class="card-icon">${badge}<img src="${REPO}${a.icon}" alt="${a.title}" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">${a.fb||"📦"}</div></div><div class="card-info"><div class="card-title">${a.title}</div><div class="card-desc">${a.desc}</div><div class="card-tags">${tags}<span class="tag tag-dl dl-chip" style="display:none"></span></div></div>${SVG_DL}</a>`;
+}
+document.querySelectorAll(".section").forEach(sec=>{
+  const cat=sec.dataset.category;
+  const list=APPS.filter(a=>a.cat===cat);
+  sec.querySelector(".cards-stack").innerHTML=list.map(cardHTML).join("");
+  const b=sec.querySelector(".section-badge");
+  if(b)b.textContent=list.length+" "+({ipa:"APPS",bypass:"FILES",patch:"MODS"}[cat]||"");
+});
+
+/* ── LƯỢT TẢI TỪNG APP (đếm thật khi có người bấm TẢI NGAY) ── */
+const DL_API="https://abacus.jasoncameron.dev/";
+function fmtDl(n){return n>=1000?(n/1000).toFixed(1).replace(/\.0$/,"")+"k":String(n)}
+APPS.forEach((a,i)=>{
+  setTimeout(()=>{
+    fetch(DL_API+"get/modgameios-v3/dl-"+a.id)
+      .then(r=>r.json())
+      .then(d=>{
+        const n=Number(d.value)||0;
+        if(!n)return;
+        const chip=document.querySelector(`.card[data-appid="${a.id}"] .dl-chip`);
+        if(chip){chip.textContent="🔥 "+fmtDl(n);chip.style.display="";}
+      }).catch(()=>{});
+  },700+i*130);
+});
+
 /* ── TOTAL APPS ── */
 const totalAppsEl=document.getElementById("totalApps");
 setTimeout(()=>animateCount(totalAppsEl,document.querySelectorAll(".card").length,1000),800);
@@ -900,12 +844,11 @@ window.addEventListener("scroll",()=>{
   document.getElementById("scrollTop").classList.toggle("show",s.scrollTop>300);
 },{ passive:true });
 
-/* ── CARD INTERACTIONS: ripple + mở chi tiết + trái tim + nghiêng 3D + hiện dần ── */
+/* ── MODAL CHI TIẾT + HD CÀI RIÊNG THEO MỤC ── */
 const appModal=document.getElementById("appModal");
 const amIcon=document.getElementById("amIcon"),amTitle=document.getElementById("amTitle"),
       amDesc=document.getElementById("amDesc"),amTags=document.getElementById("amTags"),
       amLink=document.getElementById("amLink");
-/* Hướng dẫn cài riêng theo từng mục: ipa / patch / bypass */
 const GUIDES={
   ipa:`<div class="am-step"><span class="am-num">1</span><span>Bấm nút <b>TẢI NGAY</b> bên dưới, chờ file tải xong.</span></div>
 <div class="am-step"><span class="am-num">2</span><span>Mở <b>App 3105 / Filza</b> (tải miễn phí trong mục TẢI IPA VIP).</span></div>
@@ -930,7 +873,9 @@ function openApp(card){
   amTitle.textContent=card.querySelector(".card-title").textContent;
   amDesc.textContent=card.querySelector(".card-desc").textContent;
   amTags.innerHTML=card.querySelector(".card-tags").innerHTML;
+  amTags.querySelector(".dl-chip")&&(amTags.querySelector(".dl-chip").style.display=card.querySelector(".dl-chip").style.display);
   amLink.href=card.getAttribute("href")||"#";
+  amLink.dataset.appid=card.dataset.appid||"";
   const cat=((card.closest(".section")||{}).dataset||{}).category||"ipa";
   document.getElementById("amGuide").innerHTML=GUIDES[cat]||GUIDES.ipa;
   document.querySelector('.am-tab[data-amtab="info"]').classList.add("active");
@@ -949,7 +894,19 @@ document.querySelectorAll(".am-tab").forEach(t=>t.addEventListener("click",()=>{
   t.classList.add("active");
   document.querySelector(`[data-ampanel="${t.dataset.amtab}"]`).classList.add("active");
 }));
+/* Bấm TẢI NGAY trong modal → đếm lượt tải cho app đó */
+amLink.addEventListener("click",()=>{
+  const id=amLink.dataset.appid;if(!id)return;
+  fetch(DL_API+"hit/modgameios-v3/dl-"+id)
+    .then(r=>r.json())
+    .then(d=>{
+      const n=Number(d.value)||0;
+      const chip=document.querySelector(`.card[data-appid="${id}"] .dl-chip`);
+      if(chip){chip.textContent="🔥 "+fmtDl(n);chip.style.display="";}
+    }).catch(()=>{});
+});
 
+/* ── CARD INTERACTIONS: ripple + mở chi tiết + trái tim ── */
 document.querySelectorAll(".card").forEach(card=>{
   card.addEventListener("pointerdown",e=>{
     const href=card.getAttribute("href")||"";
@@ -1033,6 +990,11 @@ setTimeout(hideSplash,3500);
 let lastSpark=0;
 addEventListener("pointerdown",e=>sparkles(e.clientX,e.clientY,9),{passive:true});
 addEventListener("pointermove",e=>{const n=performance.now();if(n-lastSpark>55){lastSpark=n;sparkles(e.clientX,e.clientY,1)}},{passive:true});
+
+/* ── PWA — cài web lên màn hình chính + chạy offline ── */
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})});
+}
 </script>
 </body>
 </html>
