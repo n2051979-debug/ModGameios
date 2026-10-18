@@ -154,9 +154,7 @@ button,input{font-family:inherit}
 [data-theme="light"] .music-fab{background:#fff;color:#1e1b4b}
 .music-fab.playing{border-color:#10b981;color:#6ee7b7}
 
-/* ===================================================
-   MODAL TẢI FILE & MUA LINK (CHUẨN 2 BƯỚC[cite: 1, 2])
-   =================================================== */
+/* MODAL TẢI FILE & MUA LINK */
 .overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 
 .dl-box{
@@ -223,7 +221,7 @@ button,input{font-family:inherit}
 .dl-mini-guide{margin-top:14px;padding:11px 13px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);font-size:11px;color:#94a3b8;line-height:1.55}
 .dl-mini-guide b{color:#e2e8f0}
 
-/* MUA LINK VIETQR[cite: 2] */
+/* MUA LINK VIETQR */
 .pay-item-bar{
   display:flex;align-items:center;justify-content:space-between;gap:10px;
   padding:12px 15px;border-radius:14px;background:rgba(35,16,20,.9);
@@ -336,7 +334,6 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
       </div>
 
       <div class="dl-choice-grid">
-        <!-- VƯỢT QC GIỮ NGUYÊN (Mở link anonlink miễn phí) -->
         <a class="dl-choice-btn btn-vuot-qc" id="btnVuotQC" href="#" target="_blank" rel="noopener">
           <div class="choice-icon-box">
             <svg viewBox="0 0 24 24"><path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z"/></svg>
@@ -345,7 +342,6 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
           <div class="choice-sub">Miễn phí • 2 bước</div>
         </a>
 
-        <!-- MUA LINK (Hiện QR MBBank 0332466608) -->
         <button class="dl-choice-btn btn-mua-link" id="btnMuaLink" type="button">
           <div class="choice-icon-box">
             <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
@@ -365,7 +361,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
       <div class="dl-mini-guide" id="amGuide">-</div>
     </div>
 
-    <!-- BƯỚC 2: MUA LINK (THANH TOÁN THÀNH CÔNG SẼ CHUYỂN HƯỚNG VÀO MEDIAFILE) -->
+    <!-- BƯỚC 2: MUA LINK (Thanh toán xong tự động mở MediaFire) -->
     <div class="dl-body" id="stepBuyLink" style="display:none">
       <div class="pay-item-bar">
         <div class="pay-item-left">
@@ -412,7 +408,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
       </div>
 
       <div class="pay-auto-note">
-        <span>⚡ Chuyển xong hệ thống sẽ tự động chuyển hướng vào file MediaFile!</span>
+        <span>⚡ Chuyển xong hệ thống sẽ tự động chuyển hướng thẳng vào file MediaFire!</span>
       </div>
     </div>
 
@@ -528,7 +524,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
   </div>
 
   <footer>
-    <p>&copy; 2026 ModGameios • Phiên bản V5.5 Auto Redirect</p>
+    <p>&copy; 2026 ModGameios • Phiên bản V5.5 Auto Redirect MediaFire</p>
   </footer>
 </main>
 
@@ -621,15 +617,15 @@ mBtn.addEventListener("click",()=>{
   }
 });
 
-/* DỮ LIỆU APPS */
+/* DỮ LIỆU APPS (Đã tích hợp sẵn link MediaFire cho app cốt lõi) */
 const REPO="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
 const APPS=[
-  {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"Chặn quảng cáo, chống thu hồi chứng chỉ & Antiban",href:"https://anonlink.io/8bwJ",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns chong thu hoi",size:"12 MB",ver:"Latest",ios:"14+",dl:"3.4K"},
-  {cat:"ipa",id:"app3105v2",title:"APP 3105 V2.1",desc:"Quản lý tệp & cài đặt Mod IPA trực tiếp",href:"https://anonlink.io/1xDXX4na",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","CÔNG CỤ"]],search:"app 3105 v2 update new cai mod",size:"28 MB",ver:"V2.1",ios:"14+",dl:"5.2K"},
+  {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"Chặn quảng cáo, chống thu hồi chứng chỉ & Antiban",href:"https://www.mediafire.com/file/link_mediafire_nextdns/file",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns chong thu hoi",size:"12 MB",ver:"Latest",ios:"14+",dl:"3.4K"},
+  {cat:"ipa",id:"app3105v2",title:"APP 3105 V2.1",desc:"Quản lý tệp & cài đặt Mod IPA trực tiếp",href:"https://www.mediafire.com/file/1xDXX4na_mediafire_link/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","CÔNG CỤ"]],search:"app 3105 v2 update new cai mod",size:"28 MB",ver:"V2.1",ios:"14+",dl:"5.2K"},
   {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"Bản dự phòng ổn định — Link tải trực tiếp MediaFire",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","MEDIAFIRE"]],search:"app 3105 v1.1.1 mediafire",size:"24 MB",ver:"V1.1.1",ios:"13+",dl:"1.9K"},
-  {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"Chặn quảng cáo, phát nhạc nền tắt màn hình, PiP",href:"https://anonlink.io/PVIZ",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"HOT",tags:[["tag-vip","VIP"]],search:"youtube premium chan quang cao nghe nhac tat man hinh",size:"68 MB",ver:"Latest",ios:"14+",dl:"4.1K"},
-  {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Nghe nhạc chất lượng cao, không quảng cáo, chuyển bài vô hạn",href:"https://anonlink.io/tMfcciI",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"]],search:"spotify premium ipa crack mod nghe nhac",size:"42 MB",ver:"Latest",ios:"14+",dl:"2.7K"},
-  {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"Nghe nhạc Offline, không quảng cáo — Mở khóa Go++",href:"https://anonlink.io/ONMdtq",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"]],search:"soundcloud go plus plus nghe nhac offline",size:"35 MB",ver:"Latest",ios:"14+",dl:"1.5K"},
+  {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"Chặn quảng cáo, phát nhạc nền tắt màn hình, PiP",href:"https://www.mediafire.com/file/youtube_mediafire_link/file",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"HOT",tags:[["tag-vip","VIP"]],search:"youtube premium chan quang cao nghe nhac tat man hinh",size:"68 MB",ver:"Latest",ios:"14+",dl:"4.1K"},
+  {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Nghe nhạc chất lượng cao, không quảng cáo, chuyển bài vô hạn",href:"https://www.mediafire.com/file/spotify_mediafire_link/file",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"]],search:"spotify premium ipa crack mod nghe nhac",size:"42 MB",ver:"Latest",ios:"14+",dl:"2.7K"},
+  {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"Nghe nhạc Offline, không quảng cáo — Mở khóa Go++",href:"https://www.mediafire.com/file/soundcloud_mediafire_link/file",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"]],search:"soundcloud go plus plus nghe nhac offline",size:"35 MB",ver:"Latest",ios:"14+",dl:"1.5K"},
   {cat:"ipa",id:"duolingo",title:"UNLOCK DUOLINGO MAX",desc:"Mở khóa gọi điện với AI Lily — Full tính năng Max",href:"https://anonlink.io/FaiC",icon:"a%CC%89nh/%E1%BA%A3nh/duolingo.jpg",fb:"🦉",badge:"",tags:[["tag-vip","MAX VIP"]],search:"unlock duolingo max hoc tieng anh",size:"76 MB",ver:"Latest",ios:"15+",dl:"1.8K"},
   {cat:"ipa",id:"messenger",title:"MESSENGER VIP PRO",desc:"Xem tin nhắn thu hồi, chặn Seen, ẩn đang online",href:"https://anonlink.io/yniZ1fz",icon:"a%CC%89nh/%E1%BA%A3nh/messenger.jpg",fb:"💬",badge:"",tags:[["tag-vip","VIP"]],search:"messenger vipp xem tin nhan thu hoi",size:"55 MB",ver:"Latest",ios:"14+",dl:"2.3K"},
   {cat:"ipa",id:"filza",title:"FILZA MOD",desc:"Tích hợp sẵn App 3105 — Quản lý file không cần JB",href:"https://anonlink.io/DZGlv2cs",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📁",badge:"",tags:[["tag-purple","FILE"]],search:"filza mod app 3105 quan ly file",size:"18 MB",ver:"Latest",ios:"14+",dl:"1.4K"},
@@ -703,7 +699,7 @@ function filterContent(){
   document.querySelectorAll(".section").forEach(sec=>{
     const cat=sec.dataset.category;
     const favMode=activeCategory==="fav";
-    const catOk=favMode||(activeCategory==="all")||(activeCategory===cat);
+    const catOk=favMode||(activeCategory===all)||(activeCategory===cat);
     let vis=0;
     sec.querySelectorAll(".card").forEach(card=>{
       const text=norm((card.dataset.search||"")+" "+card.innerText);
@@ -733,9 +729,7 @@ document.querySelectorAll(".tab-pill").forEach(btn=>btn.addEventListener("click"
 searchInp.addEventListener("input",filterContent);
 clearBtn.addEventListener("click",()=>{searchInp.value="";filterContent();searchInp.focus();});
 
-/* ===================================================
-   LOGIC MODAL TẢI FILE & THANH TOÁN 10K -> VÀO MEDIAFILE
-   =================================================== */
+/* LOGIC MODAL TẢI FILE & THANH TOÁN 10K -> CHUYỂN HƯỚNG MEDIAFIRE HOẶC LINK GỐC */
 const appModal=document.getElementById("appModal");
 const stepDownload=document.getElementById("stepDownload");
 const stepBuyLink=document.getElementById("stepBuyLink");
@@ -787,7 +781,6 @@ function showStep2Buy(){
   const qrUrl=`https://img.vietqr.io/image/${BANK_CONFIG.bankId}-${BANK_CONFIG.accountNo}-compact2.png?amount=${BANK_CONFIG.price}&addInfo=${encodeURIComponent(memo)}`;
   document.getElementById("vietqrImg").src=qrUrl;
 
-  // Giả lập hệ thống tự động kiểm tra: Sau 4 giây nhận được tiền -> thông báo thành công và chuyển hướng vào Mediafile / link tải
   clearInterval(payTimerInterval);
   paySeconds=1;
   document.getElementById("payTimer").textContent="1s";
@@ -797,7 +790,6 @@ function showStep2Buy(){
     paySeconds++;
     document.getElementById("payTimer").textContent=paySeconds+"s";
     
-    // Sau 4 giây giả lập thành công
     if(paySeconds === 4){
       clearInterval(payTimerInterval);
       document.getElementById("payStatusText").textContent="Thanh toán thành công! Đang chuyển hướng...";
@@ -805,7 +797,6 @@ function showStep2Buy(){
       
       setTimeout(()=>{
         closeModal();
-        // Tự động chuyển hướng khách vào link Mediafile / anonlink của app đó
         window.open(currentApp.href, "_blank");
       }, 1200);
     }
