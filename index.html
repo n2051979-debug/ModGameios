@@ -221,7 +221,7 @@ button,input{font-family:inherit}
 .dl-mini-guide{margin-top:14px;padding:11px 13px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);font-size:11px;color:#94a3b8;line-height:1.55}
 .dl-mini-guide b{color:#e2e8f0}
 
-/* MUA LINK VIETQR */
+/* MUA LINK VIETQR VÀ SEPAY */
 .pay-item-bar{
   display:flex;align-items:center;justify-content:space-between;gap:10px;
   padding:12px 15px;border-radius:14px;background:rgba(35,16,20,.9);
@@ -302,7 +302,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
   <span id="musicText">Nhạc nền</span>
 </div>
 
-<!-- MODAL TẢI FILE / MUA LINK -->
+<!-- MODAL TẢI FILE & THANH TOÁN SEPAY -->
 <div class="overlay" id="appModal" style="display:none">
   <div class="dl-box">
     <div class="dl-header">
@@ -361,7 +361,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
       <div class="dl-mini-guide" id="amGuide">-</div>
     </div>
 
-    <!-- BƯỚC 2: MUA LINK (Thanh toán xong tự động mở MediaFire) -->
+    <!-- BƯỚC 2: MUA LINK (Kiểm tra thực tế qua API SePay) -->
     <div class="dl-body" id="stepBuyLink" style="display:none">
       <div class="pay-item-bar">
         <div class="pay-item-left">
@@ -402,13 +402,13 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
       <div class="pay-wait-bar">
         <div class="wait-left">
           <span class="spinner-red"></span>
-          <span id="payStatusText">Đang chờ thanh toán...</span>
+          <span id="payStatusText">Đang chờ chuyển khoản 10.000đ...</span>
         </div>
         <span class="wait-timer" id="payTimer">1s</span>
       </div>
 
       <div class="pay-auto-note">
-        <span>⚡ Chuyển xong hệ thống sẽ tự động chuyển hướng thẳng vào file MediaFire!</span>
+        <span>⚡ Chuyển khoản thành công, hệ thống tự động mở file MediaFire!</span>
       </div>
     </div>
 
@@ -524,7 +524,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
   </div>
 
   <footer>
-    <p>&copy; 2026 ModGameios • Phiên bản V5.5 Auto Redirect MediaFire</p>
+    <p>&copy; 2026 ModGameios • Phiên bản V5.6 SePay Real API</p>
   </footer>
 </main>
 
@@ -552,10 +552,12 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
 </nav>
 
 <script>
+/* CẤU HÌNH NGÂN HÀNG & SEPAY API TOKEN CỦA BẠN */
 const BANK_CONFIG = {
   bankId: "MB",
   accountNo: "0332466608",
-  price: 10000
+  price: 10000,
+  sepayToken: "DK3TPCYAZM1STMTBQ5X4VOGUZIUKQYXBA7PZ6F2LIECNFVOXOZEJNYKHWJLIMI4G"
 };
 
 const htmlEl=document.documentElement;
@@ -617,7 +619,7 @@ mBtn.addEventListener("click",()=>{
   }
 });
 
-/* DỮ LIỆU APPS (Đã tích hợp sẵn link MediaFire cho app cốt lõi) */
+/* DỮ LIỆU APPS */
 const REPO="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
 const APPS=[
   {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"Chặn quảng cáo, chống thu hồi chứng chỉ & Antiban",href:"https://www.mediafire.com/file/link_mediafire_nextdns/file",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns chong thu hoi",size:"12 MB",ver:"Latest",ios:"14+",dl:"3.4K"},
@@ -699,7 +701,7 @@ function filterContent(){
   document.querySelectorAll(".section").forEach(sec=>{
     const cat=sec.dataset.category;
     const favMode=activeCategory==="fav";
-    const catOk=favMode||(activeCategory===all)||(activeCategory===cat);
+    const catOk=favMode||(activeCategory==="all")||(activeCategory===cat);
     let vis=0;
     sec.querySelectorAll(".card").forEach(card=>{
       const text=norm((card.dataset.search||"")+" "+card.innerText);
@@ -729,7 +731,7 @@ document.querySelectorAll(".tab-pill").forEach(btn=>btn.addEventListener("click"
 searchInp.addEventListener("input",filterContent);
 clearBtn.addEventListener("click",()=>{searchInp.value="";filterContent();searchInp.focus();});
 
-/* LOGIC MODAL TẢI FILE & THANH TOÁN 10K -> CHUYỂN HƯỚNG MEDIAFIRE HOẶC LINK GỐC */
+/* LOGIC MODAL TẢI FILE & KIỂM TRA SEPAY THẬT */
 const appModal=document.getElementById("appModal");
 const stepDownload=document.getElementById("stepDownload");
 const stepBuyLink=document.getElementById("stepBuyLink");
@@ -784,23 +786,49 @@ function showStep2Buy(){
   clearInterval(payTimerInterval);
   paySeconds=1;
   document.getElementById("payTimer").textContent="1s";
-  document.getElementById("payStatusText").textContent="Đang chờ thanh toán...";
+  document.getElementById("payStatusText").textContent="Đang chờ chuyển khoản 10.000đ...";
 
-  payTimerInterval=setInterval(()=>{
+  // Gọi API SePay thật liên tục mỗi 3 giây để check tiền vào tài khoản
+  payTimerInterval = setInterval(async () => {
     paySeconds++;
-    document.getElementById("payTimer").textContent=paySeconds+"s";
-    
-    if(paySeconds === 4){
+    document.getElementById("payTimer").textContent = paySeconds + "s";
+
+    if (paySeconds > 300) { // Quá 5 phút dừng
       clearInterval(payTimerInterval);
-      document.getElementById("payStatusText").textContent="Thanh toán thành công! Đang chuyển hướng...";
-      showToast("🎉 Đã nhận 10.000đ từ MBBank!");
-      
-      setTimeout(()=>{
-        closeModal();
-        window.open(currentApp.href, "_blank");
-      }, 1200);
+      document.getElementById("payStatusText").textContent = "Hết thời gian chờ. Vui lòng thử lại!";
+      return;
     }
-  },1000);
+
+    try {
+      const res = await fetch(`https://my.sepay.vn/user/api/transactions/list?account_number=${BANK_CONFIG.accountNo}&limit=5`, {
+        headers: {
+          "Authorization": `Bearer ${BANK_CONFIG.sepayToken}`,
+          "Content-Type": "application/json"
+        }
+      });
+      const data = await res.json();
+
+      if (data && data.transactions) {
+        const found = data.transactions.find(tx => 
+          tx.content.toUpperCase().includes(memo.toUpperCase()) && 
+          Number(tx.amount_in) >= BANK_CONFIG.price
+        );
+
+        if (found) {
+          clearInterval(payTimerInterval);
+          document.getElementById("payStatusText").textContent = "Thanh toán thành công! Đang mở link...";
+          showToast("🎉 Đã nhận được 10.000đ từ MBBank!");
+
+          setTimeout(() => {
+            closeModal();
+            window.open(currentApp.href, "_blank");
+          }, 1200);
+        }
+      }
+    } catch (err) {
+      console.log("Đang kiểm tra SePay...");
+    }
+  }, 3000);
 }
 
 function openApp(card){
