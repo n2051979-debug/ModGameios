@@ -239,7 +239,7 @@ button,input{font-family:inherit}
 .dl-mini-guide{margin-top:14px;padding:11px 13px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);font-size:11px;color:#94a3b8;line-height:1.55}
 .dl-mini-guide b{color:#e2e8f0}
 
-/* MUA LINK VIETQR & SEPAY */
+/* MUA LINK VIETQR VÀ NÚT XÁC NHẬN CHUYỂN KHOẢN NGAY */
 .pay-item-bar{
   display:flex;align-items:center;justify-content:space-between;gap:10px;
   padding:12px 15px;border-radius:14px;background:rgba(35,16,20,.9);
@@ -269,23 +269,23 @@ button,input{font-family:inherit}
 .bank-label{font-size:9.5px;font-weight:800;color:#64748b;letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px;font-family:'JetBrains Mono',monospace}
 .bank-val-stk{font-size:15px;font-weight:800;color:#ef4444;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:space-between}
 .bank-val-name{font-size:14.5px;font-weight:800;color:#fff;font-family:'JetBrains Mono',monospace}
-.bank-memo-field{padding:11px 13px;border-radius:12px;background:#1a181d;border:1px solid rgba(255,255,255,.07);margin-bottom:10px;cursor:pointer}
+.bank-memo-field{padding:11px 13px;border-radius:12px;background:#1a181d;border:1px solid rgba(255,255,255,.07);margin-bottom:12px;cursor:pointer}
 .bank-memo-field:hover{border-color:rgba(239,68,68,.45)}
 .bank-val-memo{font-size:14.5px;font-weight:800;color:#fff;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:space-between}
 .copy-hint{font-size:9.5px;padding:2px 6px;border-radius:5px;background:rgba(255,255,255,.08);color:#cbd5e1;font-family:'Plus Jakarta Sans',sans-serif}
 
-.pay-wait-bar{
-  display:flex;align-items:center;justify-content:space-between;padding:12px 15px;
-  border-radius:12px;background:#1a181d;border:1px solid rgba(255,255,255,.07);margin-bottom:8px;
+/* Nút xác nhận chuyển khoản xong mở link ngay */
+.btn-confirm-pay{
+  width:100%;height:52px;border:0;border-radius:14px;
+  background:linear-gradient(135deg,#10b981,#059669);color:#fff;
+  font-size:13.5px;font-weight:900;letter-spacing:.4px;cursor:pointer;
+  box-shadow:0 10px 30px rgba(16,185,129,.4);display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:all .2s;margin-bottom:8px;
 }
-.wait-left{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#e2e8f0}
-.spinner-red{
-  width:18px;height:18px;border-radius:50%;
-  border:2.2px solid rgba(255,255,255,.12);border-top-color:#ef4444;
-  animation:spin .85s linear infinite;
-}
-.wait-timer{font-size:12px;font-weight:700;color:#64748b;font-family:'JetBrains Mono',monospace}
-.pay-auto-note{text-align:center;font-size:10.5px;color:#64748b;font-family:'JetBrains Mono',monospace}
+.btn-confirm-pay:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-confirm-pay:active{transform:scale(.98)}
+
+.pay-manual-note{text-align:center;font-size:10.5px;color:#94a3b8;font-family:'JetBrains Mono',monospace;margin-bottom:6px}
 
 .dl-footer{
   display:flex;align-items:center;justify-content:space-between;padding:12px 18px;
@@ -320,9 +320,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
   <span id="musicText">Nhạc nền</span>
 </div>
 
-<!-- ==============================================
-     POPUP THÔNG BÁO KHI VÀO WEB
-     ============================================== -->
+<!-- POPUP THÔNG BÁO KHI VÀO WEB -->
 <div class="notice-overlay" id="noticePopup">
   <div class="notice-modal">
     <button class="notice-close-x" id="closeNoticeBtn" type="button">✕</button>
@@ -397,7 +395,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
       <div class="dl-mini-guide" id="amGuide">-</div>
     </div>
 
-    <!-- BƯỚC 2: MUA LINK -->
+    <!-- BƯỚC 2: MUA LINK VỚI NÚT XÁC NHẬN MỞ MEDIAFIRE NGAY -->
     <div class="dl-body" id="stepBuyLink" style="display:none">
       <div class="pay-item-bar">
         <div class="pay-item-left">
@@ -435,17 +433,11 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
         </div>
       </div>
 
-      <div class="pay-wait-bar">
-        <div class="wait-left">
-          <span class="spinner-red"></span>
-          <span id="payStatusText">Đang chờ chuyển khoản 10.000đ...</span>
-        </div>
-        <span class="wait-timer" id="payTimer">1s</span>
-      </div>
-
-      <div class="pay-auto-note">
-        <span>⚡ Chuyển khoản thành công, hệ thống tự động mở file MediaFire!</span>
-      </div>
+      <!-- Nút xác nhận chuyển khoản xong mở link MediaFire ngay -->
+      <button class="btn-confirm-pay" id="btnConfirmPay" type="button">
+        <span>✅ TÔI ĐÃ CHUYỂN KHOẢN (MỞ LINK TẢI)</span>
+      </button>
+      <div class="pay-manual-note">Bấm vào đây để mở file MediaFire ngay lập tức sau khi chuyển!</div>
     </div>
 
     <div class="dl-footer">
@@ -560,7 +552,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
   </div>
 
   <footer>
-    <p>&copy; 2026 ModGameios • Phiên bản V5.8 MediaFire Integrated</p>
+    <p>&copy; 2026 ModGameios • Phiên bản V5.9 Manual Confirm Pro</p>
   </footer>
 </main>
 
@@ -588,12 +580,10 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
 </nav>
 
 <script>
-/* CẤU HÌNH NGÂN HÀNG & SEPAY API TOKEN CỦA BẠN */
 const BANK_CONFIG = {
   bankId: "MB",
   accountNo: "0332466608",
-  price: 10000,
-  sepayToken: "DK3TPCYAZM1STMTBQ5X4VOGUZIUKQYXBA7PZ6F2LIECNFVOXOZEJNYKHWJLIMI4G"
+  price: 10000
 };
 
 const htmlEl=document.documentElement;
@@ -664,9 +654,7 @@ document.getElementById("closeNoticeBtn").addEventListener("click",()=>{
   noticePopup.style.opacity="0";setTimeout(()=>noticePopup.style.display="none",250);
 });
 
-/* ==========================================================
-   DANH SÁCH APPS ĐÃ ĐƯỢC GẮN ĐẦY ĐỦ 13 LINK MEDIAFIRE THẬT
-   ========================================================== */
+/* DANH SÁCH APPS ĐÃ GẮN 13 LINK MEDIAFIRE */
 const REPO="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
 const APPS=[
   {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"Chặn quảng cáo, chống thu hồi chứng chỉ & Antiban",href:"https://www.mediafire.com/file/owbt80bo0wffr2z/NEXT+DNS.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns chong thu hoi",size:"12 MB",ver:"Latest",ios:"14+",dl:"3.4K"},
@@ -777,7 +765,7 @@ document.querySelectorAll(".tab-pill").forEach(btn=>btn.addEventListener("click"
 searchInp.addEventListener("input",filterContent);
 clearBtn.addEventListener("click",()=>{searchInp.value="";filterContent();searchInp.focus();});
 
-/* LOGIC MODAL TẢI FILE & KIỂM TRA SEPAY THẬT */
+/* LOGIC MODAL TẢI FILE & MUA LINK (XÁC NHẬN THỦ CÔNG -> MỞ MEDIAFIRE NGAY) */
 const appModal=document.getElementById("appModal");
 const stepDownload=document.getElementById("stepDownload");
 const stepBuyLink=document.getElementById("stepBuyLink");
@@ -786,8 +774,6 @@ const modalHeaderTitle=document.getElementById("modalHeaderTitle");
 const modalHeaderIcon=document.getElementById("modalHeaderIcon");
 
 let currentApp=null;
-let payTimerInterval=null;
-let paySeconds=1;
 
 const GUIDES={
   ipa:"💡 <b>Hướng dẫn cài:</b> Tải file .ipa về máy → Mở <b>App 3105 / ESign</b> chọn file vừa tải để cài → Vào Cài đặt chung tin cậy chứng chỉ.",
@@ -806,7 +792,6 @@ function genRandomCode(){
 }
 
 function showStep1(){
-  clearInterval(payTimerInterval);
   stepDownload.style.display="block";
   stepBuyLink.style.display="none";
   btnBackStep.style.display="none";
@@ -828,52 +813,6 @@ function showStep2Buy(){
 
   const qrUrl=`https://img.vietqr.io/image/${BANK_CONFIG.bankId}-${BANK_CONFIG.accountNo}-compact2.png?amount=${BANK_CONFIG.price}&addInfo=${encodeURIComponent(memo)}`;
   document.getElementById("vietqrImg").src=qrUrl;
-
-  clearInterval(payTimerInterval);
-  paySeconds=1;
-  document.getElementById("payTimer").textContent="1s";
-  document.getElementById("payStatusText").textContent="Đang chờ chuyển khoản 10.000đ...";
-
-  payTimerInterval = setInterval(async () => {
-    paySeconds++;
-    document.getElementById("payTimer").textContent = paySeconds + "s";
-
-    if (paySeconds > 300) {
-      clearInterval(payTimerInterval);
-      document.getElementById("payStatusText").textContent = "Hết thời gian chờ. Vui lòng thử lại!";
-      return;
-    }
-
-    try {
-      const res = await fetch(`https://my.sepay.vn/user/api/transactions/list?account_number=${BANK_CONFIG.accountNo}&limit=5`, {
-        headers: {
-          "Authorization": `Bearer ${BANK_CONFIG.sepayToken}`,
-          "Content-Type": "application/json"
-        }
-      });
-      const data = await res.json();
-
-      if (data && data.transactions) {
-        const found = data.transactions.find(tx => 
-          tx.content.toUpperCase().includes(memo.toUpperCase()) && 
-          Number(tx.amount_in) >= BANK_CONFIG.price
-        );
-
-        if (found) {
-          clearInterval(payTimerInterval);
-          document.getElementById("payStatusText").textContent = "Thanh toán thành công! Đang mở link...";
-          showToast("🎉 Đã nhận được 10.000đ từ MBBank!");
-
-          setTimeout(() => {
-            closeModal();
-            window.open(currentApp.href, "_blank");
-          }, 1200);
-        }
-      }
-    } catch (err) {
-      console.log("Đang kiểm tra SePay...");
-    }
-  }, 3000);
 }
 
 function openApp(card){
@@ -897,7 +836,6 @@ function openAppById(id){
 }
 
 function closeModal(){
-  clearInterval(payTimerInterval);
   appModal.style.display="none";
 }
 
@@ -906,6 +844,16 @@ btnBackStep.addEventListener("click",showStep1);
 document.getElementById("amClose").addEventListener("click",closeModal);
 document.getElementById("btnCloseFooter").addEventListener("click",closeModal);
 appModal.addEventListener("click",e=>{if(e.target===appModal)closeModal();});
+
+// Khi khách bấm nút xác nhận chuyển khoản xong -> Tự động mở link MediaFire
+document.getElementById("btnConfirmPay").addEventListener("click",()=>{
+  if(!currentApp)return;
+  showToast("🎉 Xác nhận thành công! Đang mở link tải...");
+  setTimeout(()=>{
+    closeModal();
+    window.open(currentApp.href, "_blank");
+  }, 800);
+});
 
 document.querySelectorAll(".card").forEach(card=>{
   const appId=card.dataset.appid;
