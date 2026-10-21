@@ -114,7 +114,7 @@ button, input { font-family: inherit; border: none; outline: none; background: n
   padding: calc(68px + env(safe-area-inset-top)) 16px calc(95px + env(safe-area-inset-bottom));
 }
 
-/* PROFILE POD HEADER (HIỂN THỊ RÕ RÀNG TRÊN MỌI THIẾT BỊ) */
+/* PROFILE POD HEADER */
 .profile-pod {
   display: flex; align-items: center; gap: 14px; padding: 16px; margin-bottom: 16px;
   border-radius: 20px; background: var(--panel); border: 1px solid var(--border);
@@ -127,6 +127,38 @@ button, input { font-family: inherit; border: none; outline: none; background: n
 .pod-avatar img { width: 100%; height: 100%; border-radius: 16px; object-fit: cover; }
 .pod-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
 .pod-rank { font-family: var(--font-mono); font-size: 11px; color: var(--neon-cyan); margin-top: 3px; }
+
+/* === PHẦN CERT CHỨNG CHỈ & EGESIGN === */
+.cert-deck-box {
+  padding: 18px; border-radius: 20px; margin-bottom: 16px;
+  background: linear-gradient(135deg, rgba(0, 255, 157, 0.12), rgba(0, 240, 255, 0.06));
+  border: 1px solid rgba(0, 255, 157, 0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.cert-top-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.cert-status-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--neon-green);
+  background: rgba(0, 255, 157, 0.15); padding: 4px 10px; border-radius: 99px; border: 1px solid rgba(0,255,157,0.4);
+}
+.cert-dot-live { width: 7px; height: 7px; border-radius: 50%; background: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); animation: pulseGlow 1.5s infinite; }
+.cert-desc { font-size: 12px; color: #cbd5e1; line-height: 1.45; }
+
+.cert-grid-actions {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 4px;
+}
+@media (max-width: 650px) {
+  .cert-grid-actions { grid-template-columns: 1fr; }
+}
+.cert-action-card {
+  padding: 10px 12px; border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex; flex-direction: column; gap: 6px; text-decoration: none; transition: 0.2s;
+}
+.cert-action-card:hover { border-color: var(--neon-cyan); transform: translateY(-2px); background: rgba(0, 240, 255, 0.08); }
+.cac-title { font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
+.cac-sub { font-size: 10px; color: var(--muted); font-family: var(--font-mono); }
 
 /* TELEMETRY & SOCIAL MATRIX DOCK */
 .top-dashboard-row {
@@ -462,7 +494,7 @@ button, input { font-family: inherit; border: none; outline: none; background: n
 
 <!-- MAIN OS WORKSPACE -->
 <div class="os-shell">
-  <!-- PROFILE POD HEADER (HIỂN THỊ TRỰC TIẾP TRÊN MỌI THIẾT BỊ) -->
+  <!-- PROFILE POD HEADER -->
   <div class="profile-pod">
     <div class="pod-avatar">
       <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg" alt="Admin">
@@ -470,6 +502,37 @@ button, input { font-family: inherit; border: none; outline: none; background: n
     <div>
       <div class="pod-name">ModGameios <span style="color:var(--neon-cyan)">✓</span></div>
       <div class="pod-rank">LV.99 CYBER MASTER • KHO IPA VIP</div>
+    </div>
+  </div>
+
+  <!-- === PHẦN CERT CHỨNG CHỈ (ĐÃ TÍCH HỢP 3 NÚT: DNS, ESIGN & FILE CHỨNG CHỈ) === -->
+  <div class="cert-deck-box">
+    <div class="cert-top-row">
+      <div class="cert-status-badge">
+        <span class="cert-dot-live"></span>
+        <span>HỆ THỐNG CHỨNG CHỈ iOS: HOẠT ĐỘNG TỐT (SIGNED)</span>
+      </div>
+      <span style="font-family:var(--font-mono); font-size:10.5px; color:var(--muted);">Cập nhật: Realtime 2026</span>
+    </div>
+    <div class="cert-desc">
+      Quản lý trọn gói chứng chỉ ký IPA, cài đặt ứng dụng và cấu hình chống thu hồi an toàn tuyệt đối.
+    </div>
+    <div class="cert-grid-actions">
+      <!-- 1. Nút Cấu hình NextDNS -->
+      <a class="cert-action-card" href="https://anonlink.io/8bwJ" target="_blank" rel="noopener">
+        <div class="cac-title">🛡️ Cấu hình NextDNS</div>
+        <div class="cac-sub">Chống thu hồi & chặn QC</div>
+      </a>
+      <!-- 2. Nút Tải ESign -->
+      <a class="cert-action-card" href="https://anonlink.io/1xDXX4na" target="_blank" rel="noopener">
+        <div class="cac-title">📦 Tải App ESign / 3105</div>
+        <div class="cac-sub">Trình ký IPA trực tiếp trên iOS</div>
+      </a>
+      <!-- 3. Nút Tải File Chứng Chỉ (P12 / Mobileprovision) -->
+      <a class="cert-action-card" href="#" onclick="toast('⚠️ Hãy cập nhật link file chứng chỉ của bạn tại đây!')" target="_blank" rel="noopener">
+        <div class="cac-title">📜 Tải File Chứng Chỉ</div>
+        <div class="cac-sub">Gói P12 & Mobileprovision VIP</div>
+      </a>
     </div>
   </div>
 
