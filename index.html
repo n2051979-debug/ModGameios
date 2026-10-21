@@ -114,7 +114,7 @@ button, input { font-family: inherit; border: none; outline: none; background: n
   padding: calc(68px + env(safe-area-inset-top)) 16px calc(95px + env(safe-area-inset-bottom));
 }
 
-/* PROFILE POD HEADER */
+/* PROFILE POD HEADER (HIỂN THỊ RÕ RÀNG TRÊN MỌI THIẾT BỊ) */
 .profile-pod {
   display: flex; align-items: center; gap: 14px; padding: 16px; margin-bottom: 16px;
   border-radius: 20px; background: var(--panel); border: 1px solid var(--border);
@@ -388,17 +388,17 @@ button, input { font-family: inherit; border: none; outline: none; background: n
   display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer;
 }
 
-/* MOBILE FLOATING HUD (CUỘN NGANG ĐẦY ĐỦ CÁC SECTOR) */
+/* MOBILE FLOATING HUD */
 .mobile-hud {
   position: fixed; bottom: calc(10px + env(safe-area-inset-bottom));
-  left: 50%; transform: translateX(-50%); width: min(96vw, 540px);
-  padding: 6px 10px; border-radius: 20px; z-index: 100;
+  left: 50%; transform: translateX(-50%); width: min(95vw, 480px);
+  padding: 6px; border-radius: 20px; z-index: 100;
   background: rgba(10, 11, 20, 0.92); border: 1px solid rgba(0, 240, 255, 0.3);
   backdrop-filter: blur(20px);
-  display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;
 }
 .mh-btn {
-  flex: 0 0 auto; padding: 6px 10px; border-radius: 14px; display: flex; flex-direction: column;
+  padding: 7px 2px; border-radius: 14px; display: flex; flex-direction: column;
   align-items: center; gap: 2px; font-size: 9px; font-weight: 700; color: var(--muted); cursor: pointer;
 }
 .mh-btn span:first-child { font-size: 15px; }
@@ -462,7 +462,7 @@ button, input { font-family: inherit; border: none; outline: none; background: n
 
 <!-- MAIN OS WORKSPACE -->
 <div class="os-shell">
-  <!-- PROFILE POD HEADER -->
+  <!-- PROFILE POD HEADER (HIỂN THỊ TRỰC TIẾP TRÊN MỌI THIẾT BỊ) -->
   <div class="profile-pod">
     <div class="pod-avatar">
       <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg" alt="Admin">
@@ -537,12 +537,10 @@ button, input { font-family: inherit; border: none; outline: none; background: n
   <div id="stageContent"></div>
 </div>
 
-<!-- MOBILE FLOATING HUD (ĐÃ BỔ SUNG NÚT SECTOR CHỨNG CHỈ & ESIGN) -->
+<!-- MOBILE FLOATING HUD -->
 <nav class="mobile-hud" id="mobileHud">
   <button class="mh-btn active" data-cat="all"><span>⚡</span><span>Tất cả</span></button>
-  <button class="mh-btn" data-cat="cert"><span>📜</span><span>Chứng chỉ</span></button>
   <button class="mh-btn" data-cat="ipa"><span>📱</span><span>IPA VIP</span></button>
-  <button class="mh-btn" data-cat="bypass"><span>🛡️</span><span>Bypass</span></button>
   <button class="mh-btn" data-cat="lq"><span>⚔️</span><span>Liên Quân</span></button>
   <button class="mh-btn" data-cat="ff"><span>🔥</span><span>Free Fire</span></button>
   <button class="mh-btn" data-cat="pubg"><span>🎯</span><span>PUBG</span></button>
@@ -593,12 +591,8 @@ button, input { font-family: inherit; border: none; outline: none; background: n
 <script>
 const REPO = "https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
 const APPS = [
-  /* SECTOR CHỨNG CHỈ & ESIGN (MỚI TÁCH RIÊNG) */
-  {cat:"cert",id:"nextdns",title:"IPA NEXT DNS",desc:"Cấu hình chống thu hồi chứng chỉ & chặn quảng cáo toàn hệ thống",href:"https://anonlink.io/8bwJ",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🛡️",badge:"HOT",tags:[["tag-green","SIGNED"],["tag-antiban","ANTIBAN"]],search:"nextdns chong thu hoi dns",rating:4.9,size:"12 MB",ver:"Latest",ios:"iOS 14+",baseDl:950},
-  {cat:"cert",id:"app3105v2",title:"APP 3105 / ESIGN V2.1",desc:"Trình quản lý tệp & ký chứng chỉ .ipa trực tiếp trên iOS",href:"https://anonlink.io/1xDXX4na",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","KÝ IPA"],["tag-blue","iOS"]],search:"esign app 3105 ky ipa",rating:4.9,size:"28 MB",ver:"V2.1",ios:"iOS 14+",baseDl:1420},
-  {cat:"cert",id:"p12cert",title:"FILE CHỨNG CHỈ VIP (P12)",desc:"Gói chứng chỉ P12 & Mobileprovision ký app ổn định, hạn dùng dài",href:"#",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📜",badge:"NEW",tags:[["tag-vip","VIP CERT"],["tag-green","P12"]],search:"file chung chi p12 mobileprovision",rating:4.8,size:"2 MB",ver:"Latest",ios:"Mọi iOS",baseDl:1100},
-
-  /* KHO IPA VIP */
+  {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"BY MODGAMEIOS — Chặn quảng cáo, chống thu hồi & Antiban",href:"https://anonlink.io/8bwJ",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns app crack chong thu hoi",rating:4.9,size:"12 MB",ver:"Latest",ios:"iOS 14+",baseDl:840},
+  {cat:"ipa",id:"app3105v2",title:"APP 3105 V2.1",desc:"Bản cập nhật mới nhất — Quản lý tệp & cài đặt Mod IPA",href:"https://anonlink.io/1xDXX4na",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","HOT"],["tag-blue","iOS"]],search:"app 3105 v2 update new cai mod",rating:4.9,size:"28 MB",ver:"V2.1",ios:"iOS 14+",baseDl:1250},
   {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"Bản dự phòng ổn định — Link tải trực tiếp MediaFire",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","iOS"]],search:"app 3105 v1.1.1 mediafire",rating:4.6,size:"24 MB",ver:"V1.1.1",ios:"iOS 13+",baseDl:520},
   {cat:"ipa",id:"duolingo",title:"UNLOCK DUOLINGO MAX",desc:"Mở khóa chế độ gọi điện với AI Lily — Full tính năng Max",href:"https://anonlink.io/FaiC",icon:"a%CC%89nh/%E1%BA%A3nh/duolingo.jpg",fb:"🦉",badge:"",tags:[["tag-vip","MAX VIP"],["tag-blue","iOS"]],search:"unlock duolingo max hoc tieng anh pro",rating:4.8,size:"76 MB",ver:"Latest",ios:"iOS 15+",baseDl:430},
   {cat:"ipa",id:"messenger",title:"MESSENGER VIP PRO",desc:"Xem tin nhắn đã thu hồi, chặn đã xem (Seen), ẩn đang hoạt động",href:"https://anonlink.io/yniZ1fz",icon:"a%CC%89nh/%E1%BA%A3nh/messenger.jpg",fb:"💬",badge:"",tags:[["tag-vip","PREMIUM"],["tag-blue","iOS"]],search:"messenger vipp xem tin nhan thu hoi facebook",rating:4.7,size:"55 MB",ver:"Latest",ios:"iOS 14+",baseDl:610},
@@ -607,29 +601,24 @@ const APPS = [
   {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Bản chuẩn — Chặn quảng cáo, nghe nhạc chất lượng cao, chuyển bài vô hạn",href:"https://anonlink.io/tMfcciI",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"],["tag-blue","iOS"]],search:"spotify premium ipa crack mod nghe nhac offline khong quang cao skip vo han",rating:4.9,size:"42 MB",ver:"Latest",ios:"iOS 14+",baseDl:890},
   {cat:"ipa",id:"filza",title:"FILZA MOD",desc:"Tích hợp sẵn App 3105 — Trình quản lý file hệ thống không cần JB",href:"https://anonlink.io/DZGlv2cs",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📁",badge:"",tags:[["tag-purple","FILE MGR"],["tag-blue","iOS"]],search:"filza mod app 3105 quan ly file no jailbreak",rating:4.5,size:"18 MB",ver:"Latest",ios:"iOS 14+",baseDl:390},
 
-  /* BYPASS & ANTIBAN */
   {cat:"bypass",id:"bchatgpt",title:"BYPASS CHATGPT",desc:"Dán trực tiếp vào khung chat — Mở khóa giới hạn & kiểm duyệt AI",href:"https://anonlink.io/M9S1",icon:"a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg",fb:"🤖",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","PROMPT"]],search:"bypass chatgpt ios antiban prompt gpt",rating:4.6,size:"TXT",ver:"Mới",ios:"Mọi iOS",baseDl:280},
   {cat:"bypass",id:"bclaude",title:"BYPASS AI CLAUDE",desc:"Prompt mở khóa khả năng trả lời nâng cao cho Claude AI",href:"https://anonlink.io/0whZz",icon:"a%CC%89nh/%E1%BA%A3nh/claude.jpg",fb:"✨",badge:"NEW",tags:[["tag-blue","iOS"],["tag-antiban","PROMPT"]],search:"bypass ai claude ios antiban sonnet opus",rating:4.5,size:"TXT",ver:"Mới",ios:"Mọi iOS",baseDl:195},
   {cat:"bypass",id:"dnsff",title:"DNS ANTIBAN FREE FIRE",desc:"Cấu hình DNS Antiban chuyên dụng cho Free Fire — An toàn 100%",href:"https://anonlink.io/WiTmFh",icon:"a%CC%89nh/%E1%BA%A3nh/dns.jpg",fb:"🛡️",badge:"HOT",tags:[["tag-antiban","ANTIBAN"],["tag-blue","iOS"]],search:"dns antiban ff ffm nextdns config free fire max",rating:4.8,size:"4 KB",ver:"v3.0",ios:"Mọi iOS",baseDl:740},
 
-  /* LIÊN QUÂN MOBILE */
   {cat:"lq",id:"lq",title:"PATCH LIÊN QUÂN ALL-IN-ONE",desc:"Bản Combo VIP: Mở khóa Full Skin + Hack Map Sáng + Góc nhìn Cam Xa",href:"https://anonlink.io/7OBq",icon:"a%CC%89nh/%E1%BA%A3nh/lq.jpg",fb:"⚔️",badge:"HOT",tags:[["tag-vip","COMBO VIP"],["tag-blue","iOS"]],search:"patch lq unlock skin lien quan map cam xa combo",rating:4.9,size:"10 MB",ver:"Latest",ios:"iOS 13+",baseDl:1050},
   {cat:"lq",id:"unlockskin",title:"PATCH UNLOCK ALL SKIN LQ",desc:"Liên Quân Mobile — Mở khóa trang phục, hiệu ứng biến về & âm thanh",href:"https://anonlink.io/84WCgtE",icon:"a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg",fb:"👗",badge:"",tags:[["tag-blue","iOS"],["tag-vip","SKIN MOD"]],search:"patch unlockskin unlock skin lien quan",rating:4.7,size:"7 MB",ver:"Latest",ios:"iOS 13+",baseDl:680},
   {cat:"lq",id:"mapsang",title:"PATCH HACK MAP SÁNG LQ",desc:"Liên Quân Mobile — Quan sát tầm nhìn toàn bản đồ siêu rõ",href:"https://anonlink.io/HHDo4",icon:"a%CC%89nh/%E1%BA%A3nh/map.jpg",fb:"🗺️",badge:"",tags:[["tag-blue","iOS"],["tag-purple","MAP SÁNG"]],search:"patch hack map lien quan lien minh toc chien",rating:4.5,size:"5 MB",ver:"Latest",ios:"iOS 13+",baseDl:530},
   {cat:"lq",id:"camxa",title:"PATCH UNLOCK SKIN + CAM XA",desc:"Liên Quân Mobile — Góc nhìn siêu rộng kết hợp mở khóa Skin an toàn",href:"https://anonlink.io/fT8GLeZ",icon:"a%CC%89nh/%E1%BA%A3nh/camxa.jpg",fb:"🔭",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","AN TOÀN"]],search:"patch unlockskin cam xa no map lien quan",rating:4.6,size:"7 MB",ver:"Latest",ios:"iOS 13+",baseDl:490},
 
-  /* FREE FIRE */
   {cat:"ff",id:"aimffm",title:"PATCH AIM FREE FIRE MAX",desc:"Hỗ trợ khóa mục tiêu tự động — Ghim tâm chuẩn xác cho FF Max",href:"https://anonlink.io/G8Fm18eL",icon:"a%CC%89nh/%E1%BA%A3nh/aimffm.jpg",fb:"🎯",badge:"HOT",tags:[["tag-blue","iOS"],["tag-purple","AIMLOCK"]],search:"patch aim ffm free fire max tu ke tam headshot",rating:4.8,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:870},
   {cat:"ff",id:"espffm",title:"PATCH ESP + AIM FF MAX",desc:"Dành cho Free Fire Max — Hiển thị vị trí địch (ESP) + Hỗ trợ kéo tâm",href:"https://anonlink.io/wTMGTLHP",icon:"a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg",fb:"📍",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"patch dinh vi aimbody ffm free fire max antiban",rating:4.6,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:620},
   {cat:"ff",id:"ffth",title:"PATCH FF THÁI LAN ESP + AIM",desc:"Dành riêng cho bản Free Fire Thái Lan — ESP định vị + Aimbot",href:"https://anonlink.io/q1BnSEUB",icon:"a%CC%89nh/%E1%BA%A3nh/aimffth.jpg",fb:"🔫",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FF THÁI"]],search:"patch aim ffth ESP AIM free fire thai",rating:4.5,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:310},
 
-  /* PUBG MOBILE */
   {cat:"pubg",id:"menupubg",title:"MENU PUBG VIP",desc:"Menu Mod cao cấp — ESP, Aimbot & tích hợp chống khóa tài khoản",href:"https://anonlink.io/0vMe7",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"HOT",tags:[["tag-vip","MENU VIP"],["tag-antiban","ANTI-BAN"]],search:"menu pubg vip pubg mobile mod menu hack esp aimbot no ban ios",rating:4.9,size:"22 MB",ver:"Latest",ios:"iOS 14+",baseDl:980},
   {cat:"pubg",id:"modpubgvip",title:"MOD PUBG VIP PRO",desc:"Bản VIP đặc quyền — Mở khóa Mod Skin súng & trang phục cực đẹp",href:"https://anonlink.io/Coj0THaZ",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-vip","VIP PRO"],["tag-antiban","ANTI-BAN"]],search:"mod pubg vip pubg mobile hack patch ios esp aimbot no ban menu",rating:4.7,size:"18 MB",ver:"Latest",ios:"iOS 14+",baseDl:640},
   {cat:"pubg",id:"modpubg",title:"MOD PUBG MOBILE VNG",desc:"Bản Mod chuẩn cho PUBG VNG iOS — Hỗ trợ chiến mượt, ổn định",href:"https://anonlink.io/BN5yUBP",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-blue","iOS"],["tag-vip","VNG VIP"]],search:"mod pubg pubg mobile patch hack ios no ban esp vng",rating:4.6,size:"18 MB",ver:"Latest",ios:"iOS 14+",baseDl:590},
   {cat:"pubg",id:"pubgglobal",title:"MOD PUBG (GLOBAL)",desc:"Bản Quốc Tế (Global) cho iOS — Tương thích mượt mà, an toàn",href:"https://anonlink.io/x03DO",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🌍",badge:"",tags:[["tag-blue","iOS"],["tag-vip","GLOBAL"]],search:"mod pubg global pubg mobile quoc te ios hack patch esp no ban",rating:4.6,size:"20 MB",ver:"Latest",ios:"iOS 14+",baseDl:470},
 
-  /* GAME KHÁC & CAPCUT PRO */
   {cat:"other",id:"subway",title:"PATCH SUBWAY SURFERS",desc:"Dùng cho App 3105 — Full vàng, chìa khóa, mở khóa toàn bộ nhân vật",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/subway.jpg",fb:"🏄",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FULL MAX"]],search:"patch subway surfers app 3105 full moi thu tien vang chia khoa",rating:4.6,size:"9 MB",ver:"Latest",ios:"iOS 13+",baseDl:290},
   {cat:"other",id:"candy",title:"PATCH CANDY CRUSH",desc:"Dùng cho App 3105 — Vô hạn vật phẩm hỗ trợ & lượt di chuyển",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/candycrush.jpg",fb:"🍬",badge:"",tags:[["tag-blue","iOS"],["tag-purple","VÔ HẠN"]],search:"patch candy crush app 3105 vo han tro luc moves",rating:4.5,size:"6 MB",ver:"Latest",ios:"iOS 13+",baseDl:210},
   {cat:"other",id:"pvz2",title:"PATCH HACK PVZ2",desc:"Dùng cho App 3105 — Mở khóa toàn bộ cây trồng, Shop đồng giá 1 xu",href:"https://anonlink.io/z8ddEc",icon:"a%CC%89nh/%E1%BA%A3nh/pvz2.jpg",fb:"🌻",badge:"",tags:[["tag-blue","iOS"],["tag-purple","UNLOCK"]],search:"patch hack pvz2 app 3105 full cay plants vs zombies",rating:4.7,size:"8 MB",ver:"Latest",ios:"iOS 13+",baseDl:340},
@@ -637,13 +626,12 @@ const APPS = [
 ];
 
 const SECTORS = {
-  cert: "📜 SECTOR 01 // CHỨNG CHỈ & ESIGN VIP",
-  ipa: "📱 SECTOR 02 // KHO TẢI IPA VIP",
-  bypass: "🛡️ SECTOR 03 // FILE BYPASS & ANTIBAN",
-  lq: "⚔️ SECTOR 04 // MOD & PATCH LIÊN QUÂN",
-  ff: "🔥 SECTOR 05 // MOD & PATCH FREE FIRE",
-  pubg: "🎯 SECTOR 06 // MOD & PATCH PUBG MOBILE",
-  other: "🎬 SECTOR 07 // GAME KHÁC & CAPCUT PRO"
+  ipa: "📱 SECTOR 01 // KHO TẢI IPA VIP",
+  bypass: "🛡️ SECTOR 02 // FILE BYPASS & ANTIBAN",
+  lq: "⚔️ SECTOR 03 // MOD & PATCH LIÊN QUÂN",
+  ff: "🔥 SECTOR 04 // MOD & PATCH FREE FIRE",
+  pubg: "🎯 SECTOR 05 // MOD & PATCH PUBG MOBILE",
+  other: "🎬 SECTOR 06 // GAME KHÁC & CAPCUT PRO"
 };
 
 let currentCat = "all";
@@ -769,11 +757,6 @@ function toggleFav(e, id) {
 }
 
 const PROTOCOLS = {
-  cert: [
-    "<b>[STEP 01]</b> Tải và cài đặt cấu hình NextDNS hoặc ứng dụng ESign.",
-    "<b>[STEP 02]</b> Nhập file chứng chỉ P12 và Mobileprovision vào trình ký.",
-    "<b>[STEP 03]</b> Ký file .ipa trực tiếp trên thiết bị iOS an toàn 100%."
-  ],
   ipa: [
     "<b>[STEP 01]</b> Nhấn nút khởi chạy tải xuống bên dưới để lấy gói <b>.ipa</b>.",
     "<b>[STEP 02]</b> Mở trình ký chứng chỉ <b>App 3105 / ESign / Scarlet</b> trên iOS.",
@@ -806,7 +789,7 @@ function openApp(id) {
   document.getElementById("drIos").textContent = a.ios;
   document.getElementById("drDownloadLink").href = a.href;
 
-  const pKey = PROTOCOLS[a.cat] ? a.cat : "patch";
+  const pKey = (a.cat === "ipa" || a.cat === "bypass") ? a.cat : "patch";
   document.getElementById("drTerminalSteps").innerHTML = PROTOCOLS[pKey].map(s => `<div class="term-step">${s}</div>`).join("");
   document.getElementById("drawerOverlay").classList.add("open");
 }
