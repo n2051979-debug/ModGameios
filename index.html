@@ -2,1351 +2,950 @@
 <html lang="vi" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#050508">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#05070b">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>MODGAMEIOS // TACTICAL INJECTOR TERMINAL</title>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>ModGameios Store • Kho IPA & Mod Game iOS Thế Hệ Mới</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ModGameios Store - Kho IPA Crack & Mod iOS VIP">
+<meta property="og:description" content="Giao diện App Store thế hệ mới — Tải IPA Crack, Mod Liên Quân, Free Fire, PUBG & Antiban miễn phí.">
+<meta property="og:image" href="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg">
 
 <style>
 :root {
-  --bg: #050508;
-  --panel: rgba(11, 13, 20, 0.9);
-  --panel-2: #0f121c;
-  --card: rgba(14, 18, 28, 0.88);
-  --border: rgba(0, 255, 157, 0.18);
-  --border-dim: rgba(255, 255, 255, 0.08);
-  --neon-green: #00ff9d;
-  --neon-red: #ff003c;
-  --neon-cyan: #00f0ff;
-  --neon-amber: #ffb800;
-  --text: #e2e8f0;
-  --muted: #64748b;
-  --font-tactical: 'Chakra Petch', sans-serif;
-  --font-hud: 'Rajdhani', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --bg: #05070b;
+  --surface: rgba(17, 22, 34, 0.72);
+  --surface-solid: #111622;
+  --surface-hover: rgba(26, 33, 50, 0.88);
+  --glass: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(56, 189, 248, 0.45);
+  --text: #f8fafc;
+  --text-sub: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #38bdf8;
+  --accent-2: #818cf8;
+  --accent-3: #f43f5e;
+  --emerald: #10b981;
+  --amber: #f59e0b;
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
 }
 
-[data-theme="crimson"] {
-  --border: rgba(255, 0, 60, 0.28);
-  --neon-green: #ff003c;
-  --neon-cyan: #ffb800;
-  --neon-red: #00f0ff;
+[data-theme="light"] {
+  --bg: #f1f5f9;
+  --surface: rgba(255, 255, 255, 0.85);
+  --surface-solid: #ffffff;
+  --surface-hover: rgba(255, 255, 255, 1);
+  --glass: rgba(15, 23, 42, 0.04);
+  --border: rgba(15, 23, 42, 0.08);
+  --border-highlight: rgba(2, 132, 199, 0.45);
+  --text: #0f172a;
+  --text-sub: #475569;
+  --text-muted: #94a3b8;
+  --accent: #0284c7;
+  --accent-2: #4f46e5;
+  --shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-
-html, body {
-  min-height: 100%;
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { background: var(--bg); scroll-behavior: smooth; }
+body {
+  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-tactical);
+  min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
-
 a { color: inherit; text-decoration: none; }
-button, input { font-family: inherit; border: none; outline: none; background: none; color: inherit; }
+button, input, select { font-family: inherit; border: none; outline: none; background: none; color: inherit; }
 
-/* CRT SCANLINE & CYBER GRID OVERLAY */
-.tactical-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 80% 10%, rgba(255, 0, 60, 0.09), transparent 35%),
-    radial-gradient(circle at 15% 85%, rgba(0, 255, 157, 0.08), transparent 40%),
-    linear-gradient(rgba(0, 255, 157, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 157, 0.025) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+/* AURORA MESH BACKGROUND */
+.aurora-bg {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
 }
-
-.scanlines {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 2px,
-    rgba(0, 0, 0, 0.22) 3px
-  );
-  opacity: 0.45;
+.aurora-blob {
+  position: absolute; border-radius: 50%; filter: blur(95px); opacity: 0.25;
+  animation: auroraFloat 18s ease-in-out infinite alternate;
+}
+[data-theme="light"] .aurora-blob { opacity: 0.14; }
+.blob-1 { width: 380px; height: 380px; top: -120px; left: -80px; background: #38bdf8; }
+.blob-2 { width: 350px; height: 350px; top: 25%; right: -120px; background: #818cf8; animation-delay: -5s; }
+.blob-3 { width: 320px; height: 320px; bottom: 5%; left: 10%; background: #f43f5e; animation-delay: -10s; }
+@keyframes auroraFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 40px) scale(1.12); }
 }
 
-/* BOOT TERMINAL */
-.boot-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: #030406;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  transition: opacity 0.35s ease, visibility 0.35s;
-}
-.boot-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-.boot-frame {
-  width: 92px;
-  height: 92px;
-  padding: 4px;
-  background: var(--neon-green);
-  clip-path: polygon(18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%, 0 18%);
-  animation: glitchPulse 1.2s infinite alternate;
-}
-.boot-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  clip-path: polygon(18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%, 0 18%);
-}
-.boot-code {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--neon-green);
-  letter-spacing: 2px;
-}
-@keyframes glitchPulse {
-  0% { filter: drop-shadow(0 0 8px var(--neon-green)); }
-  100% { filter: drop-shadow(0 0 24px var(--neon-red)); transform: scale(1.04); }
+/* APP SHELL */
+.app-container {
+  position: relative; z-index: 1;
+  max-width: 640px; margin: 0 auto;
+  padding: calc(12px + env(safe-area-inset-top)) 16px calc(110px + env(safe-area-inset-bottom));
 }
 
-/* TOP TACTICAL STATUS BAR */
-.hud-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 120;
-  background: rgba(5, 6, 10, 0.92);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+/* TOP HEADER */
+.app-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  position: sticky; top: calc(8px + env(safe-area-inset-top)); z-index: 60;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
-.hud-topbar-inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 10px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+.brand-row { display: flex; align-items: center; gap: 10px; }
+.brand-avatar {
+  position: relative; width: 38px; height: 38px; border-radius: 12px; overflow: hidden;
+  border: 1.5px solid var(--accent); flex-shrink: 0;
 }
-.sys-status {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: var(--font-mono);
-  font-size: 11px;
+.brand-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.brand-info h1 {
+  font-size: 15px; font-weight: 900; letter-spacing: -0.3px;
+  display: flex; align-items: center; gap: 5px;
 }
-.pulse-led {
-  width: 8px;
-  height: 8px;
-  background: var(--neon-green);
-  box-shadow: 0 0 10px var(--neon-green);
-  display: inline-block;
-  margin-right: 6px;
+.verified-icon {
+  display: inline-flex; width: 15px; height: 15px; border-radius: 50%;
+  background: var(--accent); color: #fff; align-items: center; justify-content: center; font-size: 9px;
 }
-.marquee-tag {
-  color: var(--muted);
-  display: none;
+.brand-sub { font-size: 10.5px; color: var(--text-sub); font-weight: 600; }
+
+.header-actions { display: flex; align-items: center; gap: 6px; }
+.pill-btn {
+  height: 34px; padding: 0 11px; border-radius: 999px;
+  background: var(--glass); border: 1px solid var(--border);
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; font-weight: 700; cursor: pointer; transition: 0.2s;
 }
-@media (min-width: 900px) {
-  .marquee-tag { display: inline-block; }
+.pill-btn:hover { border-color: var(--border-highlight); transform: translateY(-1px); }
+.pill-btn.playing {
+  background: rgba(56, 189, 248, 0.15); border-color: var(--accent); color: var(--accent);
+}
+.icon-btn {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--glass); border: 1px solid var(--border);
+  display: grid; place-items: center; font-size: 14px; cursor: pointer; transition: 0.2s;
+}
+.icon-btn:hover { border-color: var(--border-highlight); transform: scale(1.06); }
+
+/* MUSIC POPOVER */
+.music-popover {
+  position: fixed; top: calc(64px + env(safe-area-inset-top)); right: max(16px, calc((100vw - 640px)/2 + 16px));
+  width: 270px; padding: 14px; border-radius: 20px;
+  background: var(--surface-solid); border: 1px solid var(--border-highlight);
+  box-shadow: var(--shadow); z-index: 80; display: none;
+  animation: popIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.music-popover.show { display: block; }
+@keyframes popIn { from { opacity: 0; transform: translateY(-8px) scale(0.95); } to { opacity: 1; transform: none; } }
+.mp-title { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
+.mp-track { font-size: 12.5px; font-weight: 700; margin: 4px 0 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mp-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.mp-btn {
+  flex: 1; height: 34px; border-radius: 10px; background: var(--glass);
+  border: 1px solid var(--border); font-size: 12px; font-weight: 800; cursor: pointer;
+}
+.mp-btn.primary { background: var(--accent); color: #000; border: none; }
+.mp-vol { width: 100%; margin-top: 10px; accent-color: var(--accent); cursor: pointer; }
+
+/* BENTO STATUS DASHBOARD */
+.bento-grid {
+  display: grid; grid-template-columns: 1.35fr 1fr; gap: 10px; margin-top: 14px;
+}
+.bento-card {
+  padding: 14px; border-radius: var(--radius-lg);
+  background: var(--surface); border: 1px solid var(--border);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bento-cert {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(6, 182, 212, 0.06));
+  border-color: rgba(16, 185, 129, 0.32);
+}
+.cert-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10.5px; font-weight: 800; color: var(--emerald);
+}
+.pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--emerald);
+  box-shadow: 0 0 10px var(--emerald); animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: 0.5; } }
+.cert-title { font-size: 14px; font-weight: 900; margin: 6px 0 3px; }
+.cert-device { font-size: 11px; color: var(--text-sub); font-weight: 600; margin-bottom: 10px; }
+.cert-btn {
+  width: 100%; padding: 8px 10px; border-radius: 10px;
+  background: var(--emerald); color: #042f2e; font-size: 11px; font-weight: 800;
+  cursor: pointer; text-align: center; transition: 0.2s;
+}
+.cert-btn:hover { filter: brightness(1.1); }
+
+.bento-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.mini-stat {
+  padding: 10px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.mini-stat span { font-size: 10px; color: var(--text-sub); font-weight: 700; }
+.mini-stat strong { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-top: 2px; color: var(--accent); }
+
+/* COMMUNITY BAR */
+.social-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px;
+}
+.soc-chip {
+  padding: 10px 6px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-size: 11px; font-weight: 800; cursor: pointer; transition: 0.2s;
+}
+.soc-chip:hover { border-color: var(--border-highlight); transform: translateY(-2px); }
+.soc-discord { color: #818cf8; border-color: rgba(129, 140, 248, 0.28); }
+.soc-tiktok { color: #f43f5e; border-color: rgba(244, 63, 94, 0.28); }
+.soc-yt { color: #ef4444; border-color: rgba(239, 68, 68, 0.28); }
+.soc-share { color: var(--accent); border-color: rgba(56, 189, 248, 0.28); }
+
+/* SPOTLIGHT CAROUSEL */
+.section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 22px 2px 10px;
+}
+.section-head h2 { font-size: 16px; font-weight: 900; letter-spacing: -0.3px; display: flex; align-items: center; gap: 7px; }
+.section-head span { font-size: 11px; font-weight: 700; color: var(--text-sub); }
+
+.spotlight-track {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-bottom: 6px; scrollbar-width: none;
+}
+.spotlight-track::-webkit-scrollbar { display: none; }
+.spotlight-card {
+  flex: 0 0 84%; scroll-snap-align: start;
+  padding: 16px; border-radius: var(--radius-xl);
+  position: relative; overflow: hidden; cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.14);
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 148px; color: #fff;
+  transition: transform 0.25s ease;
+}
+.spotlight-card:hover { transform: translateY(-2px); }
+.sp-bg-1 { background: linear-gradient(135deg, #4f46e5 0%, #9333ea 50%, #db2777 100%); }
+.sp-bg-2 { background: linear-gradient(135deg, #0284c7 0%, #2563eb 55%, #1e1b4b 100%); }
+.sp-bg-3 { background: linear-gradient(135deg, #b91c1c 0%, #ea580c 60%, #7c2d12 100%); }
+.sp-tag {
+  align-self: flex-start; padding: 3px 9px; border-radius: 999px;
+  background: rgba(0,0,0,0.35); backdrop-filter: blur(8px);
+  font-size: 9.5px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase;
+}
+.sp-bottom { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+.sp-bottom img { width: 52px; height: 52px; border-radius: 14px; object-fit: cover; border: 1.5px solid rgba(255,255,255,0.4); flex-shrink: 0; }
+.sp-info { flex: 1; min-width: 0; }
+.sp-info h3 { font-size: 15px; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sp-info p { font-size: 11px; opacity: 0.88; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+.sp-get {
+  padding: 7px 13px; border-radius: 999px; background: #fff; color: #0f172a;
+  font-size: 11px; font-weight: 900; flex-shrink: 0;
 }
 
-.hud-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* RECENTLY VIEWED */
+.recent-wrap { display: none; margin-top: 16px; }
+.recent-wrap.show { display: block; }
+.recent-list { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+.recent-list::-webkit-scrollbar { display: none; }
+.recent-pill {
+  flex-shrink: 0; display: flex; align-items: center; gap: 8px;
+  padding: 6px 11px 6px 6px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  cursor: pointer; font-size: 11.5px; font-weight: 700;
 }
-.tac-btn {
-  padding: 6px 12px;
-  background: rgba(0, 255, 157, 0.08);
-  border: 1px solid var(--border);
-  color: var(--neon-green);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
-  transition: 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.recent-pill img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
+
+/* COMMAND SEARCH & TOOLBAR */
+.command-bar {
+  position: sticky; top: calc(64px + env(safe-area-inset-top)); z-index: 50;
+  margin-top: 18px; padding: 8px 0;
+  background: linear-gradient(to bottom, var(--bg) 80%, transparent);
 }
-.tac-btn:hover, .tac-btn.active {
-  background: var(--neon-green);
-  color: #000;
-  box-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
+.search-input-wrap {
+  display: flex; align-items: center; gap: 10px;
+  height: 48px; padding: 0 14px; border-radius: 16px;
+  background: var(--surface); border: 1px solid var(--border);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-.tac-btn.danger {
-  background: rgba(255, 0, 60, 0.12);
-  border-color: rgba(255, 0, 60, 0.45);
-  color: var(--neon-red);
+.search-input-wrap:focus-within { border-color: var(--accent); }
+.search-input-wrap input { flex: 1; height: 100%; font-size: 13px; font-weight: 600; }
+.search-input-wrap input::placeholder { color: var(--text-muted); }
+.clear-search { display: none; width: 24px; height: 24px; border-radius: 50%; background: var(--glass); font-size: 11px; cursor: pointer; }
+.clear-search.show { display: grid; place-items: center; }
+
+.toolbar-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px;
 }
-.tac-btn.danger:hover {
-  background: var(--neon-red);
-  color: #fff;
+.sort-pills { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.sort-pills::-webkit-scrollbar { display: none; }
+.sort-btn {
+  flex-shrink: 0; padding: 6px 11px; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 11px; font-weight: 700; color: var(--text-sub); cursor: pointer; transition: 0.18s;
+}
+.sort-btn.active {
+  background: rgba(56, 189, 248, 0.15); border-color: var(--accent); color: var(--accent);
+}
+.view-toggle {
+  display: flex; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 2px; flex-shrink: 0;
+}
+.view-btn {
+  padding: 4px 8px; border-radius: 8px; font-size: 12px; cursor: pointer; color: var(--text-muted);
+}
+.view-btn.active { background: var(--accent); color: #000; font-weight: 800; }
+
+/* CATEGORY CHIPS */
+.cat-strip {
+  display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; margin: 10px 0 4px;
+}
+.cat-strip::-webkit-scrollbar { display: none; }
+.cat-chip {
+  flex-shrink: 0; padding: 8px 14px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 11.5px; font-weight: 800; color: var(--text-sub); cursor: pointer; transition: 0.2s;
+}
+.cat-chip.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; border-color: transparent; box-shadow: 0 6px 18px rgba(56, 189, 248, 0.3);
 }
 
-/* 2-COLUMN COMMAND CENTER SHELL */
-.command-shell {
-  position: relative;
-  z-index: 1;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 18px;
-  display: grid;
-  grid-template-columns: 290px 1fr;
-  gap: 20px;
-  align-items: start;
+/* APP CARDS (LIST & GRID VIEW) */
+.cat-section { margin-top: 22px; }
+.cat-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding: 0 2px;
+}
+.cat-title { font-size: 15.5px; font-weight: 900; display: flex; align-items: center; gap: 8px; }
+.cat-count {
+  font-size: 10px; font-weight: 800; padding: 3px 9px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border); color: var(--text-sub);
 }
 
-/* LEFT SIDEBAR: OPERATOR & RADAR CONTROL */
-.operator-rack {
-  position: sticky;
-  top: 64px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.apps-grid { display: flex; flex-direction: column; gap: 10px; }
+body.grid-mode .apps-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
 }
 
-.rack-box {
-  background: var(--panel);
-  border: 1px solid var(--border-dim);
-  border-left: 3px solid var(--neon-green);
-  padding: 16px;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
-  position: relative;
+.app-card {
+  position: relative; display: flex; align-items: center; gap: 12px;
+  padding: 12px 13px; border-radius: var(--radius-lg);
+  background: var(--surface); border: 1px solid var(--border);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  cursor: pointer; transition: all 0.2s ease;
+}
+.app-card:hover {
+  transform: translateY(-2px); background: var(--surface-hover); border-color: var(--border-highlight);
+}
+.app-card:active { transform: scale(0.985); }
+
+.app-icon-box {
+  position: relative; width: 58px; height: 58px; flex: 0 0 58px;
+  border-radius: 15px; overflow: hidden; background: #1e293b;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.app-icon-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.app-icon-box img.err { display: none; }
+.app-fallback {
+  display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 24px;
+}
+.app-icon-box img.err + .app-fallback { display: flex; }
+
+.ribbon {
+  position: absolute; top: 0; left: 0; padding: 2px 6px;
+  border-bottom-right-radius: 8px; font-size: 8px; font-weight: 900; color: #fff;
+}
+.ribbon-hot { background: #ef4444; }
+.ribbon-new { background: #10b981; }
+
+.app-body { flex: 1; min-width: 0; }
+.app-name {
+  font-size: 13.5px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.app-desc {
+  font-size: 11px; color: var(--text-sub); margin-top: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.app-meta-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-top: 6px;
+}
+.chip {
+  padding: 2px 7px; border-radius: 6px; font-size: 9px; font-weight: 800;
+}
+.tag-blue { background: rgba(56, 189, 248, 0.14); color: #38bdf8; }
+.tag-purple { background: rgba(168, 85, 247, 0.14); color: #c084fc; }
+.tag-antiban { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
+.tag-vip { background: rgba(245, 158, 11, 0.16); color: #fbbf24; }
+.tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.chip-dl {
+  font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; font-weight: 700;
+  padding: 2px 7px; border-radius: 99px; background: var(--glass); border: 1px solid var(--border);
+  color: var(--text-sub);
 }
 
-.op-profile {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-bottom: 14px;
-  border-bottom: 1px dashed var(--border-dim);
+.app-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.get-btn {
+  padding: 6px 14px; border-radius: 999px;
+  background: rgba(56, 189, 248, 0.16); color: var(--accent);
+  font-size: 11.5px; font-weight: 900; letter-spacing: 0.3px; transition: 0.2s;
 }
-.op-avatar {
-  width: 58px;
-  height: 58px;
-  padding: 2px;
-  background: var(--neon-green);
-  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
-  flex-shrink: 0;
+.app-card:hover .get-btn { background: var(--accent); color: #000; }
+.sub-size { font-size: 9.5px; color: var(--text-muted); font-weight: 700; }
+
+.fav-trigger {
+  position: absolute; top: 8px; right: 8px; width: 26px; height: 26px;
+  border-radius: 50%; background: var(--glass); display: grid; place-items: center;
+  font-size: 12px; color: var(--text-muted); cursor: pointer; z-index: 4;
 }
-.op-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+.fav-trigger.active { color: #f43f5e; background: rgba(244, 63, 94, 0.15); }
+
+/* GRID MODE ADJUSTMENTS */
+body.grid-mode .app-card {
+  flex-direction: column; align-items: flex-start; padding: 14px; gap: 10px;
 }
-.op-callsign {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.op-role {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  color: var(--neon-green);
-  margin-top: 2px;
+body.grid-mode .app-body { width: 100%; }
+body.grid-mode .app-right {
+  width: 100%; flex-direction: row; align-items: center; justify-content: space-between; margin-top: 2px;
 }
 
-.telemetry-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 12px;
+/* FLOATING VISION DOCK */
+.floating-dock {
+  position: fixed; bottom: calc(12px + env(safe-area-inset-bottom)); left: 50%;
+  transform: translateX(-50%); width: min(94vw, 520px);
+  padding: 7px; border-radius: 24px;
+  background: rgba(12, 16, 26, 0.86); border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; z-index: 90;
 }
-.tele-cell {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-dim);
-  padding: 8px 10px;
+[data-theme="light"] .floating-dock {
+  background: rgba(255, 255, 255, 0.9); border-color: rgba(15, 23, 42, 0.1);
 }
-.tele-cell span {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  color: var(--muted);
+.dock-btn {
+  padding: 7px 2px; border-radius: 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  font-size: 9.5px; font-weight: 800; color: var(--text-sub); cursor: pointer; transition: 0.2s;
 }
-.tele-cell strong {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--neon-cyan);
-}
-
-/* SIDEBAR SECTOR MENU */
-.rack-title {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 1.5px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.sector-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.sec-nav-btn {
-  width: 100%;
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-dim);
-  font-family: var(--font-tactical);
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: 0.18s;
-  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
-}
-.sec-nav-btn:hover {
-  border-color: var(--neon-green);
-  padding-left: 16px;
-}
-.sec-nav-btn.active {
-  background: rgba(0, 255, 157, 0.14);
-  border-color: var(--neon-green);
-  color: var(--neon-green);
-  box-shadow: inset 3px 0 0 var(--neon-green);
-}
-.sec-code {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  opacity: 0.65;
+.dock-btn span:first-child { font-size: 16px; }
+.dock-btn.active {
+  background: rgba(56, 189, 248, 0.16); color: var(--accent);
 }
 
-.comm-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
+/* IOS BOTTOM SHEET MODAL */
+.sheet-backdrop {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  display: none; align-items: flex-end; justify-content: center;
 }
-.comm-btn {
-  padding: 9px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-dim);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.2s;
+.sheet-backdrop.show { display: flex; }
+.ios-sheet {
+  width: min(100%, 560px); max-height: 88vh; overflow-y: auto;
+  background: var(--surface-solid); border: 1px solid var(--border);
+  border-radius: 28px 28px 0 0; padding: 14px 20px calc(26px + env(safe-area-inset-bottom));
+  animation: sheetUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.comm-btn:hover {
-  border-color: var(--neon-cyan);
-  color: var(--neon-cyan);
-  background: rgba(0, 240, 255, 0.08);
-}
+@keyframes sheetUp { from { transform: translateY(100%); } to { transform: none; } }
+.sheet-pill { width: 42px; height: 5px; border-radius: 99px; background: var(--border); margin: 0 auto 16px; }
 
-/* RIGHT WORKSPACE: WARFARE DECK */
-.warfare-deck {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-width: 0;
-}
+.sheet-top { display: flex; gap: 14px; align-items: center; }
+.sheet-icon { width: 72px; height: 72px; border-radius: 18px; overflow: hidden; flex-shrink: 0; border: 1px solid var(--border); }
+.sheet-icon img { width: 100%; height: 100%; object-fit: cover; }
+.sheet-title { font-size: 18px; font-weight: 900; line-height: 1.25; }
+.sheet-desc { font-size: 12px; color: var(--text-sub); margin-top: 4px; line-height: 1.45; }
 
-/* TACTICAL BANNER */
-.tactical-banner {
-  position: relative;
-  background:
-    linear-gradient(115deg, rgba(5, 7, 12, 0.96) 35%, rgba(255, 0, 60, 0.18) 100%),
-    repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 10px, transparent 10px, transparent 20px);
-  border: 1px solid var(--border);
-  padding: 24px;
-  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 20px;
-  align-items: center;
+.sheet-specs {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0;
 }
-.tb-stamp {
-  display: inline-block;
-  padding: 3px 10px;
-  background: var(--neon-red);
-  color: #fff;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  margin-bottom: 10px;
+.spec-box {
+  padding: 10px 6px; border-radius: 14px; background: var(--glass); border: 1px solid var(--border); text-align: center;
 }
-.tb-title {
-  font-size: clamp(22px, 3vw, 32px);
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.1;
-  letter-spacing: 0.5px;
-  color: #fff;
-}
-.tb-title span { color: var(--neon-green); }
-.tb-desc {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: #94a3b8;
-  margin: 10px 0 18px;
-  line-height: 1.55;
-}
-.tb-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.btn-inject-main {
-  padding: 12px 20px;
-  background: var(--neon-green);
-  color: #000;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-  box-shadow: 0 0 25px rgba(0, 255, 157, 0.35);
-  transition: 0.2s;
-}
-.btn-inject-main:hover {
-  transform: translateY(-2px);
-  background: #fff;
-}
-.btn-inject-outline {
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border);
-  color: var(--neon-cyan);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-}
+.spec-box small { display: block; font-size: 9px; color: var(--text-muted); font-weight: 800; text-transform: uppercase; }
+.spec-box b { display: block; font-size: 12.5px; margin-top: 3px; color: var(--text); }
 
-/* HOT PAYLOADS LIST IN BANNER */
-.payload-mini-rack {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.pm-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid var(--border-dim);
-  border-left: 3px solid var(--neon-red);
-  cursor: pointer;
-  transition: 0.2s;
-}
-.pm-row:hover {
-  border-color: var(--neon-green);
-  transform: translateX(4px);
-}
-.pm-row img {
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
-  clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%);
-}
-.pm-meta { flex: 1; min-width: 0; }
-.pm-meta b {
-  display: block;
-  font-size: 12.5px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.pm-meta span {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--muted);
-}
-.pm-tag {
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  padding: 2px 6px;
-  background: rgba(255, 0, 60, 0.2);
-  color: var(--neon-red);
-  border: 1px solid var(--neon-red);
-}
-
-/* CLI SEARCH & FILTER BAR */
-.cli-bar {
-  background: var(--panel);
-  border: 1px solid var(--border-dim);
-  padding: 12px 16px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.cli-input-box {
-  flex: 1;
-  min-width: 240px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #040508;
-  border: 1px solid var(--border);
-  padding: 0 14px;
-  height: 42px;
-}
-.cli-prompt {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--neon-green);
-  font-weight: 700;
-}
-.cli-input-box input {
-  flex: 1;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: #fff;
-}
-.cli-sorts {
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-}
-.cli-sort-btn {
-  padding: 8px 12px;
-  background: #080a10;
-  border: 1px solid var(--border-dim);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--muted);
-  cursor: pointer;
-  white-space: nowrap;
-  text-transform: uppercase;
-}
-.cli-sort-btn.active {
-  border-color: var(--neon-cyan);
-  color: var(--neon-cyan);
-  background: rgba(0, 240, 255, 0.1);
-}
-
-/* MODULE ARSENAL GRID */
-.sector-zone {
-  margin-bottom: 26px;
-}
-.zone-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 14px;
-  background: linear-gradient(90deg, rgba(0, 255, 157, 0.12), transparent);
-  border-left: 4px solid var(--neon-green);
-  margin-bottom: 14px;
-}
-.zone-title {
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.zone-count {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--neon-green);
-}
-
-.arsenal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
-  gap: 14px;
-}
-
-/* MECHA WEAPON CARD */
-.weapon-card {
-  position: relative;
-  background: var(--card);
-  border: 1px solid var(--border-dim);
-  padding: 15px;
-  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.weapon-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 32px;
-  height: 2px;
-  background: var(--neon-green);
-  transition: width 0.25s ease;
-}
-.weapon-card:hover {
-  border-color: var(--neon-green);
-  background: rgba(18, 24, 38, 0.96);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 18px rgba(0, 255, 157, 0.12);
-}
-.weapon-card:hover::before {
-  width: 100%;
-}
-
-.wc-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-.wc-thumb {
-  width: 56px;
-  height: 56px;
-  background: #080b12;
-  border: 1px solid var(--border);
-  clip-path: polygon(16% 0, 100% 0, 100% 84%, 84% 100%, 0 100%, 0 16%);
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.wc-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.wc-thumb img.err { display: none; }
-.wc-fb {
-  display: none;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-}
-.wc-thumb img.err + .wc-fb { display: flex; }
-
-.wc-head-info { flex: 1; min-width: 0; }
-.wc-id-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--muted);
-  margin-bottom: 3px;
-}
-.badge-tac {
-  padding: 1px 6px;
-  font-weight: 700;
-  font-size: 9px;
-}
-.b-hot { background: var(--neon-red); color: #fff; }
-.b-new { background: var(--neon-green); color: #000; }
-
-.wc-name {
-  font-size: 15.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.wc-pin {
-  width: 28px;
-  height: 28px;
-  border: 1px solid var(--border-dim);
-  display: grid;
-  place-items: center;
-  font-size: 12px;
-  cursor: pointer;
-}
-.wc-pin.on {
-  border-color: var(--neon-red);
-  background: rgba(255, 0, 60, 0.2);
-}
-
-.wc-desc {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: #94a3b8;
-  line-height: 1.45;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 32px;
-}
-
-.wc-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.t-chip {
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  font-weight: 700;
-  padding: 2px 7px;
-  border: 1px solid;
-}
-.tag-blue { border-color: rgba(0, 240, 255, 0.4); color: var(--neon-cyan); background: rgba(0, 240, 255, 0.08); }
-.tag-purple { border-color: rgba(192, 132, 252, 0.4); color: #c084fc; background: rgba(192, 132, 252, 0.08); }
-.tag-antiban { border-color: rgba(255, 0, 60, 0.45); color: #ff4d6d; background: rgba(255, 0, 60, 0.1); }
-.tag-vip { border-color: rgba(255, 184, 0, 0.45); color: var(--neon-amber); background: rgba(255, 184, 0, 0.1); }
-.tag-green { border-color: rgba(0, 255, 157, 0.45); color: var(--neon-green); background: rgba(0, 255, 157, 0.1); }
-
-.wc-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 10px;
-  border-top: 1px dashed var(--border-dim);
-}
-.wc-telemetry {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  color: var(--muted);
-}
-.wc-telemetry b { color: var(--neon-amber); }
-
-.btn-inject-card {
-  padding: 5px 11px;
-  background: rgba(0, 255, 157, 0.12);
-  border: 1px solid var(--neon-green);
-  color: var(--neon-green);
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 700;
-  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
-  transition: 0.2s;
-}
-.weapon-card:hover .btn-inject-card {
-  background: var(--neon-green);
-  color: #000;
-  box-shadow: 0 0 12px var(--neon-green);
-}
-
-/* CENTERED TERMINAL DECRYPTOR MODAL */
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 300;
-  background: rgba(2, 3, 6, 0.84);
-  backdrop-filter: blur(8px);
-  display: grid;
-  place-items: center;
-  padding: 16px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.22s ease;
-}
-.modal-backdrop.open { opacity: 1; visibility: visible; }
-
-.decryptor-window {
-  width: min(100%, 520px);
-  background: #080b11;
-  border: 1px solid var(--neon-green);
-  box-shadow: 0 0 50px rgba(0, 255, 157, 0.2);
-  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-  transform: scale(0.92);
-  transition: 0.22s ease;
-  overflow: hidden;
-}
-.modal-backdrop.open .decryptor-window { transform: scale(1); }
-
-.dw-header {
-  background: rgba(0, 255, 157, 0.12);
-  border-bottom: 1px solid var(--border);
-  padding: 12px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.dw-sys-code {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--neon-green);
-  font-weight: 700;
-}
-.dw-close {
-  padding: 4px 10px;
-  background: var(--neon-red);
-  color: #fff;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.dw-body {
-  padding: 20px;
-}
-.dw-module-head {
-  display: flex;
-  gap: 14px;
-  align-items: center;
+.guide-box {
+  padding: 14px; border-radius: 16px; background: var(--glass); border: 1px solid var(--border);
   margin-bottom: 16px;
 }
-.dw-module-head img {
-  width: 68px;
-  height: 68px;
-  object-fit: cover;
-  border: 1.5px solid var(--neon-green);
-  clip-path: polygon(16% 0, 100% 0, 100% 84%, 84% 100%, 0 100%, 0 16%);
-}
-.dw-title {
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.dw-desc {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: #94a3b8;
-  margin-top: 4px;
+.guide-box h4 { font-size: 12.5px; font-weight: 800; margin-bottom: 10px; color: var(--accent); }
+.guide-step { display: flex; gap: 10px; font-size: 12px; line-height: 1.5; color: var(--text-sub); margin-bottom: 8px; }
+.guide-step:last-child { margin-bottom: 0; }
+.step-num {
+  width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: #000;
+  font-size: 10.5px; font-weight: 900; display: grid; place-items: center; flex-shrink: 0; margin-top: 1px;
 }
 
-.dw-specs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-bottom: 16px;
+.sheet-actions { display: flex; gap: 8px; }
+.btn-download-main {
+  flex: 1; height: 50px; border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; font-size: 14px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35); cursor: pointer;
 }
-.dw-spec-box {
-  background: #04060a;
-  border: 1px solid var(--border-dim);
-  padding: 9px;
-  text-align: center;
-}
-.dw-spec-box span {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  color: var(--muted);
-}
-.dw-spec-box strong {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--neon-cyan);
-  margin-top: 2px;
-  display: block;
-}
-
-.dw-console {
-  background: #030407;
-  border: 1px solid var(--border-dim);
-  border-left: 3px solid var(--neon-cyan);
-  padding: 14px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  line-height: 1.65;
-  color: #cbd5e1;
-  margin-bottom: 18px;
-}
-.dw-console-title {
-  color: var(--neon-cyan);
-  font-size: 10.5px;
-  margin-bottom: 8px;
-  border-bottom: 1px dashed var(--border-dim);
-  padding-bottom: 6px;
-}
-.console-line { margin-bottom: 6px; }
-.console-line b { color: var(--neon-green); }
-
-.dw-footer-btns {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.btn-execute-dl {
-  height: 48px;
-  background: var(--neon-green);
-  color: #000;
-  font-family: var(--font-mono);
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
-  cursor: pointer;
-}
-.btn-execute-dl:hover { background: #fff; }
-.dw-sub-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-.btn-sub-tac {
-  height: 38px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-dim);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
-}
-.btn-sub-tac:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); }
-
-/* MOBILE BOTTOM TACTICAL BAR */
-.mobile-radar-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 150;
-  background: rgba(5, 6, 10, 0.96);
-  border-top: 1px solid var(--border);
-  padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
-  display: none;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 4px;
-}
-.m-nav-item {
-  padding: 6px 2px;
-  border: 1px solid transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--muted);
-  cursor: pointer;
-}
-.m-nav-item span:first-child { font-size: 15px; }
-.m-nav-item.active {
-  border-color: var(--neon-green);
-  background: rgba(0, 255, 157, 0.12);
-  color: var(--neon-green);
+.btn-secondary {
+  height: 50px; padding: 0 14px; border-radius: 16px;
+  background: var(--glass); border: 1px solid var(--border);
+  font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; cursor: pointer;
 }
 
 /* TOAST */
-.cyber-toast {
-  position: fixed;
-  bottom: 75px;
-  right: 20px;
-  z-index: 400;
-  background: #06080e;
-  border: 1px solid var(--neon-green);
-  border-left: 4px solid var(--neon-green);
-  color: var(--neon-green);
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  padding: 10px 16px;
-  opacity: 0;
-  transform: translateY(15px);
-  pointer-events: none;
-  transition: 0.22s;
+.toast-msg {
+  position: fixed; top: calc(16px + env(safe-area-inset-top)); left: 50%;
+  transform: translate(-50%, -20px); opacity: 0; pointer-events: none;
+  padding: 10px 18px; border-radius: 999px;
+  background: var(--surface-solid); border: 1px solid var(--accent);
+  box-shadow: var(--shadow); font-size: 12px; font-weight: 800; z-index: 300;
+  transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.cyber-toast.show { opacity: 1; transform: translateY(0); }
+.toast-msg.show { transform: translate(-50%, 0); opacity: 1; }
 
-@media (max-width: 980px) {
-  .command-shell {
-    grid-template-columns: 1fr;
-    padding-bottom: 90px;
-  }
-  .operator-rack {
-    position: static;
-  }
-  .sector-nav-box { display: none; }
-  .mobile-radar-nav { display: grid; }
-  .tactical-banner { grid-template-columns: 1fr; }
+.empty-box { display: none; text-align: center; padding: 48px 16px; color: var(--text-sub); }
+footer { text-align: center; margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); }
+
+@media (max-width: 440px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .social-strip { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
 <body>
 
-<div class="tactical-bg"></div>
-<div class="scanlines"></div>
-
-<!-- BOOT SCREEN -->
-<div class="boot-screen" id="bootScreen">
-  <div class="boot-frame">
-    <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg" alt="ModGameios">
-  </div>
-  <div class="boot-code">> INITIALIZING ROOT_KERNEL // MODGAMEIOS_OS...</div>
+<div class="aurora-bg" aria-hidden="true">
+  <div class="aurora-blob blob-1"></div>
+  <div class="aurora-blob blob-2"></div>
+  <div class="aurora-blob blob-3"></div>
 </div>
 
-<!-- YOUTUBE HIDDEN -->
 <div id="youtubePlayer" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none"></div>
-<div class="cyber-toast" id="cyberToast"></div>
+<div class="toast-msg" id="toast"></div>
 
-<!-- TOP TACTICAL BAR -->
-<header class="hud-topbar">
-  <div class="hud-topbar-inner">
-    <div class="sys-status">
-      <span><i class="pulse-led"></i>SYS_ONLINE // KERNEL: <b style="color:var(--neon-green)">BYPASSED</b></span>
-      <span class="marquee-tag">// ANTI-REVOKE DNS SHIELD: ACTIVE 24/7 // NO JAILBREAK REQUIRED</span>
+<div class="app-container">
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="brand-row">
+      <div class="brand-avatar">
+        <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg" alt="ModGameios">
+      </div>
+      <div class="brand-info">
+        <h1>ModGameios <span class="verified-icon">✓</span></h1>
+        <div class="brand-sub" id="greetingText">Kho IPA & Mod Game iOS V7.0</div>
+      </div>
     </div>
-    <div class="hud-controls">
-      <button class="tac-btn danger" onclick="openApp('nextdns')">🛡️ + DNS CHỐNG THU HỒI</button>
-      <button class="tac-btn" id="diAudioBtn" type="button">
-        <span>🔊</span>
-        <span id="diAudioText">BGM: OFF</span>
+    <div class="header-actions">
+      <button class="pill-btn" id="musicToggleBtn" type="button">
+        <span id="musicStatusIcon">🎧</span>
+        <span id="musicStatusLabel">Nhạc nền</span>
       </button>
-      <button class="tac-btn" id="nextSongBtn" title="Next Track">⏭</button>
-      <button class="tac-btn" id="themeSwitchBtn" title="Đổi màu Red/Green">⚡ MODE</button>
+      <button class="icon-btn" id="themeBtn" type="button" title="Đổi giao diện">☀️</button>
+    </div>
+  </header>
+
+  <!-- MUSIC POPOVER -->
+  <div class="music-popover" id="musicPopover">
+    <div class="mp-title">🎵 Trình phát nhạc nền</div>
+    <div class="mp-track" id="mpTrackTitle">Nhạc nền ModGameios VIP</div>
+    <div class="mp-controls">
+      <button class="mp-btn" id="mpPrev" type="button">⏮</button>
+      <button class="mp-btn primary" id="mpPlayPause" type="button">▶ Phát</button>
+      <button class="mp-btn" id="mpNext" type="button">⏭</button>
+    </div>
+    <input type="range" class="mp-vol" id="mpVol" min="0" max="100" value="65">
+  </div>
+
+  <!-- BENTO STATUS & DEVICE DETECTOR -->
+  <section class="bento-grid">
+    <div class="bento-card bento-cert">
+      <div>
+        <div class="cert-badge"><span class="pulse-dot"></span> CHỨNG CHỈ HÔM NAY: SIGNED</div>
+        <div class="cert-title">Hoạt động 100% Anti-Revoke</div>
+        <div class="cert-device" id="deviceDetector">📱 Đang kiểm tra thiết bị của bạn...</div>
+      </div>
+      <button class="cert-btn" type="button" onclick="openAppById('nextdns')">🛡️ Cài Cấu Hình DNS Chống Thu Hồi</button>
+    </div>
+
+    <div class="bento-stats">
+      <div class="mini-stat">
+        <span>Lượt truy cập</span>
+        <strong id="statViews">3,892</strong>
+      </div>
+      <div class="mini-stat">
+        <span>Kho hiện có</span>
+        <strong id="statTotalApps">26 Mods</strong>
+      </div>
+      <div class="mini-stat">
+        <span>Đang trực tuyến</span>
+        <strong id="statOnline">24</strong>
+      </div>
+      <div class="mini-stat" style="cursor:pointer" onclick="filterByCategory('fav')">
+        <span>Đã lưu ❤️</span>
+        <strong id="statFavs">0</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL CHIPS -->
+  <div class="social-strip">
+    <a class="soc-chip soc-discord" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">💬 Discord Hỗ Trợ</a>
+    <a class="soc-chip soc-tiktok" href="https://www.tiktok.com/@muopwiuem?_r=1&_t=ZS-99byCsyAsR0" target="_blank" rel="noopener">🎵 Kênh TikTok</a>
+    <a class="soc-chip soc-yt" href="https://www.youtube.com/channel/UCXZ-E233Kbbf_j39MWeQbcw" target="_blank" rel="noopener">▶️ YouTube</a>
+    <button class="soc-chip soc-share" id="shareWebBtn" type="button">🔗 Chia sẻ Web</button>
+  </div>
+
+  <!-- FEATURED SPOTLIGHT CAROUSEL -->
+  <div class="section-head">
+    <h2>🔥 Tiêu điểm nổi bật</h2>
+    <span>Vuốt ngang ➔</span>
+  </div>
+  <div class="spotlight-track">
+    <div class="spotlight-card sp-bg-1" onclick="openAppById('app3105v2')">
+      <span class="sp-tag">⚡ CÔNG CỤ BẮT BUỘC</span>
+      <div class="sp-bottom">
+        <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/app3105.jpg" alt="App 3105">
+        <div class="sp-info">
+          <h3>APP 3105 V2.1</h3>
+          <p>Trình quản lý tệp & cài đặt Patch Mod không cần JB</p>
+        </div>
+        <span class="sp-get">MỞ</span>
+      </div>
+    </div>
+
+    <div class="spotlight-card sp-bg-2" onclick="openAppById('lq')">
+      <span class="sp-tag">⚔️ BẢN MOD HOT NHẤT</span>
+      <div class="sp-bottom">
+        <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/lq.jpg" alt="Liên Quân">
+        <div class="sp-info">
+          <h3>LIÊN QUÂN ALL-IN-ONE</h3>
+          <p>Combo Mở khóa Full Skin + Hack Map Sáng + Cam Xa</p>
+        </div>
+        <span class="sp-get">MỞ</span>
+      </div>
+    </div>
+
+    <div class="spotlight-card sp-bg-3" onclick="openAppById('menupubg')">
+      <span class="sp-tag">🎯 SIÊU PHẨM VIP</span>
+      <div class="sp-bottom">
+        <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg" alt="PUBG VIP">
+        <div class="sp-info">
+          <h3>MENU PUBG VIP</h3>
+          <p>ESP, Aimbot chuẩn xác & tích hợp Antiban an toàn</p>
+        </div>
+        <span class="sp-get">MỞ</span>
+      </div>
     </div>
   </div>
-</header>
 
-<!-- 2-COLUMN COMMAND WORKSPACE -->
-<div class="command-shell">
+  <!-- RECENTLY VIEWED -->
+  <div class="recent-wrap" id="recentWrap">
+    <div class="section-head" style="margin-top:14px">
+      <h2>🕘 Vừa xem gần đây</h2>
+      <span style="cursor:pointer;color:var(--accent)" onclick="clearRecent()">Xóa</span>
+    </div>
+    <div class="recent-list" id="recentList"></div>
+  </div>
 
-  <!-- LEFT RACK: OPERATOR & SECTOR SELECTOR -->
-  <aside class="operator-rack">
-    <div class="rack-box">
-      <div class="op-profile">
-        <div class="op-avatar">
-          <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg" alt="Admin">
-        </div>
-        <div>
-          <div class="op-callsign">MODGAMEIOS <span style="color:var(--neon-green)">[VIP]</span></div>
-          <div class="op-role">ROOT OPERATOR // LV.99</div>
-        </div>
+  <!-- SEARCH & SORT TOOLBAR -->
+  <div class="command-bar">
+    <div class="search-input-wrap">
+      <span>🔍</span>
+      <input type="search" id="searchInput" placeholder="Tìm nhanh IPA, Liên Quân, Free Fire, PUBG, DNS..." autocomplete="off">
+      <button type="button" class="clear-search" id="clearSearchBtn">✕</button>
+    </div>
+    <div class="toolbar-row">
+      <div class="sort-pills">
+        <button type="button" class="sort-btn active" data-sort="default">🔄 Mặc định</button>
+        <button type="button" class="sort-btn" data-sort="dl">🔥 Tải nhiều nhất</button>
+        <button type="button" class="sort-btn" data-sort="rating">⭐ Đánh giá cao</button>
+        <button type="button" class="sort-btn" data-sort="size">📦 Nhẹ nhất</button>
       </div>
-      <div class="telemetry-grid">
-        <div class="tele-cell">
-          <span>TRUY CẬP HỆ THỐNG</span>
-          <strong id="teleViews">3,892</strong>
-        </div>
-        <div class="tele-cell">
-          <span>BẢO MẬT ANTIBAN</span>
-          <strong style="color:var(--neon-green)">99.9% SAFE</strong>
-        </div>
+      <div class="view-toggle">
+        <button type="button" class="view-btn active" id="viewListBtn" title="Danh sách">☰</button>
+        <button type="button" class="view-btn" id="viewGridBtn" title="Lưới 2 cột">⊞</button>
       </div>
     </div>
+  </div>
 
-    <div class="rack-box sector-nav-box">
-      <div class="rack-title"><span>// DANH MỤC PAYLOAD</span><span>[07]</span></div>
-      <div class="sector-nav" id="desktopNav">
-        <button class="sec-nav-btn active" data-cat="all"><span>⚡ TẤT CẢ MODULE</span><span class="sec-code">ALL</span></button>
-        <button class="sec-nav-btn" data-cat="ipa"><span>📱 KHO IPA CRACK VIP</span><span class="sec-code">SEC_01</span></button>
-        <button class="sec-nav-btn" data-cat="bypass"><span>🛡️ DNS & BYPASS AI</span><span class="sec-code">SEC_02</span></button>
-        <button class="sec-nav-btn" data-cat="lq"><span>⚔️ HACK LIÊN QUÂN</span><span class="sec-code">SEC_03</span></button>
-        <button class="sec-nav-btn" data-cat="ff"><span>🔥 AIMLOCK FREE FIRE</span><span class="sec-code">SEC_04</span></button>
-        <button class="sec-nav-btn" data-cat="pubg"><span>🎯 MENU PUBG MOBILE</span><span class="sec-code">SEC_05</span></button>
-        <button class="sec-nav-btn" data-cat="other"><span>🎬 GAME KHÁC & CAPCUT</span><span class="sec-code">SEC_06</span></button>
-      </div>
-    </div>
+  <!-- CATEGORY STRIP -->
+  <div class="cat-strip" id="catStrip">
+    <button type="button" class="cat-chip active" data-cat="all">⚡ Tất cả (26)</button>
+    <button type="button" class="cat-chip" data-cat="ipa">📱 Kho IPA VIP</button>
+    <button type="button" class="cat-chip" data-cat="bypass">🛡️ File Bypass & DNS</button>
+    <button type="button" class="cat-chip" data-cat="lq">⚔️ Liên Quân</button>
+    <button type="button" class="cat-chip" data-cat="ff">🔥 Free Fire</button>
+    <button type="button" class="cat-chip" data-cat="pubg">🎯 PUBG Mobile</button>
+    <button type="button" class="cat-chip" data-cat="other">🎬 Game Khác & CapCut</button>
+    <button type="button" class="cat-chip" data-cat="fav">❤️ Yêu thích</button>
+  </div>
 
-    <div class="rack-box">
-      <div class="rack-title"><span>// KÊNH LIÊN LẠC NGẦM</span><span>LINK</span></div>
-      <div class="comm-links">
-        <a class="comm-btn" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">DISCORD</a>
-        <a class="comm-btn" href="https://www.tiktok.com/@muopwiuem?_r=1&_t=ZS-99byCsyAsR0" target="_blank" rel="noopener">TIKTOK</a>
-        <a class="comm-btn" href="https://www.youtube.com/channel/UCXZ-E233Kbbf_j39MWeQbcw" target="_blank" rel="noopener">YOUTUBE</a>
-        <button class="comm-btn" id="shareDeckBtn" type="button">COPY URL</button>
-      </div>
-    </div>
-  </aside>
+  <!-- MAIN CATALOG -->
+  <div id="catalogContainer"></div>
 
-  <!-- RIGHT MAIN DECK -->
-  <main class="warfare-deck">
+  <div class="empty-box" id="emptyState">
+    <div style="font-size:38px;margin-bottom:8px">🔍</div>
+    <div style="font-weight:800;font-size:14px" id="emptyText">Không tìm thấy ứng dụng phù hợp</div>
+  </div>
 
-    <!-- TACTICAL HERO -->
-    <section class="tactical-banner">
-      <div>
-        <span class="tb-stamp">ROOT ACCESS GRANTED // V9.5</span>
-        <h1 class="tb-title">TRẠM NẠP <span>IPA CRACK & MOD MENU</span> iOS KHÔNG CẦN JAILBREAK</h1>
-        <p class="tb-desc">
-          > Hệ thống phân phối trực tiếp gói cài đặt App 3105, Patch Full Skin Liên Quân, Aimbot Free Fire Max, ESP PUBG & Cấu hình DNS kháng thu hồi chứng chỉ.
-        </p>
-        <div class="tb-cta">
-          <button class="btn-inject-main" onclick="openApp('app3105v2')">[ NẠP APP 3105 V2.1 ]</button>
-          <a class="btn-inject-outline" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">// VÀO DISCORD NHẬN KEY</a>
-        </div>
-      </div>
-
-      <div class="payload-mini-rack">
-        <div class="pm-row" onclick="openApp('lq')">
-          <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/lq.jpg" alt="LQ">
-          <div class="pm-meta">
-            <b>PATCH LIÊN QUÂN ALL-IN-ONE</b>
-            <span>Unlock Skin + Map Sáng + Cam Xa</span>
-          </div>
-          <span class="pm-tag">HOT</span>
-        </div>
-        <div class="pm-row" onclick="openApp('menupubg')">
-          <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg" alt="PUBG">
-          <div class="pm-meta">
-            <b>MENU PUBG MOBILE VIP</b>
-            <span>ESP + Aimbot + Antiban Kernel</span>
-          </div>
-          <span class="pm-tag">VIP</span>
-        </div>
-        <div class="pm-row" onclick="openApp('aimffm')">
-          <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/aimffm.jpg" alt="FF">
-          <div class="pm-meta">
-            <b>PATCH AIMLOCK FREE FIRE MAX</b>
-            <span>Ghim đầu chuẩn xác + Không khóa Acc</span>
-          </div>
-          <span class="pm-tag">AIM</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLI SEARCH BAR -->
-    <div class="cli-bar">
-      <div class="cli-input-box">
-        <span class="cli-prompt">root@ios:~#</span>
-        <input type="search" id="searchBox" placeholder="Nhập lệnh tìm module (vd: pubg, ff, lq, 3105, spotify...)" autocomplete="off">
-      </div>
-      <div class="cli-sorts">
-        <button class="cli-sort-btn active" data-sort="default">MẶC ĐỊNH</button>
-        <button class="cli-sort-btn" data-sort="dl">LƯỢT NẠP CAO</button>
-        <button class="cli-sort-btn" data-sort="rating">ĐỘ ỔN ĐỊNH</button>
-        <button class="cli-sort-btn" data-sort="fav" id="quickFavBtn">ĐÃ GHIM (<span id="topFavCount">0</span>)</button>
-      </div>
-    </div>
-
-    <!-- ARSENAL CONTAINER -->
-    <div id="stageContent"></div>
-
-  </main>
+  <footer>
+    <p>© 2026 ModGameios • iOS 19 Spatial Glass Store V7.0</p>
+    <p style="margin-top:4px">Tất cả file IPA & Patch đều được kiểm duyệt an toàn trước khi đăng tải</p>
+  </footer>
 </div>
 
-<!-- MOBILE RADAR BOTTOM BAR -->
-<nav class="mobile-radar-nav" id="mobileHud">
-  <button class="m-nav-item active" data-cat="all"><span>⚡</span><span>ALL</span></button>
-  <button class="m-nav-item" data-cat="ipa"><span>📱</span><span>IPA VIP</span></button>
-  <button class="m-nav-item" data-cat="lq"><span>⚔️</span><span>LIÊN QUÂN</span></button>
-  <button class="m-nav-item" data-cat="ff"><span>🔥</span><span>FREE FIRE</span></button>
-  <button class="m-nav-item" data-cat="pubg"><span>🎯</span><span>PUBG</span></button>
-  <button class="m-nav-item" data-cat="other"><span>🎬</span><span>KHÁC</span></button>
+<!-- FLOATING DOCK -->
+<nav class="floating-dock">
+  <button type="button" class="dock-btn active" data-dock="all" onclick="filterByCategory('all')">
+    <span>🏠</span><span>Trang chủ</span>
+  </button>
+  <button type="button" class="dock-btn" data-dock="ipa" onclick="filterByCategory('ipa')">
+    <span>📱</span><span>Kho IPA</span>
+  </button>
+  <button type="button" class="dock-btn" data-dock="lq" onclick="filterByCategory('lq')">
+    <span>⚔️</span><span>Liên Quân</span>
+  </button>
+  <button type="button" class="dock-btn" data-dock="ff" onclick="filterByCategory('ff')">
+    <span>🔥</span><span>Free Fire</span>
+  </button>
+  <button type="button" class="dock-btn" data-dock="pubg" onclick="filterByCategory('pubg')">
+    <span>🎯</span><span>PUBG</span>
+  </button>
+  <button type="button" class="dock-btn" data-dock="other" onclick="filterByCategory('other')">
+    <span>🎬</span><span>Khác</span>
+  </button>
 </nav>
 
-<!-- CENTERED TERMINAL DECRYPTOR MODAL -->
-<div class="modal-backdrop" id="drawerOverlay" onclick="if(event.target===this)closeDrawer()">
-  <div class="decryptor-window">
-    <div class="dw-header">
-      <span class="dw-sys-code" id="drCode">// PAYLOAD_DECRYPTOR</span>
-      <button class="dw-close" onclick="closeDrawer()">[ ESC / ĐÓNG ]</button>
+<!-- APP DETAIL BOTTOM SHEET -->
+<div class="sheet-backdrop" id="appSheetBackdrop" onclick="if(event.target===this)closeSheet()">
+  <div class="ios-sheet">
+    <div class="sheet-pill"></div>
+    <div class="sheet-top">
+      <div class="sheet-icon"><img id="shIcon" src="" alt=""></div>
+      <div style="flex:1;min-width:0">
+        <div class="sheet-title" id="shTitle">-</div>
+        <div class="sheet-desc" id="shDesc">-</div>
+      </div>
     </div>
 
-    <div class="dw-body">
-      <div class="dw-module-head">
-        <img id="drIcon" src="" alt="">
-        <div>
-          <div class="dw-title" id="drTitle">-</div>
-          <div class="dw-desc" id="drDesc">-</div>
-        </div>
-      </div>
+    <div class="sheet-specs">
+      <div class="spec-box"><small>Đánh giá</small><b id="shRating">⭐ 4.9</b></div>
+      <div class="spec-box"><small>Dung lượng</small><b id="shSize">-</b></div>
+      <div class="spec-box"><small>Phiên bản</small><b id="shVer">-</b></div>
+      <div class="spec-box"><small>Hỗ trợ iOS</small><b id="shIos">-</b></div>
+    </div>
 
-      <div class="dw-specs">
-        <div class="dw-spec-box"><span>KÍCH THƯỚC</span><strong id="drSize">-</strong></div>
-        <div class="dw-spec-box"><span>BẢN BUILD</span><strong id="drVer">-</strong></div>
-        <div class="dw-spec-box"><span>YÊU CẦU OS</span><strong id="drIos">-</strong></div>
-      </div>
+    <div class="guide-box">
+      <h4>🛠️ Hướng dẫn cài đặt nhanh</h4>
+      <div id="shGuideSteps"></div>
+    </div>
 
-      <div class="dw-console">
-        <div class="dw-console-title">> EXECUTE_INSTALL_PROTOCOL.SH</div>
-        <div id="drTerminalSteps"></div>
-      </div>
-
-      <div class="dw-footer-btns">
-        <a class="btn-execute-dl" id="drDownloadLink" href="#" target="_blank" rel="noopener">
-          <span>⚡ [ KHỞI CHẠY NẠP FILE // DOWNLOAD ]</span>
-        </a>
-        <div class="dw-sub-row">
-          <button class="btn-sub-tac" id="drCopyBtn" type="button">📋 COPY RAW LINK</button>
-          <a class="btn-sub-tac" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">⚠️ BÁO LỖI MODULE</a>
-        </div>
-      </div>
+    <div class="sheet-actions">
+      <a class="btn-download-main" id="shDownloadBtn" href="#" target="_blank" rel="noopener">
+        <span>⬇️ TẢI XUỐNG NGAY</span>
+      </a>
+      <button type="button" class="btn-secondary" id="shCopyBtn" title="Copy Link">📋 Copy Link</button>
+      <a class="btn-secondary" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener" title="Báo lỗi">⚠️</a>
     </div>
   </div>
 </div>
 
 <script>
+/* === 1. DỮ LIỆU GỐC 26 APPS & LINKS === */
 const REPO = "https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
 const APPS = [
-  {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"BY MODGAMEIOS — Chặn quảng cáo, chống thu hồi & Antiban",href:"https://anonlink.io/8bwJ",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns app crack chong thu hoi",rating:4.9,size:"12 MB",ver:"Latest",ios:"iOS 14+",baseDl:840},
-  {cat:"ipa",id:"app3105v2",title:"APP 3105 V2.1",desc:"Bản cập nhật mới nhất — Quản lý tệp & cài đặt Mod IPA",href:"https://anonlink.io/1xDXX4na",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","CORE"],["tag-blue","iOS"]],search:"app 3105 v2 update new cai mod",rating:4.9,size:"28 MB",ver:"V2.1",ios:"iOS 14+",baseDl:1250},
-  {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"Bản dự phòng ổn định — Link tải trực tiếp MediaFire",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","DIRECT"]],search:"app 3105 v1.1.1 mediafire",rating:4.6,size:"24 MB",ver:"V1.1.1",ios:"iOS 13+",baseDl:520},
-  {cat:"ipa",id:"duolingo",title:"UNLOCK DUOLINGO MAX",desc:"Mở khóa chế độ gọi điện với AI Lily — Full tính năng Max",href:"https://anonlink.io/FaiC",icon:"a%CC%89nh/%E1%BA%A3nh/duolingo.jpg",fb:"🦉",badge:"",tags:[["tag-vip","MAX VIP"],["tag-blue","iOS"]],search:"unlock duolingo max hoc tieng anh pro",rating:4.8,size:"76 MB",ver:"Latest",ios:"iOS 15+",baseDl:430},
-  {cat:"ipa",id:"messenger",title:"MESSENGER VIP PRO",desc:"Xem tin nhắn đã thu hồi, chặn đã xem (Seen), ẩn đang hoạt động",href:"https://anonlink.io/yniZ1fz",icon:"a%CC%89nh/%E1%BA%A3nh/messenger.jpg",fb:"💬",badge:"",tags:[["tag-vip","MOD VIP"],["tag-blue","iOS"]],search:"messenger vipp xem tin nhan thu hoi facebook",rating:4.7,size:"55 MB",ver:"Latest",ios:"iOS 14+",baseDl:610},
-  {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"Bản mới nhất — Chặn quảng cáo, phát nhạc tắt màn hình, PiP",href:"https://anonlink.io/PVIZ",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"HOT",tags:[["tag-vip","VIP"],["tag-blue","NO ADS"]],search:"youtube premium cap nhat chan quang cao nghe nhac tat man hinh",rating:4.9,size:"68 MB",ver:"Latest",ios:"iOS 14+",baseDl:1120},
-  {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"Nghe nhạc Offline chất lượng cao, không quảng cáo — Mở khóa Go++",href:"https://anonlink.io/ONMdtq",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"],["tag-blue","iOS"]],search:"soundcloud go plus plus nghe nhac offline ipa crack mod premium",rating:4.7,size:"35 MB",ver:"Latest",ios:"iOS 14+",baseDl:310},
-  {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Bản chuẩn — Chặn quảng cáo, nghe nhạc chất lượng cao, chuyển bài vô hạn",href:"https://anonlink.io/tMfcciI",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"],["tag-blue","iOS"]],search:"spotify premium ipa crack mod nghe nhac offline khong quang cao skip vo han",rating:4.9,size:"42 MB",ver:"Latest",ios:"iOS 14+",baseDl:890},
-  {cat:"ipa",id:"filza",title:"FILZA MOD",desc:"Tích hợp sẵn App 3105 — Trình quản lý file hệ thống không cần JB",href:"https://anonlink.io/DZGlv2cs",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📁",badge:"",tags:[["tag-purple","ROOT FS"],["tag-blue","iOS"]],search:"filza mod app 3105 quan ly file no jailbreak",rating:4.5,size:"18 MB",ver:"Latest",ios:"iOS 14+",baseDl:390},
+  /* 1. KHO IPA VIP */
+  {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"BY MODGAMEIOS — Chặn quảng cáo, chống thu hồi & Antiban",href:"https://anonlink.io/8bwJ",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns app crack chong thu hoi",rating:4.9,size:"12 MB",ver:"Latest",ios:"14+",baseDl:840},
+  {cat:"ipa",id:"app3105v2",title:"APP 3105 V2.1",desc:"Bản cập nhật mới nhất — Quản lý tệp & cài đặt Mod IPA",href:"https://anonlink.io/1xDXX4na",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","HOT"],["tag-blue","iOS"]],search:"app 3105 v2 update new cai mod",rating:4.9,size:"28 MB",ver:"V2.1",ios:"14+",baseDl:1250},
+  {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"Bản dự phòng ổn định — Link tải trực tiếp MediaFire",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","iOS"]],search:"app 3105 v1.1.1 mediafire",rating:4.6,size:"24 MB",ver:"V1.1.1",ios:"13+",baseDl:520},
+  {cat:"ipa",id:"duolingo",title:"UNLOCK DUOLINGO MAX",desc:"Mở khóa chế độ gọi điện với AI Lily — Full tính năng Max",href:"https://anonlink.io/FaiC",icon:"a%CC%89nh/%E1%BA%A3nh/duolingo.jpg",fb:"🦉",badge:"",tags:[["tag-vip","MAX VIP"],["tag-blue","iOS"]],search:"unlock duolingo max hoc tieng anh pro",rating:4.8,size:"76 MB",ver:"Latest",ios:"15+",baseDl:430},
+  {cat:"ipa",id:"messenger",title:"MESSENGER VIP PRO",desc:"Xem tin nhắn đã thu hồi, chặn đã xem (Seen), ẩn đang hoạt động",href:"https://anonlink.io/yniZ1fz",icon:"a%CC%89nh/%E1%BA%A3nh/messenger.jpg",fb:"💬",badge:"",tags:[["tag-vip","PREMIUM"],["tag-blue","iOS"]],search:"messenger vipp xem tin nhan thu hoi facebook",rating:4.7,size:"55 MB",ver:"Latest",ios:"14+",baseDl:610},
+  {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"Bản mới nhất — Chặn quảng cáo, phát nhạc tắt màn hình, PiP",href:"https://anonlink.io/PVIZ",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"HOT",tags:[["tag-vip","VIP"],["tag-blue","iOS"]],search:"youtube premium cap nhat chan quang cao nghe nhac tat man hinh",rating:4.9,size:"68 MB",ver:"Latest",ios:"14+",baseDl:1120},
+  {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"Nghe nhạc Offline chất lượng cao, không quảng cáo — Mở khóa Go++",href:"https://anonlink.io/ONMdtq",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"],["tag-blue","iOS"]],search:"soundcloud go plus plus nghe nhac offline ipa crack mod premium",rating:4.7,size:"35 MB",ver:"Latest",ios:"14+",baseDl:310},
+  {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Bản chuẩn — Chặn quảng cáo, nghe nhạc chất lượng cao, chuyển bài vô hạn",href:"https://anonlink.io/tMfcciI",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"],["tag-blue","iOS"]],search:"spotify premium ipa crack mod nghe nhac offline khong quang cao skip vo han",rating:4.9,size:"42 MB",ver:"Latest",ios:"14+",baseDl:890},
+  {cat:"ipa",id:"filza",title:"FILZA MOD",desc:"Tích hợp sẵn App 3105 — Trình quản lý file hệ thống không cần JB",href:"https://anonlink.io/DZGlv2cs",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📁",badge:"",tags:[["tag-purple","FILE MANAGER"],["tag-blue","iOS"]],search:"filza mod app 3105 quan ly file no jailbreak",rating:4.5,size:"18 MB",ver:"Latest",ios:"14+",baseDl:390},
 
-  {cat:"bypass",id:"bchatgpt",title:"BYPASS CHATGPT",desc:"Dán trực tiếp vào khung chat — Mở khóa giới hạn & kiểm duyệt AI",href:"https://anonlink.io/M9S1",icon:"a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg",fb:"🤖",badge:"",tags:[["tag-blue","PROMPT"],["tag-antiban","JAILBREAK"]],search:"bypass chatgpt ios antiban prompt gpt",rating:4.6,size:"TXT",ver:"Mới",ios:"Mọi iOS",baseDl:280},
-  {cat:"bypass",id:"bclaude",title:"BYPASS AI CLAUDE",desc:"Prompt mở khóa khả năng trả lời nâng cao cho Claude AI",href:"https://anonlink.io/0whZz",icon:"a%CC%89nh/%E1%BA%A3nh/claude.jpg",fb:"✨",badge:"NEW",tags:[["tag-blue","PROMPT"],["tag-antiban","UNLOCK"]],search:"bypass ai claude ios antiban sonnet opus",rating:4.5,size:"TXT",ver:"Mới",ios:"Mọi iOS",baseDl:195},
-  {cat:"bypass",id:"dnsff",title:"DNS ANTIBAN FREE FIRE",desc:"Cấu hình DNS Antiban chuyên dụng cho Free Fire — An toàn 100%",href:"https://anonlink.io/WiTmFh",icon:"a%CC%89nh/%E1%BA%A3nh/dns.jpg",fb:"🛡️",badge:"HOT",tags:[["tag-antiban","ANTIBAN"],["tag-blue","DNS"]],search:"dns antiban ff ffm nextdns config free fire max",rating:4.8,size:"4 KB",ver:"v3.0",ios:"Mọi iOS",baseDl:740},
+  /* 2. FILE BYPASS + ANTIBAN */
+  {cat:"bypass",id:"bchatgpt",title:"BYPASS CHATGPT",desc:"Dán trực tiếp vào khung chat — Mở khóa giới hạn & kiểm duyệt AI",href:"https://anonlink.io/M9S1",icon:"a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg",fb:"🤖",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","PROMPT"]],search:"bypass chatgpt ios antiban prompt gpt",rating:4.6,size:"1 MB",ver:"Mới",ios:"Mọi iOS",baseDl:280},
+  {cat:"bypass",id:"bclaude",title:"BYPASS AI CLAUDE",desc:"Prompt mở khóa khả năng trả lời nâng cao cho Claude AI",href:"https://anonlink.io/0whZz",icon:"a%CC%89nh/%E1%BA%A3nh/claude.jpg",fb:"✨",badge:"NEW",tags:[["tag-blue","iOS"],["tag-antiban","PROMPT"]],search:"bypass ai claude ios antiban sonnet opus",rating:4.5,size:"1 MB",ver:"Mới",ios:"Mọi iOS",baseDl:195},
+  {cat:"bypass",id:"dnsff",title:"DNS ANTIBAN FREE FIRE",desc:"Cấu hình DNS Antiban chuyên dụng cho Free Fire — An toàn 100%",href:"https://anonlink.io/WiTmFh",icon:"a%CC%89nh/%E1%BA%A3nh/dns.jpg",fb:"🛡️",badge:"HOT",tags:[["tag-antiban","ANTIBAN 100%"],["tag-blue","iOS"]],search:"dns antiban ff ffm nextdns config free fire max",rating:4.8,size:"1 MB",ver:"v3.0",ios:"Mọi iOS",baseDl:740},
 
-  {cat:"lq",id:"lq",title:"PATCH LIÊN QUÂN ALL-IN-ONE",desc:"Bản Combo VIP: Mở khóa Full Skin + Hack Map Sáng + Góc nhìn Cam Xa",href:"https://anonlink.io/7OBq",icon:"a%CC%89nh/%E1%BA%A3nh/lq.jpg",fb:"⚔️",badge:"HOT",tags:[["tag-vip","COMBO VIP"],["tag-blue","iOS"]],search:"patch lq unlock skin lien quan map cam xa combo",rating:4.9,size:"10 MB",ver:"Latest",ios:"iOS 13+",baseDl:1050},
-  {cat:"lq",id:"unlockskin",title:"PATCH UNLOCK ALL SKIN LQ",desc:"Liên Quân Mobile — Mở khóa trang phục, hiệu ứng biến về & âm thanh",href:"https://anonlink.io/84WCgtE",icon:"a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg",fb:"👗",badge:"",tags:[["tag-blue","iOS"],["tag-vip","SKIN MOD"]],search:"patch unlockskin unlock skin lien quan",rating:4.7,size:"7 MB",ver:"Latest",ios:"iOS 13+",baseDl:680},
-  {cat:"lq",id:"mapsang",title:"PATCH HACK MAP SÁNG LQ",desc:"Liên Quân Mobile — Quan sát tầm nhìn toàn bản đồ siêu rõ",href:"https://anonlink.io/HHDo4",icon:"a%CC%89nh/%E1%BA%A3nh/map.jpg",fb:"🗺️",badge:"",tags:[["tag-blue","iOS"],["tag-purple","MAP HACK"]],search:"patch hack map lien quan lien minh toc chien",rating:4.5,size:"5 MB",ver:"Latest",ios:"iOS 13+",baseDl:530},
-  {cat:"lq",id:"camxa",title:"PATCH UNLOCK SKIN + CAM XA",desc:"Liên Quân Mobile — Góc nhìn siêu rộng kết hợp mở khóa Skin an toàn",href:"https://anonlink.io/fT8GLeZ",icon:"a%CC%89nh/%E1%BA%A3nh/camxa.jpg",fb:"🔭",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","SAFE"]],search:"patch unlockskin cam xa no map lien quan",rating:4.6,size:"7 MB",ver:"Latest",ios:"iOS 13+",baseDl:490},
+  /* 3. LIÊN QUÂN MOBILE */
+  {cat:"lq",id:"lq",title:"PATCH LIÊN QUÂN ALL-IN-ONE",desc:"Bản Combo VIP: Mở khóa Full Skin + Hack Map Sáng + Góc nhìn Cam Xa",href:"https://anonlink.io/7OBq",icon:"a%CC%89nh/%E1%BA%A3nh/lq.jpg",fb:"⚔️",badge:"HOT",tags:[["tag-vip","COMBO VIP"],["tag-blue","iOS"]],search:"patch lq unlock skin lien quan map cam xa combo",rating:4.9,size:"10 MB",ver:"Latest",ios:"13+",baseDl:1050},
+  {cat:"lq",id:"unlockskin",title:"PATCH UNLOCK ALL SKIN LQ",desc:"Liên Quân Mobile — Mở khóa trang phục, hiệu ứng biến về & âm thanh",href:"https://anonlink.io/84WCgtE",icon:"a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg",fb:"👗",badge:"",tags:[["tag-blue","iOS"],["tag-vip","SKIN MOD"]],search:"patch unlockskin unlock skin lien quan",rating:4.7,size:"7 MB",ver:"Latest",ios:"13+",baseDl:680},
+  {cat:"lq",id:"mapsang",title:"PATCH HACK MAP SÁNG LQ",desc:"Liên Quân Mobile — Quan sát tầm nhìn toàn bản đồ siêu rõ",href:"https://anonlink.io/HHDo4",icon:"a%CC%89nh/%E1%BA%A3nh/map.jpg",fb:"🗺️",badge:"",tags:[["tag-blue","iOS"],["tag-purple","MAP SÁNG"]],search:"patch hack map lien quan lien minh toc chien",rating:4.5,size:"5 MB",ver:"Latest",ios:"13+",baseDl:530},
+  {cat:"lq",id:"camxa",title:"PATCH UNLOCK SKIN + CAM XA",desc:"Liên Quân Mobile — Góc nhìn siêu rộng kết hợp mở khóa Skin an toàn",href:"https://anonlink.io/fT8GLeZ",icon:"a%CC%89nh/%E1%BA%A3nh/camxa.jpg",fb:"🔭",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","AN TOÀN"]],search:"patch unlockskin cam xa no map lien quan",rating:4.6,size:"7 MB",ver:"Latest",ios:"13+",baseDl:490},
 
-  {cat:"ff",id:"aimffm",title:"PATCH AIM FREE FIRE MAX",desc:"Hỗ trợ khóa mục tiêu tự động — Ghim tâm chuẩn xác cho FF Max",href:"https://anonlink.io/G8Fm18eL",icon:"a%CC%89nh/%E1%BA%A3nh/aimffm.jpg",fb:"🎯",badge:"HOT",tags:[["tag-blue","iOS"],["tag-purple","AIMLOCK"]],search:"patch aim ffm free fire max tu ke tam headshot",rating:4.8,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:870},
-  {cat:"ff",id:"espffm",title:"PATCH ESP + AIM FF MAX",desc:"Dành cho Free Fire Max — Hiển thị vị trí địch (ESP) + Hỗ trợ kéo tâm",href:"https://anonlink.io/wTMGTLHP",icon:"a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg",fb:"📍",badge:"",tags:[["tag-blue","ESP"],["tag-antiban","ANTIBAN"]],search:"patch dinh vi aimbody ffm free fire max antiban",rating:4.6,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:620},
-  {cat:"ff",id:"ffth",title:"PATCH FF THÁI LAN ESP + AIM",desc:"Dành riêng cho bản Free Fire Thái Lan — ESP định vị + Aimbot",href:"https://anonlink.io/q1BnSEUB",icon:"a%CC%89nh/%E1%BA%A3nh/aimffth.jpg",fb:"🔫",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FF THÁI"]],search:"patch aim ffth ESP AIM free fire thai",rating:4.5,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:310},
+  /* 4. FREE FIRE */
+  {cat:"ff",id:"aimffm",title:"PATCH AIM FREE FIRE MAX",desc:"Hỗ trợ khóa mục tiêu tự động — Ghim tâm chuẩn xác cho FF Max",href:"https://anonlink.io/G8Fm18eL",icon:"a%CC%89nh/%E1%BA%A3nh/aimffm.jpg",fb:"🎯",badge:"HOT",tags:[["tag-blue","iOS"],["tag-purple","AIMLOCK"]],search:"patch aim ffm free fire max tu ke tam headshot",rating:4.8,size:"6 MB",ver:"Latest",ios:"14+",baseDl:870},
+  {cat:"ff",id:"espffm",title:"PATCH ESP + AIM FF MAX",desc:"Dành cho Free Fire Max — Hiển thị vị trí địch (ESP) + Hỗ trợ kéo tâm",href:"https://anonlink.io/wTMGTLHP",icon:"a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg",fb:"📍",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"patch dinh vi aimbody ffm free fire max antiban",rating:4.6,size:"6 MB",ver:"Latest",ios:"14+",baseDl:620},
+  {cat:"ff",id:"ffth",title:"PATCH FF THÁI LAN ESP + AIM",desc:"Dành riêng cho bản Free Fire Thái Lan — ESP định vị + Aimbot",href:"https://anonlink.io/q1BnSEUB",icon:"a%CC%89nh/%E1%BA%A3nh/aimffth.jpg",fb:"🔫",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FF THÁI"]],search:"patch aim ffth ESP AIM free fire thai",rating:4.5,size:"6 MB",ver:"Latest",ios:"14+",baseDl:310},
 
-  {cat:"pubg",id:"menupubg",title:"MENU PUBG VIP",desc:"Menu Mod cao cấp — ESP, Aimbot & tích hợp chống khóa tài khoản",href:"https://anonlink.io/0vMe7",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"HOT",tags:[["tag-vip","MENU VIP"],["tag-antiban","ANTI-BAN"]],search:"menu pubg vip pubg mobile mod menu hack esp aimbot no ban ios",rating:4.9,size:"22 MB",ver:"Latest",ios:"iOS 14+",baseDl:980},
-  {cat:"pubg",id:"modpubgvip",title:"MOD PUBG VIP PRO",desc:"Bản VIP đặc quyền — Mở khóa Mod Skin súng & trang phục cực đẹp",href:"https://anonlink.io/Coj0THaZ",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-vip","VIP PRO"],["tag-antiban","ANTI-BAN"]],search:"mod pubg vip pubg mobile hack patch ios esp aimbot no ban menu",rating:4.7,size:"18 MB",ver:"Latest",ios:"iOS 14+",baseDl:640},
-  {cat:"pubg",id:"modpubg",title:"MOD PUBG MOBILE VNG",desc:"Bản Mod chuẩn cho PUBG VNG iOS — Hỗ trợ chiến mượt, ổn định",href:"https://anonlink.io/BN5yUBP",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-blue","iOS"],["tag-vip","VNG VIP"]],search:"mod pubg pubg mobile patch hack ios no ban esp vng",rating:4.6,size:"18 MB",ver:"Latest",ios:"iOS 14+",baseDl:590},
-  {cat:"pubg",id:"pubgglobal",title:"MOD PUBG (GLOBAL)",desc:"Bản Quốc Tế (Global) cho iOS — Tương thích mượt mà, an toàn",href:"https://anonlink.io/x03DO",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🌍",badge:"",tags:[["tag-blue","iOS"],["tag-vip","GLOBAL"]],search:"mod pubg global pubg mobile quoc te ios hack patch esp no ban",rating:4.6,size:"20 MB",ver:"Latest",ios:"iOS 14+",baseDl:470},
+  /* 5. PUBG MOBILE */
+  {cat:"pubg",id:"menupubg",title:"MENU PUBG VIP",desc:"Menu Mod cao cấp — ESP, Aimbot & tích hợp chống khóa tài khoản",href:"https://anonlink.io/0vMe7",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"HOT",tags:[["tag-vip","MENU VIP"],["tag-antiban","ANTI-BAN"],["tag-blue","iOS"]],search:"menu pubg vip pubg mobile mod menu hack esp aimbot no ban ios",rating:4.9,size:"22 MB",ver:"Latest",ios:"14+",baseDl:980},
+  {cat:"pubg",id:"modpubgvip",title:"MOD PUBG VIP PRO",desc:"Bản VIP đặc quyền — Mở khóa Mod Skin súng & trang phục cực đẹp",href:"https://anonlink.io/Coj0THaZ",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-vip","VIP PRO"],["tag-antiban","ANTI-BAN"],["tag-blue","iOS"]],search:"mod pubg vip pubg mobile hack patch ios esp aimbot no ban menu",rating:4.7,size:"18 MB",ver:"Latest",ios:"14+",baseDl:640},
+  {cat:"pubg",id:"modpubg",title:"MOD PUBG MOBILE VNG",desc:"Bản Mod chuẩn cho PUBG VNG iOS — Hỗ trợ chiến mượt, ổn định",href:"https://anonlink.io/BN5yUBP",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-blue","iOS"],["tag-vip","VNG VIP"]],search:"mod pubg pubg mobile patch hack ios no ban esp vng",rating:4.6,size:"18 MB",ver:"Latest",ios:"14+",baseDl:590},
+  {cat:"pubg",id:"pubgglobal",title:"MOD PUBG (GLOBAL)",desc:"Bản Quốc Tế (Global) cho iOS — Tương thích mượt mà, an toàn",href:"https://anonlink.io/x03DO",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🌍",badge:"",tags:[["tag-blue","iOS"],["tag-vip","GLOBAL"],["tag-antiban","ANTI-BAN"]],search:"mod pubg global pubg mobile quoc te ios hack patch esp no ban",rating:4.6,size:"20 MB",ver:"Latest",ios:"14+",baseDl:470},
 
-  {cat:"other",id:"subway",title:"PATCH SUBWAY SURFERS",desc:"Dùng cho App 3105 — Full vàng, chìa khóa, mở khóa toàn bộ nhân vật",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/subway.jpg",fb:"🏄",badge:"",tags:[["tag-blue","iOS"],["tag-purple","MAX COIN"]],search:"patch subway surfers app 3105 full moi thu tien vang chia khoa",rating:4.6,size:"9 MB",ver:"Latest",ios:"iOS 13+",baseDl:290},
-  {cat:"other",id:"candy",title:"PATCH CANDY CRUSH",desc:"Dùng cho App 3105 — Vô hạn vật phẩm hỗ trợ & lượt di chuyển",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/candycrush.jpg",fb:"🍬",badge:"",tags:[["tag-blue","iOS"],["tag-purple","UNLIMITED"]],search:"patch candy crush app 3105 vo han tro luc moves",rating:4.5,size:"6 MB",ver:"Latest",ios:"iOS 13+",baseDl:210},
-  {cat:"other",id:"pvz2",title:"PATCH HACK PVZ2",desc:"Dùng cho App 3105 — Mở khóa toàn bộ cây trồng, Shop đồng giá 1 xu",href:"https://anonlink.io/z8ddEc",icon:"a%CC%89nh/%E1%BA%A3nh/pvz2.jpg",fb:"🌻",badge:"",tags:[["tag-blue","iOS"],["tag-purple","1 COIN SHOP"]],search:"patch hack pvz2 app 3105 full cay plants vs zombies",rating:4.7,size:"8 MB",ver:"Latest",ios:"iOS 13+",baseDl:340},
-  {cat:"other",id:"capcut",title:"CAPCUT PRO MOD",desc:"Mở khóa toàn bộ hiệu ứng Pro — Xuất video 4K 60fps không dính logo",href:"https://anonlink.io/nqiI",icon:"a%CC%89nh/%E1%BA%A3nh/capcut.jpg",fb:"🎬",badge:"HOT",tags:[["tag-vip","PRO UNLOCK"],["tag-blue","iOS"]],search:"capcut pro patch mod edit video khong logo",rating:4.9,size:"145 MB",ver:"Latest",ios:"iOS 15+",baseDl:940}
+  /* 6. GAME KHÁC & CAPCUT PRO */
+  {cat:"other",id:"subway",title:"PATCH SUBWAY SURFERS",desc:"Dùng cho App 3105 — Full vàng, chìa khóa, mở khóa toàn bộ nhân vật",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/subway.jpg",fb:"🏄",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FULL MAX"]],search:"patch subway surfers app 3105 full moi thu tien vang chia khoa",rating:4.6,size:"9 MB",ver:"Latest",ios:"13+",baseDl:290},
+  {cat:"other",id:"candy",title:"PATCH CANDY CRUSH",desc:"Dùng cho App 3105 — Vô hạn vật phẩm hỗ trợ & lượt di chuyển",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/candycrush.jpg",fb:"🍬",badge:"",tags:[["tag-blue","iOS"],["tag-purple","VÔ HẠN"]],search:"patch candy crush app 3105 vo han tro luc moves",rating:4.5,size:"6 MB",ver:"Latest",ios:"13+",baseDl:210},
+  {cat:"other",id:"pvz2",title:"PATCH HACK PVZ2",desc:"Dùng cho App 3105 — Mở khóa toàn bộ cây trồng, Shop đồng giá 1 xu",href:"https://anonlink.io/z8ddEc",icon:"a%CC%89nh/%E1%BA%A3nh/pvz2.jpg",fb:"🌻",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FULL UNLOCK"]],search:"patch hack pvz2 app 3105 full cay plants vs zombies",rating:4.7,size:"8 MB",ver:"Latest",ios:"13+",baseDl:340},
+  {cat:"other",id:"capcut",title:"CAPCUT PRO MOD",desc:"Mở khóa toàn bộ hiệu ứng Pro — Xuất video 4K 60fps không dính logo",href:"https://anonlink.io/nqiI",icon:"a%CC%89nh/%E1%BA%A3nh/capcut.jpg",fb:"🎬",badge:"HOT",tags:[["tag-vip","PRO VIP"],["tag-blue","iOS"]],search:"capcut pro patch mod edit video khong logo",rating:4.9,size:"145 MB",ver:"Latest",ios:"15+",baseDl:940}
 ];
 
-const SECTORS = {
-  ipa: "SECTOR 01 // KHO TẢI IPA CRACK VIP",
-  bypass: "SECTOR 02 // CẤU HÌNH DNS & BYPASS AI",
-  lq: "SECTOR 03 // PAYLOAD PATCH LIÊN QUÂN",
-  ff: "SECTOR 04 // PAYLOAD AIMLOCK FREE FIRE",
-  pubg: "SECTOR 05 // MENU & MOD PUBG MOBILE",
-  other: "SECTOR 06 // GAME KHÁC & CAPCUT PRO"
+const CAT_INFO = {
+  ipa: { title: "📱 KHO TẢI IPA VIP", unit: "APPS" },
+  bypass: { title: "🛡️ FILE BYPASS & ANTIBAN", unit: "FILES" },
+  lq: { title: "⚔️ MOD & PATCH LIÊN QUÂN", unit: "MODS" },
+  ff: { title: "🔥 MOD & PATCH FREE FIRE", unit: "MODS" },
+  pubg: { title: "🎯 MOD & PATCH PUBG MOBILE", unit: "MODS" },
+  other: { title: "🎬 GAME KHÁC & CAPCUT PRO", unit: "MODS" }
 };
 
-let currentCat = "all";
-let currentSort = "default";
+/* === 2. TRẠNG THÁI & TIỆN ÍCH === */
+let activeCat = "all";
+let activeSort = "default";
 let favs = new Set(JSON.parse(localStorage.getItem("modgameios_favs_v2") || "[]"));
+let recentIds = JSON.parse(localStorage.getItem("mgi_recent_v7") || "[]");
+let dlCounts = {};
+APPS.forEach(a => dlCounts[a.id] = a.baseDl);
 
-function toast(msg) {
-  const el = document.getElementById("cyberToast");
-  el.textContent = msg;
-  el.classList.add("show");
-  clearTimeout(window._ct);
-  window._ct = setTimeout(() => el.classList.remove("show"), 2400);
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(window._tTimer);
+  window._tTimer = setTimeout(() => t.classList.remove("show"), 2300);
 }
 
-function norm(s) {
-  return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
+function fmtDl(n) {
+  return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : String(n);
 }
 
-function renderStage() {
-  const kw = norm(document.getElementById("searchBox").value.trim());
-  const stage = document.getElementById("stageContent");
-  stage.innerHTML = "";
-  const cats = (currentCat === "all" || currentCat === "fav") ? Object.keys(SECTORS) : [currentCat];
-  let countAll = 0;
+function parseMB(s) {
+  const num = parseFloat(s);
+  return isNaN(num) ? 1 : num;
+}
 
-  cats.forEach(cat => {
-    let items = APPS.filter(a => {
-      if (a.cat !== cat) return false;
-      if (currentCat === "fav" && !favs.has(a.id)) return false;
-      if (kw && !norm(a.title + " " + a.desc + " " + a.search).includes(kw)) return false;
+function normText(str) {
+  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
+}
+
+/* === 3. RENDER DANH SÁCH ỨNG DỤNG === */
+function createCardHTML(app) {
+  const isFav = favs.has(app.id);
+  const badge = app.badge === "HOT" ? '<span class="ribbon ribbon-hot">HOT</span>' :
+                app.badge === "NEW" ? '<span class="ribbon ribbon-new">NEW</span>' : '';
+  const tags = (app.tags || []).map(t => `<span class="chip ${t[0]}">${t[1]}</span>`).join("");
+
+  return `
+    <div class="app-card" onclick="openAppById('${app.id}')">
+      <button type="button" class="fav-trigger ${isFav ? 'active' : ''}" onclick="toggleFav(event, '${app.id}')">
+        ${isFav ? '❤️' : '🤍'}
+      </button>
+      <div class="app-icon-box">
+        ${badge}
+        <img src="${REPO + app.icon}" alt="${app.title}" loading="lazy" onerror="this.classList.add('err')">
+        <div class="app-fallback">${app.fb || '📦'}</div>
+      </div>
+      <div class="app-body">
+        <div class="app-name">${app.title}</div>
+        <div class="app-desc">${app.desc}</div>
+        <div class="app-meta-row">
+          ${tags}
+          <span class="chip-dl" id="dl-${app.id}">⬇ ${fmtDl(dlCounts[app.id])}</span>
+        </div>
+      </div>
+      <div class="app-right">
+        <span class="get-btn">NHẬN</span>
+        <span class="sub-size">⭐ ${app.rating} • ${app.size}</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderCatalog() {
+  const kw = normText(document.getElementById("searchInput").value.trim());
+  const container = document.getElementById("catalogContainer");
+  container.innerHTML = "";
+  let totalVisible = 0;
+
+  const sortFn = (a, b) => {
+    if (activeSort === "dl") return (dlCounts[b.id] || 0) - (dlCounts[a.id] || 0);
+    if (activeSort === "rating") return b.rating - a.rating;
+    if (activeSort === "size") return parseMB(a.size) - parseMB(b.size);
+    return 0;
+  };
+
+  const categoriesToRender = activeCat === "all" || activeCat === "fav"
+    ? Object.keys(CAT_INFO)
+    : [activeCat];
+
+  categoriesToRender.forEach(catKey => {
+    let list = APPS.filter(app => {
+      if (app.cat !== catKey) return false;
+      if (activeCat === "fav" && !favs.has(app.id)) return false;
+      if (kw) {
+        const hay = normText(app.title + " " + app.desc + " " + app.search);
+        if (!hay.includes(kw)) return false;
+      }
       return true;
     });
 
-    if (currentSort === "dl") items.sort((a,b) => b.baseDl - a.baseDl);
-    if (currentSort === "rating") items.sort((a,b) => b.rating - a.rating);
+    if (activeSort !== "default") list = [...list].sort(sortFn);
 
-    if (items.length) {
-      countAll += items.length;
-      const zone = document.createElement("section");
-      zone.className = "sector-zone";
-      zone.innerHTML = `
-        <div class="zone-header">
-          <div class="zone-title">${SECTORS[cat]}</div>
-          <span class="zone-count">[ ${items.length} MODULES ]</span>
+    if (list.length > 0) {
+      totalVisible += list.length;
+      const info = CAT_INFO[catKey];
+      const sec = document.createElement("section");
+      sec.className = "cat-section";
+      sec.innerHTML = `
+        <div class="cat-header">
+          <div class="cat-title">${info.title}</div>
+          <span class="cat-count">${list.length} ${info.unit}</span>
         </div>
-        <div class="arsenal-grid">
-          ${items.map(a => {
-            const isF = favs.has(a.id);
-            const st = a.badge === "HOT" ? '<span class="badge-tac b-hot">HOT</span>' :
-                       a.badge === "NEW" ? '<span class="badge-tac b-new">NEW</span>' : '';
-            const tags = a.tags.map(t => `<span class="t-chip ${t[0]}">${t[1]}</span>`).join("");
-            return `
-              <div class="weapon-card" onclick="openApp('${a.id}')">
-                <div>
-                  <div class="wc-top">
-                    <div class="wc-thumb">
-                      <img src="${REPO + a.icon}" alt="${a.title}" loading="lazy" onerror="this.classList.add('err')">
-                      <div class="wc-fb">${a.fb}</div>
-                    </div>
-                    <div class="wc-head-info">
-                      <div class="wc-id-row">
-                        ${st}
-                        <span>#${a.id.toUpperCase()}</span>
-                        <span>• ${a.size}</span>
-                      </div>
-                      <div class="wc-name">${a.title}</div>
-                    </div>
-                    <button type="button" class="wc-pin ${isF ? 'on' : ''}" onclick="toggleFav(event,'${a.id}')" title="Ghim Module">
-                      ${isF ? '📌' : '➕'}
-                    </button>
-                  </div>
-                  <div class="wc-desc" style="margin-top:10px">${a.desc}</div>
-                </div>
-                <div>
-                  <div class="wc-chips" style="margin-bottom:10px">${tags}</div>
-                  <div class="wc-bottom">
-                    <div class="wc-telemetry"><b>★ ${a.rating}</b> // ${a.baseDl} INJECTS</div>
-                    <span class="btn-inject-card">[ INJECT // ]</span>
-                  </div>
-                </div>
-              </div>
-            `;
-          }).join("")}
+        <div class="apps-grid">
+          ${list.map(createCardHTML).join("")}
         </div>
       `;
-      stage.appendChild(zone);
+      container.appendChild(sec);
     }
   });
 
-  if (!countAll) {
-    stage.innerHTML = `
-      <div style="padding:45px 20px;border:1px dashed var(--border);text-align:center;font-family:var(--font-mono);color:var(--muted)">
-        > ERROR 404: KHÔNG TÌM THẤY MODULE TRONG CƠ SỞ DỮ LIỆU
-      </div>
-    `;
+  const emptyEl = document.getElementById("emptyState");
+  emptyEl.style.display = totalVisible === 0 ? "block" : "none";
+  if (totalVisible === 0) {
+    document.getElementById("emptyText").textContent =
+      activeCat === "fav" ? "Bạn chưa lưu ứng dụng yêu thích nào (Bấm 🤍 trên thẻ để lưu)" : "Không tìm thấy ứng dụng phù hợp.";
   }
 }
 
-function setCategory(cat) {
-  currentCat = cat;
-  document.querySelectorAll("#mobileHud .m-nav-item, #desktopNav .sec-nav-btn").forEach(b => {
-    b.classList.toggle("active", b.dataset.cat === cat);
-  });
-  renderStage();
+/* === 4. LỌC, SẮP XẾP & YÊU THÍCH === */
+function filterByCategory(cat) {
+  activeCat = cat;
+  document.querySelectorAll(".cat-chip").forEach(b => b.classList.toggle("active", b.dataset.cat === cat));
+  document.querySelectorAll(".dock-btn").forEach(b => b.classList.toggle("active", b.dataset.dock === cat));
+  renderCatalog();
 }
 
-document.querySelectorAll("#mobileHud .m-nav-item, #desktopNav .sec-nav-btn").forEach(btn => {
-  btn.addEventListener("click", () => setCategory(btn.dataset.cat));
+document.querySelectorAll(".cat-chip").forEach(btn => {
+  btn.addEventListener("click", () => filterByCategory(btn.dataset.cat));
 });
 
-document.querySelectorAll(".cli-sort-btn").forEach(pill => {
-  pill.addEventListener("click", () => {
-    const s = pill.dataset.sort;
-    if (s === "fav") {
-      setCategory(currentCat === "fav" ? "all" : "fav");
-      pill.classList.toggle("active", currentCat === "fav");
-      return;
-    }
-    currentSort = s;
-    document.querySelectorAll(".cli-sort-btn:not(#quickFavBtn)").forEach(p => p.classList.remove("active"));
-    pill.classList.add("active");
-    renderStage();
+document.querySelectorAll(".sort-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    activeSort = btn.dataset.sort;
+    document.querySelectorAll(".sort-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderCatalog();
   });
 });
 
@@ -1354,154 +953,257 @@ function toggleFav(e, id) {
   e.stopPropagation();
   if (favs.has(id)) {
     favs.delete(id);
-    toast("> ĐÃ GỠ MODULE KHỎI DANH SÁCH GHIM");
+    showToast("💔 Đã xóa khỏi mục Yêu thích");
   } else {
     favs.add(id);
-    toast("> ĐÃ GHIM MODULE VÀO BỘ NHỚ!");
+    showToast("❤️ Đã lưu vào mục Yêu thích!");
   }
   localStorage.setItem("modgameios_favs_v2", JSON.stringify([...favs]));
-  document.getElementById("topFavCount").textContent = favs.size;
-  renderStage();
+  document.getElementById("statFavs").textContent = favs.size;
+  renderCatalog();
 }
 
-const PROTOCOLS = {
+/* === 5. CHẾ ĐỘ XEM LƯỚI / DANH SÁCH === */
+const viewListBtn = document.getElementById("viewListBtn");
+const viewGridBtn = document.getElementById("viewGridBtn");
+viewListBtn.addEventListener("click", () => {
+  document.body.classList.remove("grid-mode");
+  viewListBtn.classList.add("active");
+  viewGridBtn.classList.remove("active");
+});
+viewGridBtn.addEventListener("click", () => {
+  document.body.classList.add("grid-mode");
+  viewGridBtn.classList.add("active");
+  viewListBtn.classList.remove("active");
+});
+
+/* === 6. VỪA XEM GẦN ĐÂY === */
+function addRecent(id) {
+  recentIds = [id, ...recentIds.filter(x => x !== id)].slice(0, 6);
+  localStorage.setItem("mgi_recent_v7", JSON.stringify(recentIds));
+  renderRecent();
+}
+function clearRecent() {
+  recentIds = [];
+  localStorage.removeItem("mgi_recent_v7");
+  renderRecent();
+}
+function renderRecent() {
+  const wrap = document.getElementById("recentWrap");
+  const listEl = document.getElementById("recentList");
+  const items = recentIds.map(id => APPS.find(a => a.id === id)).filter(Boolean);
+  if (!items.length) { wrap.classList.remove("show"); return; }
+  wrap.classList.add("show");
+  listEl.innerHTML = items.map(a => `
+    <div class="recent-pill" onclick="openAppById('${a.id}')">
+      <img src="${REPO + a.icon}" alt="${a.title}" onerror="this.style.display='none'">
+      <span>${a.title}</span>
+    </div>
+  `).join("");
+}
+
+/* === 7. BOTTOM SHEET CHI TIẾT ỨNG DỤNG === */
+const GUIDES = {
   ipa: [
-    "<b>[01]</b> Nhấn nút <b>KHỞI CHẠY NẠP FILE</b> bên dưới để lấy gói <b>.ipa</b>.",
-    "<b>[02]</b> Mở công cụ ký chứng chỉ <b>App 3105 / ESign / Scarlet</b> trên iOS.",
-    "<b>[03]</b> Import file IPA → Thực thi lệnh <b>Ký & Cài đặt (Install)</b>.",
-    "<b>[04]</b> Bật <b>DNS Chống thu hồi</b> trên thanh trạng thái để khóa chứng chỉ."
+    "Bấm nút <b>TẢI XUỐNG NGAY</b> bên dưới để lấy file <b>.ipa</b>.",
+    "Mở ứng dụng <b>App 3105 / ESign / Scarlet</b> để ký chứng chỉ và cài đặt.",
+    "Vào <b>Cài đặt → Cài đặt chung → Quản lý VPN & Thiết bị</b> chọn Tin cậy."
   ],
   bypass: [
-    "<b>[01]</b> Truy cập đường dẫn cấu hình hoặc kịch bản Prompt bên dưới.",
-    "<b>[02]</b> Với <b>DNS</b>: Vào Cài đặt iOS → Đã tải về hồ sơ → Kích hoạt VPN/DNS.",
-    "<b>[03]</b> Với <b>Prompt AI</b>: Copy toàn bộ lệnh và nạp thẳng vào khung chat."
+    "Bấm <b>TẢI XUỐNG NGAY</b> để mở file cấu hình DNS hoặc Prompt.",
+    "Nếu là <b>DNS</b>: Cho phép cài đặt Hồ sơ cấu hình trong Cài đặt iOS.",
+    "Nếu là <b>Bypass AI</b>: Sao chép toàn bộ văn bản và dán vào ChatGPT / Claude."
   ],
   patch: [
-    "<b>[01]</b> Yêu cầu máy đã cài đặt <b>App 3105 V2.1</b> trong Sector 01.",
-    "<b>[02]</b> Tải gói Patch dữ liệu của tựa game này về máy.",
-    "<b>[03]</b> Mở App 3105 → Chọn dấu (+) thêm file → Nhấn <b>Áp dụng Patch</b>."
+    "Đảm bảo máy đã cài sẵn <b>App 3105</b> (tải tại mục Kho IPA VIP).",
+    "Tải file Patch Mod bên dưới về máy → Mở <b>App 3105</b> bấm dấu <b>(+)</b> để thêm file.",
+    "Chọn tựa game tương ứng và bấm <b>Áp dụng Patch</b> rồi vào game."
   ]
 };
 
-let activeApp = null;
-function openApp(id) {
-  const a = APPS.find(x => x.id === id);
-  if (!a) return;
-  activeApp = a;
-  document.getElementById("drCode").textContent = "// DECRYPT_MODULE: " + a.id.toUpperCase();
-  document.getElementById("drIcon").src = REPO + a.icon;
-  document.getElementById("drTitle").textContent = a.title;
-  document.getElementById("drDesc").textContent = a.desc;
-  document.getElementById("drSize").textContent = a.size;
-  document.getElementById("drVer").textContent = a.ver;
-  document.getElementById("drIos").textContent = a.ios;
-  document.getElementById("drDownloadLink").href = a.href;
+let currentApp = null;
+function openAppById(id) {
+  const app = APPS.find(a => a.id === id);
+  if (!app) return;
+  currentApp = app;
+  addRecent(id);
 
-  const pKey = (a.cat === "ipa" || a.cat === "bypass") ? a.cat : "patch";
-  document.getElementById("drTerminalSteps").innerHTML = PROTOCOLS[pKey].map(s => `<div class="console-line">${s}</div>`).join("");
-  document.getElementById("drawerOverlay").classList.add("open");
+  document.getElementById("shIcon").src = REPO + app.icon;
+  document.getElementById("shTitle").textContent = app.title;
+  document.getElementById("shDesc").textContent = app.desc;
+  document.getElementById("shRating").textContent = "⭐ " + app.rating;
+  document.getElementById("shSize").textContent = app.size;
+  document.getElementById("shVer").textContent = app.ver;
+  document.getElementById("shIos").textContent = "iOS " + app.ios;
+  document.getElementById("shDownloadBtn").href = app.href;
+
+  const gKey = (app.cat === "ipa" || app.cat === "bypass") ? app.cat : "patch";
+  document.getElementById("shGuideSteps").innerHTML = GUIDES[gKey].map((s, i) => `
+    <div class="guide-step"><span class="step-num">${i + 1}</span><span>${s}</span></div>
+  `).join("");
+
+  document.getElementById("appSheetBackdrop").classList.add("show");
 }
 
-function closeDrawer() {
-  document.getElementById("drawerOverlay").classList.remove("open");
+function closeSheet() {
+  document.getElementById("appSheetBackdrop").classList.remove("show");
 }
 
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") closeDrawer();
+document.getElementById("shDownloadBtn").addEventListener("click", () => {
+  if (!currentApp) return;
+  dlCounts[currentApp.id] = (dlCounts[currentApp.id] || 100) + 1;
+  const el = document.getElementById("dl-" + currentApp.id);
+  if (el) el.textContent = "⬇ " + fmtDl(dlCounts[currentApp.id]);
+  fetch("https://abacus.jasoncameron.dev/hit/modgameios-v3/dl-" + currentApp.id).catch(() => {});
 });
 
-document.getElementById("drCopyBtn").addEventListener("click", async () => {
-  if (!activeApp) return;
+document.getElementById("shCopyBtn").addEventListener("click", async () => {
+  if (!currentApp) return;
   try {
-    await navigator.clipboard.writeText(activeApp.href);
-    toast("> ĐÃ SAO CHÉP RAW LINK VÀO CLIPBOARD!");
-  } catch (e) {}
+    await navigator.clipboard.writeText(currentApp.href);
+    showToast("✅ Đã sao chép link tải vào bộ nhớ tạm!");
+  } catch (e) {
+    showToast("🔗 Link: " + currentApp.href);
+  }
 });
 
-document.getElementById("searchBox").addEventListener("input", renderStage);
+/* === 8. TÌM KIẾM === */
+const searchInput = document.getElementById("searchInput");
+const clearSearchBtn = document.getElementById("clearSearchBtn");
+searchInput.addEventListener("input", () => {
+  clearSearchBtn.classList.toggle("show", !!searchInput.value.trim());
+  renderCatalog();
+});
+clearSearchBtn.addEventListener("click", () => {
+  searchInput.value = "";
+  clearSearchBtn.classList.remove("show");
+  renderCatalog();
+});
 
-/* YOUTUBE BGM ENGINE */
-let yt = null, ytOk = false, playing = false, plInit = false;
-const sc = document.createElement("script");
-sc.src = "https://www.youtube.com/iframe_api";
-document.body.appendChild(sc);
+/* === 9. NHẬN DIỆN THIẾT BỊ IOS TỰ ĐỘNG === */
+(function detectDevice() {
+  const ua = navigator.userAgent;
+  const el = document.getElementById("deviceDetector");
+  const iosMatch = ua.match(/OS (\d+)_(\d+)/);
+  if (/iPhone|iPad|iPod/.test(ua) && iosMatch) {
+    el.textContent = `✅ Đã nhận diện iPhone/iPad (iOS ${iosMatch[1]}.${iosMatch[2]}) — Tương thích 100%`;
+  } else if (/Mac/.test(ua) && navigator.maxTouchPoints > 1) {
+    el.textContent = "✅ Đã nhận diện iPadOS — Tương thích 100%";
+  } else {
+    el.textContent = "💻 Đang xem trên PC/Android — Mở bằng Safari iPhone để cài IPA";
+  }
+})();
+
+/* === 10. TRÌNH PHÁT NHẠC YOUTUBE === */
+let ytPlayer = null, ytReady = false, isPlaying = false, plLoaded = false;
+const musicPopover = document.getElementById("musicPopover");
+const musicToggleBtn = document.getElementById("musicToggleBtn");
+const mpPlayPause = document.getElementById("mpPlayPause");
+
+musicToggleBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  musicPopover.classList.toggle("show");
+});
+document.addEventListener("click", (e) => {
+  if (!e.target.closest("#musicPopover") && !e.target.closest("#musicToggleBtn")) {
+    musicPopover.classList.remove("show");
+  }
+});
+
+const tag = document.createElement("script");
+tag.src = "https://www.youtube.com/iframe_api";
+document.body.appendChild(tag);
 
 window.onYouTubeIframeAPIReady = function() {
-  yt = new YT.Player("youtubePlayer", {
+  ytPlayer = new YT.Player("youtubePlayer", {
     height: "1", width: "1", videoId: "BUORWKzSl_o",
     playerVars: { autoplay: 0, controls: 0, playsinline: 1 },
     events: {
-      onReady: () => { ytOk = true; yt.setVolume(65); },
-      onStateChange: e => { if (e.data === YT.PlayerState.ENDED) skipTrack(); }
+      onReady: () => { ytReady = true; ytPlayer.setVolume(65); },
+      onStateChange: (e) => {
+        if (e.data === YT.PlayerState.ENDED) nextSong();
+        if (e.data === YT.PlayerState.PLAYING) {
+          try {
+            const d = ytPlayer.getVideoData();
+            if (d && d.title) document.getElementById("mpTrackTitle").textContent = d.title;
+          } catch (err) {}
+        }
+      }
     }
   });
 };
 
-const diAudioBtn = document.getElementById("diAudioBtn");
-diAudioBtn.addEventListener("click", () => {
-  if (!yt || !ytOk) { toast("> ĐANG KẾT NỐI AUDIO STREAM..."); return; }
-  if (playing) {
-    yt.pauseVideo();
-    playing = false;
-    diAudioBtn.classList.remove("active");
-    document.getElementById("diAudioText").textContent = "BGM: OFF";
-    toast("> AUDIO STREAM: PAUSED");
+function togglePlay() {
+  if (!ytPlayer || !ytReady) { showToast("⏳ Đang khởi tạo trình phát nhạc..."); return; }
+  if (isPlaying) {
+    ytPlayer.pauseVideo();
+    isPlaying = false;
+    mpPlayPause.textContent = "▶ Phát";
+    musicToggleBtn.classList.remove("playing");
+    document.getElementById("musicStatusLabel").textContent = "Nhạc nền";
   } else {
-    yt.playVideo();
-    playing = true;
-    diAudioBtn.classList.add("active");
-    document.getElementById("diAudioText").textContent = "BGM: ON";
-    toast("> AUDIO STREAM: ACTIVE");
+    ytPlayer.playVideo();
+    isPlaying = true;
+    mpPlayPause.textContent = "⏸ Dừng";
+    musicToggleBtn.classList.add("playing");
+    document.getElementById("musicStatusLabel").textContent = "Đang phát";
   }
-});
-
-function skipTrack() {
-  if (!yt || !ytOk) return;
-  if (!plInit) {
-    plInit = true;
-    yt.loadPlaylist({ list: "UCY4J_kmDLkpyc23Zeye5PfA", listType: "user_uploads", index: 0 });
-  } else {
-    yt.nextVideo();
-  }
-  playing = true;
-  diAudioBtn.classList.add("active");
-  document.getElementById("diAudioText").textContent = "BGM: ON";
-  toast("> TRACK SKIPPED // NEXT STREAM");
 }
-document.getElementById("nextSongBtn").addEventListener("click", skipTrack);
+function nextSong() {
+  if (!ytPlayer || !ytReady) return;
+  if (!plLoaded) {
+    plLoaded = true;
+    ytPlayer.loadPlaylist({ list: "UCY4J_kmDLkpyc23Zeye5PfA", listType: "user_uploads", index: 0 });
+  } else {
+    ytPlayer.nextVideo();
+  }
+  isPlaying = true;
+  mpPlayPause.textContent = "⏸ Dừng";
+  musicToggleBtn.classList.add("playing");
+}
 
-/* MODE SWITCHER (MATRIX GREEN <-> CRIMSON RED) */
-const themeBtn = document.getElementById("themeSwitchBtn");
+mpPlayPause.addEventListener("click", togglePlay);
+document.getElementById("mpNext").addEventListener("click", nextSong);
+document.getElementById("mpPrev").addEventListener("click", () => { if (ytPlayer && plLoaded) ytPlayer.previousVideo(); });
+document.getElementById("mpVol").addEventListener("input", (e) => { if (ytPlayer && ytReady) ytPlayer.setVolume(Number(e.target.value)); });
+
+/* === 11. GIAO DIỆN SÁNG/TỐI & THỐNG KÊ === */
+const themeBtn = document.getElementById("themeBtn");
+const savedTheme = localStorage.getItem("mgi_theme") || "dark";
+document.documentElement.setAttribute("data-theme", savedTheme);
+themeBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+
 themeBtn.addEventListener("click", () => {
   const cur = document.documentElement.getAttribute("data-theme");
-  const next = cur === "crimson" ? "dark" : "crimson";
+  const next = cur === "dark" ? "light" : "dark";
   document.documentElement.setAttribute("data-theme", next);
-  toast(next === "crimson" ? "> OVERDRIVE MODE: CRIMSON RED" : "> STEALTH MODE: MATRIX GREEN");
+  localStorage.setItem("mgi_theme", next);
+  themeBtn.textContent = next === "dark" ? "☀️" : "🌙";
 });
 
-document.getElementById("shareDeckBtn").addEventListener("click", async () => {
-  const url = location.href;
-  if (navigator.share) navigator.share({ title: "ModGameios Terminal", url }).catch(()=>{});
-  else {
+document.getElementById("shareWebBtn").addEventListener("click", async () => {
+  const url = location.origin + location.pathname;
+  if (navigator.share) {
+    navigator.share({ title: "ModGameios Store", url }).catch(() => {});
+  } else {
     await navigator.clipboard.writeText(url);
-    toast("> ĐÃ COPY URL TRẠM ĐIỀU KHIỂN!");
+    showToast("🔗 Đã sao chép link trang web!");
   }
 });
 
 fetch("https://abacus.jasoncameron.dev/hit/modgameios-v3/views")
   .then(r => r.json())
-  .then(d => {
-    if (d.value) document.getElementById("teleViews").textContent = Number(d.value).toLocaleString("vi-VN");
-  })
-  .catch(()=>{});
+  .then(d => { if (d.value) document.getElementById("statViews").textContent = Number(d.value).toLocaleString("vi-VN"); })
+  .catch(() => {});
 
-window.addEventListener("load", () => {
-  setTimeout(() => document.getElementById("bootScreen").classList.add("hidden"), 600);
-});
-setTimeout(() => document.getElementById("bootScreen").classList.add("hidden"), 1800);
+document.getElementById("statTotalApps").textContent = APPS.length + " Mods";
+document.getElementById("statFavs").textContent = favs.size;
+setInterval(() => {
+  document.getElementById("statOnline").textContent = 18 + Math.floor(Math.random() * 12);
+}, 15000);
 
-document.getElementById("topFavCount").textContent = favs.size;
-renderStage();
+renderRecent();
+renderCatalog();
 </script>
 </body>
 </html>
