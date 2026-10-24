@@ -3,586 +3,1216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#06060c">
+<meta name="theme-color" content="#07090e">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>MODGAMEIOS // CYBER DECK OS</title>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>ModGameios — Kho IPA & Game Mod iOS VIP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg">
 
 <style>
 :root {
-  --bg: #06060c;
-  --panel: rgba(14, 15, 26, 0.78);
-  --panel-solid: #0e0f1a;
-  --card: rgba(20, 22, 38, 0.75);
+  --bg: #07090e;
+  --bg-elevated: #0d111a;
+  --surface: rgba(19, 24, 36, 0.72);
+  --surface-hover: rgba(28, 35, 52, 0.85);
+  --surface-solid: #121723;
   --border: rgba(255, 255, 255, 0.08);
-  --neon-cyan: #00f0ff;
-  --neon-pink: #ff0055;
-  --neon-purple: #b537f2;
-  --neon-green: #00ff9d;
-  --neon-amber: #ffb800;
-  --text: #f1f5f9;
-  --muted: #8b9bb4;
-  --font-display: 'Chakra Petch', sans-serif;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --border-highlight: rgba(56, 189, 248, 0.4);
+  --primary: #38bdf8;
+  --primary-glow: rgba(56, 189, 248, 0.25);
+  --accent: #818cf8;
+  --pink: #f43f5e;
+  --emerald: #10b981;
+  --amber: #f59e0b;
+  --text: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --shadow-lg: 0 20px 45px -15px rgba(0, 0, 0, 0.65);
 }
 
 [data-theme="light"] {
-  --bg: #eef2f6;
-  --panel: rgba(255, 255, 255, 0.85);
-  --panel-solid: #ffffff;
-  --card: rgba(255, 255, 255, 0.92);
-  --border: rgba(15, 23, 42, 0.1);
-  --neon-cyan: #0284c7;
-  --neon-pink: #e11d48;
-  --neon-purple: #7c3aed;
+  --bg: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-hover: rgba(255, 255, 255, 0.98);
+  --surface-solid: #ffffff;
+  --border: rgba(15, 23, 42, 0.09);
+  --border-highlight: rgba(2, 132, 199, 0.45);
+  --primary: #0284c7;
+  --primary-glow: rgba(2, 132, 199, 0.18);
+  --accent: #4f46e5;
+  --pink: #e11d48;
+  --emerald: #059669;
+  --amber: #d97706;
   --text: #0f172a;
-  --muted: #475569;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --shadow-lg: 0 18px 40px -15px rgba(15, 23, 42, 0.12);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-sans); overflow-x: hidden; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 a { color: inherit; text-decoration: none; }
 button, input { font-family: inherit; border: none; outline: none; background: none; color: inherit; }
 
-/* CYBER MATRIX BACKGROUND */
-.cyber-bg {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background: 
-    radial-gradient(circle at 15% 15%, rgba(181, 55, 242, 0.14), transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(0, 240, 255, 0.12), transparent 45%),
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+/* AMBIENT AURORA BACKGROUND */
+.ambient-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(56, 189, 248, 0.12), transparent 38%),
+    radial-gradient(circle at 88% 18%, rgba(129, 140, 248, 0.12), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(244, 63, 94, 0.08), transparent 45%);
 }
 
 /* BOOT LOADER */
 .boot-screen {
-  position: fixed; inset: 0; z-index: 9999; background: #040408;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 16px; transition: opacity 0.45s ease, visibility 0.45s;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #05070b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  transition: opacity 0.4s ease, visibility 0.4s;
 }
 .boot-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-.boot-hex {
-  width: 88px; height: 88px; border-radius: 24px; padding: 3px;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink), var(--neon-purple));
-  animation: pulseGlow 1.5s infinite alternate;
+.boot-logo {
+  width: 82px;
+  height: 82px;
+  border-radius: 22px;
+  padding: 2.5px;
+  background: linear-gradient(135deg, var(--primary), var(--accent), var(--pink));
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+  animation: floatPulse 1.6s infinite ease-in-out alternate;
 }
-.boot-hex img { width: 100%; height: 100%; border-radius: 21px; object-fit: cover; }
-.boot-text { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: 4px; color: #fff; }
-.boot-sub { font-family: var(--font-mono); font-size: 11px; color: var(--neon-cyan); }
-@keyframes pulseGlow { to { filter: drop-shadow(0 0 22px var(--neon-cyan)); transform: scale(1.04); } }
+.boot-logo img { width: 100%; height: 100%; border-radius: 20px; object-fit: cover; }
+.boot-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; letter-spacing: 2px; color: #fff; }
+.boot-bar { width: 140px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; }
+.boot-bar::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 99px;
+  animation: loadingSlide 0.9s infinite ease-in-out alternate;
+}
+@keyframes floatPulse { to { transform: translateY(-5px) scale(1.03); } }
+@keyframes loadingSlide { from { transform: translateX(-30%); } to { transform: translateX(95%); } }
 
-/* DYNAMIC ISLAND HUD */
-.island-wrap {
-  position: fixed; top: calc(10px + env(safe-area-inset-top)); left: 50%; transform: translateX(-50%);
-  z-index: 120; width: min(94vw, 680px);
+/* TOP FLOATING NAVIGATION (DYNAMIC BAR) */
+.top-nav-wrap {
+  position: sticky;
+  top: calc(10px + env(safe-area-inset-top));
+  z-index: 100;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
-.dynamic-island {
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 8px 14px; border-radius: 999px;
-  background: rgba(10, 11, 20, 0.9); border: 1px solid rgba(0, 240, 255, 0.3);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.12);
-  color: #fff;
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: var(--shadow-lg);
 }
-.di-left { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 700; }
-.di-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
-.di-cert-btn {
-  padding: 4px 9px; border-radius: 99px; background: rgba(0, 255, 157, 0.15);
-  border: 1px solid rgba(0, 255, 157, 0.4); color: var(--neon-green);
-  font-family: var(--font-mono); font-size: 10px; font-weight: 700; cursor: pointer;
+.brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.di-right { display: flex; align-items: center; gap: 6px; }
-.di-audio {
-  display: flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 99px;
-  background: rgba(255, 255, 255, 0.07); font-size: 11px; font-weight: 700; cursor: pointer;
-}
-.di-audio.active { background: rgba(255, 0, 85, 0.22); border: 1px solid var(--neon-pink); color: #ff80ab; }
-.di-icon-btn {
-  width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.08);
-  display: grid; place-items: center; font-size: 13px; cursor: pointer;
-}
-
-/* OS WORKSPACE LAYOUT */
-.os-shell {
-  position: relative; z-index: 1;
-  max-width: 1100px; margin: 0 auto;
-  padding: calc(68px + env(safe-area-inset-top)) 16px calc(95px + env(safe-area-inset-bottom));
-}
-
-/* PROFILE POD HEADER (HIỂN THỊ RÕ RÀNG TRÊN MỌI THIẾT BỊ) */
-.profile-pod {
-  display: flex; align-items: center; gap: 14px; padding: 16px; margin-bottom: 16px;
-  border-radius: 20px; background: var(--panel); border: 1px solid var(--border);
-  backdrop-filter: blur(16px);
-}
-.pod-avatar {
-  position: relative; width: 64px; height: 64px; border-radius: 18px; padding: 2px;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink)); flex-shrink: 0;
-}
-.pod-avatar img { width: 100%; height: 100%; border-radius: 16px; object-fit: cover; }
-.pod-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
-.pod-rank { font-family: var(--font-mono); font-size: 11px; color: var(--neon-cyan); margin-top: 3px; }
-
-/* TELEMETRY & SOCIAL MATRIX DOCK */
-.top-dashboard-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px;
-}
-.telemetry-box {
-  padding: 14px; border-radius: 16px; background: var(--panel); border: 1px solid var(--border);
-}
-.tele-row { display: flex; justify-content: space-between; font-size: 11.5px; margin-bottom: 7px; }
-.tele-row:last-child { margin-bottom: 0; }
-.tele-val { font-family: var(--font-mono); font-weight: 700; color: var(--neon-cyan); }
-
-.social-matrix { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-.matrix-btn {
-  padding: 12px; border-radius: 14px; background: var(--panel); border: 1px solid var(--border);
-  font-size: 12px; font-weight: 700; text-align: center; cursor: pointer; transition: 0.2s;
-  display: grid; place-items: center;
-}
-.matrix-btn:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); }
-
-@media (max-width: 600px) {
-  .top-dashboard-row { grid-template-columns: 1fr; }
-}
-
-/* HERO BANNER SHOWCASE */
-.cyber-hero {
-  position: relative; border-radius: 26px; overflow: hidden;
-  padding: 24px; margin-bottom: 18px;
-  background: linear-gradient(125deg, #160d2e 0%, #091931 55%, #2a0826 100%);
-  border: 1px solid rgba(0, 240, 255, 0.28);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
-  display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px; align-items: center;
-}
-.hero-tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 4px 11px; border-radius: 99px;
-  background: rgba(0, 240, 255, 0.15); border: 1px solid var(--neon-cyan);
-  color: var(--neon-cyan); font-family: var(--font-mono); font-size: 10px; font-weight: 700;
-}
-.hero-title {
-  font-family: var(--font-display); font-size: clamp(20px, 3.2vw, 28px);
-  font-weight: 700; color: #fff; margin: 10px 0 6px; line-height: 1.15;
-}
-.hero-desc { font-size: 12px; color: #cbd5e1; line-height: 1.5; margin-bottom: 16px; }
-.hero-cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.btn-cyber-primary {
-  padding: 11px 18px; border-radius: 13px;
-  background: linear-gradient(135deg, var(--neon-cyan), #3b82f6);
-  color: #020617; font-weight: 800; font-size: 12.5px; cursor: pointer;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); transition: 0.2s;
-}
-.btn-cyber-primary:hover { transform: translateY(-2px); }
-.btn-cyber-ghost {
-  padding: 11px 16px; border-radius: 13px;
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
-  color: #fff; font-weight: 700; font-size: 12.5px; cursor: pointer;
-}
-
-.hero-quick-cards { display: flex; flex-direction: column; gap: 8px; }
-.hq-item {
-  display: flex; align-items: center; gap: 10px; padding: 9px 12px;
-  border-radius: 14px; background: rgba(0,0,0,0.42); border: 1px solid rgba(255,255,255,0.12);
-  cursor: pointer; transition: 0.2s; color: #fff;
-}
-.hq-item:hover { border-color: var(--neon-cyan); transform: translateX(4px); }
-.hq-item img { width: 38px; height: 38px; border-radius: 10px; object-fit: cover; }
-.hq-info { flex: 1; min-width: 0; }
-.hq-info b { display: block; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.hq-info span { font-size: 10px; color: #94a3b8; }
-.hq-badge { font-family: var(--font-mono); font-size: 9.5px; padding: 3px 8px; border-radius: 6px; background: var(--neon-pink); font-weight: 700; }
-
-@media (max-width: 800px) {
-  .cyber-hero { grid-template-columns: 1fr; }
-}
-
-/* CONTROL DECK BAR (SEARCH + SORT) */
-.control-bar {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 12px; border-radius: 20px; margin-bottom: 18px;
-  background: var(--panel); border: 1px solid var(--border);
-  backdrop-filter: blur(16px);
-}
-.cyber-search {
-  flex: 1; min-width: 200px; display: flex; align-items: center; gap: 10px;
-  height: 42px; padding: 0 14px; border-radius: 12px;
-  background: rgba(0,0,0,0.25); border: 1px solid var(--border);
-}
-[data-theme="light"] .cyber-search { background: rgba(15,23,42,0.04); }
-.cyber-search:focus-within { border-color: var(--neon-cyan); box-shadow: 0 0 14px rgba(0, 240, 255, 0.2); }
-.cyber-search input { flex: 1; font-size: 13px; font-weight: 600; }
-
-.filter-pills { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
-.filter-pills::-webkit-scrollbar { display: none; }
-.f-pill {
-  padding: 8px 12px; border-radius: 11px; font-size: 11.5px; font-weight: 700;
-  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-  color: var(--muted); cursor: pointer; white-space: nowrap; transition: 0.2s;
-}
-.f-pill.active {
-  background: rgba(0, 240, 255, 0.15); border-color: var(--neon-cyan); color: var(--neon-cyan);
-}
-
-/* HOLOGRAPHIC POSTER GRID */
-.sector-block { margin-bottom: 28px; }
-.sector-head {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
-}
-.sector-title {
-  font-family: var(--font-display); font-size: 17px; font-weight: 700;
-  display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;
-}
-.sector-count {
-  font-family: var(--font-mono); font-size: 11px; color: var(--neon-cyan);
-  padding: 3px 10px; border-radius: 99px; background: rgba(0, 240, 255, 0.1);
-}
-
-.holo-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px;
-}
-
-.holo-card {
-  position: relative; border-radius: 20px; padding: 15px;
-  background: var(--card); border: 1px solid var(--border);
-  backdrop-filter: blur(14px);
-  display: flex; flex-direction: column; justify-content: space-between;
-  cursor: pointer; transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+.brand-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   overflow: hidden;
+  border: 1.5px solid var(--primary);
+  flex-shrink: 0;
 }
-.holo-card::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
-  opacity: 0; transition: 0.25s;
+.brand-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.brand-meta h2 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-.holo-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0, 240, 255, 0.45);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45), 0 0 22px rgba(0, 240, 255, 0.14);
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #000;
+  font-size: 10px;
+  font-weight: 800;
 }
-.holo-card:hover::before { opacity: 1; }
-
-.hc-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
-.hc-icon {
-  position: relative; width: 58px; height: 58px; border-radius: 16px; overflow: hidden;
-  background: #141829; border: 1px solid rgba(255,255,255,0.12); flex-shrink: 0;
+.brand-sub {
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-.hc-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hc-icon img.err { display: none; }
-.hc-fb { display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 24px; }
-.hc-icon img.err + .hc-fb { display: flex; }
-
-.hc-badges { display: flex; align-items: center; gap: 6px; }
-.pill-status {
-  font-family: var(--font-mono); font-size: 9px; font-weight: 700;
-  padding: 3px 7px; border-radius: 6px; text-transform: uppercase;
-}
-.st-hot { background: rgba(255, 0, 85, 0.2); color: #ff4d88; border: 1px solid rgba(255,0,85,0.4); }
-.st-new { background: rgba(0, 255, 157, 0.18); color: var(--neon-green); border: 1px solid rgba(0,255,157,0.4); }
-
-.hc-fav {
-  width: 30px; height: 30px; border-radius: 10px; background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border); display: grid; place-items: center; font-size: 13px; cursor: pointer;
-}
-.hc-fav.on { background: rgba(255, 0, 85, 0.2); border-color: var(--neon-pink); }
-
-.hc-body { margin: 12px 0; }
-.hc-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; line-height: 1.25; }
-.hc-desc {
-  font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-  min-height: 30px;
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: 0 0 8px var(--emerald);
 }
 
-.hc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-.c-tag { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 6px; }
-.tag-blue { background: rgba(0, 240, 255, 0.12); color: var(--neon-cyan); }
-.tag-purple { background: rgba(181, 55, 242, 0.15); color: #d884ff; }
-.tag-antiban { background: rgba(255, 0, 85, 0.15); color: #ff6b9d; }
-.tag-vip { background: rgba(255, 184, 0, 0.16); color: var(--neon-amber); }
-.tag-green { background: rgba(0, 255, 157, 0.15); color: var(--neon-green); }
-
-.hc-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  padding-top: 9px; border-top: 1px solid var(--border);
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.hc-metrics { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
-.hc-metrics b { color: var(--neon-amber); }
-.hc-dl-btn {
-  padding: 5px 10px; border-radius: 9px;
-  background: rgba(0, 240, 255, 0.14); border: 1px solid rgba(0, 240, 255, 0.35);
-  color: var(--neon-cyan); font-family: var(--font-display); font-size: 11.5px; font-weight: 700;
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
   transition: 0.2s;
 }
-.holo-card:hover .hc-dl-btn { background: var(--neon-cyan); color: #000; }
+[data-theme="light"] .pill-btn { background: rgba(15, 23, 42, 0.04); }
+.pill-btn:hover { border-color: var(--primary); color: var(--primary); }
+.pill-btn.dns-shield {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: var(--emerald);
+}
+.pill-btn.audio-active {
+  background: rgba(244, 63, 94, 0.15);
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+[data-theme="light"] .icon-btn { background: rgba(15, 23, 42, 0.04); }
+.icon-btn:hover { border-color: var(--primary); transform: translateY(-1px); }
 
-/* SIDE INSPECTOR DRAWER */
+/* EQUALIZER ANIMATION FOR MUSIC */
+.eq-bars {
+  display: none;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+.audio-active .eq-bars { display: inline-flex; }
+.audio-active .audio-icon-static { display: none; }
+.eq-bars span {
+  width: 2.5px;
+  background: var(--pink);
+  border-radius: 2px;
+  animation: eqBounce 0.6s infinite ease-in-out alternate;
+}
+.eq-bars span:nth-child(2) { animation-delay: 0.2s; }
+.eq-bars span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes eqBounce { 0% { height: 3px; } 100% { height: 12px; } }
+
+/* MAIN CONTAINER */
+.workspace {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 16px calc(100px + env(safe-area-inset-bottom));
+}
+
+/* BENTO HERO SHOWCASE */
+.bento-hero {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.hero-main-card {
+  position: relative;
+  border-radius: 26px;
+  padding: 28px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #0f172a 100%);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+}
+.hero-main-card::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.28), transparent 70%);
+  pointer-events: none;
+}
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: 99px;
+  background: rgba(56, 189, 248, 0.16);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  line-height: 1.18;
+  margin: 14px 0 10px;
+  letter-spacing: -0.3px;
+}
+.hero-subtext {
+  font-size: 13px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 22px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.btn-primary-glow {
+  padding: 12px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.35);
+  transition: 0.2s;
+}
+.btn-primary-glow:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.btn-glass {
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-glass:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* RIGHT BENTO COLUMN: SPOTLIGHT + TELEMETRY */
+.bento-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.spotlight-box {
+  flex: 1;
+  border-radius: 22px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+.sp-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.2s;
+}
+[data-theme="light"] .sp-item { background: rgba(15, 23, 42, 0.025); }
+.sp-item:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+.sp-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.sp-info { flex: 1; min-width: 0; }
+.sp-info b {
+  display: block;
+  font-size: 12.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sp-info span { font-size: 11px; color: var(--text-secondary); }
+.sp-get {
+  padding: 5px 11px;
+  border-radius: 99px;
+  background: rgba(56, 189, 248, 0.14);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* STATS & SOCIAL BAR */
+.metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 1.5fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.metric-card {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.m-label { font-size: 11.5px; color: var(--text-secondary); font-weight: 600; }
+.m-val { font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--primary); margin-top: 2px; }
+.social-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.soc-btn {
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.soc-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* STICKY FILTER & SEARCH COMMAND BAR */
+.command-deck {
+  padding: 14px;
+  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.search-input-wrap {
+  flex: 1;
+  min-width: 240px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.2s;
+}
+.search-input-wrap:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+.search-input-wrap input {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+.kbd-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+}
+
+.sort-group {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sort-group::-webkit-scrollbar { display: none; }
+.sort-pill {
+  padding: 9px 13px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+.sort-pill.active {
+  background: var(--primary-glow);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* CATEGORY TABS ROW */
+.cat-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-top: 2px;
+}
+.cat-tabs::-webkit-scrollbar { display: none; }
+.cat-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+[data-theme="light"] .cat-tab { background: rgba(15, 23, 42, 0.03); }
+.cat-tab:hover { color: var(--text); }
+.cat-tab.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: transparent;
+}
+
+/* STORE SECTIONS & APP CARDS */
+.sector-section {
+  margin-bottom: 32px;
+}
+.sector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.sector-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sector-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: var(--primary-glow);
+  color: var(--primary);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.app-card {
+  position: relative;
+  border-radius: 22px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+.app-card:hover {
+  transform: translateY(-4px);
+  background: var(--surface-hover);
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-lg);
+}
+
+.ac-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+.ac-icon {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+.ac-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ac-icon img.err { display: none; }
+.ac-fb {
+  display: none;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+.ac-icon img.err + .ac-fb { display: flex; }
+
+.ac-title-wrap {
+  flex: 1;
+  min-width: 0;
+}
+.ac-top-badges {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+.status-tag {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+.st-hot { background: rgba(244, 63, 94, 0.16); color: var(--pink); }
+.st-new { background: rgba(16, 185, 129, 0.16); color: var(--emerald); }
+
+.ac-title {
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ac-submeta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.ac-fav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: 0.2s;
+}
+.ac-fav-btn:hover { transform: scale(1.08); }
+.ac-fav-btn.on {
+  background: rgba(244, 63, 94, 0.16);
+  border-color: rgba(244, 63, 94, 0.4);
+}
+
+.ac-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 34px;
+}
+
+.ac-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.c-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 7px;
+}
+.tag-blue { background: rgba(56, 189, 248, 0.12); color: var(--primary); }
+.tag-purple { background: rgba(129, 140, 248, 0.14); color: var(--accent); }
+.tag-antiban { background: rgba(244, 63, 94, 0.13); color: var(--pink); }
+.tag-vip { background: rgba(245, 158, 11, 0.15); color: var(--amber); }
+.tag-green { background: rgba(16, 185, 129, 0.14); color: var(--emerald); }
+
+.ac-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.ac-stats {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.ac-stats b { color: var(--amber); }
+
+.btn-get-app {
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: var(--primary-glow);
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 11.5px;
+  transition: 0.2s;
+}
+.app-card:hover .btn-get-app {
+  background: var(--primary);
+  color: #000;
+}
+
+/* DRAWER / MODAL INSPECTOR */
 .drawer-overlay {
-  position: fixed; inset: 0; z-index: 200;
-  background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(10px);
-  opacity: 0; visibility: hidden; transition: 0.28s ease;
-  display: flex; justify-content: flex-end;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(3, 5, 10, 0.72);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.28s ease;
+  display: flex;
+  justify-content: flex-end;
 }
 .drawer-overlay.open { opacity: 1; visibility: visible; }
-.cyber-drawer {
-  width: min(100%, 440px); height: 100%;
-  background: var(--panel-solid); border-left: 1px solid rgba(0, 240, 255, 0.3);
-  padding: calc(20px + env(safe-area-inset-top)) 20px calc(24px + env(safe-area-inset-bottom));
-  display: flex; flex-direction: column; justify-content: space-between;
-  transform: translateX(100%); transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+.inspector-sheet {
+  width: min(100%, 450px);
+  height: 100%;
+  background: var(--surface-solid);
+  border-left: 1px solid var(--border);
+  padding: calc(20px + env(safe-area-inset-top)) 22px calc(24px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
 }
-.drawer-overlay.open .cyber-drawer { transform: translateX(0); }
+.drawer-overlay.open .inspector-sheet { transform: translateX(0); }
 
-.dr-top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
-.dr-code { font-family: var(--font-mono); font-size: 11px; color: var(--neon-cyan); }
-.dr-close {
-  width: 34px; height: 34px; border-radius: 10px; background: rgba(255,255,255,0.07);
-  display: grid; place-items: center; cursor: pointer; font-weight: 800;
+.sheet-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
 }
-
-.dr-app-head { display: flex; gap: 14px; align-items: center; margin-bottom: 16px; }
-.dr-app-head img { width: 74px; height: 74px; border-radius: 18px; object-fit: cover; border: 1.5px solid var(--neon-cyan); }
-.dr-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; }
-.dr-desc { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.45; }
-
-.dr-spec-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px;
+.sheet-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--primary-glow);
 }
-.dr-spec {
-  padding: 10px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); text-align: center;
-}
-.dr-spec span { display: block; font-size: 9.5px; color: var(--muted); text-transform: uppercase; }
-.dr-spec strong { font-family: var(--font-mono); font-size: 13px; margin-top: 3px; display: block; color: var(--neon-cyan); }
-
-.terminal-window {
-  border-radius: 14px; background: #05070e; border: 1px solid rgba(0, 240, 255, 0.25);
-  padding: 14px; font-family: var(--font-mono); font-size: 11.5px; color: #a7f3d0;
-  margin-bottom: 18px; line-height: 1.65;
-}
-.term-head {
-  display: flex; align-items: center; gap: 6px; padding-bottom: 8px; margin-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--neon-cyan); font-size: 10px;
-}
-.term-step { margin-bottom: 6px; color: #cbd5e1; }
-.term-step b { color: var(--neon-cyan); }
-
-.dr-actions { display: flex; flex-direction: column; gap: 8px; }
-.dr-dl-btn {
-  height: 52px; border-radius: 14px;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-  color: #000; font-family: var(--font-display); font-size: 15px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  box-shadow: 0 10px 28px rgba(0, 240, 255, 0.35); cursor: pointer;
-}
-.dr-sub-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.dr-sec-btn {
-  height: 42px; border-radius: 12px; background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border); font-size: 12px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer;
+.sheet-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-weight: 800;
 }
 
-/* MOBILE FLOATING HUD */
-.mobile-hud {
-  position: fixed; bottom: calc(10px + env(safe-area-inset-bottom));
-  left: 50%; transform: translateX(-50%); width: min(95vw, 480px);
-  padding: 6px; border-radius: 20px; z-index: 100;
-  background: rgba(10, 11, 20, 0.92); border: 1px solid rgba(0, 240, 255, 0.3);
-  backdrop-filter: blur(20px);
-  display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;
+.sheet-app-hero {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 18px;
 }
-.mh-btn {
-  padding: 7px 2px; border-radius: 14px; display: flex; flex-direction: column;
-  align-items: center; gap: 2px; font-size: 9px; font-weight: 700; color: var(--muted); cursor: pointer;
+.sheet-app-hero img {
+  width: 76px;
+  height: 76px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 1.5px solid var(--border-highlight);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
-.mh-btn span:first-child { font-size: 15px; }
-.mh-btn.active { background: rgba(0, 240, 255, 0.16); color: var(--neon-cyan); }
+.sheet-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; }
+.sheet-desc { font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5; }
 
-/* TOAST */
+.spec-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.spec-item {
+  padding: 11px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+[data-theme="light"] .spec-item { background: rgba(15, 23, 42, 0.03); }
+.spec-item span { display: block; font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+.spec-item strong { font-family: var(--font-mono); font-size: 13.5px; margin-top: 4px; display: block; color: var(--primary); }
+
+.guide-card {
+  border-radius: 16px;
+  background: #080b12;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 16px;
+  font-size: 12px;
+  color: #e2e8f0;
+  margin-bottom: 20px;
+  line-height: 1.65;
+}
+.guide-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #38bdf8;
+}
+.guide-step { margin-bottom: 8px; }
+.guide-step:last-child { margin-bottom: 0; }
+.guide-step b { color: #38bdf8; font-family: var(--font-mono); }
+
+.sheet-actions { display: flex; flex-direction: column; gap: 10px; }
+.btn-download-now {
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 10px 28px var(--primary-glow);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-download-now:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.sheet-sub-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.btn-secondary-sheet {
+  height: 44px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  font-size: 12.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+[data-theme="light"] .btn-secondary-sheet { background: rgba(15, 23, 42, 0.04); }
+
+/* MOBILE BOTTOM GLASS DOCK */
+.mobile-dock {
+  position: fixed;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(94vw, 460px);
+  padding: 6px;
+  border-radius: 22px;
+  z-index: 110;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: var(--shadow-lg);
+  display: none;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+.dock-btn {
+  padding: 7px 2px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.dock-btn span:first-child { font-size: 16px; }
+.dock-btn.active {
+  background: var(--primary-glow);
+  color: var(--primary);
+}
+
+/* TOAST NOTIFICATION */
 .cyber-toast {
-  position: fixed; bottom: calc(82px + env(safe-area-inset-bottom)); left: 50%;
-  transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
-  padding: 10px 18px; border-radius: 12px; z-index: 300;
-  background: #0a0c16; border: 1px solid var(--neon-cyan); color: #fff;
-  font-family: var(--font-mono); font-size: 11.5px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  position: fixed;
+  bottom: calc(86px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translate(-50%, 16px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 11px 18px;
+  border-radius: 99px;
+  z-index: 300;
+  background: #0f172a;
+  border: 1px solid var(--primary);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
   transition: 0.25s;
+  white-space: nowrap;
 }
 .cyber-toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-@media (max-width: 520px) {
-  .holo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .holo-card { padding: 12px; }
-  .hc-icon { width: 48px; height: 48px; }
-  .hc-title { font-size: 13.5px; }
-  .di-cert-btn { display: none; }
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 920px) {
+  .bento-hero { grid-template-columns: 1fr; }
+  .metrics-bar { grid-template-columns: repeat(3, 1fr); }
+  .social-strip { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .mobile-dock { display: grid; }
+  .cat-tabs { display: none; }
+  .pill-btn.dns-shield span:last-child { display: none; }
+  .metrics-bar { grid-template-columns: 1fr 1fr; }
+  .metric-card:nth-child(3) { grid-column: 1 / -1; }
+  .app-grid { grid-template-columns: 1fr; }
+  .hero-main-card { padding: 22px; }
+  .kbd-hint { display: none; }
 }
 </style>
 </head>
 <body>
 
-<div class="cyber-bg"></div>
+<div class="ambient-canvas"></div>
 
 <!-- BOOT LOADER -->
 <div class="boot-screen" id="bootScreen">
-  <div class="boot-hex">
+  <div class="boot-logo">
     <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg" alt="ModGameios">
   </div>
-  <div class="boot-text">MODGAMEIOS OS</div>
-  <div class="boot-sub">INITIALIZING VIP REPOSITORY...</div>
+  <div class="boot-title">MODGAMEIOS STORE</div>
+  <div class="boot-bar"></div>
 </div>
 
-<!-- YOUTUBE HIDDEN -->
+<!-- HIDDEN YOUTUBE PLAYER -->
 <div id="youtubePlayer" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none"></div>
 <div class="cyber-toast" id="cyberToast"></div>
 
-<!-- DYNAMIC ISLAND HUD -->
-<div class="island-wrap">
-  <div class="dynamic-island">
-    <div class="di-left">
-      <span class="di-dot"></span>
-      <span id="diDeviceStatus">CERT: SIGNED</span>
-      <button class="di-cert-btn" onclick="openApp('nextdns')">+ ANTI-REVOKE DNS</button>
+<!-- STICKY TOP BAR -->
+<header class="top-nav-wrap">
+  <div class="top-nav">
+    <div class="brand-cluster">
+      <div class="brand-avatar">
+        <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg" alt="Admin">
+      </div>
+      <div class="brand-meta">
+        <h2>ModGameios <span class="verified-badge">✓</span></h2>
+        <div class="brand-sub">
+          <span class="status-dot"></span>
+          <span>Chứng chỉ: Đã ký (No Jailbreak)</span>
+        </div>
+      </div>
     </div>
-    <div class="di-right">
-      <button class="di-audio" id="diAudioBtn" type="button">
-        <span id="diAudioIcon">🎧</span>
-        <span id="diAudioText">PLAY BGM</span>
+
+    <div class="nav-actions">
+      <button class="pill-btn dns-shield" onclick="openApp('nextdns')" type="button">
+        <span>🛡️</span>
+        <span>Chống thu hồi DNS</span>
       </button>
-      <button class="di-icon-btn" id="nextSongBtn" title="Bài tiếp">⏭</button>
-      <button class="di-icon-btn" id="themeSwitchBtn" title="Đổi nền">☀️</button>
+      <button class="pill-btn" id="diAudioBtn" type="button">
+        <span class="audio-icon-static">🎧</span>
+        <span class="eq-bars"><span></span><span></span><span></span></span>
+        <span id="diAudioText">Nhạc nền</span>
+      </button>
+      <button class="icon-btn" id="nextSongBtn" title="Đổi bài nhạc">⏭</button>
+      <button class="icon-btn" id="themeSwitchBtn" title="Đổi giao diện Sáng/Tối">☀️</button>
     </div>
   </div>
-</div>
+</header>
 
-<!-- MAIN OS WORKSPACE -->
-<div class="os-shell">
-  <!-- PROFILE POD HEADER (HIỂN THỊ TRỰC TIẾP TRÊN MỌI THIẾT BỊ) -->
-  <div class="profile-pod">
-    <div class="pod-avatar">
-      <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/CD82E151-2D3F-4C63-9F79-C5F90CF36D74.jpg" alt="Admin">
-    </div>
-    <div>
-      <div class="pod-name">ModGameios <span style="color:var(--neon-cyan)">✓</span></div>
-      <div class="pod-rank">LV.99 CYBER MASTER • KHO IPA VIP</div>
-    </div>
-  </div>
+<!-- MAIN STORE WORKSPACE -->
+<main class="workspace">
 
-  <!-- TELEMETRY & SOCIAL DOCK -->
-  <div class="top-dashboard-row">
-    <div class="telemetry-box">
-      <div class="tele-row"><span>Lượt truy cập</span><span class="tele-val" id="teleViews">3,892</span></div>
-      <div class="tele-row"><span>Trực tuyến</span><span class="tele-val" id="teleOnline">28 ONLINE</span></div>
-      <div class="tele-row"><span>Bảo mật</span><span class="tele-val" style="color:var(--neon-green)">ANTIBAN 99%</span></div>
-    </div>
-    <div class="social-matrix">
-      <a class="matrix-btn" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">💬 Discord</a>
-      <a class="matrix-btn" href="https://www.tiktok.com/@muopwiuem?_r=1&_t=ZS-99byCsyAsR0" target="_blank" rel="noopener">🎵 TikTok</a>
-      <a class="matrix-btn" href="https://www.youtube.com/channel/UCXZ-E233Kbbf_j39MWeQbcw" target="_blank" rel="noopener">▶️ YouTube</a>
-      <button class="matrix-btn" id="shareDeckBtn" type="button">🔗 Share</button>
-    </div>
-  </div>
-
-  <!-- CYBER HERO -->
-  <section class="cyber-hero">
-    <div>
-      <span class="hero-tag">⚡ MODGAMEIOS DECK V8.0</span>
-      <h1 class="hero-title">KHO IPA CRACK & PATCH GAME iOS KHÔNG CẦN JAILBREAK</h1>
-      <p class="hero-desc">Hệ thống phân phối IPA VIP, Mod Skin Liên Quân, Aimlock Free Fire, Menu PUBG & Cấu hình NextDNS chống thu hồi chứng chỉ 24/7.</p>
-      <div class="hero-cta-row">
-        <button class="btn-cyber-primary" onclick="openApp('app3105v2')">📦 Tải App 3105 V2.1</button>
-        <a class="btn-cyber-ghost" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">💬 Hỗ trợ Discord</a>
+  <!-- BENTO HERO -->
+  <section class="bento-hero">
+    <div class="hero-main-card">
+      <div>
+        <div class="hero-chip">✨ STORE OS V9.0 • ANTIBAN 99.9%</div>
+        <h1 class="hero-headline">Kho IPA VIP & Bản Patch Game iOS Không Cần Jailbreak</h1>
+        <p class="hero-subtext">
+          Cài đặt trực tiếp App 3105, Mod Skin Liên Quân, Aimlock Free Fire, Menu PUBG VIP và cấu hình NextDNS chặn thu hồi chứng chỉ hoạt động 24/7.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <button class="btn-primary-glow" onclick="openApp('app3105v2')">📦 Cài đặt App 3105 V2.1</button>
+        <button class="btn-glass" onclick="openApp('nextdns')">🛡️ Cài DNS Chống Thu Hồi</button>
+        <a class="btn-glass" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">💬 Cộng đồng Discord</a>
       </div>
     </div>
 
-    <div class="hero-quick-cards">
-      <div class="hq-item" onclick="openApp('lq')">
-        <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/lq.jpg" alt="LQ">
-        <div class="hq-info"><b>PATCH LIÊN QUÂN ALL-IN-ONE</b><span>Full Skin + Map Sáng + Cam Xa</span></div>
-        <span class="hq-badge">HOT</span>
-      </div>
-      <div class="hq-item" onclick="openApp('menupubg')">
-        <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg" alt="PUBG">
-        <div class="hq-info"><b>MENU PUBG MOBILE VIP</b><span>ESP + Aimbot + Antiban iOS</span></div>
-        <span class="hq-badge">VIP</span>
-      </div>
-      <div class="hq-item" onclick="openApp('youtube')">
-        <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/Youtube.jpg" alt="YT">
-        <div class="hq-info"><b>YOUTUBE PREMIUM IPA</b><span>Chặn QC + Nghe nhạc tắt màn</span></div>
-        <span class="hq-badge" style="background:var(--neon-cyan);color:#000">IPA</span>
+    <div class="bento-side">
+      <div class="spotlight-box">
+        <div class="sp-header">
+          <span>🔥 Đề xuất nổi bật hôm nay</span>
+          <span style="color:var(--primary)">TOP 3</span>
+        </div>
+        <div class="sp-item" onclick="openApp('lq')">
+          <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/lq.jpg" alt="LQ">
+          <div class="sp-info">
+            <b>Patch Liên Quân All-In-One</b>
+            <span>Full Skin + Map Sáng + Cam Xa</span>
+          </div>
+          <span class="sp-get">NHẬN</span>
+        </div>
+        <div class="sp-item" onclick="openApp('menupubg')">
+          <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/pubg.jpg" alt="PUBG">
+          <div class="sp-info">
+            <b>Menu PUBG Mobile VIP</b>
+            <span>ESP + Aimbot + Antiban iOS</span>
+          </div>
+          <span class="sp-get">NHẬN</span>
+        </div>
+        <div class="sp-item" onclick="openApp('youtube')">
+          <img src="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/a%CC%89nh/%E1%BA%A3nh/Youtube.jpg" alt="YT">
+          <div class="sp-info">
+            <b>YouTube Premium IPA</b>
+            <span>Chặn quảng cáo + Phát nền PiP</span>
+          </div>
+          <span class="sp-get">NHẬN</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SEARCH & FILTER DECK -->
-  <div class="control-bar">
-    <div class="cyber-search">
-      <span>🔍</span>
-      <input type="search" id="searchBox" placeholder="Nhập lệnh tìm kiếm: pubg, ff, lq, spotify, 3105, dns..." autocomplete="off">
+  <!-- METRICS & SOCIAL BAR -->
+  <div class="metrics-bar">
+    <div class="metric-card">
+      <div>
+        <div class="m-label">Tổng lượt truy cập</div>
+        <div class="m-val" id="teleViews">3,892</div>
+      </div>
+      <span style="font-size:20px">📊</span>
     </div>
-    <div class="filter-pills">
-      <button class="f-pill active" data-sort="default">Mặc định</button>
-      <button class="f-pill" data-sort="dl">🔥 Tải nhiều</button>
-      <button class="f-pill" data-sort="rating">⭐ Điểm cao</button>
-      <button class="f-pill" data-sort="fav" id="quickFavBtn">❤️ Yêu thích (<span id="topFavCount">0</span>)</button>
+    <div class="metric-card">
+      <div>
+        <div class="m-label">Đang trực tuyến</div>
+        <div class="m-val" id="teleOnline" style="color:var(--emerald)">28 ONLINE</div>
+      </div>
+      <span style="font-size:20px">🟢</span>
+    </div>
+    <div class="metric-card">
+      <div>
+        <div class="m-label">Kho ứng dụng</div>
+        <div class="m-val">26 MODULES</div>
+      </div>
+      <span style="font-size:20px">⚡</span>
+    </div>
+    <div class="social-strip">
+      <a class="soc-btn" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">💬 Discord</a>
+      <a class="soc-btn" href="https://www.tiktok.com/@muopwiuem?_r=1&_t=ZS-99byCsyAsR0" target="_blank" rel="noopener">🎵 TikTok</a>
+      <a class="soc-btn" href="https://www.youtube.com/channel/UCXZ-E233Kbbf_j39MWeQbcw" target="_blank" rel="noopener">▶️ YouTube</a>
+      <button class="soc-btn" id="shareDeckBtn" type="button">🔗 Chia sẻ</button>
     </div>
   </div>
 
-  <!-- DYNAMIC HOLOGRAPHIC GRID CONTAINER -->
-  <div id="stageContent"></div>
-</div>
+  <!-- SEARCH, SORT & CATEGORY BAR -->
+  <div class="command-deck">
+    <div class="search-row">
+      <div class="search-input-wrap">
+        <span>🔍</span>
+        <input type="search" id="searchBox" placeholder="Tìm nhanh ứng dụng: pubg, free fire, liên quân, spotify, 3105, dns..." autocomplete="off">
+        <span class="kbd-hint">⌘K</span>
+      </div>
+      <div class="sort-group">
+        <button class="sort-pill active" data-sort="default">Mặc định</button>
+        <button class="sort-pill" data-sort="dl">🔥 Tải nhiều nhất</button>
+        <button class="sort-pill" data-sort="rating">⭐ Đánh giá cao</button>
+        <button class="sort-pill" data-sort="fav" id="quickFavBtn">❤️ Đã lưu (<span id="topFavCount">0</span>)</button>
+      </div>
+    </div>
 
-<!-- MOBILE FLOATING HUD -->
-<nav class="mobile-hud" id="mobileHud">
-  <button class="mh-btn active" data-cat="all"><span>⚡</span><span>Tất cả</span></button>
-  <button class="mh-btn" data-cat="ipa"><span>📱</span><span>IPA VIP</span></button>
-  <button class="mh-btn" data-cat="lq"><span>⚔️</span><span>Liên Quân</span></button>
-  <button class="mh-btn" data-cat="ff"><span>🔥</span><span>Free Fire</span></button>
-  <button class="mh-btn" data-cat="pubg"><span>🎯</span><span>PUBG</span></button>
-  <button class="mh-btn" data-cat="other"><span>🎬</span><span>Khác</span></button>
+    <div class="cat-tabs" id="desktopCatTabs">
+      <button class="cat-tab active" data-cat="all"><span>⚡</span><span>Tất cả danh mục</span></button>
+      <button class="cat-tab" data-cat="ipa"><span>📱</span><span>Kho IPA VIP</span></button>
+      <button class="cat-tab" data-cat="bypass"><span>🛡️</span><span>DNS & Bypass AI</span></button>
+      <button class="cat-tab" data-cat="lq"><span>⚔️</span><span>Liên Quân Mobile</span></button>
+      <button class="cat-tab" data-cat="ff"><span>🔥</span><span>Free Fire Max</span></button>
+      <button class="cat-tab" data-cat="pubg"><span>🎯</span><span>PUBG Mobile</span></button>
+      <button class="cat-tab" data-cat="other"><span>🎬</span><span>Game Khác & CapCut</span></button>
+    </div>
+  </div>
+
+  <!-- DYNAMIC STAGE CONTENT -->
+  <div id="stageContent"></div>
+
+</main>
+
+<!-- MOBILE FLOATING DOCK -->
+<nav class="mobile-dock" id="mobileHud">
+  <button class="dock-btn active" data-cat="all"><span>⚡</span><span>Tất cả</span></button>
+  <button class="dock-btn" data-cat="ipa"><span>📱</span><span>IPA VIP</span></button>
+  <button class="dock-btn" data-cat="lq"><span>⚔️</span><span>Liên Quân</span></button>
+  <button class="dock-btn" data-cat="ff"><span>🔥</span><span>Free Fire</span></button>
+  <button class="dock-btn" data-cat="pubg"><span>🎯</span><span>PUBG</span></button>
+  <button class="dock-btn" data-cat="other"><span>🎬</span><span>Khác</span></button>
 </nav>
 
 <!-- SIDE INSPECTOR DRAWER -->
 <div class="drawer-overlay" id="drawerOverlay" onclick="if(event.target===this)closeDrawer()">
-  <div class="cyber-drawer">
+  <div class="inspector-sheet">
     <div>
-      <div class="dr-top-bar">
-        <span class="dr-code" id="drCode">// MODULE_INSPECTOR</span>
-        <button class="dr-close" onclick="closeDrawer()">✕</button>
+      <div class="sheet-top">
+        <span class="sheet-tag" id="drCode">MODULE // INSPECTOR</span>
+        <button class="sheet-close" onclick="closeDrawer()">✕</button>
       </div>
 
-      <div class="dr-app-head">
+      <div class="sheet-app-hero">
         <img id="drIcon" src="" alt="">
         <div>
-          <div class="dr-title" id="drTitle">-</div>
-          <div class="dr-desc" id="drDesc">-</div>
+          <div class="sheet-title" id="drTitle">-</div>
+          <div class="sheet-desc" id="drDesc">-</div>
         </div>
       </div>
 
-      <div class="dr-spec-grid">
-        <div class="dr-spec"><span>Dung lượng</span><strong id="drSize">-</strong></div>
-        <div class="dr-spec"><span>Phiên bản</span><strong id="drVer">-</strong></div>
-        <div class="dr-spec"><span>Yêu cầu</span><strong id="drIos">-</strong></div>
+      <div class="spec-boxes">
+        <div class="spec-item"><span>Dung lượng</span><strong id="drSize">-</strong></div>
+        <div class="spec-item"><span>Phiên bản</span><strong id="drVer">-</strong></div>
+        <div class="spec-item"><span>Tương thích</span><strong id="drIos">-</strong></div>
       </div>
 
-      <div class="terminal-window">
-        <div class="term-head"><span>● ● ●</span><span>INSTALL_PROTOCOL.SH</span></div>
+      <div class="guide-card">
+        <div class="guide-head">
+          <span>HƯỚNG DẪN CÀI ĐẶT NHANH</span>
+          <span>VERIFIED ✓</span>
+        </div>
         <div id="drTerminalSteps"></div>
       </div>
     </div>
 
-    <div class="dr-actions">
-      <a class="dr-dl-btn" id="drDownloadLink" href="#" target="_blank" rel="noopener">
-        <span>⚡ KHỞI CHẠY TẢI XUỐNG</span>
+    <div class="sheet-actions">
+      <a class="btn-download-now" id="drDownloadLink" href="#" target="_blank" rel="noopener">
+        <span>⚡ TẢI XUỐNG NGAY</span>
       </a>
-      <div class="dr-sub-actions">
-        <button class="dr-sec-btn" id="drCopyBtn" type="button">📋 Sao chép Link</button>
-        <a class="dr-sec-btn" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">⚠️ Báo lỗi Link</a>
+      <div class="sheet-sub-btns">
+        <button class="btn-secondary-sheet" id="drCopyBtn" type="button">📋 Sao chép Link</button>
+        <a class="btn-secondary-sheet" href="https://discord.gg/c65ZuPyPQ6" target="_blank" rel="noopener">⚠️ Báo lỗi Link</a>
       </div>
     </div>
   </div>
@@ -591,27 +1221,27 @@ button, input { font-family: inherit; border: none; outline: none; background: n
 <script>
 const REPO = "https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
 const APPS = [
-  {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"BY MODGAMEIOS — Chặn quảng cáo, chống thu hồi & Antiban",href:"https://anonlink.io/8bwJ",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns app crack chong thu hoi",rating:4.9,size:"12 MB",ver:"Latest",ios:"iOS 14+",baseDl:840},
-  {cat:"ipa",id:"app3105v2",title:"APP 3105 V2.1",desc:"Bản cập nhật mới nhất — Quản lý tệp & cài đặt Mod IPA",href:"https://anonlink.io/1xDXX4na",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","HOT"],["tag-blue","iOS"]],search:"app 3105 v2 update new cai mod",rating:4.9,size:"28 MB",ver:"V2.1",ios:"iOS 14+",baseDl:1250},
-  {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"Bản dự phòng ổn định — Link tải trực tiếp MediaFire",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","iOS"]],search:"app 3105 v1.1.1 mediafire",rating:4.6,size:"24 MB",ver:"V1.1.1",ios:"iOS 13+",baseDl:520},
-  {cat:"ipa",id:"duolingo",title:"UNLOCK DUOLINGO MAX",desc:"Mở khóa chế độ gọi điện với AI Lily — Full tính năng Max",href:"https://anonlink.io/FaiC",icon:"a%CC%89nh/%E1%BA%A3nh/duolingo.jpg",fb:"🦉",badge:"",tags:[["tag-vip","MAX VIP"],["tag-blue","iOS"]],search:"unlock duolingo max hoc tieng anh pro",rating:4.8,size:"76 MB",ver:"Latest",ios:"iOS 15+",baseDl:430},
-  {cat:"ipa",id:"messenger",title:"MESSENGER VIP PRO",desc:"Xem tin nhắn đã thu hồi, chặn đã xem (Seen), ẩn đang hoạt động",href:"https://anonlink.io/yniZ1fz",icon:"a%CC%89nh/%E1%BA%A3nh/messenger.jpg",fb:"💬",badge:"",tags:[["tag-vip","PREMIUM"],["tag-blue","iOS"]],search:"messenger vipp xem tin nhan thu hoi facebook",rating:4.7,size:"55 MB",ver:"Latest",ios:"iOS 14+",baseDl:610},
-  {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"Bản mới nhất — Chặn quảng cáo, phát nhạc tắt màn hình, PiP",href:"https://anonlink.io/PVIZ",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"HOT",tags:[["tag-vip","VIP"],["tag-blue","iOS"]],search:"youtube premium cap nhat chan quang cao nghe nhac tat man hinh",rating:4.9,size:"68 MB",ver:"Latest",ios:"iOS 14+",baseDl:1120},
-  {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"Nghe nhạc Offline chất lượng cao, không quảng cáo — Mở khóa Go++",href:"https://anonlink.io/ONMdtq",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"],["tag-blue","iOS"]],search:"soundcloud go plus plus nghe nhac offline ipa crack mod premium",rating:4.7,size:"35 MB",ver:"Latest",ios:"iOS 14+",baseDl:310},
-  {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Bản chuẩn — Chặn quảng cáo, nghe nhạc chất lượng cao, chuyển bài vô hạn",href:"https://anonlink.io/tMfcciI",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"],["tag-blue","iOS"]],search:"spotify premium ipa crack mod nghe nhac offline khong quang cao skip vo han",rating:4.9,size:"42 MB",ver:"Latest",ios:"iOS 14+",baseDl:890},
-  {cat:"ipa",id:"filza",title:"FILZA MOD",desc:"Tích hợp sẵn App 3105 — Trình quản lý file hệ thống không cần JB",href:"https://anonlink.io/DZGlv2cs",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📁",badge:"",tags:[["tag-purple","FILE MGR"],["tag-blue","iOS"]],search:"filza mod app 3105 quan ly file no jailbreak",rating:4.5,size:"18 MB",ver:"Latest",ios:"iOS 14+",baseDl:390},
+  {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"BY MODGAMEIOS — Chặn quảng cáo, chống thu hồi chứng chỉ & Antiban",href:"https://anonlink.io/8bwJ",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-blue","iOS 14+"],["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns app crack chong thu hoi",rating:4.9,size:"12 MB",ver:"Latest",ios:"iOS 14+",baseDl:840},
+  {cat:"ipa",id:"app3105v2",title:"APP 3105 V2.1",desc:"Bản cập nhật mới nhất — Quản lý tệp & cài đặt Mod IPA trực tiếp",href:"https://anonlink.io/1xDXX4na",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","CÔNG CỤ GỐC"],["tag-blue","iOS"]],search:"app 3105 v2 update new cai mod",rating:4.9,size:"28 MB",ver:"V2.1",ios:"iOS 14+",baseDl:1250},
+  {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"Bản dự phòng ổn định — Link tải trực tiếp MediaFire tốc độ cao",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","MEDIAFIRE"]],search:"app 3105 v1.1.1 mediafire",rating:4.6,size:"24 MB",ver:"V1.1.1",ios:"iOS 13+",baseDl:520},
+  {cat:"ipa",id:"duolingo",title:"UNLOCK DUOLINGO MAX",desc:"Mở khóa chế độ gọi điện với AI Lily — Full tính năng Max VIP",href:"https://anonlink.io/FaiC",icon:"a%CC%89nh/%E1%BA%A3nh/duolingo.jpg",fb:"🦉",badge:"",tags:[["tag-vip","MAX VIP"],["tag-blue","iOS"]],search:"unlock duolingo max hoc tieng anh pro",rating:4.8,size:"76 MB",ver:"Latest",ios:"iOS 15+",baseDl:430},
+  {cat:"ipa",id:"messenger",title:"MESSENGER VIP PRO",desc:"Xem tin nhắn đã thu hồi, chặn đã xem (Seen), ẩn trạng thái hoạt động",href:"https://anonlink.io/yniZ1fz",icon:"a%CC%89nh/%E1%BA%A3nh/messenger.jpg",fb:"💬",badge:"",tags:[["tag-vip","CHỐNG THU HỒI"],["tag-blue","iOS"]],search:"messenger vipp xem tin nhan thu hoi facebook",rating:4.7,size:"55 MB",ver:"Latest",ios:"iOS 14+",baseDl:610},
+  {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"Bản mới nhất — Chặn quảng cáo, phát nhạc tắt màn hình, PiP mượt mà",href:"https://anonlink.io/PVIZ",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"HOT",tags:[["tag-vip","PREMIUM"],["tag-blue","NO ADS"]],search:"youtube premium cap nhat chan quang cao nghe nhac tat man hinh",rating:4.9,size:"68 MB",ver:"Latest",ios:"iOS 14+",baseDl:1120},
+  {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"Nghe nhạc Offline chất lượng cao, không quảng cáo — Mở khóa Go++",href:"https://anonlink.io/ONMdtq",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"],["tag-blue","OFFLINE"]],search:"soundcloud go plus plus nghe nhac offline ipa crack mod premium",rating:4.7,size:"35 MB",ver:"Latest",ios:"iOS 14+",baseDl:310},
+  {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Bản chuẩn — Chặn quảng cáo, âm thanh Very High, chuyển bài vô hạn",href:"https://anonlink.io/tMfcciI",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"],["tag-blue","iOS"]],search:"spotify premium ipa crack mod nghe nhac offline khong quang cao skip vo han",rating:4.9,size:"42 MB",ver:"Latest",ios:"iOS 14+",baseDl:890},
+  {cat:"ipa",id:"filza",title:"FILZA MOD",desc:"Tích hợp sẵn App 3105 — Trình quản lý file hệ thống không cần JB",href:"https://anonlink.io/DZGlv2cs",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📁",badge:"",tags:[["tag-purple","FILE MGR"],["tag-blue","NO JB"]],search:"filza mod app 3105 quan ly file no jailbreak",rating:4.5,size:"18 MB",ver:"Latest",ios:"iOS 14+",baseDl:390},
 
-  {cat:"bypass",id:"bchatgpt",title:"BYPASS CHATGPT",desc:"Dán trực tiếp vào khung chat — Mở khóa giới hạn & kiểm duyệt AI",href:"https://anonlink.io/M9S1",icon:"a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg",fb:"🤖",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","PROMPT"]],search:"bypass chatgpt ios antiban prompt gpt",rating:4.6,size:"TXT",ver:"Mới",ios:"Mọi iOS",baseDl:280},
-  {cat:"bypass",id:"bclaude",title:"BYPASS AI CLAUDE",desc:"Prompt mở khóa khả năng trả lời nâng cao cho Claude AI",href:"https://anonlink.io/0whZz",icon:"a%CC%89nh/%E1%BA%A3nh/claude.jpg",fb:"✨",badge:"NEW",tags:[["tag-blue","iOS"],["tag-antiban","PROMPT"]],search:"bypass ai claude ios antiban sonnet opus",rating:4.5,size:"TXT",ver:"Mới",ios:"Mọi iOS",baseDl:195},
-  {cat:"bypass",id:"dnsff",title:"DNS ANTIBAN FREE FIRE",desc:"Cấu hình DNS Antiban chuyên dụng cho Free Fire — An toàn 100%",href:"https://anonlink.io/WiTmFh",icon:"a%CC%89nh/%E1%BA%A3nh/dns.jpg",fb:"🛡️",badge:"HOT",tags:[["tag-antiban","ANTIBAN"],["tag-blue","iOS"]],search:"dns antiban ff ffm nextdns config free fire max",rating:4.8,size:"4 KB",ver:"v3.0",ios:"Mọi iOS",baseDl:740},
+  {cat:"bypass",id:"bchatgpt",title:"BYPASS CHATGPT",desc:"Dán trực tiếp vào khung chat — Mở khóa giới hạn & kiểm duyệt AI",href:"https://anonlink.io/M9S1",icon:"a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg",fb:"🤖",badge:"",tags:[["tag-blue","PROMPT"],["tag-antiban","UNLOCK"]],search:"bypass chatgpt ios antiban prompt gpt",rating:4.6,size:"TXT",ver:"Mới",ios:"Mọi thiết bị",baseDl:280},
+  {cat:"bypass",id:"bclaude",title:"BYPASS AI CLAUDE",desc:"Prompt mở khóa khả năng trả lời nâng cao cho Claude Sonnet / Opus",href:"https://anonlink.io/0whZz",icon:"a%CC%89nh/%E1%BA%A3nh/claude.jpg",fb:"✨",badge:"NEW",tags:[["tag-blue","PROMPT"],["tag-antiban","UNLOCK"]],search:"bypass ai claude ios antiban sonnet opus",rating:4.5,size:"TXT",ver:"Mới",ios:"Mọi thiết bị",baseDl:195},
+  {cat:"bypass",id:"dnsff",title:"DNS ANTIBAN FREE FIRE",desc:"Cấu hình DNS Antiban chuyên dụng cho Free Fire — Bảo vệ acc 100%",href:"https://anonlink.io/WiTmFh",icon:"a%CC%89nh/%E1%BA%A3nh/dns.jpg",fb:"🛡️",badge:"HOT",tags:[["tag-antiban","ANTIBAN"],["tag-blue","CONFIG"]],search:"dns antiban ff ffm nextdns config free fire max",rating:4.8,size:"4 KB",ver:"v3.0",ios:"Mọi iOS",baseDl:740},
 
   {cat:"lq",id:"lq",title:"PATCH LIÊN QUÂN ALL-IN-ONE",desc:"Bản Combo VIP: Mở khóa Full Skin + Hack Map Sáng + Góc nhìn Cam Xa",href:"https://anonlink.io/7OBq",icon:"a%CC%89nh/%E1%BA%A3nh/lq.jpg",fb:"⚔️",badge:"HOT",tags:[["tag-vip","COMBO VIP"],["tag-blue","iOS"]],search:"patch lq unlock skin lien quan map cam xa combo",rating:4.9,size:"10 MB",ver:"Latest",ios:"iOS 13+",baseDl:1050},
-  {cat:"lq",id:"unlockskin",title:"PATCH UNLOCK ALL SKIN LQ",desc:"Liên Quân Mobile — Mở khóa trang phục, hiệu ứng biến về & âm thanh",href:"https://anonlink.io/84WCgtE",icon:"a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg",fb:"👗",badge:"",tags:[["tag-blue","iOS"],["tag-vip","SKIN MOD"]],search:"patch unlockskin unlock skin lien quan",rating:4.7,size:"7 MB",ver:"Latest",ios:"iOS 13+",baseDl:680},
-  {cat:"lq",id:"mapsang",title:"PATCH HACK MAP SÁNG LQ",desc:"Liên Quân Mobile — Quan sát tầm nhìn toàn bản đồ siêu rõ",href:"https://anonlink.io/HHDo4",icon:"a%CC%89nh/%E1%BA%A3nh/map.jpg",fb:"🗺️",badge:"",tags:[["tag-blue","iOS"],["tag-purple","MAP SÁNG"]],search:"patch hack map lien quan lien minh toc chien",rating:4.5,size:"5 MB",ver:"Latest",ios:"iOS 13+",baseDl:530},
+  {cat:"lq",id:"unlockskin",title:"PATCH UNLOCK ALL SKIN LQ",desc:"Liên Quân Mobile — Mở khóa trang phục, hiệu ứng biến về & âm thanh",href:"https://anonlink.io/84WCgtE",icon:"a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg",fb:"👗",badge:"",tags:[["tag-blue","iOS"],["tag-vip","FULL SKIN"]],search:"patch unlockskin unlock skin lien quan",rating:4.7,size:"7 MB",ver:"Latest",ios:"iOS 13+",baseDl:680},
+  {cat:"lq",id:"mapsang",title:"PATCH HACK MAP SÁNG LQ",desc:"Liên Quân Mobile — Quan sát tầm nhìn toàn bản đồ siêu rõ nét",href:"https://anonlink.io/HHDo4",icon:"a%CC%89nh/%E1%BA%A3nh/map.jpg",fb:"🗺️",badge:"",tags:[["tag-blue","iOS"],["tag-purple","MAP SÁNG"]],search:"patch hack map lien quan lien minh toc chien",rating:4.5,size:"5 MB",ver:"Latest",ios:"iOS 13+",baseDl:530},
   {cat:"lq",id:"camxa",title:"PATCH UNLOCK SKIN + CAM XA",desc:"Liên Quân Mobile — Góc nhìn siêu rộng kết hợp mở khóa Skin an toàn",href:"https://anonlink.io/fT8GLeZ",icon:"a%CC%89nh/%E1%BA%A3nh/camxa.jpg",fb:"🔭",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","AN TOÀN"]],search:"patch unlockskin cam xa no map lien quan",rating:4.6,size:"7 MB",ver:"Latest",ios:"iOS 13+",baseDl:490},
 
   {cat:"ff",id:"aimffm",title:"PATCH AIM FREE FIRE MAX",desc:"Hỗ trợ khóa mục tiêu tự động — Ghim tâm chuẩn xác cho FF Max",href:"https://anonlink.io/G8Fm18eL",icon:"a%CC%89nh/%E1%BA%A3nh/aimffm.jpg",fb:"🎯",badge:"HOT",tags:[["tag-blue","iOS"],["tag-purple","AIMLOCK"]],search:"patch aim ffm free fire max tu ke tam headshot",rating:4.8,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:870},
-  {cat:"ff",id:"espffm",title:"PATCH ESP + AIM FF MAX",desc:"Dành cho Free Fire Max — Hiển thị vị trí địch (ESP) + Hỗ trợ kéo tâm",href:"https://anonlink.io/wTMGTLHP",icon:"a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg",fb:"📍",badge:"",tags:[["tag-blue","iOS"],["tag-antiban","ANTIBAN"]],search:"patch dinh vi aimbody ffm free fire max antiban",rating:4.6,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:620},
+  {cat:"ff",id:"espffm",title:"PATCH ESP + AIM FF MAX",desc:"Dành cho Free Fire Max — Hiển thị vị trí địch (ESP) + Hỗ trợ kéo tâm",href:"https://anonlink.io/wTMGTLHP",icon:"a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg",fb:"📍",badge:"",tags:[["tag-blue","ESP"],["tag-antiban","ANTIBAN"]],search:"patch dinh vi aimbody ffm free fire max antiban",rating:4.6,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:620},
   {cat:"ff",id:"ffth",title:"PATCH FF THÁI LAN ESP + AIM",desc:"Dành riêng cho bản Free Fire Thái Lan — ESP định vị + Aimbot",href:"https://anonlink.io/q1BnSEUB",icon:"a%CC%89nh/%E1%BA%A3nh/aimffth.jpg",fb:"🔫",badge:"",tags:[["tag-blue","iOS"],["tag-purple","FF THÁI"]],search:"patch aim ffth ESP AIM free fire thai",rating:4.5,size:"6 MB",ver:"Latest",ios:"iOS 14+",baseDl:310},
 
   {cat:"pubg",id:"menupubg",title:"MENU PUBG VIP",desc:"Menu Mod cao cấp — ESP, Aimbot & tích hợp chống khóa tài khoản",href:"https://anonlink.io/0vMe7",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"HOT",tags:[["tag-vip","MENU VIP"],["tag-antiban","ANTI-BAN"]],search:"menu pubg vip pubg mobile mod menu hack esp aimbot no ban ios",rating:4.9,size:"22 MB",ver:"Latest",ios:"iOS 14+",baseDl:980},
@@ -626,12 +1256,12 @@ const APPS = [
 ];
 
 const SECTORS = {
-  ipa: "📱 SECTOR 01 // KHO TẢI IPA VIP",
-  bypass: "🛡️ SECTOR 02 // FILE BYPASS & ANTIBAN",
-  lq: "⚔️ SECTOR 03 // MOD & PATCH LIÊN QUÂN",
-  ff: "🔥 SECTOR 04 // MOD & PATCH FREE FIRE",
-  pubg: "🎯 SECTOR 05 // MOD & PATCH PUBG MOBILE",
-  other: "🎬 SECTOR 06 // GAME KHÁC & CAPCUT PRO"
+  ipa: "📱 Kho Tải IPA VIP (Không Jailbreak)",
+  bypass: "🛡️ Cấu Hình DNS & Bypass AI",
+  lq: "⚔️ Bản Patch & Mod Liên Quân Mobile",
+  ff: "🔥 Bản Patch & Mod Free Fire Max",
+  pubg: "🎯 Menu & Bản Mod PUBG Mobile",
+  other: "🎬 Game Khác & Ứng Dụng CapCut Pro"
 };
 
 let currentCat = "all";
@@ -671,40 +1301,46 @@ function renderStage() {
     if (items.length) {
       countAll += items.length;
       const block = document.createElement("section");
-      block.className = "sector-block";
+      block.className = "sector-section";
       block.innerHTML = `
-        <div class="sector-head">
+        <div class="sector-header">
           <div class="sector-title">${SECTORS[cat]}</div>
-          <span class="sector-count">${items.length} MODULES</span>
+          <span class="sector-badge">${items.length} MỤC</span>
         </div>
-        <div class="holo-grid">
+        <div class="app-grid">
           ${items.map(a => {
             const isF = favs.has(a.id);
-            const st = a.badge === "HOT" ? '<span class="pill-status st-hot">HOT</span>' :
-                       a.badge === "NEW" ? '<span class="pill-status st-new">NEW</span>' : '';
+            const st = a.badge === "HOT" ? '<span class="status-tag st-hot">HOT</span>' :
+                       a.badge === "NEW" ? '<span class="status-tag st-new">NEW</span>' : '';
             const tags = a.tags.map(t => `<span class="c-tag ${t[0]}">${t[1]}</span>`).join("");
             return `
-              <div class="holo-card" onclick="openApp('${a.id}')">
+              <div class="app-card" onclick="openApp('${a.id}')">
                 <div>
-                  <div class="hc-top">
-                    <div class="hc-icon">
+                  <div class="ac-header">
+                    <div class="ac-icon">
                       <img src="${REPO + a.icon}" alt="${a.title}" loading="lazy" onerror="this.classList.add('err')">
-                      <div class="hc-fb">${a.fb}</div>
+                      <div class="ac-fb">${a.fb}</div>
                     </div>
-                    <div class="hc-badges">
-                      ${st}
-                      <button type="button" class="hc-fav ${isF ? 'on' : ''}" onclick="toggleFav(event,'${a.id}')">${isF ? '❤️' : '🤍'}</button>
+                    <div class="ac-title-wrap">
+                      <div class="ac-top-badges">
+                        ${st}
+                        <span style="font-size:10.5px;color:var(--text-muted);font-family:var(--font-mono)">${a.size}</span>
+                      </div>
+                      <div class="ac-title">${a.title}</div>
+                      <div class="ac-submeta">${a.ios} • Bản ${a.ver}</div>
                     </div>
+                    <button type="button" class="ac-fav-btn ${isF ? 'on' : ''}" onclick="toggleFav(event,'${a.id}')" title="Lưu yêu thích">
+                      ${isF ? '❤️' : '🤍'}
+                    </button>
                   </div>
-                  <div class="hc-body">
-                    <div class="hc-title">${a.title}</div>
-                    <div class="hc-desc">${a.desc}</div>
-                  </div>
-                  <div class="hc-tags">${tags}</div>
+                  <div class="ac-desc" style="margin-top:11px">${a.desc}</div>
                 </div>
-                <div class="hc-footer">
-                  <div class="hc-metrics"><b>★ ${a.rating}</b> • ${a.baseDl} DL</div>
-                  <span class="hc-dl-btn">GET //</span>
+                <div>
+                  <div class="ac-tags" style="margin-bottom:10px">${tags}</div>
+                  <div class="ac-footer">
+                    <div class="ac-stats"><b>★ ${a.rating}</b> • ${a.baseDl.toLocaleString("vi-VN")} lượt tải</div>
+                    <span class="btn-get-app">NHẬN</span>
+                  </div>
                 </div>
               </div>
             `;
@@ -716,23 +1352,29 @@ function renderStage() {
   });
 
   if (!countAll) {
-    stage.innerHTML = `<div style="text-align:center;padding:50px 20px;color:var(--muted);font-family:var(--font-mono)">// KHÔNG TÌM THẤY MODULE PHÙ HỢP</div>`;
+    stage.innerHTML = `
+      <div style="text-align:center;padding:56px 20px;border-radius:22px;background:var(--surface);border:1px solid var(--border)">
+        <div style="font-size:32px;margin-bottom:8px">🔍</div>
+        <div style="font-weight:700;font-size:15px">Không tìm thấy ứng dụng phù hợp</div>
+        <div style="font-size:12.5px;color:var(--text-secondary);margin-top:4px">Hãy thử từ khóa khác như: pubg, lq, ff, 3105, spotify...</div>
+      </div>
+    `;
   }
 }
 
 function setCategory(cat) {
   currentCat = cat;
-  document.querySelectorAll("#mobileHud .mh-btn").forEach(b => {
+  document.querySelectorAll("#mobileHud .dock-btn, #desktopCatTabs .cat-tab").forEach(b => {
     b.classList.toggle("active", b.dataset.cat === cat);
   });
   renderStage();
 }
 
-document.querySelectorAll("#mobileHud .mh-btn").forEach(btn => {
+document.querySelectorAll("#mobileHud .dock-btn, #desktopCatTabs .cat-tab").forEach(btn => {
   btn.addEventListener("click", () => setCategory(btn.dataset.cat));
 });
 
-document.querySelectorAll(".f-pill").forEach(pill => {
+document.querySelectorAll(".sort-pill").forEach(pill => {
   pill.addEventListener("click", () => {
     const s = pill.dataset.sort;
     if (s === "fav") {
@@ -741,7 +1383,7 @@ document.querySelectorAll(".f-pill").forEach(pill => {
       return;
     }
     currentSort = s;
-    document.querySelectorAll(".f-pill:not(#quickFavBtn)").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll(".sort-pill:not(#quickFavBtn)").forEach(p => p.classList.remove("active"));
     pill.classList.add("active");
     renderStage();
   });
@@ -749,8 +1391,13 @@ document.querySelectorAll(".f-pill").forEach(pill => {
 
 function toggleFav(e, id) {
   e.stopPropagation();
-  if (favs.has(id)) { favs.delete(id); toast("💔 Đã xóa khỏi kho lưu trữ"); }
-  else { favs.add(id); toast("❤️ Đã lưu vào kho Yêu thích!"); }
+  if (favs.has(id)) {
+    favs.delete(id);
+    toast("💔 Đã xóa khỏi danh sách đã lưu");
+  } else {
+    favs.add(id);
+    toast("❤️ Đã lưu vào mục Yêu thích!");
+  }
   localStorage.setItem("modgameios_favs_v2", JSON.stringify([...favs]));
   document.getElementById("topFavCount").textContent = favs.size;
   renderStage();
@@ -758,20 +1405,20 @@ function toggleFav(e, id) {
 
 const PROTOCOLS = {
   ipa: [
-    "<b>[STEP 01]</b> Nhấn nút khởi chạy tải xuống bên dưới để lấy gói <b>.ipa</b>.",
-    "<b>[STEP 02]</b> Mở trình ký chứng chỉ <b>App 3105 / ESign / Scarlet</b> trên iOS.",
-    "<b>[STEP 03]</b> Import file IPA → Bấm <b>Ký & Cài đặt (Install)</b>.",
-    "<b>[STEP 04]</b> Cấp quyền Tin cậy chứng chỉ trong Cài đặt chung iOS."
+    "<b>[BƯỚC 1]</b> Nhấn nút <b>Tải Xuống Ngay</b> bên dưới để lấy tệp cài đặt <b>.ipa</b>.",
+    "<b>[BƯỚC 2]</b> Mở ứng dụng ký chứng chỉ <b>App 3105 / ESign / Scarlet</b> trên máy.",
+    "<b>[BƯỚC 3]</b> Nhập file IPA vừa tải → Chọn <b>Ký & Cài đặt (Install)</b>.",
+    "<b>[BƯỚC 4]</b> Cài thêm <b>DNS Chống thu hồi</b> trên thanh đầu trang để dùng bền vững."
   ],
   bypass: [
-    "<b>[STEP 01]</b> Mở liên kết tải cấu hình hoặc tệp văn bản.",
-    "<b>[STEP 02]</b> Với <b>DNS</b>: Cài đặt cấu hình vào VPN & Thiết bị để chặn thu hồi.",
-    "<b>[STEP 03]</b> Với <b>Prompt AI</b>: Copy toàn bộ lệnh dán vào khung chat."
+    "<b>[BƯỚC 1]</b> Mở liên kết tải cấu hình hoặc tệp văn bản bên dưới.",
+    "<b>[BƯỚC 2]</b> Với <b>DNS</b>: Vào Cài đặt iOS → Đã tải về hồ sơ → Cài đặt cấu hình.",
+    "<b>[BƯỚC 3]</b> Với <b>Prompt AI</b>: Sao chép toàn bộ nội dung và dán vào khung chat."
   ],
   patch: [
-    "<b>[STEP 01]</b> Yêu cầu cài sẵn công cụ <b>App 3105 V2.1</b> trong mục IPA VIP.",
-    "<b>[STEP 02]</b> Tải gói Patch Mod của tựa game này về điện thoại.",
-    "<b>[STEP 03]</b> Mở App 3105 → Bấm dấu (+) thêm file → Nhấn <b>Áp dụng Patch</b>."
+    "<b>[BƯỚC 1]</b> Đảm bảo máy đã cài sẵn công cụ <b>App 3105 V2.1</b> trong mục Kho IPA.",
+    "<b>[BƯỚC 2]</b> Nhấn tải gói Patch Mod của tựa game này về tệp iPhone.",
+    "<b>[BƯỚC 3]</b> Mở App 3105 → Bấm dấu (+) thêm file → Nhấn <b>Áp dụng Patch</b> và vào game."
   ]
 };
 
@@ -780,7 +1427,7 @@ function openApp(id) {
   const a = APPS.find(x => x.id === id);
   if (!a) return;
   activeApp = a;
-  document.getElementById("drCode").textContent = "// MODULE_ID: " + a.id.toUpperCase();
+  document.getElementById("drCode").textContent = "ID // " + a.id.toUpperCase();
   document.getElementById("drIcon").src = REPO + a.icon;
   document.getElementById("drTitle").textContent = a.title;
   document.getElementById("drDesc").textContent = a.desc;
@@ -790,7 +1437,7 @@ function openApp(id) {
   document.getElementById("drDownloadLink").href = a.href;
 
   const pKey = (a.cat === "ipa" || a.cat === "bypass") ? a.cat : "patch";
-  document.getElementById("drTerminalSteps").innerHTML = PROTOCOLS[pKey].map(s => `<div class="term-step">${s}</div>`).join("");
+  document.getElementById("drTerminalSteps").innerHTML = PROTOCOLS[pKey].map(s => `<div class="guide-step">${s}</div>`).join("");
   document.getElementById("drawerOverlay").classList.add("open");
 }
 
@@ -798,16 +1445,25 @@ function closeDrawer() {
   document.getElementById("drawerOverlay").classList.remove("open");
 }
 
+document.addEventListener("keydown", e => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+    e.preventDefault();
+    document.getElementById("searchBox").focus();
+  }
+  if (e.key === "Escape") closeDrawer();
+});
+
 document.getElementById("drCopyBtn").addEventListener("click", async () => {
   if (!activeApp) return;
   try {
     await navigator.clipboard.writeText(activeApp.href);
-    toast("✅ ĐÃ SAO CHÉP LINK TẢI VÀO CLIPBOARD!");
+    toast("✅ Đã sao chép liên kết tải vào bộ nhớ tạm!");
   } catch (e) {}
 });
 
 document.getElementById("searchBox").addEventListener("input", renderStage);
 
+/* YOUTUBE AUDIO STREAM */
 let yt = null, ytOk = false, playing = false, plInit = false;
 const sc = document.createElement("script");
 sc.src = "https://www.youtube.com/iframe_api";
@@ -826,17 +1482,19 @@ window.onYouTubeIframeAPIReady = function() {
 
 const diAudioBtn = document.getElementById("diAudioBtn");
 diAudioBtn.addEventListener("click", () => {
-  if (!yt || !ytOk) { toast("⏳ Đang nạp luồng âm thanh..."); return; }
+  if (!yt || !ytOk) { toast("⏳ Đang kết nối máy chủ âm thanh..."); return; }
   if (playing) {
-    yt.pauseVideo(); playing = false;
-    diAudioBtn.classList.remove("active");
-    document.getElementById("diAudioText").textContent = "PLAY BGM";
+    yt.pauseVideo();
+    playing = false;
+    diAudioBtn.classList.remove("audio-active");
+    document.getElementById("diAudioText").textContent = "Nhạc nền";
     toast("🔇 Đã tạm dừng nhạc nền");
   } else {
-    yt.playVideo(); playing = true;
-    diAudioBtn.classList.add("active");
-    document.getElementById("diAudioText").textContent = "PLAYING";
-    toast("🎵 Đang phát nhạc nền Cyber Deck");
+    yt.playVideo();
+    playing = true;
+    diAudioBtn.classList.add("audio-active");
+    document.getElementById("diAudioText").textContent = "Đang phát";
+    toast("🎵 Đang phát nhạc nền ModGameios");
   }
 });
 
@@ -849,12 +1507,13 @@ function skipTrack() {
     yt.nextVideo();
   }
   playing = true;
-  diAudioBtn.classList.add("active");
-  document.getElementById("diAudioText").textContent = "PLAYING";
-  toast("⏭ Đã chuyển bài nhạc tiếp theo");
+  diAudioBtn.classList.add("audio-active");
+  document.getElementById("diAudioText").textContent = "Đang phát";
+  toast("⏭ Đã chuyển sang bản nhạc tiếp theo");
 }
 document.getElementById("nextSongBtn").addEventListener("click", skipTrack);
 
+/* THEME SWITCHER */
 const themeBtn = document.getElementById("themeSwitchBtn");
 themeBtn.addEventListener("click", () => {
   const isDark = document.documentElement.getAttribute("data-theme") === "dark";
@@ -862,20 +1521,28 @@ themeBtn.addEventListener("click", () => {
   themeBtn.textContent = isDark ? "🌙" : "☀️";
 });
 
+/* SHARE BUTTON */
 document.getElementById("shareDeckBtn").addEventListener("click", async () => {
   const url = location.href;
-  if (navigator.share) navigator.share({ title: "ModGameios Cyber Deck", url }).catch(()=>{});
-  else { await navigator.clipboard.writeText(url); toast("🔗 Đã copy đường dẫn Website!"); }
+  if (navigator.share) navigator.share({ title: "ModGameios Store", url }).catch(()=>{});
+  else {
+    await navigator.clipboard.writeText(url);
+    toast("🔗 Đã sao chép địa chỉ trang web!");
+  }
 });
 
+/* LIVE VIEW COUNTER */
 fetch("https://abacus.jasoncameron.dev/hit/modgameios-v3/views")
-  .then(r => r.json()).then(d => { if (d.value) document.getElementById("teleViews").textContent = Number(d.value).toLocaleString("vi-VN"); })
+  .then(r => r.json())
+  .then(d => {
+    if (d.value) document.getElementById("teleViews").textContent = Number(d.value).toLocaleString("vi-VN");
+  })
   .catch(()=>{});
 
 window.addEventListener("load", () => {
-  setTimeout(() => document.getElementById("bootScreen").classList.add("hidden"), 700);
+  setTimeout(() => document.getElementById("bootScreen").classList.add("hidden"), 650);
 });
-setTimeout(() => document.getElementById("bootScreen").classList.add("hidden"), 2000);
+setTimeout(() => document.getElementById("bootScreen").classList.add("hidden"), 1800);
 
 document.getElementById("topFavCount").textContent = favs.size;
 renderStage();
