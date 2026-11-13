@@ -96,14 +96,8 @@ button,input{font-family:inherit}
 .tab-pill{flex-shrink:0;padding:6px 13px;border-radius:99px;background:var(--bg-card);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;transition:all .18s}
 .tab-pill.active{background:linear-gradient(135deg,#9333ea,#4f46e5);border-color:transparent;color:#fff}
 
-.sub-filters{display:none;gap:5px;overflow-x:auto;padding:6px 0 2px;scrollbar-width:none}
-.sub-filters::-webkit-scrollbar{display:none}
-.sub-filters.show{display:flex}
-.sub-pill{flex-shrink:0;padding:4px 10px;border-radius:99px;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.25);color:#f472b6;font-size:10px;font-weight:700;cursor:pointer}
-.sub-pill.active{background:#ec4899;color:#fff;border-color:transparent}
-
 /* DANH SÁCH SECTION & CARD */
-.section{margin-top:14px}
+.section{margin-top:16px}
 .section-header{display:flex;align-items:center;justify-content:space-between;margin:0 2px 10px}
 .section-title{font-size:14px;font-weight:800;letter-spacing:.2px;color:var(--text);display:flex;align-items:center;gap:7px}
 .section-dot{width:3px;height:15px;border-radius:99px;background:#a855f7}
@@ -144,10 +138,10 @@ button,input{font-family:inherit}
 .download-action svg{width:16px;height:16px}
 
 /* BOTTOM NAV & MUSIC FAB */
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;padding:6px 12px calc(6px + env(safe-area-inset-bottom));background:rgba(10,8,20,.94);border-top:1px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;justify-content:space-around;align-items:center}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;padding:6px 8px calc(6px + env(safe-area-inset-bottom));background:rgba(10,8,20,.94);border-top:1px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;justify-content:space-around;align-items:center}
 [data-theme="light"] .bottom-nav{background:rgba(255,255,255,.95)}
-.nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:4px 12px;border-radius:10px;color:var(--sub);font-size:9px;font-weight:700}
-.nav-item svg{width:18px;height:18px}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:4px 8px;border-radius:10px;color:var(--sub);font-size:9px;font-weight:700}
+.nav-item svg{width:17px;height:17px}
 .nav-item.active{color:#c084fc;background:rgba(147,51,234,.12)}
 
 .music-fab{position:fixed;right:14px;bottom:calc(68px + env(safe-area-inset-bottom));z-index:80;height:38px;padding:0 12px;border-radius:99px;background:rgba(18,15,32,.95);border:1px solid rgba(168,85,247,.4);display:flex;align-items:center;gap:6px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.5);font-size:11px;font-weight:800;color:#e2e8f0}
@@ -432,7 +426,7 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
         <div class="ch-title">ModGameios</div>
         <div class="ch-sub">Kho IPA Crack • Mod Game • No JB</div>
         <div class="ch-stats">
-          <span>📦 <b id="totalApps">27</b> Apps</span>
+          <span>📦 <b id="totalApps">29</b> Apps</span>
           <span>•</span>
           <span>👁️ <b id="views">3.9k</b></span>
           <span>•</span>
@@ -474,24 +468,19 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
   <div class="sticky-nav">
     <div class="search-box">
       <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-      <input id="search" class="search-input" type="search" autocomplete="off" placeholder="Tìm nhanh: pubg, liên quân, free fire, spotify, 3105...">
+      <input id="search" class="search-input" type="search" autocomplete="off" placeholder="Tìm nhanh: pubg, liên quân, free fire, hải tặc, tft...">
       <button id="clearSearch" class="clear-btn" type="button">✕</button>
     </div>
 
     <div class="quick-tabs">
       <button class="tab-pill active" data-filter="all">⚡ Tất cả</button>
-      <button class="tab-pill" data-filter="ipa">📱 Tải IPA</button>
-      <button class="tab-pill" data-filter="patch">🎮 Mod Game</button>
+      <button class="tab-pill" data-filter="ipa">📱 Kho IPA</button>
+      <button class="tab-pill" data-filter="pubg">🎯 PUBG</button>
+      <button class="tab-pill" data-filter="ff">🔥 Free Fire</button>
+      <button class="tab-pill" data-filter="lq">⚔️ Liên Quân</button>
+      <button class="tab-pill" data-filter="other">🍬 Game Khác</button>
       <button class="tab-pill" data-filter="bypass">🛡️ Bypass / DNS</button>
       <button class="tab-pill" data-filter="fav">❤️ Đã lưu (<span id="favCountBadge">0</span>)</button>
-    </div>
-
-    <div class="sub-filters" id="patchSubFilters">
-      <button class="sub-pill active" data-sub="all" onclick="setSubFilter('all')">Tất cả Game</button>
-      <button class="sub-pill" data-sub="pubg" onclick="setSubFilter('pubg')">🎯 PUBG</button>
-      <button class="sub-pill" data-sub="ff" onclick="setSubFilter('ff')">🔥 Free Fire</button>
-      <button class="sub-pill" data-sub="lq" onclick="setSubFilter('lq')">⚔️ Liên Quân</button>
-      <button class="sub-pill" data-sub="other" onclick="setSubFilter('other')">🍬 Khác</button>
     </div>
   </div>
 
@@ -504,9 +493,33 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
       <div class="cards-stack"></div>
     </section>
 
-    <section class="section" data-category="patch">
+    <section class="section" data-category="pubg">
       <div class="section-header">
-        <h2 class="section-title"><span class="section-dot" style="background:#ec4899"></span>PATCH GAME & MOD</h2>
+        <h2 class="section-title"><span class="section-dot" style="background:#f59e0b"></span>MOD PUBG MOBILE</h2>
+        <span class="section-badge">0 MODS</span>
+      </div>
+      <div class="cards-stack"></div>
+    </section>
+
+    <section class="section" data-category="ff">
+      <div class="section-header">
+        <h2 class="section-title"><span class="section-dot" style="background:#ef4444"></span>MOD FREE FIRE</h2>
+        <span class="section-badge">0 MODS</span>
+      </div>
+      <div class="cards-stack"></div>
+    </section>
+
+    <section class="section" data-category="lq">
+      <div class="section-header">
+        <h2 class="section-title"><span class="section-dot" style="background:#3b82f6"></span>MOD LIÊN QUÂN MOBILE</h2>
+        <span class="section-badge">0 MODS</span>
+      </div>
+      <div class="cards-stack"></div>
+    </section>
+
+    <section class="section" data-category="other">
+      <div class="section-header">
+        <h2 class="section-title"><span class="section-dot" style="background:#ec4899"></span>PATCH GAME & APP KHÁC</h2>
         <span class="section-badge">0 MODS</span>
       </div>
       <div class="cards-stack"></div>
@@ -535,15 +548,19 @@ footer{text-align:center;margin-top:28px;padding-top:14px;border-top:1px solid v
   </div>
   <div class="nav-item" data-filter="ipa" onclick="setTab('ipa')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v8M8 12h8"/></svg>
-    <span>Tải IPA</span>
+    <span>Kho IPA</span>
   </div>
-  <div class="nav-item" data-filter="patch" onclick="setTab('patch')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-    <span>Mod Game</span>
+  <div class="nav-item" data-filter="pubg" onclick="setTab('pubg')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="3" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="21" y2="12"/></svg>
+    <span>PUBG</span>
   </div>
-  <div class="nav-item" data-filter="bypass" onclick="setTab('bypass')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    <span>Bypass</span>
+  <div class="nav-item" data-filter="ff" onclick="setTab('ff')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+    <span>FF</span>
+  </div>
+  <div class="nav-item" data-filter="lq" onclick="setTab('lq')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M19 21l2-2"/></svg>
+    <span>Liên Quân</span>
   </div>
   <div class="nav-item" data-filter="fav" onclick="setTab('fav')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -619,35 +636,49 @@ mBtn.addEventListener("click",()=>{
   }
 });
 
-/* DỮ LIỆU APPS */
+/* DỮ LIỆU APPS (ĐÃ TÁCH RIÊNG PUBG, FF, LQ & THÊM 2 GAME Ở GIỮA KHO IPA) */
 const REPO="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
 const APPS=[
+  // 1. KHO TẢI IPA VIP
   {cat:"ipa",id:"nextdns",title:"IPA NEXT DNS",desc:"Chặn quảng cáo, chống thu hồi chứng chỉ & Antiban",href:"https://www.mediafire.com/file/link_mediafire_nextdns/file",icon:"a%CC%89nh/%E1%BA%A3nh/nextdns.jpg",fb:"🌐",badge:"HOT",tags:[["tag-antiban","ANTIBAN"]],search:"ipa next dns antiban nextdns chong thu hoi",size:"12 MB",ver:"Latest",ios:"14+",dl:"3.4K"},
   {cat:"ipa",id:"app3105v2",title:"APP 3105 V2.1",desc:"Quản lý tệp & cài đặt Mod IPA trực tiếp",href:"https://www.mediafire.com/file/1xDXX4na_mediafire_link/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"HOT",tags:[["tag-purple","CÔNG CỤ"]],search:"app 3105 v2 update new cai mod",size:"28 MB",ver:"V2.1",ios:"14+",dl:"5.2K"},
   {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"Bản dự phòng ổn định — Link tải trực tiếp MediaFire",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","MEDIAFIRE"]],search:"app 3105 v1.1.1 mediafire",size:"24 MB",ver:"V1.1.1",ios:"13+",dl:"1.9K"},
   {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"Chặn quảng cáo, phát nhạc nền tắt màn hình, PiP",href:"https://anonlink.io/wyHo0S",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"HOT",tags:[["tag-vip","VIP"]],search:"youtube premium chan quang cao nghe nhac tat man hinh",size:"68 MB",ver:"Latest",ios:"14+",dl:"4.1K"},
+  
+  // 2 FILE MỚI THÊM Ở GIỮA KHO IPA (Nhớ thay link & ảnh icon của bạn vào đây)
+  {cat:"ipa",id:"haitac",title:"HẢI TẶC ĐẠI CHIẾN IPA",desc:"Bản Mod / Cài trực tiếp không cần Jailbreak — Mượt mà",href:"https://www.mediafire.com/file/link_hai_tac_dai_chien/file",icon:"a%CC%89nh/%E1%BA%A3nh/haitac.jpg",fb:"🏴‍☠️",badge:"NEW",tags:[["tag-vip","IPA GAME"]],search:"hai tac dai chien ipa one piece mod",size:"185 MB",ver:"Latest",ios:"14+",dl:"2.1K"},
+  {cat:"ipa",id:"dtcl",title:"ĐẤU TRƯỜNG CHÂN LÝ IPA",desc:"TFT Mobile iOS — Cài trực tiếp hỗ trợ đa tài khoản",href:"https://www.mediafire.com/file/link_dau_truong_chan_ly/file",icon:"a%CC%89nh/%E1%BA%A3nh/dtcl.jpg",fb:"♟️",badge:"NEW",tags:[["tag-green","TFT MOBILE"]],search:"dau truong chan ly dtcl tft mobile ipa",size:"210 MB",ver:"Latest",ios:"14+",dl:"2.5K"},
+
   {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Nghe nhạc chất lượng cao, không quảng cáo, chuyển bài vô hạn",href:"https://anonlink.io/qqf9BXZB",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"]],search:"spotify premium ipa crack mod nghe nhac",size:"42 MB",ver:"Latest",ios:"14+",dl:"2.7K"},
   {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"Nghe nhạc Offline, không quảng cáo — Mở khóa Go++",href:"https://anonlink.io/waAE6rCe",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"]],search:"soundcloud go plus plus nghe nhac offline",size:"35 MB",ver:"Latest",ios:"14+",dl:"1.5K"},
   {cat:"ipa",id:"duolingo",title:"UNLOCK DUOLINGO MAX",desc:"Mở khóa gọi điện với AI Lily — Full tính năng Max",href:"https://anonlink.io/FaiC",icon:"a%CC%89nh/%E1%BA%A3nh/duolingo.jpg",fb:"🦉",badge:"",tags:[["tag-vip","MAX VIP"]],search:"unlock duolingo max hoc tieng anh",size:"76 MB",ver:"Latest",ios:"15+",dl:"1.8K"},
   {cat:"ipa",id:"messenger",title:"MESSENGER VIP PRO",desc:"Xem tin nhắn thu hồi, chặn Seen, ẩn đang online",href:"https://anonlink.io/yniZ1fz",icon:"a%CC%89nh/%E1%BA%A3nh/messenger.jpg",fb:"💬",badge:"",tags:[["tag-vip","VIP"]],search:"messenger vipp xem tin nhan thu hoi",size:"55 MB",ver:"Latest",ios:"14+",dl:"2.3K"},
   {cat:"ipa",id:"filza",title:"FILZA MOD",desc:"Tích hợp sẵn App 3105 — Quản lý file không cần JB",href:"https://anonlink.io/DZGlv2cs",icon:"a%CC%89nh/%E1%BA%A3nh/filza.jpg",fb:"📁",badge:"",tags:[["tag-purple","FILE"]],search:"filza mod app 3105 quan ly file",size:"18 MB",ver:"Latest",ios:"14+",dl:"1.4K"},
 
-  {cat:"patch",sub:"pubg",id:"menupubg",title:"MENU PUBG VIP",desc:"Menu Mod cao cấp — ESP, Aimbot & chống khóa nick",href:"https://anonlink.io/0vMe7",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"HOT",tags:[["tag-vip","MENU VIP"],["tag-antiban","ANTI-BAN"]],search:"menu pubg vip pubg mobile mod esp aimbot",size:"22 MB",ver:"Latest",ios:"14+",dl:"3.8K"},
-  {cat:"patch",sub:"pubg",id:"modpubgvip",title:"MOD PUBG VIP PRO",desc:"Bản VIP đặc quyền — Mở khóa Mod Skin súng & trang phục",href:"https://anonlink.io/Coj0THaZ",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-vip","MOD SKIN"]],search:"mod pubg vip pubg mobile skin",size:"18 MB",ver:"Latest",ios:"14+",dl:"2.4K"},
-  {cat:"patch",sub:"pubg",id:"modpubg",title:"MOD PUBG MOBILE VNG",desc:"Bản Mod chuẩn cho PUBG VNG iOS — Chiến mượt, ổn định",href:"https://anonlink.io/BN5yUBP",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-blue","VNG"]],search:"mod pubg mobile vng",size:"18 MB",ver:"Latest",ios:"14+",dl:"2.1K"},
-  {cat:"patch",sub:"pubg",id:"pubgglobal",title:"MOD PUBG (GLOBAL)",desc:"Bản Quốc Tế (Global) cho iOS — An toàn, mượt mà",href:"https://anonlink.io/x03DO",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🌍",badge:"",tags:[["tag-blue","GLOBAL"]],search:"mod pubg global quoc te",size:"20 MB",ver:"Latest",ios:"14+",dl:"1.7K"},
-  {cat:"patch",sub:"lq",id:"lq",title:"PATCH LIÊN QUÂN ALL-IN-ONE",desc:"Combo VIP: Mở khóa Full Skin + Hack Map Sáng + Cam Xa",href:"https://anonlink.io/9SLgmhZd",icon:"a%CC%89nh/%E1%BA%A3nh/lq.jpg",fb:"⚔️",badge:"HOT",tags:[["tag-vip","COMBO VIP"]],search:"patch lq unlock skin lien quan map cam xa",size:"10 MB",ver:"Latest",ios:"13+",dl:"4.6K"},
-  {cat:"patch",sub:"lq",id:"mapsang",title:"PATCH HACK MAP SÁNG LQ",desc:"Liên Quân Mobile — Quan sát tầm nhìn toàn bản đồ",href:"https://anonlink.io/HHDo4",icon:"a%CC%89nh/%E1%BA%A3nh/map.jpg",fb:"🗺️",badge:"",tags:[["tag-purple","MAP SÁNG"]],search:"patch hack map lien quan",size:"5 MB",ver:"Latest",ios:"13+",dl:"2.2K"},
-  {cat:"patch",sub:"lq",id:"unlockskin",title:"PATCH UNLOCK ALL SKIN LQ",desc:"Liên Quân Mobile — Mở khóa trang phục, hiệu ứng & âm thanh",href:"https://anonlink.io/BbyZXzAc",icon:"a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg",fb:"👗",badge:"",tags:[["tag-vip","SKIN MOD"]],search:"patch unlockskin lien quan",size:"7 MB",ver:"Latest",ios:"13+",dl:"2.9K"},
-  {cat:"patch",sub:"lq",id:"camxa",title:"PATCH UNLOCK SKIN + CAM XA",desc:"Liên Quân Mobile — Góc nhìn siêu rộng + mở khóa Skin",href:"https://anonlink.io/fT8GLeZ",icon:"a%CC%89nh/%E1%BA%A3nh/camxa.jpg",fb:"🔭",badge:"",tags:[["tag-antiban","AN TOÀN"]],search:"patch unlockskin cam xa lien quan",size:"7 MB",ver:"Latest",ios:"13+",dl:"1.9K"},
-  {cat:"patch",sub:"ff",id:"aimffm",title:"PATCH AIM FREE FIRE MAX",desc:"Khóa mục tiêu tự động — Ghim tâm chuẩn xác cho FF Max",href:"https://anonlink.io/G8Fm18eL",icon:"a%CC%89nh/%E1%BA%A3nh/aimffm.jpg",fb:"🎯",badge:"HOT",tags:[["tag-purple","AIMLOCK"]],search:"patch aim ffm free fire max headshot",size:"6 MB",ver:"Latest",ios:"14+",dl:"3.1K"},
-  {cat:"patch",sub:"ff",id:"espffm",title:"PATCH ESP + AIM FF MAX",desc:"Hiển thị vị trí địch (ESP) + Hỗ trợ kéo tâm Free Fire Max",href:"https://anonlink.io/wTMGTLHP",icon:"a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg",fb:"📍",badge:"",tags:[["tag-antiban","ANTIBAN"]],search:"patch dinh vi aimbody ffm free fire max",size:"6 MB",ver:"Latest",ios:"14+",dl:"2.8K"},
-  {cat:"patch",sub:"ff",id:"ffth",title:"PATCH FF THÁI LAN ESP + AIM",desc:"Dành cho Free Fire Thái Lan — ESP định vị + Aimbot",href:"https://anonlink.io/q1BnSEUB",icon:"a%CC%89nh/%E1%BA%A3nh/aimffth.jpg",fb:"🔫",badge:"",tags:[["tag-purple","FF THÁI"]],search:"patch aim ffth free fire thai",size:"6 MB",ver:"Latest",ios:"14+",dl:"1.3K"},
-  {cat:"patch",sub:"other",id:"capcut",title:"CAPCUT PRO MOD",desc:"Mở khóa toàn bộ tính năng Pro — Xuất video 4K không logo",href:"https://anonlink.io/nqiI",icon:"a%CC%89nh/%E1%BA%A3nh/capcut.jpg",fb:"🎬",badge:"HOT",tags:[["tag-vip","PRO VIP"]],search:"capcut pro patch mod edit video",size:"145 MB",ver:"Latest",ios:"15+",dl:"3.6K"},
-  {cat:"patch",sub:"other",id:"pvz2",title:"PATCH HACK PVZ2",desc:"Dùng cho App 3105 — Full cây trồng, Shop đồng giá 1 xu",href:"https://anonlink.io/z8ddEc",icon:"a%CC%89nh/%E1%BA%A3nh/pvz2.jpg",fb:"🌻",badge:"",tags:[["tag-purple","FULL UNLOCK"]],search:"patch hack pvz2 plants vs zombies",size:"8 MB",ver:"Latest",ios:"13+",dl:"1.6K"},
-  {cat:"patch",sub:"other",id:"candy",title:"PATCH CANDY CRUSH",desc:"Dùng cho App 3105 — Vô hạn vật phẩm hỗ trợ & lượt đi",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/candycrush.jpg",fb:"🍬",badge:"",tags:[["tag-purple","VÔ HẠN"]],search:"patch candy crush",size:"6 MB",ver:"Latest",ios:"13+",dl:"1.1K"},
-  {cat:"patch",sub:"other",id:"subway",title:"PATCH SUBWAY SURFERS",desc:"Dùng cho App 3105 — Full vàng, chìa khóa & nhân vật",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/subway.jpg",fb:"🏄",badge:"",tags:[["tag-purple","FULL MAX"]],search:"patch subway surfers",size:"9 MB",ver:"Latest",ios:"13+",dl:"1.4K"},
+  // 2. MỤC PUBG RIÊNG
+  {cat:"pubg",id:"menupubg",title:"MENU PUBG VIP",desc:"Menu Mod cao cấp — ESP, Aimbot & chống khóa nick",href:"https://anonlink.io/0vMe7",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"HOT",tags:[["tag-vip","MENU VIP"],["tag-antiban","ANTI-BAN"]],search:"menu pubg vip pubg mobile mod esp aimbot",size:"22 MB",ver:"Latest",ios:"14+",dl:"3.8K"},
+  {cat:"pubg",id:"modpubgvip",title:"MOD PUBG VIP PRO",desc:"Bản VIP đặc quyền — Mở khóa Mod Skin súng & trang phục",href:"https://anonlink.io/Coj0THaZ",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-vip","MOD SKIN"]],search:"mod pubg vip pubg mobile skin",size:"18 MB",ver:"Latest",ios:"14+",dl:"2.4K"},
+  {cat:"pubg",id:"modpubg",title:"MOD PUBG MOBILE VNG",desc:"Bản Mod chuẩn cho PUBG VNG iOS — Chiến mượt, ổn định",href:"https://anonlink.io/BN5yUBP",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🎯",badge:"",tags:[["tag-blue","VNG"]],search:"mod pubg mobile vng",size:"18 MB",ver:"Latest",ios:"14+",dl:"2.1K"},
+  {cat:"pubg",id:"pubgglobal",title:"MOD PUBG (GLOBAL)",desc:"Bản Quốc Tế (Global) cho iOS — An toàn, mượt mà",href:"https://anonlink.io/x03DO",icon:"a%CC%89nh/%E1%BA%A3nh/pubg.jpg",fb:"🌍",badge:"",tags:[["tag-blue","GLOBAL"]],search:"mod pubg global quoc te",size:"20 MB",ver:"Latest",ios:"14+",dl:"1.7K"},
 
+  // 3. MỤC FREE FIRE RIÊNG
+  {cat:"ff",id:"aimffm",title:"PATCH AIM FREE FIRE MAX",desc:"Khóa mục tiêu tự động — Ghim tâm chuẩn xác cho FF Max",href:"https://anonlink.io/G8Fm18eL",icon:"a%CC%89nh/%E1%BA%A3nh/aimffm.jpg",fb:"🎯",badge:"HOT",tags:[["tag-purple","AIMLOCK"]],search:"patch aim ffm free fire max headshot",size:"6 MB",ver:"Latest",ios:"14+",dl:"3.1K"},
+  {cat:"ff",id:"espffm",title:"PATCH ESP + AIM FF MAX",desc:"Hiển thị vị trí địch (ESP) + Hỗ trợ kéo tâm Free Fire Max",href:"https://anonlink.io/wTMGTLHP",icon:"a%CC%89nh/%E1%BA%A3nh/dinhvi.jpg",fb:"📍",badge:"",tags:[["tag-antiban","ANTIBAN"]],search:"patch dinh vi aimbody ffm free fire max",size:"6 MB",ver:"Latest",ios:"14+",dl:"2.8K"},
+  {cat:"ff",id:"ffth",title:"PATCH FF THÁI LAN ESP + AIM",desc:"Dành cho Free Fire Thái Lan — ESP định vị + Aimbot",href:"https://anonlink.io/q1BnSEUB",icon:"a%CC%89nh/%E1%BA%A3nh/aimffth.jpg",fb:"🔫",badge:"",tags:[["tag-purple","FF THÁI"]],search:"patch aim ffth free fire thai",size:"6 MB",ver:"Latest",ios:"14+",dl:"1.3K"},
+
+  // 4. MỤC LIÊN QUÂN RIÊNG
+  {cat:"lq",id:"lq",title:"PATCH LIÊN QUÂN ALL-IN-ONE",desc:"Combo VIP: Mở khóa Full Skin + Hack Map Sáng + Cam Xa",href:"https://anonlink.io/9SLgmhZd",icon:"a%CC%89nh/%E1%BA%A3nh/lq.jpg",fb:"⚔️",badge:"HOT",tags:[["tag-vip","COMBO VIP"]],search:"patch lq unlock skin lien quan map cam xa",size:"10 MB",ver:"Latest",ios:"13+",dl:"4.6K"},
+  {cat:"lq",id:"mapsang",title:"PATCH HACK MAP SÁNG LQ",desc:"Liên Quân Mobile — Quan sát tầm nhìn toàn bản đồ",href:"https://anonlink.io/HHDo4",icon:"a%CC%89nh/%E1%BA%A3nh/map.jpg",fb:"🗺️",badge:"",tags:[["tag-purple","MAP SÁNG"]],search:"patch hack map lien quan",size:"5 MB",ver:"Latest",ios:"13+",dl:"2.2K"},
+  {cat:"lq",id:"unlockskin",title:"PATCH UNLOCK ALL SKIN LQ",desc:"Liên Quân Mobile — Mở khóa trang phục, hiệu ứng & âm thanh",href:"https://anonlink.io/BbyZXzAc",icon:"a%CC%89nh/%E1%BA%A3nh/unlockskin.jpg",fb:"👗",badge:"",tags:[["tag-vip","SKIN MOD"]],search:"patch unlockskin lien quan",size:"7 MB",ver:"Latest",ios:"13+",dl:"2.9K"},
+  {cat:"lq",id:"camxa",title:"PATCH UNLOCK SKIN + CAM XA",desc:"Liên Quân Mobile — Góc nhìn siêu rộng + mở khóa Skin",href:"https://anonlink.io/fT8GLeZ",icon:"a%CC%89nh/%E1%BA%A3nh/camxa.jpg",fb:"🔭",badge:"",tags:[["tag-antiban","AN TOÀN"]],search:"patch unlockskin cam xa lien quan",size:"7 MB",ver:"Latest",ios:"13+",dl:"1.9K"},
+
+  // 5. PATCH GAME & APP KHÁC
+  {cat:"other",id:"capcut",title:"CAPCUT PRO MOD",desc:"Mở khóa toàn bộ tính năng Pro — Xuất video 4K không logo",href:"https://anonlink.io/nqiI",icon:"a%CC%89nh/%E1%BA%A3nh/capcut.jpg",fb:"🎬",badge:"HOT",tags:[["tag-vip","PRO VIP"]],search:"capcut pro patch mod edit video",size:"145 MB",ver:"Latest",ios:"15+",dl:"3.6K"},
+  {cat:"other",id:"pvz2",title:"PATCH HACK PVZ2",desc:"Dùng cho App 3105 — Full cây trồng, Shop đồng giá 1 xu",href:"https://anonlink.io/z8ddEc",icon:"a%CC%89nh/%E1%BA%A3nh/pvz2.jpg",fb:"🌻",badge:"",tags:[["tag-purple","FULL UNLOCK"]],search:"patch hack pvz2 plants vs zombies",size:"8 MB",ver:"Latest",ios:"13+",dl:"1.6K"},
+  {cat:"other",id:"candy",title:"PATCH CANDY CRUSH",desc:"Dùng cho App 3105 — Vô hạn vật phẩm hỗ trợ & lượt đi",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/candycrush.jpg",fb:"🍬",badge:"",tags:[["tag-purple","VÔ HẠN"]],search:"patch candy crush",size:"6 MB",ver:"Latest",ios:"13+",dl:"1.1K"},
+  {cat:"other",id:"subway",title:"PATCH SUBWAY SURFERS",desc:"Dùng cho App 3105 — Full vàng, chìa khóa & nhân vật",href:"https://anonlink.io/I7r0fTtU",icon:"a%CC%89nh/%E1%BA%A3nh/subway.jpg",fb:"🏄",badge:"",tags:[["tag-purple","FULL MAX"]],search:"patch subway surfers",size:"9 MB",ver:"Latest",ios:"13+",dl:"1.4K"},
+
+  // 6. BYPASS & DNS
   {cat:"bypass",id:"dnsff",title:"DNS ANTIBAN FREE FIRE",desc:"Cấu hình DNS Antiban chuyên dụng cho Free Fire — An toàn",href:"https://anonlink.io/WiTmFh",icon:"a%CC%89nh/%E1%BA%A3nh/dns.jpg",fb:"🛡️",badge:"HOT",tags:[["tag-antiban","ANTIBAN 100%"]],search:"dns antiban ff free fire",size:"4 KB",ver:"v3.0",ios:"Mọi iOS",dl:"2.9K"},
   {cat:"bypass",id:"bchatgpt",title:"BYPASS CHATGPT",desc:"Dán vào khung chat — Mở khóa giới hạn & kiểm duyệt AI",href:"https://anonlink.io/M9S1",icon:"a%CC%89nh/%E1%BA%A3nh/chatgpt.jpg",fb:"🤖",badge:"",tags:[["tag-blue","PROMPT"]],search:"bypass chatgpt prompt",size:"TXT",ver:"Mới",ios:"Mọi iOS",dl:"1.2K"},
   {cat:"bypass",id:"bclaude",title:"BYPASS AI CLAUDE",desc:"Prompt mở khóa khả năng trả lời nâng cao cho Claude AI",href:"https://anonlink.io/0whZz",icon:"a%CC%89nh/%E1%BA%A3nh/claude.jpg",fb:"✨",badge:"NEW",tags:[["tag-blue","PROMPT"]],search:"bypass ai claude",size:"TXT",ver:"Mới",ios:"Mọi iOS",dl:"950"}
@@ -664,7 +695,7 @@ function cardHTML(a){
   const badge=a.badge==="HOT"?'<span class="card-badge badge-hot">HOT</span>':a.badge==="NEW"?'<span class="card-badge badge-new">NEW</span>':"";
   const tags=(a.tags||[]).map(t=>'<span class="tag '+t[0]+'">'+t[1]+'</span>').join("");
   const isFav=favs.has(a.id)?" on":"";
-  return `<a class="card" href="${a.href}" data-appid="${a.id}" data-sub="${a.sub||'all'}" data-search="${a.search||''}">
+  return `<a class="card" href="${a.href}" data-appid="${a.id}" data-search="${a.search||''}">
     <div class="card-icon">${badge}<img src="${REPO+a.icon}" alt="${a.title}" loading="lazy" onerror="this.classList.add('error-img')"><div class="img-fallback">${a.fb||'📦'}</div></div>
     <div class="card-info">
       <div class="card-title">${a.title}</div>
@@ -689,14 +720,13 @@ document.getElementById("totalApps").textContent=APPS.length;
 const searchInp=document.getElementById("search");
 const clearBtn=document.getElementById("clearSearch");
 const empty=document.getElementById("empty");
-let activeCategory="all",activeSubFilter="all";
+let activeCategory="all";
 
 function norm(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d");}
 
 function filterContent(){
   const kw=norm(searchInp.value.trim());
   clearBtn.classList.toggle("show",!!kw);
-  document.getElementById("patchSubFilters").classList.toggle("show",activeCategory==="patch");
   let total=0;
   document.querySelectorAll(".section").forEach(sec=>{
     const cat=sec.dataset.category;
@@ -705,8 +735,7 @@ function filterContent(){
     let vis=0;
     sec.querySelectorAll(".card").forEach(card=>{
       const text=norm((card.dataset.search||"")+" "+card.innerText);
-      const subOk=(cat!=="patch")||(activeCategory!=="patch")||(activeSubFilter==="all")||(card.dataset.sub===activeSubFilter);
-      const ok=catOk&&subOk&&(!kw||text.includes(kw))&&(!favMode||favs.has(card.dataset.appid));
+      const ok=catOk&&(!kw||text.includes(kw))&&(!favMode||favs.has(card.dataset.appid));
       card.style.display=ok?"flex":"none";
       if(ok){vis++;total++;}
     });
@@ -718,13 +747,7 @@ function filterContent(){
 
 function setTab(filter){
   activeCategory=filter;
-  if(filter!=="patch")activeSubFilter="all";
   document.querySelectorAll(".tab-pill,.nav-item").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));
-  filterContent();
-}
-function setSubFilter(sub){
-  activeSubFilter=sub;
-  document.querySelectorAll(".sub-pill").forEach(b=>b.classList.toggle("active",b.dataset.sub===sub));
   filterContent();
 }
 document.querySelectorAll(".tab-pill").forEach(btn=>btn.addEventListener("click",()=>setTab(btn.dataset.filter)));
@@ -743,9 +766,13 @@ let currentApp=null;
 let payTimerInterval=null;
 let paySeconds=1;
 
+const PATCH_GUIDE = "💡 <b>Hướng dẫn Mod:</b> Tải file Patch về máy → Mở <b>App 3105</b> nhấn dấu (+) thêm file → Chọn Game và bấm Áp dụng Patch.";
 const GUIDES={
   ipa:"💡 <b>Hướng dẫn cài:</b> Tải file .ipa về máy → Mở <b>App 3105 / ESign</b> chọn file vừa tải để cài → Vào Cài đặt chung tin cậy chứng chỉ.",
-  patch:"💡 <b>Hướng dẫn Mod:</b> Tải file Patch về máy → Mở <b>App 3105</b> nhấn dấu (+) thêm file → Chọn Game và bấm Áp dụng Patch.",
+  pubg: PATCH_GUIDE,
+  ff: PATCH_GUIDE,
+  lq: PATCH_GUIDE,
+  other: PATCH_GUIDE,
   bypass:"💡 <b>Hướng dẫn dùng:</b> Với DNS thì cài cấu hình vào máy. Với Prompt AI thì sao chép toàn bộ văn bản dán vào khung chat."
 };
 
@@ -793,7 +820,7 @@ function showStep2Buy(){
     paySeconds++;
     document.getElementById("payTimer").textContent = paySeconds + "s";
 
-    if (paySeconds > 300) { // Quá 5 phút dừng
+    if (paySeconds > 300) {
       clearInterval(payTimerInterval);
       document.getElementById("payStatusText").textContent = "Hết thời gian chờ. Vui lòng thử lại!";
       return;
