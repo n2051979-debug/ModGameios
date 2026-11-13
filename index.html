@@ -636,7 +636,7 @@ mBtn.addEventListener("click",()=>{
   }
 });
 
-/* DỮ LIỆU APPS (ĐÃ TÁCH RIÊNG PUBG, FF, LQ & THÊM 2 GAME Ở GIỮA KHO IPA) */
+/* DỮ LIỆU APPS */
 const REPO="https://raw.githubusercontent.com/n2051979-debug/ModGameios/main/";
 const APPS=[
   // 1. KHO TẢI IPA VIP
@@ -645,9 +645,9 @@ const APPS=[
   {cat:"ipa",id:"app3105v1",title:"APP 3105 (V1.1.1)",desc:"Bản dự phòng ổn định — Link tải trực tiếp MediaFire",href:"https://www.mediafire.com/file/cvcx8v9z7xxz9de/3105_1.1.1.ipa/file",icon:"a%CC%89nh/%E1%BA%A3nh/app3105.jpg",fb:"📦",badge:"",tags:[["tag-blue","MEDIAFIRE"]],search:"app 3105 v1.1.1 mediafire",size:"24 MB",ver:"V1.1.1",ios:"13+",dl:"1.9K"},
   {cat:"ipa",id:"youtube",title:"YOUTUBE PREMIUM",desc:"Chặn quảng cáo, phát nhạc nền tắt màn hình, PiP",href:"https://anonlink.io/wyHo0S",icon:"a%CC%89nh/%E1%BA%A3nh/Youtube.jpg",fb:"▶️",badge:"HOT",tags:[["tag-vip","VIP"]],search:"youtube premium chan quang cao nghe nhac tat man hinh",size:"68 MB",ver:"Latest",ios:"14+",dl:"4.1K"},
   
-  // 2 FILE MỚI THÊM Ở GIỮA KHO IPA (Nhớ thay link & ảnh icon của bạn vào đây)
-  {cat:"ipa",id:"haitac",title:"HẢI TẶC ĐẠI CHIẾN IPA",desc:"Bản Mod / Cài trực tiếp không cần Jailbreak — Mượt mà",href:"https://www.mediafire.com/file/link_hai_tac_dai_chien/file",icon:"a%CC%89nh/%E1%BA%A3nh/haitac.jpg",fb:"🏴‍☠️",badge:"NEW",tags:[["tag-vip","IPA GAME"]],search:"hai tac dai chien ipa one piece mod",size:"185 MB",ver:"Latest",ios:"14+",dl:"2.1K"},
-  {cat:"ipa",id:"dtcl",title:"ĐẤU TRƯỜNG CHÂN LÝ IPA",desc:"TFT Mobile iOS — Cài trực tiếp hỗ trợ đa tài khoản",href:"https://www.mediafire.com/file/link_dau_truong_chan_ly/file",icon:"a%CC%89nh/%E1%BA%A3nh/dtcl.jpg",fb:"♟️",badge:"NEW",tags:[["tag-green","TFT MOBILE"]],search:"dau truong chan ly dtcl tft mobile ipa",size:"210 MB",ver:"Latest",ios:"14+",dl:"2.5K"},
+  // 2 FILE Ở GIỮA KHO IPA (Đã gắn đúng ảnh/ảnh/htdc.jgp và ảnh/ảnh/dccl.jgp)
+  {cat:"ipa",id:"haitac",title:"HẢI TẶC ĐẠI CHIẾN IPA",desc:"Bản Mod / Cài trực tiếp không cần Jailbreak — Mượt mà",href:"https://www.mediafire.com/file/link_hai_tac_dai_chien/file",icon:"a%CC%89nh/%E1%BA%A3nh/htdc.jgp",fb:"🏴‍☠️",badge:"NEW",tags:[["tag-vip","IPA GAME"]],search:"hai tac dai chien ipa one piece mod",size:"185 MB",ver:"Latest",ios:"14+",dl:"2.1K"},
+  {cat:"ipa",id:"dtcl",title:"ĐẤU TRƯỜNG CHÂN LÝ IPA",desc:"TFT Mobile iOS — Cài trực tiếp hỗ trợ đa tài khoản",href:"https://www.mediafire.com/file/link_dau_truong_chan_ly/file",icon:"a%CC%89nh/%E1%BA%A3nh/dccl.jgp",fb:"♟️",badge:"NEW",tags:[["tag-green","TFT MOBILE"]],search:"dau truong chan ly dtcl tft mobile ipa",size:"210 MB",ver:"Latest",ios:"14+",dl:"2.5K"},
 
   {cat:"ipa",id:"spotify",title:"SPOTIFY PREMIUM",desc:"Nghe nhạc chất lượng cao, không quảng cáo, chuyển bài vô hạn",href:"https://anonlink.io/qqf9BXZB",icon:"spotify.jpg",fb:"🎶",badge:"NEW",tags:[["tag-green","PREMIUM"]],search:"spotify premium ipa crack mod nghe nhac",size:"42 MB",ver:"Latest",ios:"14+",dl:"2.7K"},
   {cat:"ipa",id:"soundcloud",title:"SOUNDCLOUD GO++",desc:"Nghe nhạc Offline, không quảng cáo — Mở khóa Go++",href:"https://anonlink.io/waAE6rCe",icon:"soundcloud.jpg",fb:"🎵",badge:"NEW",tags:[["tag-vip","GO++"]],search:"soundcloud go plus plus nghe nhac offline",size:"35 MB",ver:"Latest",ios:"14+",dl:"1.5K"},
@@ -815,7 +815,6 @@ function showStep2Buy(){
   document.getElementById("payTimer").textContent="1s";
   document.getElementById("payStatusText").textContent="Đang chờ chuyển khoản 10.000đ...";
 
-  // Gọi API SePay thật liên tục mỗi 3 giây để check tiền vào tài khoản
   payTimerInterval = setInterval(async () => {
     paySeconds++;
     document.getElementById("payTimer").textContent = paySeconds + "s";
